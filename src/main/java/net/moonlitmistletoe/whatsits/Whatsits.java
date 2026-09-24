@@ -16,25 +16,27 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Whatsits.MOD_ID)
 public class Whatsits {
+
     public static final String MOD_ID = "whatsits";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
     public Whatsits(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
+
+        // Register common setup
         modEventBus.addListener(this::commonSetup);
 
-        // Register ourselves for server and other game events
+        // Register server/game events
         NeoForge.EVENT_BUS.register(this);
+
+        // Register egg yolk event handler
         NeoForge.EVENT_BUS.register(EggYolkHandler.class);
 
         // Register items
         ModItems.register(modEventBus);
 
-        // Register items to creative tabs
+        // Register creative tab contents
         modEventBus.addListener(this::addCreative);
 
         // Register config
@@ -42,13 +44,33 @@ public class Whatsits {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-
     }
 
-    // Add the egg yolk to the ingredients tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+
             event.accept(ModItems.EGG_YOLK);
+            event.accept(ModItems.APPLE_JUICE);
+            event.accept(ModItems.APPLE_PIE);
+            event.accept(ModItems.AVOCADO);
+            event.accept(ModItems.AVOCADO_TOAST);
+            event.accept(ModItems.BLACKBERRY);
+            event.accept(ModItems.BLACKBERRY_JAM);
+            event.accept(ModItems.BLUEBERRY);
+            event.accept(ModItems.BLUEBERRY_JAM);
+            event.accept(ModItems.CHERRY);
+            event.accept(ModItems.CHERRY_JAM);
+            event.accept(ModItems.CHERRY_JUICE);
+            event.accept(ModItems.CHERRY_PIE);
+            event.accept(ModItems.COFFEE);
+            event.accept(ModItems.MOONCAKE);
+            event.accept(ModItems.SCRAMBLED_EGGS);
+            event.accept(ModItems.STRAWBERRY);
+            event.accept(ModItems.STRAWBERRY_ICE_CREAM);
+            event.accept(ModItems.STRAWBERRY_JAM);
+            event.accept(ModItems.STRAWBERRY_SMOOTHIE);
+            event.accept(ModItems.SUNNY_SIDE_EGGS);
         }
     }
 
