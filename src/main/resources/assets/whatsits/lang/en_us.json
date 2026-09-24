@@ -1,3 +1,23 @@
 {
-  "item.whatsits.egg_yolk": "Egg Yolk"
+  "item.whatsits.egg_yolk": "Egg Yolk",
+  "item.whatsits.apple_juice": "Apple Juice",
+  "item.whatsits.apple_pie": "Apple Pie",
+  "item.whatsits.avocado": "Avocado",
+  "item.whatsits.avocado_toast": "Avocado Toast",
+  "item.whatsits.blackberry": "Blackberry",
+  "item.whatsits.blackberry_jam": "Blackberry Jam",
+  "item.whatsits.blueberry": "Blueberry",
+  "item.whatsits.blueberry_jam": "Blueberry Jam",
+  "item.whatsits.cherry": "Cherry",
+  "item.whatsits.cherry_jam": "Cherry Jam",
+  "item.whatsits.cherry_juice": "Cherry Juice",
+  "item.whatsits.cherry_pie": "Cherry Pie",
+  "item.whatsits.coffee": "Coffee",
+  "item.whatsits.mooncake": "Mooncake",
+  "item.whatsits.scrambled_eggs": "Scrambled Eggs",
+  "item.whatsits.strawberry": "Strawberry",
+  "item.whatsits.strawberry_ice_cream": "Strawberry Ice Cream",
+  "item.whatsits.strawberry_jam": "Strawberry Jam",
+  "item.whatsits.strawberry_smoothie": "Strawberry Smoothie",
+  "item.whatsits.sunny_side_eggs": "Sunny-Side Eggs"
 }
