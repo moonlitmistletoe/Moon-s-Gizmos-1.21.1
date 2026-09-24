@@ -1,5 +1,7 @@
 package net.moonlitmistletoe.whatsits.item;
 
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.minecraft.world.item.Item;
 import net.moonlitmistletoe.whatsits.Whatsits;
 import net.neoforged.bus.api.IEventBus;
@@ -10,7 +12,17 @@ public class ModItems {
 
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(Whatsits.MOD_ID);
+    public static final DeferredItem<Item> BLACKBERRY_SEED = ITEMS.register("blackberry_seed",
+            () -> new ItemNameBlockItem(ModBlocks.BLACKBERRY_CROP.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> BLUEBERRY_SEED = ITEMS.register("blueberry_seed",
+            () -> new ItemNameBlockItem(ModBlocks.BLUEBERRY_CROP.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> COFFEE_SEED = ITEMS.register("coffee_seed",
+            () -> new ItemNameBlockItem(ModBlocks.COFFEE_CROP.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> STRAWBERRY_SEED = ITEMS.register("strawberry_seed",
+            () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
     public static final DeferredItem<Item> EGG_YOLK = ITEMS.register("egg_yolk",
             () -> new Item(new Item.Properties()
                     .food(ModFoodProperties.EGG_YOLK)));

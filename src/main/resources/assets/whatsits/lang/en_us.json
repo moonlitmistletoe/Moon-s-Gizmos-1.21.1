@@ -19,5 +19,14 @@
   "item.whatsits.strawberry_ice_cream": "Strawberry Ice Cream",
   "item.whatsits.strawberry_jam": "Strawberry Jam",
   "item.whatsits.strawberry_smoothie": "Strawberry Smoothie",
-  "item.whatsits.sunny_side_eggs": "Sunny-Side Eggs"
+  "item.whatsits.sunny_side_eggs": "Sunny-Side Eggs",
+  "block.whatsits.blackberry_crop": "Blackberry Crop",
+  "block.whatsits.blueberry_crop": "Blueberry Crop",
+  "block.whatsits.coffee_crop": "Coffee Crop",
+  "block.whatsits.strawberry_crop": "Strawberry Crop",
+
+  "item.whatsits.blackberry_seed": "Blackberry Seeds",
+  "item.whatsits.blueberry_seed": "Blueberry Seeds",
+  "item.whatsits.coffee_seed": "Coffee Seeds",
+  "item.whatsits.strawberry_seed": "Strawberry Seeds"
 }

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
+import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -33,7 +34,10 @@ public class Whatsits {
         // Register egg yolk event handler
         NeoForge.EVENT_BUS.register(EggYolkHandler.class);
 
-        // Register items
+// Register blocks
+        ModBlocks.register(modEventBus);
+
+// Register items
         ModItems.register(modEventBus);
 
         // Register creative tab contents
@@ -71,6 +75,10 @@ public class Whatsits {
             event.accept(ModItems.STRAWBERRY_JAM);
             event.accept(ModItems.STRAWBERRY_SMOOTHIE);
             event.accept(ModItems.SUNNY_SIDE_EGGS);
+            event.accept(ModItems.BLACKBERRY_SEED);
+            event.accept(ModItems.BLUEBERRY_SEED);
+            event.accept(ModItems.COFFEE_SEED);
+            event.accept(ModItems.STRAWBERRY_SEED);
         }
     }
 
