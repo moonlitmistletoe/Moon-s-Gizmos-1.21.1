@@ -1,12 +1,12 @@
 package net.moonlitmistletoe.whatsits;
 
-import net.minecraft.world.item.CreativeModeTabs;
+import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.moonlitmistletoe.whatsits.block.ModBlocks;
+import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -14,7 +14,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(Whatsits.MOD_ID)
@@ -28,58 +27,32 @@ public class Whatsits {
         // Register common setup
         modEventBus.addListener(this::commonSetup);
 
+        // Register Sounds
+        ModSounds.register(modEventBus);
+
         // Register server/game events
         NeoForge.EVENT_BUS.register(this);
 
         // Register egg yolk event handler
         NeoForge.EVENT_BUS.register(EggYolkHandler.class);
 
-// Register blocks
+        // Register crop harvest event handler
+        NeoForge.EVENT_BUS.register(CropHarvestHandler.class);
+
+        // Register blocks
         ModBlocks.register(modEventBus);
 
-// Register items
+        // Register items
         ModItems.register(modEventBus);
 
-        // Register creative tab contents
-        modEventBus.addListener(this::addCreative);
+        // Register creative tab
+        ModCreativeModeTabs.register(modEventBus);
 
         // Register config
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-
-            event.accept(ModItems.EGG_YOLK);
-            event.accept(ModItems.APPLE_JUICE);
-            event.accept(ModItems.APPLE_PIE);
-            event.accept(ModItems.AVOCADO);
-            event.accept(ModItems.AVOCADO_TOAST);
-            event.accept(ModItems.BLACKBERRY);
-            event.accept(ModItems.BLACKBERRY_JAM);
-            event.accept(ModItems.BLUEBERRY);
-            event.accept(ModItems.BLUEBERRY_JAM);
-            event.accept(ModItems.CHERRY);
-            event.accept(ModItems.CHERRY_JAM);
-            event.accept(ModItems.CHERRY_JUICE);
-            event.accept(ModItems.CHERRY_PIE);
-            event.accept(ModItems.COFFEE);
-            event.accept(ModItems.MOONCAKE);
-            event.accept(ModItems.SCRAMBLED_EGGS);
-            event.accept(ModItems.STRAWBERRY);
-            event.accept(ModItems.STRAWBERRY_ICE_CREAM);
-            event.accept(ModItems.STRAWBERRY_JAM);
-            event.accept(ModItems.STRAWBERRY_SMOOTHIE);
-            event.accept(ModItems.SUNNY_SIDE_EGGS);
-            event.accept(ModItems.BLACKBERRY_SEED);
-            event.accept(ModItems.BLUEBERRY_SEED);
-            event.accept(ModItems.COFFEE_SEED);
-            event.accept(ModItems.STRAWBERRY_SEED);
-        }
     }
 
     @SubscribeEvent
