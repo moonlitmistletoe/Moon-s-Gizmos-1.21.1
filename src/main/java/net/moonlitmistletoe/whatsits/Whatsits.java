@@ -1,7 +1,6 @@
 package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
-import net.moonlitmistletoe.whatsits.event.CowRibDropHandler;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import org.slf4j.Logger;
 
@@ -43,7 +42,6 @@ public class Whatsits {
 
         // Register crop harvest event handler
         NeoForge.EVENT_BUS.register(CropHarvestHandler.class);
-        NeoForge.EVENT_BUS.register(CowRibDropHandler.class);
 
         // Register blocks
         ModBlocks.register(modEventBus);
