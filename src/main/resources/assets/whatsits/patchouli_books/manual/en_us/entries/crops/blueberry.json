@@ -1,0 +1,18 @@
+{
+  "name": "Blueberries",
+  "icon": "whatsits:blueberry",
+  "category": "whatsits:crops",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Blueberries come from the Blueberry Crop. Harvest the crop once it is fully grown to get blueberries.$(br2)They're small, but they have a few uses beyond just eating them."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:blueberry",
+      "title": "Blueberry",
+      "text": "Blueberries can be eaten and used in other foods.$(br2)See $(l:whatsits:foods_drinks)Food & Drinks$(/l) for some of their other uses."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Meals",
+  "icon": "whatsits:avocado_toast",
+  "category": "whatsits:foods_drinks",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Moon's Whatsits also has a few proper prepared foods rather than just ingredients and snacks.$(br2)These recipes use familiar ingredients and turn them into something a bit more substantial."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The meals currently added are Avocado Toast, Scrambled Eggs and Sunny Side Eggs."
+    }
+  ]
+}

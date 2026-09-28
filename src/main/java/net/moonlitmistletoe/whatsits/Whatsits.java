@@ -10,6 +10,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
+import net.moonlitmistletoe.whatsits.event.CampfireCompatibilityHandler;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -26,6 +27,9 @@ public class Whatsits {
 
         // Register common setup
         modEventBus.addListener(this::commonSetup);
+
+        // Adds Right Click  cancellation
+        NeoForge.EVENT_BUS.register(CampfireCompatibilityHandler.class);
 
         // Register Sounds
         ModSounds.register(modEventBus);

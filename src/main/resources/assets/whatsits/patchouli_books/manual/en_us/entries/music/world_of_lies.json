@@ -1,0 +1,26 @@
+{
+  "name": "World of Lies",
+  "icon": "whatsits:world_of_lies",
+  "category": "whatsits:music",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "World of Lies is a recreation based on one of the better-known lostwave songs from the internet.$(br2)For years, people searched for a song usually called 'Everyone Knows That', or EKT, from a short recording that had been uploaded to WatZatSong."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The recording was only a small fragment, which led to years of people trying to work out where it came from. There were guesses about old adverts, films, TV shows and obscure recordings, but nothing could be confirmed for a long time.$(br2)The mystery was finally solved on 28 April 2024. The song was identified as 'Ulterior Motives' by Christopher and Philip Booth, from the 1986 film Angels of Passion."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "World of Lies comes from that period when the song was still unidentified and people were making recreations of what the full track might have sounded like.$(br2)The original mystery has been solved, but those fan recreations are still part of the history of the search."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:world_of_lies",
+      "title": "World of Lies",
+      "text": "Put the disc in a jukebox to play the recreation."
+    }
+  ]
+}

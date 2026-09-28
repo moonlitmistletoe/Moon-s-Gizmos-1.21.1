@@ -1,0 +1,16 @@
+{
+  "name": "Desserts",
+  "icon": "whatsits:apple_pie",
+  "category": "whatsits:foods_drinks",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "There are a few sweet things in Moon's Whatsits too.$(br2)Some of them use fruit from the crops in this mod, while others are a bit less ordinary."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The desserts are Apple Pie, Cherry Pie, Mooncake and Strawberry Ice Cream.$(br2)Most of these give some of the fruit crops another use once you've harvested them."
+    }
+  ]
+}

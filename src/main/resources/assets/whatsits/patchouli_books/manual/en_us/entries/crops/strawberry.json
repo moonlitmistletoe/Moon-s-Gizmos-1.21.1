@@ -1,0 +1,18 @@
+{
+  "name": "Strawberries",
+  "icon": "whatsits:strawberry",
+  "category": "whatsits:crops",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Strawberries come from the Strawberry Crop. Harvest the crop once it is fully grown to get strawberries.$(br2)They can be eaten as they are or used in other recipes."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry",
+      "title": "Strawberry",
+      "text": "Fresh strawberries are used in several recipes, including drinks and desserts.$(br2)See $(l:whatsits:foods_drinks)Food & Drinks$(/l) for more."
+    }
+  ]
+}

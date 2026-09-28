@@ -1,0 +1,16 @@
+{
+  "name": "Introduction",
+  "icon": "whatsits:manual",
+  "category": "whatsits:getting_started",
+  "priority": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Welcome to Moon's Whatsits!$(br2)This book covers the crops, food, drinks and music added by the mod.$(br2)Most of the entries explain what an item is, where it comes from, and what you can do with it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The book is split into a few sections.$(br2)$(li)$(l:whatsits:crops)Crops$(/l) covers the plants and ingredients you can grow.$(br)$(li)$(l:whatsits:foods_drinks)Food & Drinks$(/l) covers the things you can make and eat or drink.$(br)$(li)$(l:whatsits:music)Music$(/l) covers the music discs and, where there's something interesting to say, where they came from.$(br2)More entries can be added here as the mod gets bigger."
+    }
+  ]
+}

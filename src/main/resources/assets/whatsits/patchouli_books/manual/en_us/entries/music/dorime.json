@@ -1,0 +1,22 @@
+{
+  "name": "DORIME",
+  "icon": "whatsits:dorime",
+  "category": "whatsits:music",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "DORIME is a reference to the Ameno meme.$(br2)Ameno was released in 1996 by ERA, a French music project. The song is much older than the meme that eventually grew around it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ameno started showing up in internet culture long before 'Dorime' became a common meme. It was used in Twitch streams, videos and remixes, and by the late 2010s the word 'Dorime' had become strongly associated with the song.$(br2)The meme is usually paired with the song's dramatic music and vocals, often over pictures of the famous white-robed rat."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:dorime",
+      "title": "DORIME",
+      "text": "Put the disc in a jukebox to play Ameno.$(br2)There isn't much more to it. It's here because DORIME."
+    }
+  ]
+}
