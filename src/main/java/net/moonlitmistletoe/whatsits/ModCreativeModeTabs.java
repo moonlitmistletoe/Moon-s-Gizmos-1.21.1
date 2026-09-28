@@ -44,7 +44,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHERRY);
                         output.accept(ModItems.COFFEE_BEANS);
                         output.accept(ModItems.STRAWBERRY);
-                        output.accept(ModItems.RAW_COW_RIBS);
 
                         // Drinks
                         output.accept(ModItems.APPLE_JUICE);
@@ -59,7 +58,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHERRY_JAM);
                         output.accept(ModItems.SCRAMBLED_EGGS);
                         output.accept(ModItems.SUNNY_SIDE_EGGS);
-                        output.accept(ModItems.COOKED_COW_RIBS);
 
                         // Desserts
                         output.accept(ModItems.APPLE_PIE);
