@@ -54,14 +54,14 @@ public class Whatsits {
         // Register items
         ModItems.register(modEventBus);
 
-        // Register creative tab
-        ModCreativeModeTabs.register(modEventBus);
-
         // Register Scabbards
         new Scabbards(modEventBus, modContainer);
 
         // Register merged Bakery content
         Bakery.init();
+
+        // Register creative tab
+        ModCreativeModeTabs.register(modEventBus);
 
         modEventBus.addListener((FMLCommonSetupEvent event) ->
                 event.enqueueWork(CompostableRegistry::registerCompostable));
