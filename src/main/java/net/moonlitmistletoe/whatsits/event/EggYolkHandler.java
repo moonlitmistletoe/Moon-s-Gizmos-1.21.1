@@ -1,4 +1,4 @@
-package net.moonlitmistletoe.whatsits;
+package net.moonlitmistletoe.whatsits.event;
 
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.ThrownEgg;
@@ -8,6 +8,9 @@ import net.minecraft.world.phys.HitResult;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
 import net.moonlitmistletoe.whatsits.item.ModItems;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 public class EggYolkHandler {
 
@@ -51,5 +54,20 @@ public class EggYolkHandler {
         );
 
         egg.level().addFreshEntity(yolkEntity);
+    }
+
+    @SubscribeEvent
+    public static void preventEggYolkOnCampfire(PlayerInteractEvent.RightClickBlock event) {
+        if (!event.getLevel().getBlockState(event.getPos()).is(Blocks.CAMPFIRE)
+                && !event.getLevel().getBlockState(event.getPos()).is(Blocks.SOUL_CAMPFIRE)) {
+            return;
+        }
+
+        if (!event.getItemStack().is(ModItems.EGG_YOLK.get())) {
+            return;
+        }
+
+        event.setCancellationResult(InteractionResult.FAIL);
+        event.setCanceled(true);
     }
 }

@@ -21,9 +21,11 @@ sourceSets.main.resources {
 
 repositories {
     maven { url = 'https://maven.blamejared.com' }
-
     maven {
         url = "https://cursemaven.com"
+    }
+    maven {
+        url = "https://maven.theillusivec4.top/"
     }
 }
 
@@ -86,6 +88,9 @@ dependencies {
     localRuntime "vazkii.patchouli:Patchouli:1.21.1-93-NEOFORGE"
 
     implementation "curse.maven:farmers-delight-398521:8765184"
+
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
+    compileOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

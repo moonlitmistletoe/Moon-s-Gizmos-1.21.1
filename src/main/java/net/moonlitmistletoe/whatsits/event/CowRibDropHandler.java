@@ -5,20 +5,37 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 
+import java.util.Set;
+
 public class CowRibDropHandler {
 
-    @SubscribeEvent
-    public static void onCowKilled(LivingDeathEvent event) {
-        if (!(event.getEntity() instanceof Cow cow)) {
-            return;
-        }
+    private static final Set<String> RIB_WEAPONS = Set.of(
+            "farmersdelight:diamond_knife",
+            "farmersdelight:flint_knife",
+            "farmersdelight:golden_knife",
+            "farmersdelight:iron_knife",
+            "farmersdelight:netherrite_knife",
 
-        if (cow.level().isClientSide()) {
+            "moredelight:stone_knife",
+            "moredelight:wooden_knife",
+
+            "dungeonsdelight:flint_cleaver",
+            "dungeonsdelight:diamond_cleaver",
+            "dungeonsdelight:golden_cleaver",
+            "dungeonsdelight:iron_cleaver",
+            "dungeonsdelight:netherrite_cleaver",
+            "dungeonsdelight:stained_cleaver"
+    );
+
+    @SubscribeEvent
+    public static void onCowDeath(LivingDeathEvent event) {
+        if (!(event.getEntity() instanceof Cow cow)) {
             return;
         }
 
@@ -28,26 +45,29 @@ public class CowRibDropHandler {
 
         ItemStack weapon = player.getMainHandItem();
 
-        if (weapon.isEmpty()) {
+        if (!isRibWeapon(weapon)) {
             return;
         }
 
-        ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(weapon.getItem());
-
-        if (itemId == null || !itemId.getPath().contains("cleaver")) {
+        if (cow.getRandom().nextFloat() >= 0.25f) {
             return;
         }
 
-        if (cow.getRandom().nextFloat() >= 0.25F) {
-            return;
-        }
+        ItemStack ribs = new ItemStack(ModItems.RAW_COW_RIBS.get());
 
         cow.level().addFreshEntity(new ItemEntity(
                 cow.level(),
                 cow.getX(),
                 cow.getY(),
                 cow.getZ(),
-                new ItemStack(ModItems.RAW_COW_RIBS.get())
+                ribs
         ));
+    }
+
+    private static boolean isRibWeapon(ItemStack stack) {
+        Item item = stack.getItem();
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
+
+        return id != null && RIB_WEAPONS.contains(id.toString());
     }
 }

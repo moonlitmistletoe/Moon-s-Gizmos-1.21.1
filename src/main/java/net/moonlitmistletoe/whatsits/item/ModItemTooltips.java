@@ -15,7 +15,7 @@ public class ModItemTooltips {
 
         if (stack.is(ModItems.DORIME.get())) {
             event.getToolTip().add(
-                    Component.translatable("item.whatsits.dorime.description")
+                    Component.translatable("raw_cow_ribs.json.whatsits.dorime.description")
                             .withStyle(ChatFormatting.GRAY)
             );
         }

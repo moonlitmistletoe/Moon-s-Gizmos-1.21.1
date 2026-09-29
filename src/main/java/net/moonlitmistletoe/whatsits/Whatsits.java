@@ -2,18 +2,20 @@ package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.moonlitmistletoe.whatsits.item.ModItems;
+import net.nimbu.scabbards.Scabbards;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.moonlitmistletoe.whatsits.event.CampfireCompatibilityHandler;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
+import net.moonlitmistletoe.whatsits.event.EggYolkHandler;
+import net.moonlitmistletoe.whatsits.event.CropHarvestHandler;
+import net.moonlitmistletoe.whatsits.event.CowRibDropHandler;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
@@ -28,9 +30,6 @@ public class Whatsits {
         // Register common setup
         modEventBus.addListener(this::commonSetup);
 
-        // Adds Right Click  cancellation
-        NeoForge.EVENT_BUS.register(CampfireCompatibilityHandler.class);
-
         // Register Sounds
         ModSounds.register(modEventBus);
 
@@ -43,6 +42,9 @@ public class Whatsits {
         // Register crop harvest event handler
         NeoForge.EVENT_BUS.register(CropHarvestHandler.class);
 
+        // Register cow rib drop event handler
+        NeoForge.EVENT_BUS.register(CowRibDropHandler.class);
+
         // Register blocks
         ModBlocks.register(modEventBus);
 
@@ -51,6 +53,9 @@ public class Whatsits {
 
         // Register creative tab
         ModCreativeModeTabs.register(modEventBus);
+
+        // Register Scabbards
+        new Scabbards(modEventBus, modContainer);
 
         // Register config
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

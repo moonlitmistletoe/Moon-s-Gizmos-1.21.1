@@ -36,6 +36,11 @@ public class ModFoodProperties {
             .saturationModifier(0.2F)
             .build();
 
+    public static final FoodProperties RAW_COW_RIBS = new FoodProperties.Builder()
+            .nutrition(3)
+            .saturationModifier(0.3F)
+            .build();
+
 
     // Drinks
     public static final FoodProperties APPLE_JUICE = new FoodProperties.Builder()
@@ -95,6 +100,11 @@ public class ModFoodProperties {
     public static final FoodProperties SUNNY_SIDE_EGGS = new FoodProperties.Builder()
             .nutrition(6)
             .saturationModifier(0.6F)
+            .build();
+
+    public static final FoodProperties COOKED_COW_RIBS = new FoodProperties.Builder()
+            .nutrition(8)
+            .saturationModifier(0.8F)
             .build();
 
 

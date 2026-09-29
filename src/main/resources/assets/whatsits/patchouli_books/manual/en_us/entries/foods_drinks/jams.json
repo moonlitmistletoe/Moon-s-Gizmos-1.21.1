@@ -9,7 +9,9 @@
       "text": "Some of the fruit grown in the mod can be turned into jam.$(br2)It's a fairly simple way of getting another use out of berries and cherries once you've got a decent harvest."
     },
     {
-      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "whatsits:blackberry_jam,whatsits:blueberry_jam,whatsits:cherry_jam",
+      "title": "Jams",
       "text": "There are three jams: Blackberry Jam, Blueberry Jam and Cherry Jam.$(br2)Each one is made from its corresponding fruit."
     }
   ]

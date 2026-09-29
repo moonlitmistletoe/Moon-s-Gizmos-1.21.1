@@ -4,7 +4,7 @@
   "cookingtime": 600,
   "experience": 0.0,
   "ingredient": {
-    "item": "minecraft:egg"
+    "item": "whatsits:egg_yolk"
   },
   "result": {
     "id": "whatsits:sunny_side_eggs",

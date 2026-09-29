@@ -9,8 +9,16 @@
       "text": "Moon's Whatsits also has a few proper prepared foods rather than just ingredients and snacks.$(br2)These recipes use familiar ingredients and turn them into something a bit more substantial."
     },
     {
-      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "whatsits:avocado_toast,whatsits:scrambled_eggs,whatsits:sunny_side_eggs",
+      "title": "Meals",
       "text": "The meals currently added are Avocado Toast, Scrambled Eggs and Sunny Side Eggs."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:sunny_side_eggs",
+      "title": "Sunny Side Eggs",
+      "text": "Sunny Side Eggs are made using a Farmer's Delight Skillet.$(br2)First, throw a normal Egg to get an Egg Yolk. Place a Skillet on a lit Stove, then right-click the Skillet with the Egg Yolk.$(br2)After cooking, the Egg Yolk becomes Sunny Side Eggs."
     }
   ]
 }

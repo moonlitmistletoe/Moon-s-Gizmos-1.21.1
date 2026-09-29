@@ -1,4 +1,4 @@
-package net.moonlitmistletoe.whatsits;
+package net.moonlitmistletoe.whatsits.event;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;

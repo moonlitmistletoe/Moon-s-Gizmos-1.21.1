@@ -65,6 +65,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .food(ModFoodProperties.STRAWBERRY)));
 
+    public static final DeferredItem<Item> RAW_COW_RIBS = ITEMS.register("raw_cow_ribs",
+            () -> new Item(new Item.Properties()
+                    .food(ModFoodProperties.RAW_COW_RIBS)));
+
 
     // Drinks
     public static final DeferredItem<Item> APPLE_JUICE = ITEMS.register("apple_juice",
@@ -109,6 +113,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .food(ModFoodProperties.SUNNY_SIDE_EGGS)));
 
+    public static final DeferredItem<Item> COOKED_COW_RIBS = ITEMS.register("cooked_cow_ribs",
+            () -> new Item(new Item.Properties()
+                    .food(ModFoodProperties.COOKED_COW_RIBS)));
+
 
     // Desserts
     public static final DeferredItem<Item> APPLE_PIE = ITEMS.register("apple_pie",
@@ -150,6 +158,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .rarity(Rarity.RARE)
                     .jukeboxPlayable(WORLD_OF_LIES_SONG)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

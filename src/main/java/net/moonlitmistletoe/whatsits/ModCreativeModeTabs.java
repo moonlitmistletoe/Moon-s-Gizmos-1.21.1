@@ -19,13 +19,11 @@ public class ModCreativeModeTabs {
             CREATIVE_MODE_TABS.register("whatsits", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.whatsits.whatsits"))
 
-                    // Use the mod logo as the tab image
                     .withTabsImage(ResourceLocation.fromNamespaceAndPath(
                             Whatsits.MOD_ID,
                             "logo.png"
                     ))
 
-                    // The icon still needs an ItemStack internally
                     .icon(() -> new ItemStack(ModItems.MOD_LOGO.get()))
 
                     .displayItems((parameters, output) -> {
@@ -44,6 +42,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHERRY);
                         output.accept(ModItems.COFFEE_BEANS);
                         output.accept(ModItems.STRAWBERRY);
+                        output.accept(ModItems.RAW_COW_RIBS);
 
                         // Drinks
                         output.accept(ModItems.APPLE_JUICE);
@@ -58,6 +57,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHERRY_JAM);
                         output.accept(ModItems.SCRAMBLED_EGGS);
                         output.accept(ModItems.SUNNY_SIDE_EGGS);
+                        output.accept(ModItems.COOKED_COW_RIBS);
 
                         // Desserts
                         output.accept(ModItems.APPLE_PIE);
