@@ -96,7 +96,7 @@ public class ModCreativeModeTabs {
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BREAD_CRATE.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_BOX.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.JAR.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_JAM.get());
+                        output.accept(ModItems.STRAWBERRY_JAM);
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_JAM.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_JAM.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.APPLE_JAM.get());
