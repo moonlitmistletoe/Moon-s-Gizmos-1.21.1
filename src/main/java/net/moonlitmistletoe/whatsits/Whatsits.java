@@ -1,6 +1,9 @@
 package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
+import net.satisfy.bakery.Bakery;
+import net.satisfy.bakery.core.registry.CompostableRegistry;
+import net.satisfy.bakery.neoforge.core.config.BakeryNeoForgeConfig;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import net.nimbu.scabbards.Scabbards;
 import org.slf4j.Logger;
@@ -57,8 +60,16 @@ public class Whatsits {
         // Register Scabbards
         new Scabbards(modEventBus, modContainer);
 
-        // Register config
+        // Register merged Bakery content
+        Bakery.init();
+
+        modEventBus.addListener((FMLCommonSetupEvent event) ->
+                event.enqueueWork(CompostableRegistry::registerCompostable));
+
+        modEventBus.addListener(BakeryNeoForgeConfig::onLoad);
+        modEventBus.addListener(BakeryNeoForgeConfig::onReload);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, BakeryNeoForgeConfig.COMMON_CONFIG);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
