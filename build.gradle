@@ -442,8 +442,20 @@ public class SoundEventRegistry {
                          */
                         text = text.replace(
                                 'tooltip.farm_and_charm.thankyou_2',
-                                'tooltip.bakery.banner.thankyou_2'
+                                'tooltip.whatsits.banner.thankyou_2'
                         )
+                                .replace(
+                                        'tooltip.bakery.banner.thankyou_1',
+                                        'tooltip.whatsits.banner.thankyou_1'
+                                )
+                                .replace(
+                                        'tooltip.bakery.banner.thankyou_3',
+                                        'tooltip.whatsits.banner.thankyou_3'
+                                )
+                                .replace(
+                                        'tooltip.bakery.banner.thankyou_4',
+                                        'tooltip.whatsits.banner.thankyou_4'
+                                )
 
                         def destination = new File(
                                 bakeryGeneratedJava,
