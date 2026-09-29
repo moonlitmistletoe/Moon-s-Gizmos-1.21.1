@@ -16,7 +16,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Crafting:$\(br\)Apple Juice: Apple + Glass Bottle$\(br\)Cherry Juice: Cherry + Glass Bottle$\(br\)Coffee: Coffee Beans + Water Bottle$\(br\)Strawberry Smoothie: Strawberries + Milk Bucket + Sugar."
+      "text": "Crafting:$(br)Apple Juice: Apple + Glass Bottle$(br)Cherry Juice: Cherry + Glass Bottle$(br)Coffee: Coffee Beans + Water Bottle$(br)Strawberry Smoothie: Strawberries + Milk Bucket + Sugar."
     }
   ]
 }
