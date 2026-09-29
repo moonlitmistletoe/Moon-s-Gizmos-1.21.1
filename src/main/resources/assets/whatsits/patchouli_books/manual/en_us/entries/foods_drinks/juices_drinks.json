@@ -6,17 +6,17 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "There are a few drinks in Moon's Whatsits, mostly made from ingredients you can grow yourself.$(br2)There are fruit juices, Strawberry Smoothies and Coffee."
+      "text": "There are a few drinks in Moon's Whatsits, mostly made from ingredients you can grow yourself.$(br2)There are fruit juices, Strawberry Smoothie and Coffee."
     },
     {
       "type": "patchouli:spotlight",
       "item": "whatsits:apple_juice,whatsits:cherry_juice,whatsits:coffee,whatsits:strawberry_smoothie",
       "title": "Drinks",
-      "text": "The drinks added by the mod are Apple Juice, Cherry Juice, Coffee and Strawberry Smoothie.$(br2)They're all served in glass bottles and can be drank like other drinks."
+      "text": "The drinks added by the mod are Apple Juice, Cherry Juice, Coffee and Strawberry Smoothie.$(br2)The bottled drinks return a glass bottle when consumed."
     },
     {
       "type": "patchouli:text",
-      "text": "Crafting:$(br)Apple Juice: Apple + Glass Bottle$(br)Cherry Juice: Cherry + Glass Bottle$(br)Coffee: Coffee Beans + Water Bottle$(br)Strawberry Smoothie: Strawberries + Milk Bucket + Sugar."
+      "text": "Recipes:$(br)Apple Juice: Apple + Glass Bottle$(br)Cherry Juice: Cherry + Glass Bottle$(br)Coffee: Coffee Beans + Milk Bucket$(br)Strawberry Smoothie: Strawberry + Milk Bucket"
     }
   ]
 }
