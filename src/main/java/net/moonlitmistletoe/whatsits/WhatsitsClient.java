@@ -8,7 +8,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.RegisterEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -18,7 +18,7 @@ public class WhatsitsClient {
 
     public WhatsitsClient(ModContainer container, net.neoforged.bus.api.IEventBus modEventBus) {
         modEventBus.addListener(RegisterEvent.class, event -> BakeryClient.preInitClient());
-        modEventBus.addListener(FMLClientSetupEvent.class, event -> event.enqueueWork(BakeryClient::initClient));
+        modEventBus.addListener(FMLClientSetupEvent.class, event -> BakeryClient.initClient());
 
         container.registerExtensionPoint(
                 IConfigScreenFactory.class,
