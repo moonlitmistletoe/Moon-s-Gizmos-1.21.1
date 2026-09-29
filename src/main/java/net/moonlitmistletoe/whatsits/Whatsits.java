@@ -14,6 +14,7 @@ import net.neoforged.fml.ModContainer;
 import net.moonlitmistletoe.whatsits.event.EggYolkHandler;
 import net.moonlitmistletoe.whatsits.event.CropHarvestHandler;
 import net.moonlitmistletoe.whatsits.event.CowRibDropHandler;
+import net.moonlitmistletoe.whatsits.event.CakeCuttingHandler;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.common.Mod;
@@ -37,6 +38,7 @@ public class Whatsits {
         NeoForge.EVENT_BUS.register(EggYolkHandler.class);
         NeoForge.EVENT_BUS.register(CropHarvestHandler.class);
         NeoForge.EVENT_BUS.register(CowRibDropHandler.class);
+        NeoForge.EVENT_BUS.register(CakeCuttingHandler.class);
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
