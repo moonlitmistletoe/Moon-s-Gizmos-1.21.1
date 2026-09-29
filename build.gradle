@@ -846,18 +846,11 @@ tasks.named("processResources").configure {
     dependsOn(prepareBakeryMerge)
 
     /*
-     * The Bakery merge task creates a combined sounds.json. Exclude the
-     * original Whatsits copy from the normal source set and add the merged
-     * file explicitly.
+     * The main resource source set excludes sounds.json because Bakery's
+     * generated version is a merged copy containing both Whatsits and Bakery.
      */
-    setSource(
-            sourceSets.main.resources.matching {
-                exclude("assets/whatsits/sounds.json")
-            }
-    )
-
-    from(bakeryGeneratedResources) {
-        include("assets/whatsits/sounds.json")
+    from(new File(bakeryGeneratedResources, "assets/whatsits")) {
+        include("sounds.json")
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
