@@ -19,6 +19,10 @@
       "item": "whatsits:sunny_side_eggs",
       "title": "Sunny Side Eggs",
       "text": "Sunny Side Eggs are made using a Farmer's Delight Skillet.$(br2)First, throw a normal Egg to get an Egg Yolk. Place a Skillet on a lit Stove, then right-click the Skillet with the Egg Yolk.$(br2)After cooking, the Egg Yolk becomes Sunny Side Eggs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Avocado Toast, Scrambled Eggs and Sunny Side Eggs all have their recipes available in the recipe viewer."
     }
   ]
 }
