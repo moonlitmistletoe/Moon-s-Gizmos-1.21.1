@@ -19,6 +19,204 @@ sourceSets.main.resources {
     exclude("src/generated/**/.cache")
 }
 
+def bakeryGeneratedDir = layout.buildDirectory.dir("generated/bakery")
+
+def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
+    outputs.dir(bakeryGeneratedDir)
+
+    doLast {
+        def generatedRoot = bakeryGeneratedDir.get().asFile
+        def javaRoot = new File(generatedRoot, "java")
+        def resourceRoot = new File(generatedRoot, "resources")
+
+        delete(generatedRoot)
+        javaRoot.mkdirs()
+        resourceRoot.mkdirs()
+
+        def archive = new File(buildDir, "bakery-1.21.1-source.zip")
+        if (!archive.exists()) {
+            new URL("https://github.com/Let-s-Do-Collection/Bakery/archive/refs/heads/1.21.1.zip").withInputStream { input ->
+                archive.withOutputStream { output -> output << input }
+            }
+        }
+
+        def zip = new java.util.zip.ZipFile(archive)
+
+        try {
+            zip.entries().each { entry ->
+                if (entry.isDirectory()) return
+
+                def path = entry.name
+                def prefix = "Bakery-1.21.1/"
+                if (!path.startsWith(prefix)) return
+
+                def relative = path.substring(prefix.length())
+
+                if (relative.startsWith("common/src/main/resources/data/bakery/worldgen/") ||
+                    relative.startsWith("common/src/main/resources/data/bakery/structure/") ||
+                    relative.startsWith("common/src/main/resources/data/bakery/tags/worldgen/")) {
+                    return
+                }
+
+                if (relative == "common/src/main/resources/architectury.common.json" ||
+                    relative == "common/src/main/resources/bakery.accesswidener" ||
+                    relative == "common/src/main/resources/pack.png") {
+                    return
+                }
+
+                if (relative.startsWith("common/src/main/java/net/satisfy/bakery/") &&
+                    relative.endsWith(".java")) {
+
+                    def javaRelative = relative.substring("common/src/main/java/".length())
+
+                    if (javaRelative.contains("/compat/") ||
+                        javaRelative.endsWith("/registry/TabRegistry.java") ||
+                        javaRelative.endsWith("/platform/PlatformHelper.java") ||
+                        javaRelative.endsWith("/Bakery.java")) {
+                        return
+                    }
+
+                    def text = zip.getInputStream(entry).getText("UTF-8")
+                        .replaceAll(/import net\.fabricmc\.api\.EnvType;\r?\n/, "")
+                        .replaceAll(/import net\.fabricmc\.api\.Environment;\r?\n/, "")
+                        .replaceAll(/@Environment\(EnvType\.CLIENT\)\r?\n/, "")
+
+                    if (javaRelative.endsWith("/core/registry/ObjectRegistry.java")) {
+                        text = text.replace(
+                            'import net.satisfy.bakery.Bakery;\n',
+                            'import net.satisfy.bakery.Bakery;\nimport net.moonlitmistletoe.whatsits.item.ModItems;\n'
+                        )
+                        text = text.replaceAll(
+                            /    public static final RegistrySupplier<Item> APPLE_PIE_SLICE = registerItem\("apple_pie_slice".*?\);\r?\n/s,
+                            ""
+                        )
+                        text = text.replace(
+                            "ObjectRegistry.APPLE_PIE_SLICE));",
+                            "ModItems.APPLE_PIE_SLICE::get));"
+                        )
+                    }
+
+                    if (javaRelative.endsWith("/core/registry/CompostableRegistry.java")) {
+                        text = text.replace(
+                            "import net.minecraft.world.level.block.ComposterBlock;\n",
+                            "import net.minecraft.world.level.block.ComposterBlock;\nimport net.moonlitmistletoe.whatsits.item.ModItems;\n"
+                        )
+                        text = text.replace(
+                            "ObjectRegistry.APPLE_PIE_SLICE.get()",
+                            "ModItems.APPLE_PIE_SLICE.get()"
+                        )
+                    }
+
+                    def destination = new File(javaRoot, javaRelative)
+                    destination.parentFile.mkdirs()
+                    destination.text = text
+                    return
+                }
+
+                if (relative == "common/src/main/java/net/satisfy/bakery/Bakery.java") {
+                    def text = zip.getInputStream(entry).getText("UTF-8")
+                        .replace('public static final String MOD_ID = "bakery";', 'public static final String MOD_ID = "whatsits";')
+                        .replace('        TabRegistry.init();\n', '')
+                    def destination = new File(javaRoot, "net/satisfy/bakery/Bakery.java")
+                    destination.parentFile.mkdirs()
+                    destination.text = text
+                    return
+                }
+
+                if (relative == "neoforge/src/main/java/net/satisfy/bakery/platform/neoforge/PlatformHelperImpl.java") {
+                    def text = zip.getInputStream(entry).getText("UTF-8")
+                        .replace("package net.satisfy.bakery.platform.neoforge;", "package net.satisfy.bakery.platform;")
+                        .replace("import net.satisfy.bakery.platform.PlatformHelper;\n\n", "")
+                        .replace("public class PlatformHelperImpl extends PlatformHelper", "public final class PlatformHelper")
+                        .replace("PlatformHelperImpl", "PlatformHelper")
+                    def destination = new File(javaRoot, "net/satisfy/bakery/platform/PlatformHelper.java")
+                    destination.parentFile.mkdirs()
+                    destination.text = text
+                    return
+                }
+
+                if (relative.startsWith("neoforge/src/main/java/net/satisfy/bakery/neoforge/core/config/") &&
+                    relative.endsWith(".java")) {
+                    def javaRelative = relative.substring("neoforge/src/main/java/".length())
+                    def destination = new File(javaRoot, javaRelative)
+                    destination.parentFile.mkdirs()
+                    destination.text = zip.getInputStream(entry).getText("UTF-8")
+                    return
+                }
+
+                if (relative.startsWith("common/src/main/resources/")) {
+                    def resourceRelative = relative.substring("common/src/main/resources/".length())
+
+                    if (resourceRelative.startsWith("data/bakery/worldgen/") ||
+                        resourceRelative.startsWith("data/bakery/structure/") ||
+                        resourceRelative.startsWith("data/bakery/tags/worldgen/")) {
+                        return
+                    }
+
+                    if (resourceRelative.startsWith("assets/bakery/")) {
+                        resourceRelative = "assets/whatsits/" + resourceRelative.substring("assets/bakery/".length())
+                    } else if (resourceRelative.startsWith("data/bakery/")) {
+                        resourceRelative = "data/whatsits/" + resourceRelative.substring("data/bakery/".length())
+                    }
+
+                    // The existing Whatsits apple pie slice is reused.
+                    if (resourceRelative.contains("/apple_pie_slice.")) return
+
+                    def destination = new File(resourceRoot, resourceRelative)
+                    destination.parentFile.mkdirs()
+
+                    if (resourceRelative.endsWith(".json") ||
+                        resourceRelative.endsWith(".mcmeta") ||
+                        resourceRelative.endsWith(".txt")) {
+                        destination.text = zip.getInputStream(entry).getText("UTF-8")
+                            .replace("bakery:", "whatsits:")
+                            .replace("bakery.", "whatsits.")
+                    } else {
+                        destination.bytes = zip.getInputStream(entry).bytes
+                    }
+                }
+            }
+
+            def bakeryLangEntry = zip.getEntry(
+                "Bakery-1.21.1/common/src/main/resources/assets/bakery/lang/en_us.json"
+            )
+
+            if (bakeryLangEntry != null) {
+                def bakeryLang = new groovy.json.JsonSlurper().parseText(
+                    zip.getInputStream(bakeryLangEntry).getText("UTF-8")
+                        .replace("bakery:", "whatsits:")
+                        .replace("bakery.", "whatsits.")
+                ) as Map
+
+                def existingFile = file("src/main/resources/assets/whatsits/lang/en_us.json")
+                def existingLang = existingFile.exists()
+                    ? new groovy.json.JsonSlurper().parse(existingFile) as Map
+                    : [:]
+
+                bakeryLang.each { key, value ->
+                    if (!existingLang.containsKey(key)) {
+                        existingLang[key] = value
+                    }
+                }
+
+                def langDestination = new File(
+                    resourceRoot,
+                    "assets/whatsits/lang/en_us.json"
+                )
+                langDestination.parentFile.mkdirs()
+                langDestination.text = groovy.json.JsonOutput.prettyPrint(
+                    groovy.json.JsonOutput.toJson(existingLang)
+                )
+            }
+        } finally {
+            zip.close()
+        }
+    }
+}
+
+sourceSets.main.java.srcDir(new File(bakeryGeneratedDir.get().asFile, "java"))
+sourceSets.main.resources.srcDir(new File(bakeryGeneratedDir.get().asFile, "resources"))
+
 repositories {
     maven { url = 'https://maven.blamejared.com' }
     maven {
@@ -89,6 +287,9 @@ dependencies {
 
     implementation "curse.maven:farmers-delight-398521:8765184"
 
+    compileOnly "dev.architectury:architectury-neoforge:13.0.8"
+    compileOnly "curse.maven:lets-do-farm-charm-1038103:8968388"
+
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
     compileOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api"
 }
@@ -131,6 +332,11 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+    dependsOn(prepareBakeryMerge)
+}
+
+tasks.named("processResources").configure {
+    dependsOn(prepareBakeryMerge)
 }
 
 idea {
