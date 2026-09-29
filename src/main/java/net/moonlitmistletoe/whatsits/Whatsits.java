@@ -2,7 +2,6 @@ package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.satisfy.bakery.Bakery;
-import net.satisfy.bakery.core.registry.CompostableRegistry;
 import net.satisfy.bakery.neoforge.core.config.BakeryNeoForgeConfig;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import net.nimbu.scabbards.Scabbards;
@@ -62,9 +61,6 @@ public class Whatsits {
 
         // Register creative tab
         ModCreativeModeTabs.register(modEventBus);
-
-        modEventBus.addListener((FMLCommonSetupEvent event) ->
-                event.enqueueWork(CompostableRegistry::registerCompostable));
 
         modEventBus.addListener(BakeryNeoForgeConfig::onLoad);
         modEventBus.addListener(BakeryNeoForgeConfig::onReload);
