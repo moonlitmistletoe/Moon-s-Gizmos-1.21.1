@@ -12,11 +12,11 @@
       "type": "patchouli:spotlight",
       "item": "whatsits:blackberry_jam,whatsits:blueberry_jam,whatsits:cherry_jam",
       "title": "Jams",
-      "text": "There are three jams: Blackberry Jam, Blueberry Jam and Cherry Jam.$(br2)Each one is made from its corresponding fruit."
+      "text": "There are three jams: Blackberry Jam, Blueberry Jam and Cherry Jam.$(br2)Each jam is made from its corresponding fruit and sugar."
     },
     {
       "type": "patchouli:text",
-      "text": "Crafting:$(br)Blackberry Jam: Blackberries + Glass Bottle$(br)Blueberry Jam: Blueberries + Glass Bottle$(br)Cherry Jam: Cherries + Glass Bottle."
+      "text": "Recipes:$(br)Blackberry Jam: Blackberry + Sugar$(br)Blueberry Jam: Blueberry + Sugar$(br)Cherry Jam: Cherry + Sugar"
     }
   ]
 }
