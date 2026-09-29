@@ -2,7 +2,6 @@ package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.satisfy.bakery.Bakery;
-import net.satisfy.bakery.neoforge.core.config.BakeryNeoForgeConfig;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import net.nimbu.scabbards.Scabbards;
 import org.slf4j.Logger;
@@ -29,43 +28,31 @@ public class Whatsits {
 
     public Whatsits(IEventBus modEventBus, ModContainer modContainer) {
 
-        // Register common setup
         modEventBus.addListener(this::commonSetup);
 
-        // Register Sounds
         ModSounds.register(modEventBus);
 
-        // Register server/game events
         NeoForge.EVENT_BUS.register(this);
 
-        // Register egg yolk event handler
         NeoForge.EVENT_BUS.register(EggYolkHandler.class);
-
-        // Register crop harvest event handler
         NeoForge.EVENT_BUS.register(CropHarvestHandler.class);
-
-        // Register cow rib drop event handler
         NeoForge.EVENT_BUS.register(CowRibDropHandler.class);
 
-        // Register blocks
         ModBlocks.register(modEventBus);
-
-        // Register items
         ModItems.register(modEventBus);
 
-        // Register Scabbards
         new Scabbards(modEventBus, modContainer);
 
-        // Register merged Bakery content
+        // Register the merged Bakery food/cake content.
         Bakery.init();
 
-        // Register creative tab
         ModCreativeModeTabs.register(modEventBus);
 
-        modEventBus.addListener(BakeryNeoForgeConfig::onLoad);
-        modEventBus.addListener(BakeryNeoForgeConfig::onReload);
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        modContainer.registerConfig(ModConfig.Type.COMMON, BakeryNeoForgeConfig.COMMON_CONFIG);
+        // Only Whatsits' own config is registered.
+        modContainer.registerConfig(
+                ModConfig.Type.COMMON,
+                Config.SPEC
+        );
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
