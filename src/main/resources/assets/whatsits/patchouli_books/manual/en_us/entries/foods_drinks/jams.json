@@ -16,7 +16,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Crafting:$\(br\)Blackberry Jam: Blackberries + Glass Bottle$\(br\)Blueberry Jam: Blueberries + Glass Bottle$\(br\)Cherry Jam: Cherries + Glass Bottle."
+      "text": "Crafting:$(br)Blackberry Jam: Blackberries + Glass Bottle$(br)Blueberry Jam: Blueberries + Glass Bottle$(br)Cherry Jam: Cherries + Glass Bottle."
     }
   ]
 }
