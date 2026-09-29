@@ -21,149 +21,490 @@ sourceSets.main.resources {
 
 def bakeryGeneratedDir = layout.buildDirectory.dir("generated/bakery")
 
+def bakeryGeneratedRoot = layout.buildDirectory
+        .dir("generated/bakery")
+        .get()
+        .asFile
+
+def bakeryGeneratedJava = new File(
+        bakeryGeneratedRoot,
+        "java"
+)
+
+def bakeryGeneratedResources = new File(
+        bakeryGeneratedRoot,
+        "resources"
+)
+
+def bakeryArchive = new File(
+        layout.buildDirectory.get().asFile,
+        "bakery-1.21.1-source.zip"
+)
+
+def existingSoundsFile = new File(
+        layout.projectDirectory.asFile,
+        "src/main/resources/assets/whatsits/sounds.json"
+)
+
 def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
-    outputs.dir(bakeryGeneratedDir)
+    outputs.dir(bakeryGeneratedRoot)
 
     doLast {
-        def generatedRoot = bakeryGeneratedDir.get().asFile
-        def javaRoot = new File(generatedRoot, "java")
-        def resourceRoot = new File(generatedRoot, "resources")
+        if (bakeryGeneratedRoot.exists()) {
+            bakeryGeneratedRoot.deleteDir()
+        }
 
-        delete(generatedRoot)
-        javaRoot.mkdirs()
-        resourceRoot.mkdirs()
+        bakeryGeneratedJava.mkdirs()
+        bakeryGeneratedResources.mkdirs()
 
-        def archive = new File(buildDir, "bakery-1.21.1-source.zip")
-        if (!archive.exists()) {
-            new URL("https://github.com/Let-s-Do-Collection/Bakery/archive/refs/heads/1.21.1.zip").withInputStream { input ->
-                archive.withOutputStream { output -> output << input }
+        if (!bakeryArchive.exists()) {
+            new URL(
+                    "https://github.com/Let-s-Do-Collection/Bakery/archive/refs/heads/1.21.1.zip"
+            ).withInputStream { input ->
+                bakeryArchive.withOutputStream { output ->
+                    output << input
+                }
             }
         }
 
-        def zip = new java.util.zip.ZipFile(archive)
+        def zip = new java.util.zip.ZipFile(bakeryArchive)
 
         try {
+            /*
+             * Bakery's Farm & Charm dependent systems are deliberately
+             * excluded. Only the self-contained Bakery content is merged.
+             */
+            def keptCommonJava = [
+                    "net/satisfy/bakery/client/renderer/block/CompletionistBannerRenderer.java",
+                    "net/satisfy/bakery/core/block/CabinetBlock.java",
+                    "net/satisfy/bakery/core/block/CompletionistBannerBlock.java",
+                    "net/satisfy/bakery/core/block/CompletionistWallBannerBlock.java",
+                    "net/satisfy/bakery/core/block/TableBlock.java",
+                    "net/satisfy/bakery/core/block/entity/CabinetBlockEntity.java",
+                    "net/satisfy/bakery/core/block/entity/CompletionistBannerEntity.java"
+            ] as Set
+
+            def writeText = { String relativePath, String text ->
+                def destination = new File(
+                        bakeryGeneratedJava,
+                        relativePath
+                )
+                destination.parentFile.mkdirs()
+                destination.text = text
+            }
+
+            /*
+             * Our merged Bakery entry point.
+             */
+            writeText(
+                    "net/satisfy/bakery/Bakery.java",
+                    """package net.satisfy.bakery;
+
+import net.minecraft.resources.ResourceLocation;
+import net.satisfy.bakery.core.registry.EntityTypeRegistry;
+import net.satisfy.bakery.core.registry.ObjectRegistry;
+import net.satisfy.bakery.core.registry.SoundEventRegistry;
+
+public class Bakery {
+    public static final String MOD_ID = "whatsits";
+
+    public static ResourceLocation identifier(String name) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
+    }
+
+    public static void init() {
+        ObjectRegistry.init();
+        EntityTypeRegistry.init();
+        SoundEventRegistry.init();
+    }
+}
+"""
+            )
+
+            /*
+             * Only the Bakery block entities which survive without
+             * Farm & Charm are registered.
+             */
+            writeText(
+                    "net/satisfy/bakery/core/registry/EntityTypeRegistry.java",
+                    """package net.satisfy.bakery.core.registry;
+
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.satisfy.bakery.Bakery;
+import net.satisfy.bakery.core.block.CompletionistBannerBlock;
+import net.satisfy.bakery.core.block.CompletionistWallBannerBlock;
+import net.satisfy.bakery.core.block.CabinetBlock;
+import net.satisfy.bakery.core.block.entity.CabinetBlockEntity;
+import net.satisfy.bakery.core.block.entity.CompletionistBannerEntity;
+
+public class EntityTypeRegistry {
+    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES =
+            DeferredRegister.create(Bakery.MOD_ID, Registries.BLOCK_ENTITY_TYPE);
+
+    public static final RegistrySupplier<BlockEntityType<CabinetBlockEntity>> CABINET_BLOCK_ENTITY =
+            BLOCK_ENTITY_TYPES.register(
+                    "cabinet",
+                    () -> BlockEntityType.Builder.of(
+                            CabinetBlockEntity::new,
+                            ObjectRegistry.CABINET.get(),
+                            ObjectRegistry.DRAWER.get(),
+                            ObjectRegistry.WALL_CABINET.get()
+                    ).build(null)
+            );
+
+    public static final RegistrySupplier<BlockEntityType<CompletionistBannerEntity>> BAKERY_BANNER =
+            BLOCK_ENTITY_TYPES.register(
+                    "bakery_banner",
+                    () -> BlockEntityType.Builder.of(
+                            CompletionistBannerEntity::new,
+                            ObjectRegistry.BAKERY_BANNER.get(),
+                            ObjectRegistry.BAKERY_WALL_BANNER.get()
+                    ).build(null)
+            );
+
+    public static void init() {
+        BLOCK_ENTITY_TYPES.register();
+    }
+}
+"""
+            )
+
+            /*
+             * Self-contained Bakery registry.
+             *
+             * Anything whose implementation came from Farm & Charm is
+             * intentionally not registered.
+             */
+            writeText(
+                    "net/satisfy/bakery/core/registry/ObjectRegistry.java",
+                    """package net.satisfy.bakery.core.registry;
+
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.satisfy.bakery.Bakery;
+import net.satisfy.bakery.core.block.CabinetBlock;
+import net.satisfy.bakery.core.block.CompletionistBannerBlock;
+import net.satisfy.bakery.core.block.CompletionistWallBannerBlock;
+import net.satisfy.bakery.core.block.TableBlock;
+
+public class ObjectRegistry {
+    private static final DeferredRegister<Block> BLOCKS =
+            DeferredRegister.create(Bakery.MOD_ID, Registries.BLOCK);
+
+    private static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(Bakery.MOD_ID, Registries.ITEM);
+
+    public static final RegistrySupplier<Block> BAKERY_BANNER =
+            registerBlockWithItem(
+                    "bakery_banner",
+                    () -> new CompletionistBannerBlock(
+                            BlockBehaviour.Properties.of()
+                                    .strength(1.0F)
+                                    .instrument(NoteBlockInstrument.BASS)
+                                    .noCollission()
+                                    .sound(SoundType.WOOD)
+                    )
+            );
+
+    public static final RegistrySupplier<Block> BAKERY_WALL_BANNER =
+            registerBlock(
+                    "bakery_wall_banner",
+                    () -> new CompletionistWallBannerBlock(
+                            BlockBehaviour.Properties.of()
+                                    .strength(1.0F)
+                                    .instrument(NoteBlockInstrument.BASS)
+                                    .noCollission()
+                                    .sound(SoundType.WOOD)
+                    )
+            );
+
+    public static final RegistrySupplier<Block> CABINET =
+            registerBlockWithItem(
+                    "cabinet",
+                    () -> new CabinetBlock(
+                            BlockBehaviour.Properties.of()
+                                    .strength(2.0F, 3.0F)
+                                    .sound(SoundType.WOOD),
+                            SoundEventRegistry.CABINET_OPEN.get(),
+                            SoundEventRegistry.CABINET_CLOSE.get()
+                    )
+            );
+
+    public static final RegistrySupplier<Block> DRAWER =
+            registerBlockWithItem(
+                    "drawer",
+                    () -> new CabinetBlock(
+                            BlockBehaviour.Properties.of()
+                                    .strength(2.0F, 3.0F)
+                                    .sound(SoundType.WOOD),
+                            SoundEventRegistry.DRAWER_OPEN.get(),
+                            SoundEventRegistry.DRAWER_CLOSE.get()
+                    )
+            );
+
+    public static final RegistrySupplier<Block> WALL_CABINET =
+            registerBlockWithItem(
+                    "wall_cabinet",
+                    () -> new CabinetBlock(
+                            BlockBehaviour.Properties.of()
+                                    .strength(2.0F, 3.0F)
+                                    .sound(SoundType.WOOD),
+                            SoundEventRegistry.CABINET_OPEN.get(),
+                            SoundEventRegistry.CABINET_CLOSE.get()
+                    )
+            );
+
+    public static final RegistrySupplier<Block> IRON_TABLE =
+            registerBlockWithItem(
+                    "iron_table",
+                    () -> new TableBlock(
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+                    )
+            );
+
+    public static final RegistrySupplier<Item> ROLLING_PIN =
+            registerItem(
+                    "rolling_pin",
+                    () -> new SwordItem(
+                            Tiers.WOOD,
+                            new Item.Properties()
+                    )
+            );
+
+    public static final RegistrySupplier<Item> BREAD_KNIFE =
+            registerItem(
+                    "bread_knife",
+                    () -> new SwordItem(
+                            Tiers.IRON,
+                            new Item.Properties()
+                    )
+            );
+
+    private static <T extends Block> RegistrySupplier<T> registerBlock(
+            String name,
+            java.util.function.Supplier<T> blockSupplier
+    ) {
+        return BLOCKS.register(name, blockSupplier);
+    }
+
+    private static <T extends Block> RegistrySupplier<T> registerBlockWithItem(
+            String name,
+            java.util.function.Supplier<T> blockSupplier
+    ) {
+        RegistrySupplier<T> block = BLOCKS.register(name, blockSupplier);
+        ITEMS.register(
+                name,
+                () -> new BlockItem(
+                        block.get(),
+                        new Item.Properties()
+                )
+        );
+        return block;
+    }
+
+    private static <T extends Item> RegistrySupplier<T> registerItem(
+            String name,
+            java.util.function.Supplier<T> itemSupplier
+    ) {
+        return ITEMS.register(name, itemSupplier);
+    }
+
+    public static void init() {
+        BLOCKS.register();
+        ITEMS.register();
+    }
+}
+"""
+            )
+
+            /*
+             * Self-contained sound registry.
+             */
+            writeText(
+                    "net/satisfy/bakery/core/registry/SoundEventRegistry.java",
+                    """package net.satisfy.bakery.core.registry;
+
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.satisfy.bakery.Bakery;
+
+public class SoundEventRegistry {
+    private static final DeferredRegister<SoundEvent> SOUND_EVENTS =
+            DeferredRegister.create(Bakery.MOD_ID, Registries.SOUND_EVENT);
+
+    public static final RegistrySupplier<SoundEvent> COOKING_POT_HIT =
+            create("cooking_pot_hit");
+
+    public static final RegistrySupplier<SoundEvent> CAKE_CUT =
+            create("cake_cut");
+
+    public static final RegistrySupplier<SoundEvent> DRAWER_OPEN =
+            create("drawer_open");
+
+    public static final RegistrySupplier<SoundEvent> DRAWER_CLOSE =
+            create("drawer_close");
+
+    public static final RegistrySupplier<SoundEvent> CABINET_OPEN =
+            create("cabinet_open");
+
+    public static final RegistrySupplier<SoundEvent> CABINET_CLOSE =
+            create("cabinet_close");
+
+    private static RegistrySupplier<SoundEvent> create(String name) {
+        ResourceLocation id = Bakery.identifier(name);
+        return SOUND_EVENTS.register(
+                name,
+                () -> SoundEvent.createVariableRangeEvent(id)
+        );
+    }
+
+    public static void init() {
+        SOUND_EVENTS.register();
+    }
+}
+"""
+            )
+
+            /*
+             * Copy only the self-contained common Java files.
+             */
             zip.entries().each { entry ->
-                if (entry.isDirectory()) return
+                if (entry.isDirectory()) {
+                    return
+                }
 
                 def path = entry.name
                 def prefix = "Bakery-1.21.1/"
-                if (!path.startsWith(prefix)) return
+
+                if (!path.startsWith(prefix)) {
+                    return
+                }
 
                 def relative = path.substring(prefix.length())
 
-                if (relative.startsWith("common/src/main/resources/data/bakery/worldgen/") ||
-                    relative.startsWith("common/src/main/resources/data/bakery/structure/") ||
-                    relative.startsWith("common/src/main/resources/data/bakery/tags/worldgen/")) {
-                    return
-                }
+                if (relative.startsWith("common/src/main/java/")) {
+                    def javaRelative = relative.substring(
+                            "common/src/main/java/".length()
+                    )
 
-                if (relative == "common/src/main/resources/architectury.common.json" ||
-                    relative == "common/src/main/resources/bakery.accesswidener" ||
-                    relative == "common/src/main/resources/pack.png") {
-                    return
-                }
+                    if (keptCommonJava.contains(javaRelative)) {
+                        def text = zip.getInputStream(entry).getText("UTF-8")
 
-                if (relative.startsWith("common/src/main/java/net/satisfy/bakery/") &&
-                    relative.endsWith(".java")) {
+                        /*
+                         * The banner text originally thanks Farm & Charm.
+                         * Keep the Bakery functionality but remove the
+                         * external translation key.
+                         */
+                        text = text.replace(
+                                'tooltip.farm_and_charm.thankyou_2',
+                                'tooltip.bakery.banner.thankyou_2'
+                        )
 
-                    def javaRelative = relative.substring("common/src/main/java/".length())
+                        def destination = new File(
+                                bakeryGeneratedJava,
+                                javaRelative
+                        )
 
-                    if (javaRelative.contains("/compat/") ||
-                        javaRelative.endsWith("/registry/TabRegistry.java") ||
-                        javaRelative.endsWith("/platform/PlatformHelper.java")) {
-                        return
-                    }
-
-                    def text = zip.getInputStream(entry).getText("UTF-8")
-                        .replaceAll(/import net\.fabricmc\.api\.EnvType;\r?\n/, "")
-                        .replaceAll(/import net\.fabricmc\.api\.Environment;\r?\n/, "")
-                        .replaceAll(/@Environment\(EnvType\.CLIENT\)\r?\n/, "")
-
-                    if (javaRelative.endsWith("/Bakery.java")) {
-                        text = text
-                            .replace('public static final String MOD_ID = "bakery";', 'public static final String MOD_ID = "whatsits";')
-                            .replace('import net.satisfy.bakery.core.registry.TabRegistry;\n', '')
-                            .replace('        TabRegistry.init();\n', '')
-                        def destination = new File(javaRoot, javaRelative)
                         destination.parentFile.mkdirs()
                         destination.text = text
+                    }
+
+                    return
+                }
+
+                /*
+                 * Keep the NeoForge Bakery config and its platform values.
+                 * They do not require Farm & Charm.
+                 */
+                if (relative ==
+                        "neoforge/src/main/java/net/satisfy/bakery/platform/neoforge/PlatformHelperImpl.java") {
+
+                    def text = zip.getInputStream(entry).getText("UTF-8")
+                            .replace(
+                                    "package net.satisfy.bakery.platform.neoforge;",
+                                    "package net.satisfy.bakery.platform;"
+                            )
+                            .replace(
+                                    "import net.satisfy.bakery.platform.PlatformHelper;\n\n",
+                                    ""
+                            )
+                            .replace(
+                                    "public class PlatformHelperImpl extends PlatformHelper",
+                                    "public final class PlatformHelper"
+                            )
+                            .replace(
+                                    "PlatformHelperImpl",
+                                    "PlatformHelper"
+                            )
+
+                    writeText(
+                            "net/satisfy/bakery/platform/PlatformHelper.java",
+                            text
+                    )
+
+                    return
+                }
+
+                if (relative.startsWith(
+                        "neoforge/src/main/java/net/satisfy/bakery/neoforge/core/config/"
+                ) && relative.endsWith(".java")) {
+
+                    def javaRelative = relative.substring(
+                            "neoforge/src/main/java/".length()
+                    )
+
+                    writeText(
+                            javaRelative,
+                            zip.getInputStream(entry).getText("UTF-8")
+                    )
+
+                    return
+                }
+
+                /*
+                 * ---------------------------------------------------------
+                 * RESOURCES
+                 * ---------------------------------------------------------
+                 */
+                if (relative.startsWith(
+                        "common/src/main/resources/"
+                )) {
+
+                    def resourceRelative = relative.substring(
+                            "common/src/main/resources/".length()
+                    )
+
+                    /*
+                     * No Farm & Charm data can survive the merge.
+                     */
+                    if (resourceRelative.startsWith("data/farm_and_charm/")) {
                         return
                     }
 
-                    if (javaRelative.endsWith("/core/registry/ObjectRegistry.java")) {
-                        text = text.replaceAll(
-                            /^    public static final RegistrySupplier<Block> STRAWBERRY_JAM.*\r?\n/m,
-                            ""
-                        )
-                        text = text.replace(
-                            'import net.satisfy.bakery.Bakery;\n',
-                            'import net.satisfy.bakery.Bakery;\nimport net.moonlitmistletoe.whatsits.item.ModItems;\n'
-                        )
-                        text = text.replaceAll(
-                            /^    public static final RegistrySupplier<Item> APPLE_PIE_SLICE.*\r?\n/m,
-                            ""
-                        )
-                        text = text.replace(
-                            "ObjectRegistry.APPLE_PIE_SLICE));",
-                            "ModItems.APPLE_PIE_SLICE::get));"
-                        )
+                    /*
+                     * The Bakery recipes/advancements depend heavily on
+                     * Farm & Charm and/or removed Bakery systems.
+                     */
+                    if (resourceRelative.startsWith("data/bakery/recipe/") ||
+                        resourceRelative.startsWith("data/bakery/advancement/")) {
+                        return
                     }
-
-                    if (javaRelative.endsWith("/client/BakeryClient.java")) {
-                        text = text.replace("ObjectRegistry.STRAWBERRY_JAM.get(), ", "")
-                    }
-
-                    if (javaRelative.endsWith("/core/registry/CompostableRegistry.java")) {
-                        text = text.replace(
-                            "import net.minecraft.world.level.block.ComposterBlock;\n",
-                            "import net.minecraft.world.level.block.ComposterBlock;\nimport net.moonlitmistletoe.whatsits.item.ModItems;\n"
-                        )
-                        text = text.replace(
-                            "ObjectRegistry.APPLE_PIE_SLICE.get()",
-                            "ModItems.APPLE_PIE_SLICE.get()"
-                        )
-                    }
-
-                    def destination = new File(javaRoot, javaRelative)
-                    destination.parentFile.mkdirs()
-                    destination.text = text
-                    return
-                }
-
-                if (relative == "common/src/main/java/net/satisfy/bakery/Bakery.java") {
-                    def text = zip.getInputStream(entry).getText("UTF-8")
-                        .replace('public static final String MOD_ID = "bakery";', 'public static final String MOD_ID = "whatsits";')
-                        .replace('        TabRegistry.init();\n', '')
-                    def destination = new File(javaRoot, "net/satisfy/bakery/Bakery.java")
-                    destination.parentFile.mkdirs()
-                    destination.text = text
-                    return
-                }
-
-                if (relative == "neoforge/src/main/java/net/satisfy/bakery/platform/neoforge/PlatformHelperImpl.java") {
-                    def text = zip.getInputStream(entry).getText("UTF-8")
-                        .replace("package net.satisfy.bakery.platform.neoforge;", "package net.satisfy.bakery.platform;")
-                        .replace("import net.satisfy.bakery.platform.PlatformHelper;\n\n", "")
-                        .replace("public class PlatformHelperImpl extends PlatformHelper", "public final class PlatformHelper")
-                        .replace("PlatformHelperImpl", "PlatformHelper")
-                    def destination = new File(javaRoot, "net/satisfy/bakery/platform/PlatformHelper.java")
-                    destination.parentFile.mkdirs()
-                    destination.text = text
-                    return
-                }
-
-                if (relative.startsWith("neoforge/src/main/java/net/satisfy/bakery/neoforge/core/config/") &&
-                    relative.endsWith(".java")) {
-                    def javaRelative = relative.substring("neoforge/src/main/java/".length())
-                    def destination = new File(javaRoot, javaRelative)
-                    destination.parentFile.mkdirs()
-                    destination.text = zip.getInputStream(entry).getText("UTF-8")
-                    return
-                }
-
-                if (relative.startsWith("common/src/main/resources/")) {
-                    def resourceRelative = relative.substring("common/src/main/resources/".length())
 
                     if (resourceRelative.startsWith("data/bakery/worldgen/") ||
                         resourceRelative.startsWith("data/bakery/structure/") ||
@@ -172,33 +513,165 @@ def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
                     }
 
                     if (resourceRelative.startsWith("assets/bakery/")) {
-                        resourceRelative = "assets/whatsits/" + resourceRelative.substring("assets/bakery/".length())
+                        resourceRelative =
+                                "assets/whatsits/" +
+                                        resourceRelative.substring(
+                                                "assets/bakery/".length()
+                                        )
                     } else if (resourceRelative.startsWith("data/bakery/")) {
-                        resourceRelative = "data/whatsits/" + resourceRelative.substring("data/bakery/".length())
+                        resourceRelative =
+                                "data/whatsits/" +
+                                        resourceRelative.substring(
+                                                "data/bakery/".length()
+                                        )
                     }
 
-                    // The existing Whatsits apple pie slice is reused.
-                    if (resourceRelative == "assets/bakery/lang/en_us.json") return
-                    if (resourceRelative.contains("/apple_pie_slice.")) return
-                    if (resourceRelative == "assets/bakery/blockstates/strawberry_jam.json" ||
-                        resourceRelative == "assets/bakery/models/item/strawberry_jam.json" ||
-                        resourceRelative.startsWith("assets/bakery/models/block/strawberry_jam") ||
-                        resourceRelative == "data/bakery/loot_table/blocks/strawberry_jam.json") return
+                    /*
+                     * The existing Whatsits translations are retained.
+                     */
+                    if (resourceRelative ==
+                            "assets/whatsits/lang/en_us.json") {
+                        return
+                    }
 
-                    def destination = new File(resourceRoot, resourceRelative)
-                    destination.parentFile.mkdirs()
+                    /*
+                     * Existing Whatsits implementations.
+                     */
+                    if (resourceRelative.contains("/apple_pie_slice.")) {
+                        return
+                    }
+
+                    if (resourceRelative.startsWith(
+                            "assets/whatsits/blockstates/strawberry_jam"
+                    ) ||
+                        resourceRelative.startsWith(
+                                "assets/whatsits/models/item/strawberry_jam"
+                        ) ||
+                        resourceRelative.startsWith(
+                                "assets/whatsits/models/block/strawberry_jam"
+                        ) ||
+                        resourceRelative.startsWith(
+                                "assets/whatsits/textures/item/strawberry_jam"
+                        ) ||
+                        resourceRelative.startsWith(
+                                "assets/whatsits/textures/block/strawberry_jam"
+                        ) ||
+                        resourceRelative.startsWith(
+                                "data/whatsits/loot_table/blocks/strawberry_jam"
+                        )) {
+                        return
+                    }
+
+                    /*
+                     * sounds.json is merged with the existing Whatsits
+                     * sound definitions.
+                     */
+                    if (resourceRelative ==
+                            "assets/whatsits/sounds.json") {
+                        return
+                    }
 
                     if (resourceRelative.endsWith(".json") ||
                         resourceRelative.endsWith(".mcmeta") ||
                         resourceRelative.endsWith(".txt")) {
-                        destination.text = zip.getInputStream(entry).getText("UTF-8")
-                            .replace("bakery:", "whatsits:")
-                            .replace("bakery.", "whatsits.")
+
+                        def text =
+                                zip.getInputStream(entry).getText("UTF-8")
+
+                        /*
+                         * A textual resource referencing Farm & Charm cannot
+                         * be safely used without that mod.
+                         */
+                        if (text.contains("farm_and_charm")) {
+                            return
+                        }
+
+                        def destination = new File(
+                                bakeryGeneratedResources,
+                                resourceRelative
+                        )
+
+                        destination.parentFile.mkdirs()
+
+                        destination.text = text
+                                .replace("bakery:", "whatsits:")
+                                .replace("bakery.", "whatsits.")
+
                     } else {
-                        destination.bytes = zip.getInputStream(entry).bytes
+
+                        def destination = new File(
+                                bakeryGeneratedResources,
+                                resourceRelative
+                        )
+
+                        destination.parentFile.mkdirs()
+                        destination.bytes =
+                                zip.getInputStream(entry).bytes
                     }
                 }
             }
+
+            /*
+             * Merge Bakery's sounds.json with the existing Whatsits one.
+             */
+            def bakerySoundsEntry = zip.getEntry(
+                    "Bakery-1.21.1/common/src/main/resources/assets/bakery/sounds.json"
+            )
+
+            Map mergedSounds = new LinkedHashMap()
+
+            if (bakerySoundsEntry != null) {
+                def bakerySounds =
+                        new groovy.json.JsonSlurper().parseText(
+                                zip.getInputStream(bakerySoundsEntry)
+                                        .getText("UTF-8")
+                        )
+
+                if (bakerySounds instanceof Map) {
+                    bakerySounds.each { name, definition ->
+                        def converted =
+                                new groovy.json.JsonSlurper().parseText(
+                                        groovy.json.JsonOutput.toJson(
+                                                definition
+                                        )
+                                                .replace(
+                                                        "bakery:",
+                                                        "whatsits:"
+                                                )
+                                                .replace(
+                                                        "bakery.",
+                                                        "whatsits."
+                                                )
+                                )
+
+                        mergedSounds[name] = converted
+                    }
+                }
+            }
+
+            if (existingSoundsFile.exists()) {
+                def existing =
+                        new groovy.json.JsonSlurper().parseText(
+                                existingSoundsFile.getText("UTF-8")
+                        )
+
+                if (existing instanceof Map) {
+                    existing.each { name, definition ->
+                        mergedSounds[name] = definition
+                    }
+                }
+            }
+
+            def mergedSoundsFile = new File(
+                    bakeryGeneratedResources,
+                    "assets/whatsits/sounds.json"
+            )
+
+            mergedSoundsFile.parentFile.mkdirs()
+            mergedSoundsFile.text =
+                    groovy.json.JsonOutput.prettyPrint(
+                            groovy.json.JsonOutput.toJson(mergedSounds)
+                    ) + "\n"
 
         } finally {
             zip.close()
