@@ -13,6 +13,10 @@
       "item": "whatsits:blackberry_jam,whatsits:blueberry_jam,whatsits:cherry_jam",
       "title": "Jams",
       "text": "There are three jams: Blackberry Jam, Blueberry Jam and Cherry Jam.$(br2)Each one is made from its corresponding fruit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Crafting:$\(br\)Blackberry Jam: Blackberries + Glass Bottle$\(br\)Blueberry Jam: Blueberries + Glass Bottle$\(br\)Cherry Jam: Cherries + Glass Bottle."
     }
   ]
 }
