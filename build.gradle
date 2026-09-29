@@ -92,6 +92,10 @@ def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
                     }
 
                     if (javaRelative.endsWith("/core/registry/ObjectRegistry.java")) {
+                        text = text.replaceAll(
+                            /^    public static final RegistrySupplier<Block> STRAWBERRY_JAM.*\r?\n/m,
+                            ""
+                        )
                         text = text.replace(
                             'import net.satisfy.bakery.Bakery;\n',
                             'import net.satisfy.bakery.Bakery;\nimport net.moonlitmistletoe.whatsits.item.ModItems;\n'
