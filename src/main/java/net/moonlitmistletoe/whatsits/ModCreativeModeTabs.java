@@ -109,19 +109,6 @@ public class ModCreativeModeTabs {
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART.get());
 
                         // Bakery food blocks
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_CUPCAKE_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_CUPCAKE_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.APPLE_CUPCAKE_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_COOKIE_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_COOKIE_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_COOKIE_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CRUSTY_BREAD_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BREAD_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BAGUETTE_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.TOAST_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BRAIDED_BREAD_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BUN_BLOCK.get());
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.WAFFLE_BLOCK.get());
 
                         // Bakery jars and jams
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.JAR.get());
