@@ -13,6 +13,10 @@
       "item": "whatsits:apple_juice,whatsits:cherry_juice,whatsits:coffee,whatsits:strawberry_smoothie",
       "title": "Drinks",
       "text": "The drinks added by the mod are Apple Juice, Cherry Juice, Coffee and Strawberry Smoothie.$(br2)They're all served in glass bottles and can be drank like other drinks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Crafting:$\(br\)Apple Juice: Apple + Glass Bottle$\(br\)Cherry Juice: Cherry + Glass Bottle$\(br\)Coffee: Coffee Beans + Water Bottle$\(br\)Strawberry Smoothie: Strawberries + Milk Bucket + Sugar."
     }
   ]
 }
