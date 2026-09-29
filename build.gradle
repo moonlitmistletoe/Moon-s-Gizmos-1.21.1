@@ -122,6 +122,37 @@ public class Bakery {
             )
 
             /*
+             * Client entry point with only the self-contained Bakery
+             * banner renderer retained.
+             */
+            writeText(
+                    "net/satisfy/bakery/client/BakeryClient.java",
+                    """package net.satisfy.bakery.client;
+
+import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
+import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
+import net.satisfy.bakery.client.renderer.block.CompletionistBannerRenderer;
+import net.satisfy.bakery.core.registry.EntityTypeRegistry;
+
+public class BakeryClient {
+    public static void preInitClient() {
+        EntityModelLayerRegistry.register(
+                CompletionistBannerRenderer.LAYER_LOCATION,
+                CompletionistBannerRenderer::createBodyLayer
+        );
+    }
+
+    public static void initClient() {
+        BlockEntityRendererRegistry.register(
+                EntityTypeRegistry.BAKERY_BANNER.get(),
+                CompletionistBannerRenderer::new
+        );
+    }
+}
+"""
+            )
+
+            /*
              * Only the Bakery block entities which survive without
              * Farm & Charm are registered.
              */
