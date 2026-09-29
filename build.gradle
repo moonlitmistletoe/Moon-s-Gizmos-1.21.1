@@ -34,6 +34,11 @@ def bakeryGeneratedResources = new File(
         "resources"
 )
 
+def bakeryLangFile = new File(
+        bakeryGeneratedRoot,
+        "bakery_en_us.json"
+)
+
 def bakeryArchive = new File(
         layout.buildDirectory.get().asFile,
         "bakery-1.21.1-source.zip"
@@ -68,6 +73,17 @@ def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
                         bakeryGeneratedJava,
                         relativePath
                 )
+
+                destination.parentFile.mkdirs()
+                destination.text = text
+            }
+
+            def writeResourceText = { String relativePath, String text ->
+                def destination = new File(
+                        bakeryGeneratedResources,
+                        relativePath
+                )
+
                 destination.parentFile.mkdirs()
                 destination.text = text
             }
@@ -111,6 +127,7 @@ public class BakeryClient {
                     "net/satisfy/bakery/core/block/BakeryCakeBlock.java",
                     """package net.satisfy.bakery.core.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -138,34 +155,88 @@ import java.util.function.Supplier;
 
 public class BakeryCakeBlock extends HorizontalDirectionalBlock {
 
+    public static final MapCodec<BakeryCakeBlock> CODEC =
+            simpleCodec(BakeryCakeBlock::new);
+
     public static final IntegerProperty CUTS =
             IntegerProperty.create("cuts", 0, 3);
 
     private static final VoxelShape FULL_SHAPE =
-            Shapes.box(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.5D, 0.9375D);
+            Shapes.box(
+                    0.0625D,
+                    0.0D,
+                    0.0625D,
+                    0.9375D,
+                    0.5D,
+                    0.9375D
+            );
 
     private static final VoxelShape THREE_QUARTERS_SHAPE =
             Shapes.or(
-                    Shapes.box(0.5D, 0.0D, 0.5D, 0.9375D, 0.5D, 0.9375D),
-                    Shapes.box(0.0625D, 0.0D, 0.0625D, 0.5D, 0.5D, 0.9375D)
+                    Shapes.box(
+                            0.5D,
+                            0.0D,
+                            0.5D,
+                            0.9375D,
+                            0.5D,
+                            0.9375D
+                    ),
+                    Shapes.box(
+                            0.0625D,
+                            0.0D,
+                            0.0625D,
+                            0.5D,
+                            0.5D,
+                            0.9375D
+                    )
             );
 
     private static final VoxelShape HALF_SHAPE =
-            Shapes.box(0.0625D, 0.0D, 0.5D, 0.9375D, 0.5D, 0.9375D);
+            Shapes.box(
+                    0.0625D,
+                    0.0D,
+                    0.0625D,
+                    0.9375D,
+                    0.5D,
+                    0.9375D
+            );
 
     private static final VoxelShape QUARTER_SHAPE =
-            Shapes.box(0.0625D, 0.0D, 0.5D, 0.5D, 0.5D, 0.9375D);
+            Shapes.box(
+                    0.0625D,
+                    0.0D,
+                    0.0625D,
+                    0.5D,
+                    0.5D,
+                    0.9375D
+            );
 
     private final Supplier<Item> slice;
 
-    public BakeryCakeBlock(Properties properties, Supplier<Item> slice) {
+    public BakeryCakeBlock(Properties properties) {
+        this(properties, null);
+    }
+
+    public BakeryCakeBlock(
+            Properties properties,
+            Supplier<Item> slice
+    ) {
         super(properties);
-        this.slice = slice != null ? slice : () -> Items.AIR;
+
+        this.slice = slice != null
+                ? slice
+                : () -> Items.AIR;
+
         this.registerDefaultState(
                 this.defaultBlockState()
                         .setValue(FACING, Direction.NORTH)
                         .setValue(CUTS, 0)
         );
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -189,20 +260,29 @@ public class BakeryCakeBlock extends HorizontalDirectionalBlock {
 
         if (held.isEmpty() && !player.isShiftKeyDown()) {
             if (!level.isClientSide) {
-                popResource(level, pos, new ItemStack(this));
+                popResource(
+                        level,
+                        pos,
+                        new ItemStack(this)
+                );
+
                 level.removeBlock(pos, false);
             }
+
             return ItemInteractionResult.SUCCESS;
         }
 
-        if (player.isShiftKeyDown() &&
-                (held.isEmpty() || held.getItem() instanceof SwordItem)) {
+        if (player.isShiftKeyDown()
+                && (held.isEmpty()
+                || held.getItem() instanceof SwordItem)) {
 
             if (!level.isClientSide) {
                 Item sliceItem = slice.get();
 
                 if (sliceItem != Items.AIR) {
-                    ItemStack sliceStack = new ItemStack(sliceItem);
+                    ItemStack sliceStack =
+                            new ItemStack(sliceItem);
+
                     FoodProperties food =
                             sliceStack.get(DataComponents.FOOD);
 
@@ -210,14 +290,21 @@ public class BakeryCakeBlock extends HorizontalDirectionalBlock {
                         player.getFoodData().eat(food);
 
                         int cuts = state.getValue(CUTS);
+
                         if (cuts < 2) {
                             level.setBlock(
                                     pos,
-                                    state.setValue(CUTS, cuts + 1),
+                                    state.setValue(
+                                            CUTS,
+                                            cuts + 1
+                                    ),
                                     3
                             );
                         } else {
-                            level.removeBlock(pos, false);
+                            level.removeBlock(
+                                    pos,
+                                    false
+                            );
                         }
                     }
                 }
@@ -226,8 +313,8 @@ public class BakeryCakeBlock extends HorizontalDirectionalBlock {
             return ItemInteractionResult.SUCCESS;
         }
 
-        if (!player.isShiftKeyDown() &&
-                held.getItem() instanceof SwordItem) {
+        if (!player.isShiftKeyDown()
+                && held.getItem() instanceof SwordItem) {
 
             if (!level.isClientSide) {
                 Item sliceItem = slice.get();
@@ -245,11 +332,17 @@ public class BakeryCakeBlock extends HorizontalDirectionalBlock {
                 if (cuts < 2) {
                     level.setBlock(
                             pos,
-                            state.setValue(CUTS, cuts + 1),
+                            state.setValue(
+                                    CUTS,
+                                    cuts + 1
+                            ),
                             3
                     );
                 } else {
-                    level.removeBlock(pos, false);
+                    level.removeBlock(
+                            pos,
+                            false
+                    );
                 }
             }
 
@@ -284,6 +377,7 @@ public class BakeryCakeBlock extends HorizontalDirectionalBlock {
 import net.minecraft.world.level.block.Block;
 
 public class BakeryFoodBlock extends Block {
+
     public BakeryFoodBlock(Properties properties) {
         super(properties);
     }
@@ -298,6 +392,7 @@ public class BakeryFoodBlock extends Block {
 import net.minecraft.world.level.block.Block;
 
 public class BakerySimpleBlock extends Block {
+
     public BakerySimpleBlock(Properties properties) {
         super(properties);
     }
@@ -331,254 +426,532 @@ import java.util.function.Supplier;
 public class ObjectRegistry {
 
     private static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(Bakery.MOD_ID, Registries.BLOCK);
+            DeferredRegister.create(
+                    Bakery.MOD_ID,
+                    Registries.BLOCK
+            );
 
     private static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(Bakery.MOD_ID, Registries.ITEM);
+            DeferredRegister.create(
+                    Bakery.MOD_ID,
+                    Registries.ITEM
+            );
 
     public static final RegistrySupplier<Item> ROLLING_PIN =
-            registerItem("rolling_pin", () -> new SwordItem(Tiers.WOOD, new Item.Properties()));
+            registerItem(
+                    "rolling_pin",
+                    () -> new SwordItem(
+                            Tiers.WOOD,
+                            new Item.Properties()
+                    )
+            );
 
     public static final RegistrySupplier<Item> BREAD_KNIFE =
-            registerItem("bread_knife", () -> new SwordItem(Tiers.IRON, new Item.Properties()));
+            registerItem(
+                    "bread_knife",
+                    () -> new SwordItem(
+                            Tiers.IRON,
+                            new Item.Properties()
+                    )
+            );
 
     public static final RegistrySupplier<Item> STRAWBERRY_CAKE_SLICE =
-            registerFood("strawberry_cake_slice", 5, 0.7F);
+            registerFood(
+                    "strawberry_cake_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> SWEETBERRY_CAKE_SLICE =
-            registerFood("sweetberry_cake_slice", 5, 0.7F);
+            registerFood(
+                    "sweetberry_cake_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> CHOCOLATE_CAKE_SLICE =
-            registerFood("chocolate_cake_slice", 5, 0.7F);
+            registerFood(
+                    "chocolate_cake_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> CHOCOLATE_GATEAU_SLICE =
-            registerFood("chocolate_gateau_slice", 5, 0.7F);
+            registerFood(
+                    "chocolate_gateau_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> BUNDT_CAKE_SLICE =
-            registerFood("bundt_cake_slice", 5, 0.7F);
+            registerFood(
+                    "bundt_cake_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> LINZER_TART_SLICE =
-            registerFood("linzer_tart_slice", 5, 0.7F);
+            registerFood(
+                    "linzer_tart_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> GLOWBERRY_PIE_SLICE =
-            registerFood("glowberry_pie_slice", 5, 0.7F);
+            registerFood(
+                    "glowberry_pie_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> CHOCOLATE_TART_SLICE =
-            registerFood("chocolate_tart_slice", 5, 0.7F);
+            registerFood(
+                    "chocolate_tart_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> PUDDING_SLICE =
-            registerFood("pudding_slice", 5, 0.7F);
+            registerFood(
+                    "pudding_slice",
+                    5,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> CAKE_DOUGH =
-            registerFood("cake_dough", 5, 0.6F);
+            registerFood(
+                    "cake_dough",
+                    5,
+                    0.6F
+            );
 
     public static final RegistrySupplier<Item> SWEET_DOUGH =
-            registerFood("sweet_dough", 5, 0.6F);
+            registerFood(
+                    "sweet_dough",
+                    5,
+                    0.6F
+            );
 
     public static final RegistrySupplier<Item> CROISSANT =
-            registerFood("croissant", 5, 0.6F);
+            registerFood(
+                    "croissant",
+                    5,
+                    0.6F
+            );
 
     public static final RegistrySupplier<Item> CRUSTY_BREAD =
-            registerFood("crusty_bread", 5, 1.2F);
+            registerFood(
+                    "crusty_bread",
+                    5,
+                    1.2F
+            );
 
     public static final RegistrySupplier<Item> BREAD =
-            registerFood("bread", 5, 1.2F);
+            registerFood(
+                    "bread",
+                    5,
+                    1.2F
+            );
 
     public static final RegistrySupplier<Item> BAGUETTE =
-            registerFood("baguette", 5, 1.2F);
+            registerFood(
+                    "baguette",
+                    5,
+                    1.2F
+            );
 
     public static final RegistrySupplier<Item> TOAST =
-            registerFood("toast", 3, 0.8F);
+            registerFood(
+                    "toast",
+                    3,
+                    0.8F
+            );
 
     public static final RegistrySupplier<Item> BRAIDED_BREAD =
-            registerFood("braided_bread", 5, 1.2F);
+            registerFood(
+                    "braided_bread",
+                    5,
+                    1.2F
+            );
 
     public static final RegistrySupplier<Item> SANDWICH =
-            registerFood("sandwich", 7, 0.7F);
+            registerFood(
+                    "sandwich",
+                    7,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> VEGETABLE_SANDWICH =
-            registerFood("vegetable_sandwich", 8, 0.6F);
+            registerFood(
+                    "vegetable_sandwich",
+                    8,
+                    0.6F
+            );
 
     public static final RegistrySupplier<Item> GRILLED_SALMON_SANDWICH =
-            registerFood("grilled_salmon_sandwich", 6, 0.8F);
+            registerFood(
+                    "grilled_salmon_sandwich",
+                    6,
+                    0.8F
+            );
 
     public static final RegistrySupplier<Item> GRILLED_BACON_SANDWICH =
-            registerFood("grilled_bacon_sandwich", 7, 0.7F);
+            registerFood(
+                    "grilled_bacon_sandwich",
+                    7,
+                    0.7F
+            );
 
     public static final RegistrySupplier<Item> BREAD_WITH_JAM =
-            registerFood("bread_with_jam", 5, 0.5F);
+            registerFood(
+                    "bread_with_jam",
+                    5,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> STRAWBERRY_GLAZED_COOKIE =
-            registerFood("strawberry_glazed_cookie", 3, 0.5F);
+            registerFood(
+                    "strawberry_glazed_cookie",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> SWEETBERRY_GLAZED_COOKIE =
-            registerFood("sweetberry_glazed_cookie", 3, 0.5F);
+            registerFood(
+                    "sweetberry_glazed_cookie",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> CHOCOLATE_GLAZED_COOKIE =
-            registerFood("chocolate_glazed_cookie", 3, 0.5F);
+            registerFood(
+                    "chocolate_glazed_cookie",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> STRAWBERRY_CUPCAKE =
-            registerFood("strawberry_cupcake", 3, 0.5F);
+            registerFood(
+                    "strawberry_cupcake",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> SWEETBERRY_CUPCAKE =
-            registerFood("sweetberry_cupcake", 3, 0.5F);
+            registerFood(
+                    "sweetberry_cupcake",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> APPLE_CUPCAKE =
-            registerFood("apple_cupcake", 3, 0.5F);
+            registerFood(
+                    "apple_cupcake",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> CORNET =
-            registerFood("cornet", 3, 0.5F);
+            registerFood(
+                    "cornet",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> JAM_ROLL =
-            registerFood("jam_roll", 3, 0.5F);
+            registerFood(
+                    "jam_roll",
+                    3,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> CHOCOLATE_TRUFFLE =
-            registerFood("chocolate_truffle", 2, 0.4F);
+            registerFood(
+                    "chocolate_truffle",
+                    2,
+                    0.4F
+            );
 
     public static final RegistrySupplier<Item> MISSLILITU_BISCUIT =
-            registerFood("misslilitu_biscuit", 6, 0.6F);
+            registerFood(
+                    "misslilitu_biscuit",
+                    6,
+                    0.6F
+            );
 
     public static final RegistrySupplier<Item> WAFFLE =
-            registerFood("waffle", 5, 0.5F);
+            registerFood(
+                    "waffle",
+                    5,
+                    0.5F
+            );
 
     public static final RegistrySupplier<Item> BUN =
-            registerFood("bun", 5, 1.2F);
+            registerFood(
+                    "bun",
+                    5,
+                    1.2F
+            );
 
     public static final RegistrySupplier<Block> STRAWBERRY_CAKE =
-            registerCakeBlock("strawberry_cake", STRAWBERRY_CAKE_SLICE);
+            registerCakeBlock(
+                    "strawberry_cake",
+                    STRAWBERRY_CAKE_SLICE
+            );
 
     public static final RegistrySupplier<Block> SWEETBERRY_CAKE =
-            registerCakeBlock("sweetberry_cake", SWEETBERRY_CAKE_SLICE);
+            registerCakeBlock(
+                    "sweetberry_cake",
+                    SWEETBERRY_CAKE_SLICE
+            );
 
     public static final RegistrySupplier<Block> CHOCOLATE_CAKE =
-            registerCakeBlock("chocolate_cake", CHOCOLATE_CAKE_SLICE);
+            registerCakeBlock(
+                    "chocolate_cake",
+                    CHOCOLATE_CAKE_SLICE
+            );
 
     public static final RegistrySupplier<Block> BUNDT_CAKE =
-            registerCakeBlock("bundt_cake", BUNDT_CAKE_SLICE);
+            registerCakeBlock(
+                    "bundt_cake",
+                    BUNDT_CAKE_SLICE
+            );
 
     public static final RegistrySupplier<Block> LINZER_TART =
-            registerCakeBlock("linzer_tart", LINZER_TART_SLICE);
+            registerCakeBlock(
+                    "linzer_tart",
+                    LINZER_TART_SLICE
+            );
 
     public static final RegistrySupplier<Block> GLOWBERRY_TART =
-            registerCakeBlock("glowberry_tart", GLOWBERRY_PIE_SLICE);
+            registerCakeBlock(
+                    "glowberry_tart",
+                    GLOWBERRY_PIE_SLICE
+            );
 
     public static final RegistrySupplier<Block> PUDDING =
-            registerCakeBlock("pudding", PUDDING_SLICE);
+            registerCakeBlock(
+                    "pudding",
+                    PUDDING_SLICE
+            );
 
     public static final RegistrySupplier<Block> CHOCOLATE_GATEAU =
-            registerCakeBlock("chocolate_gateau", CHOCOLATE_GATEAU_SLICE);
+            registerCakeBlock(
+                    "chocolate_gateau",
+                    CHOCOLATE_GATEAU_SLICE
+            );
 
     public static final RegistrySupplier<Block> CHOCOLATE_TART =
-            registerCakeBlock("chocolate_tart", CHOCOLATE_TART_SLICE);
+            registerCakeBlock(
+                    "chocolate_tart",
+                    CHOCOLATE_TART_SLICE
+            );
 
     public static final RegistrySupplier<Block> APPLE_PIE =
-            registerCakeBlock("apple_pie", () -> ModItems.APPLE_PIE_SLICE.get());
+            registerCakeBlock(
+                    "apple_pie",
+                    () -> ModItems.APPLE_PIE_SLICE.get()
+            );
 
     public static final RegistrySupplier<Block> BLANK_CAKE =
-            registerSimpleBlock("blank_cake",
+            registerSimpleBlock(
+                    "blank_cake",
                     () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> APPLE_CUPCAKE_BLOCK =
-            registerSimpleBlock("apple_cupcake_block",
+            registerSimpleBlock(
+                    "apple_cupcake_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> SWEETBERRY_CUPCAKE_BLOCK =
-            registerSimpleBlock("sweetberry_cupcake_block",
+            registerSimpleBlock(
+                    "sweetberry_cupcake_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> STRAWBERRY_CUPCAKE_BLOCK =
-            registerSimpleBlock("strawberry_cupcake_block",
+            registerSimpleBlock(
+                    "strawberry_cupcake_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> CHOCOLATE_COOKIE_BLOCK =
-            registerSimpleBlock("chocolate_cookie_block",
+            registerSimpleBlock(
+                    "chocolate_cookie_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> SWEETBERRY_COOKIE_BLOCK =
-            registerSimpleBlock("sweetberry_cookie_block",
+            registerSimpleBlock(
+                    "sweetberry_cookie_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> STRAWBERRY_COOKIE_BLOCK =
-            registerSimpleBlock("strawberry_cookie_block",
+            registerSimpleBlock(
+                    "strawberry_cookie_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> CRUSTY_BREAD_BLOCK =
-            registerSimpleBlock("crusty_bread_block",
+            registerSimpleBlock(
+                    "crusty_bread_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> BREAD_BLOCK =
-            registerSimpleBlock("bread_block",
+            registerSimpleBlock(
+                    "bread_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> BAGUETTE_BLOCK =
-            registerSimpleBlock("baguette_block",
+            registerSimpleBlock(
+                    "baguette_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> TOAST_BLOCK =
-            registerSimpleBlock("toast_block",
+            registerSimpleBlock(
+                    "toast_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> BRAIDED_BREAD_BLOCK =
-            registerSimpleBlock("braided_bread_block",
+            registerSimpleBlock(
+                    "braided_bread_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> BUN_BLOCK =
-            registerSimpleBlock("bun_block",
+            registerSimpleBlock(
+                    "bun_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> WAFFLE_BLOCK =
-            registerSimpleBlock("waffle_block",
+            registerSimpleBlock(
+                    "waffle_block",
                     () -> new BakeryFoodBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.CAKE
+                            )
+                    )
+            );
 
     public static final RegistrySupplier<Block> JAR =
-            registerSimpleBlock("jar",
+            registerSimpleBlock(
+                    "jar",
                     () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-                                    .noOcclusion()));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
+            );
 
     public static final RegistrySupplier<Block> STRAWBERRY_JAM =
-            registerSimpleBlock("strawberry_jam",
+            registerSimpleBlock(
+                    "strawberry_jam",
                     () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-                                    .noOcclusion()));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
+            );
 
     public static final RegistrySupplier<Block> GLOWBERRY_JAM =
-            registerSimpleBlock("glowberry_jam",
+            registerSimpleBlock(
+                    "glowberry_jam",
                     () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-                                    .noOcclusion()));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
+            );
 
     public static final RegistrySupplier<Block> SWEETBERRY_JAM =
-            registerSimpleBlock("sweetberry_jam",
+            registerSimpleBlock(
+                    "sweetberry_jam",
                     () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-                                    .noOcclusion()));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
+            );
 
     public static final RegistrySupplier<Block> CHOCOLATE_JAM =
-            registerSimpleBlock("chocolate_jam",
+            registerSimpleBlock(
+                    "chocolate_jam",
                     () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-                                    .noOcclusion()));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
+            );
 
     public static final RegistrySupplier<Block> APPLE_JAM =
-            registerSimpleBlock("apple_jam",
+            registerSimpleBlock(
+                    "apple_jam",
                     () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-                                    .noOcclusion()));
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
+            );
 
     private static RegistrySupplier<Block> registerCakeBlock(
             String name,
@@ -587,8 +960,9 @@ public class ObjectRegistry {
         return registerBlockWithItem(
                 name,
                 () -> new BakeryCakeBlock(
-                        BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)
-                                .noOcclusion(),
+                        BlockBehaviour.Properties.ofFullCopy(
+                                Blocks.CAKE
+                        ).noOcclusion(),
                         slice
                 )
         );
@@ -598,18 +972,30 @@ public class ObjectRegistry {
             String name,
             Supplier<? extends Block> supplier
     ) {
-        return registerBlockWithItem(name, supplier);
+        return registerBlockWithItem(
+                name,
+                supplier
+        );
     }
 
-    private static <T extends Block> RegistrySupplier<T> registerBlockWithItem(
+    private static RegistrySupplier<Block> registerBlockWithItem(
             String name,
-            Supplier<T> supplier
+            Supplier<? extends Block> supplier
     ) {
-        RegistrySupplier<T> block = BLOCKS.register(name, supplier);
+        RegistrySupplier<Block> block =
+                BLOCKS.register(
+                        name,
+                        supplier
+                );
+
         ITEMS.register(
                 name,
-                () -> new BlockItem(block.get(), new Item.Properties())
+                () -> new BlockItem(
+                        block.get(),
+                        new Item.Properties()
+                )
         );
+
         return block;
     }
 
@@ -635,7 +1021,10 @@ public class ObjectRegistry {
             String name,
             Supplier<Item> supplier
     ) {
-        return ITEMS.register(name, supplier);
+        return ITEMS.register(
+                name,
+                supplier
+        );
     }
 
     public static void init() {
@@ -645,7 +1034,6 @@ public class ObjectRegistry {
 }
 """
             )
-
 
             def removedNames = [
                     "bakery_banner",
@@ -677,8 +1065,11 @@ public class ObjectRegistry {
 
             if (bakeryLangEntry != null) {
                 bakeryLangFile.parentFile.mkdirs()
+
                 bakeryLangFile.text =
-                        zip.getInputStream(bakeryLangEntry).getText("UTF-8")
+                        zip.getInputStream(
+                                bakeryLangEntry
+                        ).getText("UTF-8")
             }
 
             zip.entries().each { entry ->
@@ -693,7 +1084,9 @@ public class ObjectRegistry {
                     return
                 }
 
-                def relative = path.substring(prefix.length())
+                def relative = path.substring(
+                        prefix.length()
+                )
 
                 if (!relative.startsWith(
                         "common/src/main/resources/assets/bakery/"
@@ -715,20 +1108,25 @@ public class ObjectRegistry {
                     return
                 }
 
-                def lower = resourceRelative.toLowerCase()
+                def lower =
+                        resourceRelative.toLowerCase()
 
                 if (removedNames.any { name ->
-                    lower.contains("/" + name.toLowerCase())
+                    lower.contains(
+                            "/" + name.toLowerCase()
+                    )
                 }) {
                     return
                 }
 
                 if (lower.contains("/banner") ||
-                    lower.contains("banner/")) {
+                        lower.contains("banner/")) {
                     return
                 }
 
-                if (resourceRelative.startsWith("assets/bakery/")) {
+                if (resourceRelative.startsWith(
+                        "assets/bakery/"
+                )) {
                     resourceRelative =
                             "assets/whatsits/" +
                                     resourceRelative.substring(
@@ -737,12 +1135,16 @@ public class ObjectRegistry {
                 }
 
                 if (resourceRelative.endsWith(".json") ||
-                    resourceRelative.endsWith(".mcmeta")) {
+                        resourceRelative.endsWith(".mcmeta")) {
 
                     def text =
-                            zip.getInputStream(entry).getText("UTF-8")
+                            zip.getInputStream(
+                                    entry
+                            ).getText("UTF-8")
 
-                    if (text.contains("farm_and_charm")) {
+                    if (text.contains(
+                            "farm_and_charm"
+                    )) {
                         return
                     }
 
@@ -752,9 +1154,17 @@ public class ObjectRegistry {
                     )
 
                     destination.parentFile.mkdirs()
-                    destination.text = text
-                            .replace("bakery:", "whatsits:")
-                            .replace("bakery.", "whatsits.")
+
+                    destination.text =
+                            text
+                                    .replace(
+                                            "bakery:",
+                                            "whatsits:"
+                                    )
+                                    .replace(
+                                            "bakery.",
+                                            "whatsits."
+                                    )
 
                 } else {
 
@@ -764,9 +1174,80 @@ public class ObjectRegistry {
                     )
 
                     destination.parentFile.mkdirs()
+
                     destination.bytes =
-                            zip.getInputStream(entry).bytes
+                            zip.getInputStream(
+                                    entry
+                            ).bytes
                 }
+            }
+
+            /*
+             * Force item models for Bakery food items.
+             *
+             * These are generated here because the merged Bakery blocks
+             * and items do not always provide a usable item model once
+             * the original Bakery systems have been stripped down.
+             */
+            def forcedItemTextures = [
+                    "blank_cake",
+                    "strawberry_cupcake",
+                    "sweetberry_cupcake",
+                    "apple_cupcake",
+                    "strawberry_glazed_cookie",
+                    "sweetberry_glazed_cookie",
+                    "chocolate_glazed_cookie",
+                    "crusty_bread",
+                    "bread",
+                    "baguette",
+                    "toast",
+                    "braided_bread",
+                    "waffle"
+            ]
+
+            forcedItemTextures.each { name ->
+                writeResourceText(
+                        "assets/whatsits/models/item/${name}.json",
+                        """{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "whatsits:item/${name}"
+  }
+}
+"""
+                )
+            }
+
+            /*
+             * These are blocks in the merged registry which also receive
+             * BlockItems. Give each BlockItem an item model that uses its
+             * corresponding block model so it renders properly in the
+             * inventory.
+             */
+            def forcedBlockItemModels = [
+                    "strawberry_cupcake_block",
+                    "sweetberry_cupcake_block",
+                    "apple_cupcake_block",
+                    "strawberry_cookie_block",
+                    "sweetberry_cookie_block",
+                    "chocolate_cookie_block",
+                    "crusty_bread_block",
+                    "bread_block",
+                    "baguette_block",
+                    "toast_block",
+                    "braided_bread_block",
+                    "bun_block",
+                    "waffle_block"
+            ]
+
+            forcedBlockItemModels.each { name ->
+                writeResourceText(
+                        "assets/whatsits/models/item/${name}.json",
+                        """{
+  "parent": "whatsits:block/${name}"
+}
+"""
+                )
             }
 
         } finally {
@@ -775,16 +1256,31 @@ public class ObjectRegistry {
     }
 }
 
-sourceSets.main.java.srcDir(bakeryGeneratedJava)
-sourceSets.main.resources.srcDir(bakeryGeneratedResources)
+sourceSets.main.java.srcDir(
+        bakeryGeneratedJava
+)
+
+sourceSets.main.resources.srcDir(
+        bakeryGeneratedResources
+)
 
 repositories {
-    maven { url = 'https://maven.architectury.dev' }
-    maven { url = 'https://maven.blamejared.com' }
-    maven { url = 'https://api.modrinth.com/maven' }
+    maven {
+        url = 'https://maven.architectury.dev'
+    }
+
+    maven {
+        url = 'https://maven.blamejared.com'
+    }
+
+    maven {
+        url = 'https://api.modrinth.com/maven'
+    }
+
     maven {
         url = "https://cursemaven.com"
     }
+
     maven {
         url = "https://maven.theillusivec4.top/"
     }
@@ -794,43 +1290,76 @@ base {
     archivesName = mod_id
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+java.toolchain.languageVersion =
+        JavaLanguageVersion.of(21)
 
 neoForge {
     version = project.neo_version
 
     parchment {
-        mappingsVersion = project.parchment_mappings_version
-        minecraftVersion = project.parchment_minecraft_version
+        mappingsVersion =
+                project.parchment_mappings_version
+
+        minecraftVersion =
+                project.parchment_minecraft_version
     }
 
     runs {
         client {
             client()
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+
+            systemProperty(
+                    'neoforge.enabledGameTestNamespaces',
+                    project.mod_id
+            )
         }
 
         server {
             server()
+
             programArgument '--nogui'
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+
+            systemProperty(
+                    'neoforge.enabledGameTestNamespaces',
+                    project.mod_id
+            )
         }
 
         gameTestServer {
             type = "gameTestServer"
-            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+
+            systemProperty(
+                    'neoforge.enabledGameTestNamespaces',
+                    project.mod_id
+            )
         }
 
         data {
             data()
-            programArguments.addAll '--mod', project.mod_id, '--all',
-                    '--output', file('src/generated/resources/').getAbsolutePath(),
-                    '--existing', file('src/main/resources/').getAbsolutePath()
+
+            programArguments.addAll(
+                    '--mod',
+                    project.mod_id,
+                    '--all',
+                    '--output',
+                    file(
+                            'src/generated/resources/'
+                    ).getAbsolutePath(),
+                    '--existing',
+                    file(
+                            'src/main/resources/'
+                    ).getAbsolutePath()
+            )
         }
 
         configureEach {
-            systemProperty 'forge.logging.markers', 'REGISTRIES'
-            logLevel = org.slf4j.event.Level.DEBUG
+            systemProperty(
+                    'forge.logging.markers',
+                    'REGISTRIES'
+            )
+
+            logLevel =
+                    org.slf4j.event.Level.DEBUG
         }
     }
 
@@ -853,70 +1382,100 @@ dependencies {
     compileOnly "dev.architectury:architectury-neoforge:13.0.8"
 
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
+
     compileOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api"
 }
 
-var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
-    var replaceProperties = [
-            minecraft_version      : minecraft_version,
-            minecraft_version_range: minecraft_version_range,
-            neo_version            : neo_version,
-            loader_version_range   : loader_version_range,
-            mod_id                 : mod_id,
-            mod_name               : mod_name,
-            mod_license            : mod_license,
-            mod_version            : mod_version,
-    ]
+var generateModMetadata =
+        tasks.register(
+                "generateModMetadata",
+                ProcessResources
+        ) {
 
-    inputs.properties replaceProperties
-    expand replaceProperties
-    from "src/main/templates"
-    into "build/generated/sources/modMetadata"
-}
+            var replaceProperties = [
+                    minecraft_version      : minecraft_version,
+                    minecraft_version_range: minecraft_version_range,
+                    neo_version            : neo_version,
+                    loader_version_range   : loader_version_range,
+                    mod_id                 : mod_id,
+                    mod_name               : mod_name,
+                    mod_license            : mod_license,
+                    mod_version            : mod_version,
+            ]
 
-sourceSets.main.resources.srcDir generateModMetadata
+            inputs.properties replaceProperties
 
-neoForge.ideSyncTask generateModMetadata
+            expand replaceProperties
+
+            from "src/main/templates"
+
+            into "build/generated/sources/modMetadata"
+        }
+
+sourceSets.main.resources.srcDir(
+        generateModMetadata
+)
+
+neoForge.ideSyncTask(
+        generateModMetadata
+)
 
 publishing {
     publications {
-        register('mavenJava', MavenPublication) {
+        register(
+                'mavenJava',
+                MavenPublication
+        ) {
             from components.java
         }
     }
 
     repositories {
         maven {
-            url = "file://${project.projectDir}/repo"
+            url =
+                    "file://${project.projectDir}/repo"
         }
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
+tasks.withType(
+        JavaCompile
+).configureEach {
     options.encoding = 'UTF-8'
     dependsOn(prepareBakeryMerge)
 }
 
-tasks.named("processResources").configure {
+tasks.named(
+        "processResources"
+).configure {
+
     dependsOn(prepareBakeryMerge)
 
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    duplicatesStrategy =
+            DuplicatesStrategy.EXCLUDE
 
     doLast {
+
         def outputLang = new File(
-                destinationDir.get().asFile,
+                destinationDir,
                 "assets/whatsits/lang/en_us.json"
         )
 
-        if (bakeryLangFile.exists() && outputLang.exists()) {
+        if (bakeryLangFile.exists() &&
+                outputLang.exists()) {
+
             def bakeryLang =
                     new groovy.json.JsonSlurper().parseText(
-                            bakeryLangFile.getText("UTF-8")
+                            bakeryLangFile.getText(
+                                    "UTF-8"
+                            )
                     )
 
             def whatsitsLang =
                     new groovy.json.JsonSlurper().parseText(
-                            outputLang.getText("UTF-8")
+                            outputLang.getText(
+                                    "UTF-8"
+                            )
                     )
 
             def removedKeys = [
@@ -942,34 +1501,56 @@ tasks.named("processResources").configure {
                     "small_cooking_pot"
             ]
 
-            Map mergedLang = new LinkedHashMap()
+            Map mergedLang =
+                    new LinkedHashMap()
 
             if (bakeryLang instanceof Map) {
-                bakeryLang.each { key, value ->
-                    def lowerKey = key.toString().toLowerCase()
-                    if (!removedKeys.any { lowerKey.contains(it) }) {
-                        mergedLang[key.toString()
-                                .replace("bakery.", "whatsits.")
-                                .replace("bakery:", "whatsits:")] = value
-                    }
+
+                bakeryLang.each {
+                    key, value ->
+
+                        def lowerKey =
+                                key.toString()
+                                        .toLowerCase()
+
+                        if (!removedKeys.any {
+                            lowerKey.contains(it)
+                        }) {
+
+                            mergedLang[
+                                    key.toString()
+                                            .replace(
+                                                    "bakery.",
+                                                    "whatsits."
+                                            )
+                                            .replace(
+                                                    "bakery:",
+                                                    "whatsits:"
+                                            )
+                            ] = value
+                        }
                 }
             }
 
             if (whatsitsLang instanceof Map) {
-                whatsitsLang.each { key, value ->
-                    mergedLang[key] = value
+
+                whatsitsLang.each {
+                    key, value ->
+                        mergedLang[key] = value
                 }
             }
 
             outputLang.parentFile.mkdirs()
+
             outputLang.text =
                     groovy.json.JsonOutput.prettyPrint(
-                            groovy.json.JsonOutput.toJson(mergedLang)
+                            groovy.json.JsonOutput.toJson(
+                                    mergedLang
+                            )
                     ) + "\n"
         }
     }
 }
-
 
 idea {
     module {
