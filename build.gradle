@@ -754,7 +754,6 @@ dependencies {
     implementation "curse.maven:farmers-delight-398521:8765184"
 
     compileOnly "dev.architectury:architectury-neoforge:13.0.8"
-    compileOnly "maven.modrinth:farm-and-charm:1.1.23+neoforge"
 
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
     compileOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api"
@@ -803,6 +802,23 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.named("processResources").configure {
     dependsOn(prepareBakeryMerge)
+
+    /*
+     * The Bakery merge task creates a combined sounds.json. Exclude the
+     * original Whatsits copy from the normal source set and add the merged
+     * file explicitly.
+     */
+    setSource(
+            sourceSets.main.resources.matching {
+                exclude("assets/whatsits/sounds.json")
+            }
+    )
+
+    from(bakeryGeneratedResources) {
+        include("assets/whatsits/sounds.json")
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 idea {
