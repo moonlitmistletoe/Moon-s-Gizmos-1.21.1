@@ -119,9 +119,9 @@ public class ModItems {
 
 
     // Desserts
-    public static final DeferredItem<Item> APPLE_PIE = ITEMS.register("apple_pie",
+    public static final DeferredItem<Item> APPLE_PIE_SLICE = ITEMS.register("apple_pie_slice",
             () -> new Item(new Item.Properties()
-                    .food(ModFoodProperties.APPLE_PIE)));
+                    .food(ModFoodProperties.APPLE_PIE_SLICE)));
 
     public static final DeferredItem<Item> CHERRY_PIE = ITEMS.register("cherry_pie",
             () -> new Item(new Item.Properties()

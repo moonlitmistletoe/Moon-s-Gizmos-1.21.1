@@ -109,7 +109,7 @@ public class ModFoodProperties {
 
 
     // Desserts
-    public static final FoodProperties APPLE_PIE = new FoodProperties.Builder()
+    public static final FoodProperties APPLE_PIE_SLICE = new FoodProperties.Builder()
             .nutrition(8)
             .saturationModifier(0.8F)
             .build();

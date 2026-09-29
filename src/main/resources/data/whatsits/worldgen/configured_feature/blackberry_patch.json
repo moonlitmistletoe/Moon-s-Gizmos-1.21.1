@@ -28,20 +28,16 @@
               },
               {
                 "type": "minecraft:matching_blocks",
-                "blocks": "minecraft:dirt",
-                "offset": [
-                  0,
-                  -1,
-                  0
-                ]
+                "blocks": "minecraft:grass_block",
+                "offset": [0, -1, 0]
               }
             ]
           }
         }
       ]
     },
-    "tries": 3,
-    "xz_spread": 7,
+    "tries": 128,
+    "xz_spread": 10,
     "y_spread": 3
   }
 }

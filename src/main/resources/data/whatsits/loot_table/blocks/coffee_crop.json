@@ -18,6 +18,30 @@
           }
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "whatsits:coffee_seeds",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "whatsits:coffee_crop",
+          "properties": {
+            "age": "7"
+          }
+        }
+      ]
     }
   ]
 }

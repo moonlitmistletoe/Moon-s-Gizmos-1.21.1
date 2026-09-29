@@ -44,6 +44,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STRAWBERRY);
                         output.accept(ModItems.RAW_COW_RIBS);
 
+                        // Scabbards
+                        output.accept(net.nimbu.scabbards.item.ModItems.SCABBARD);
+                        output.accept(net.nimbu.scabbards.item.ModItems.HIP_SCABBARD);
+                        output.accept(net.nimbu.scabbards.item.ModItems.WEAPON_HOlSTER);
+
                         // Drinks
                         output.accept(ModItems.APPLE_JUICE);
                         output.accept(ModItems.CHERRY_JUICE);
@@ -60,7 +65,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COOKED_COW_RIBS);
 
                         // Desserts
-                        output.accept(ModItems.APPLE_PIE);
+                        output.accept(ModItems.APPLE_PIE_SLICE);
                         output.accept(ModItems.CHERRY_PIE);
                         output.accept(ModItems.MOONCAKE);
                         output.accept(ModItems.STRAWBERRY_ICE_CREAM);
