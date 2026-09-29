@@ -103,9 +103,3 @@ A bunch of random items added with QFS in mind.
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies.${mod_id}]]
-    modId="farm_and_charm"
-    type="required"
-    versionRange="[1.1.19,)"
-    ordering="AFTER"
-    side="BOTH"
