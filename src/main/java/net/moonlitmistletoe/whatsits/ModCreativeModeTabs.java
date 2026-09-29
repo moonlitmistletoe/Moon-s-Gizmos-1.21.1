@@ -104,6 +104,13 @@ public class ModCreativeModeTabs {
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CAKE_DOUGH.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.SWEET_DOUGH.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CROISSANT.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CRUSTY_BREAD_BLOCK.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BREAD_BLOCK.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BAGUETTE_BLOCK.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.TOAST_BLOCK.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BRAIDED_BREAD_BLOCK.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BUN_BLOCK.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.WAFFLE_BLOCK.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CRUSTY_BREAD.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BREAD.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BAGUETTE.get());
@@ -147,6 +154,7 @@ public class ModCreativeModeTabs {
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_TART.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BAKERY_BANNER.get());
+                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.BAKERY_WALL_BANNER.get());
                     })
                     .build());
 
