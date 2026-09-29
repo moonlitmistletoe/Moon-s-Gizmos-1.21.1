@@ -13,6 +13,10 @@
       "item": "whatsits:apple_pie,whatsits:cherry_pie,whatsits:mooncake,whatsits:strawberry_ice_cream",
       "title": "Desserts",
       "text": "The desserts are Apple Pie, Cherry Pie, Mooncake and Strawberry Ice Cream.$(br2)Most of these give some of the fruit crops another use once you've harvested them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cutting cakes and pies:$\(br\)Use the Bakery Bread Knife on a whole cake, pie, tart or pudding block to turn it into slices.$(br2)The knife works on Strawberry Cake, Sweetberry Cake, Chocolate Cake, Bundt Cake, Linzer Tart, Apple Pie, Glowberry Tart, Pudding, Chocolate Gateau and Chocolate Tart."
     }
   ]
 }
