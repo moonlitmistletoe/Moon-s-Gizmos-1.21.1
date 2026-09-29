@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "whatsits:sweet_dough"
+    },
+    {
+      "item": "whatsits:strawberry_jam"
+    }
+  ],
+  "result": {
+    "id": "whatsits:jam_roll",
+    "count": 1
+  }
+}
