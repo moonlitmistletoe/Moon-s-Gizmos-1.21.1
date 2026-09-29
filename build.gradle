@@ -19,8 +19,6 @@ sourceSets.main.resources {
     exclude("src/generated/**/.cache")
 }
 
-def bakeryGeneratedDir = layout.buildDirectory.dir("generated/bakery")
-
 def bakeryGeneratedRoot = layout.buildDirectory
         .dir("generated/bakery")
         .get()
