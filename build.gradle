@@ -71,8 +71,7 @@ def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
 
                     if (javaRelative.contains("/compat/") ||
                         javaRelative.endsWith("/registry/TabRegistry.java") ||
-                        javaRelative.endsWith("/platform/PlatformHelper.java") ||
-                        javaRelative.endsWith("/Bakery.java")) {
+                        javaRelative.endsWith("/platform/PlatformHelper.java")) {
                         return
                     }
 
@@ -81,19 +80,34 @@ def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
                         .replaceAll(/import net\.fabricmc\.api\.Environment;\r?\n/, "")
                         .replaceAll(/@Environment\(EnvType\.CLIENT\)\r?\n/, "")
 
+                    if (javaRelative.endsWith("/Bakery.java")) {
+                        text = text
+                            .replace('public static final String MOD_ID = "bakery";', 'public static final String MOD_ID = "whatsits";')
+                            .replace('import net.satisfy.bakery.core.registry.TabRegistry;\n', '')
+                            .replace('        TabRegistry.init();\n', '')
+                        def destination = new File(javaRoot, javaRelative)
+                        destination.parentFile.mkdirs()
+                        destination.text = text
+                        return
+                    }
+
                     if (javaRelative.endsWith("/core/registry/ObjectRegistry.java")) {
                         text = text.replace(
                             'import net.satisfy.bakery.Bakery;\n',
                             'import net.satisfy.bakery.Bakery;\nimport net.moonlitmistletoe.whatsits.item.ModItems;\n'
                         )
                         text = text.replaceAll(
-                            /    public static final RegistrySupplier<Item> APPLE_PIE_SLICE = registerItem\("apple_pie_slice".*?\);\r?\n/s,
+                            /^    public static final RegistrySupplier<Item> APPLE_PIE_SLICE.*\r?\n/m,
                             ""
                         )
                         text = text.replace(
                             "ObjectRegistry.APPLE_PIE_SLICE));",
                             "ModItems.APPLE_PIE_SLICE::get));"
                         )
+                    }
+
+                    if (javaRelative.endsWith("/client/BakeryClient.java")) {
+                        text = text.replace("ObjectRegistry.STRAWBERRY_JAM.get(), ", "")
                     }
 
                     if (javaRelative.endsWith("/core/registry/CompostableRegistry.java")) {
@@ -161,6 +175,10 @@ def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
 
                     // The existing Whatsits apple pie slice is reused.
                     if (resourceRelative.contains("/apple_pie_slice.")) return
+                    if (resourceRelative == "assets/bakery/blockstates/strawberry_jam.json" ||
+                        resourceRelative == "assets/bakery/models/item/strawberry_jam.json" ||
+                        resourceRelative.startsWith("assets/bakery/models/block/strawberry_jam") ||
+                        resourceRelative == "data/bakery/loot_table/blocks/strawberry_jam.json") return
 
                     def destination = new File(resourceRoot, resourceRelative)
                     destination.parentFile.mkdirs()
@@ -219,6 +237,7 @@ sourceSets.main.resources.srcDir(new File(bakeryGeneratedDir.get().asFile, "reso
 
 repositories {
     maven { url = 'https://maven.blamejared.com' }
+    maven { url = 'https://api.modrinth.com/maven' }
     maven {
         url = "https://cursemaven.com"
     }
@@ -288,7 +307,7 @@ dependencies {
     implementation "curse.maven:farmers-delight-398521:8765184"
 
     compileOnly "dev.architectury:architectury-neoforge:13.0.8"
-    compileOnly "curse.maven:lets-do-farm-charm-1038103:8968388"
+    compileOnly "maven.modrinth:farm-and-charm:1.1.23+neoforge"
 
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
     compileOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api"
