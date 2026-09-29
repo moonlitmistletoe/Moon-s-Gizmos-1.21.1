@@ -1,22 +1,22 @@
 {
   "name": "Desserts",
-  "icon": "whatsits:apple_pie",
+  "icon": "whatsits:apple_pie_slice",
   "category": "whatsits:foods_drinks",
   "sortnum": 3,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "There are a few sweet things in Moon's Whatsits too.$(br2)Some of them use fruit from the crops in this mod, while others are a bit less ordinary."
+      "text": "There are a few sweet things in Moon's Whatsits too.$(br2)Some use fruit from the crops in this mod, while others are a bit less ordinary."
     },
     {
       "type": "patchouli:spotlight",
-      "item": "whatsits:apple_pie,whatsits:cherry_pie,whatsits:mooncake,whatsits:strawberry_ice_cream",
+      "item": "whatsits:apple_pie_slice,whatsits:cherry_pie,whatsits:mooncake,whatsits:strawberry_ice_cream",
       "title": "Desserts",
-      "text": "The desserts are Apple Pie, Cherry Pie, Mooncake and Strawberry Ice Cream.$(br2)Most of these give some of the fruit crops another use once you've harvested them."
+      "text": "The desserts are Apple Pie Slice, Cherry Pie, Mooncake and Strawberry Ice Cream.$(br2)Apple Pie Slice is crafted from apples, sugar and wheat. Cherry Pie uses cherries, sugar and wheat. Mooncake uses an egg, sugar and wheat. Strawberry Ice Cream uses strawberries, sugar and a milk bucket."
     },
     {
       "type": "patchouli:text",
-      "text": "Cutting cakes and pies:$(br)Use the Bakery Bread Knife on a whole cake, pie, tart or pudding block to turn it into slices.$(br2)The knife works on Strawberry Cake, Sweetberry Cake, Chocolate Cake, Bundt Cake, Linzer Tart, Apple Pie, Glowberry Tart, Pudding, Chocolate Gateau and Chocolate Tart."
+      "text": "Cutting Bakery cakes and pies:$(br)Use a knife from the Bakery knives tag on a whole Bakery cake, pie, tart or pudding block to cut off a slice.$(br2)Each use gives one slice and reduces the cake's remaining portions. Bakery cakes and similar foods can be cut four times before the block is used up."
     }
   ]
 }
