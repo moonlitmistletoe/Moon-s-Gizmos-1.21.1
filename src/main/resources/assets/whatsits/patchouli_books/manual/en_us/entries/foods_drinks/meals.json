@@ -10,19 +10,17 @@
     },
     {
       "type": "patchouli:spotlight",
-      "item": "whatsits:avocado_toast,whatsits:scrambled_eggs,whatsits:sunny_side_eggs",
+      "item": "whatsits:avocado_toast,whatsits:scrambled_eggs,whatsits:sunny_side_eggs,whatsits:cooked_cow_ribs",
       "title": "Meals",
-      "text": "The meals currently added are Avocado Toast, Scrambled Eggs and Sunny Side Eggs."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:sunny_side_eggs",
-      "title": "Sunny Side Eggs",
-      "text": "Sunny Side Eggs are made using a Farmer's Delight Skillet.$(br2)First, throw a normal Egg to get an Egg Yolk. Place a Skillet on a lit Stove, then right-click the Skillet with the Egg Yolk.$(br2)After cooking, the Egg Yolk becomes Sunny Side Eggs."
+      "text": "The meals currently added are Avocado Toast, Scrambled Eggs, Sunny Side Eggs and Cooked Cow Ribs."
     },
     {
       "type": "patchouli:text",
-      "text": "Avocado Toast, Scrambled Eggs and Sunny Side Eggs all have their recipes available in the recipe viewer."
+      "text": "Recipes:$(br)Avocado Toast: Avocado + Bread$(br)Scrambled Eggs: 2 Egg Yolks$(br)Sunny Side Eggs: Egg Yolk cooked on a Campfire$(br)Cooked Cow Ribs: Raw Cow Ribs cooked in a Furnace, Smoker or Campfire."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Egg Yolk is obtained by throwing a normal Egg. Raw Cow Ribs can be obtained from cows when killed with a suitable knife or cleaver.$(br2)Both are ingredients for the cooked foods above rather than having ordinary crafting recipes."
     }
   ]
 }
