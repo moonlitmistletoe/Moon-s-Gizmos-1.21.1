@@ -95,3 +95,17 @@ A bunch of random items added with QFS in mind.
 # stop your mod loading on the server for example.
 #[features.${mod_id}]
 #openGLVersion="[3.2,)"
+
+[[dependencies.${mod_id}]]
+    modId="architectury"
+    type="required"
+    versionRange="[13.0.8,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="farm_and_charm"
+    type="required"
+    versionRange="[1.1.19,)"
+    ordering="AFTER"
+    side="BOTH"
