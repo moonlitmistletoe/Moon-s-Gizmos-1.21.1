@@ -1,8 +1,9 @@
 package net.moonlitmistletoe.whatsits.event;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -15,8 +16,11 @@ import net.satisfy.bakery.core.block.cake.PieBlock;
 
 public class CakeCuttingHandler {
 
-    private static final ResourceLocation KNIVES_TAG =
-            ResourceLocation.fromNamespaceAndPath("bakery", "knives");
+    private static final TagKey<net.minecraft.world.item.Item> KNIVES =
+            TagKey.create(
+                    Registries.ITEM,
+                    ResourceLocation.fromNamespaceAndPath("bakery", "knives")
+            );
 
     @SubscribeEvent
     public static void onRightClickCake(PlayerInteractEvent.RightClickBlock event) {
@@ -28,10 +32,7 @@ public class CakeCuttingHandler {
 
         ItemStack knife = event.getItemStack();
 
-        if (!knife.is(net.minecraft.tags.TagKey.create(
-                net.minecraft.core.registries.Registries.ITEM,
-                KNIVES_TAG
-        ))) {
+        if (!knife.is(KNIVES)) {
             return;
         }
 
@@ -47,9 +48,8 @@ public class CakeCuttingHandler {
         }
 
         int cuts = state.getValue(PieBlock.CUTS);
-        int maxCuts = pie.getMaxCuts();
 
-        if (cuts < maxCuts - 1) {
+        if (cuts < pie.getMaxCuts() - 1) {
             level.setBlock(pos, state.setValue(PieBlock.CUTS, cuts + 1), 3);
         } else {
             level.removeBlock(pos, false);
