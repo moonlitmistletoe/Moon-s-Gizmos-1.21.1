@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "whatsits:jar"
+    }
+  ],
+  "result": {
+    "id": "whatsits:apple_jam",
+    "count": 1
+  }
+}
