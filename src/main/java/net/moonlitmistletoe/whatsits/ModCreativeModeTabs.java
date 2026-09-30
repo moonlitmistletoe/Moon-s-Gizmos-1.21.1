@@ -26,6 +26,7 @@ public class ModCreativeModeTabs {
                     .displayItems((parameters, output) -> {
 
                         // Existing Whatsits content
+                        output.accept(ModItems.MANUAL);
                         output.accept(ModItems.BLACKBERRY_SEED);
                         output.accept(ModItems.BLUEBERRY_SEED);
                         output.accept(ModItems.COFFEE_SEED);
