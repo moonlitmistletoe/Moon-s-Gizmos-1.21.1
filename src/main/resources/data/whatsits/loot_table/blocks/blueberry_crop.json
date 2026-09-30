@@ -6,16 +6,16 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:blueberry"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "whatsits:blueberry_crop",
-          "properties": {
-            "age": "7"
-          }
+          "name": "whatsits:blueberry",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "whatsits:blueberry_crop",
+              "properties": {
+                "age": "7"
+              }
+            }
+          ]
         }
       ]
     },
@@ -24,22 +24,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:blueberry_seeds",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 2
-            }
-          ]
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "whatsits:blueberry_crop",
-          "properties": {
-            "age": "7"
-          }
+          "name": "whatsits:blueberry_seed"
         }
       ]
     }
