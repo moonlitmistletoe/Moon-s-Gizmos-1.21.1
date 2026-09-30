@@ -20,7 +20,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("itemGroup.whatsits.whatsits"))
                     .withTabsImage(ResourceLocation.fromNamespaceAndPath(
                             Whatsits.MOD_ID,
-                            "logo.png"
+                            "textures/gui/logo.png"
                     ))
                     .icon(() -> new ItemStack(ModItems.MOD_LOGO.get()))
                     .displayItems((parameters, output) -> {
@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COFFEE_BEANS);
                         output.accept(ModItems.STRAWBERRY);
                         output.accept(ModItems.RAW_COW_RIBS);
+                        output.accept(ModItems.HANDCUFFS);
 
                         output.accept(net.nimbu.scabbards.item.ModItems.SCABBARD);
                         output.accept(net.nimbu.scabbards.item.ModItems.HIP_SCABBARD);
@@ -89,8 +90,6 @@ public class ModCreativeModeTabs {
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART_SLICE.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.PUDDING_SLICE.get());
 
-
-
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CORNET.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.JAM_ROLL.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TRUFFLE.get());
@@ -108,10 +107,9 @@ public class ModCreativeModeTabs {
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_GATEAU.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART.get());
 
-                        // Bakery food blocks
+// Bakery food blocks
 
-                        // Bakery jars and jams
-                        output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.JAR.get());
+// Bakery jars and jams
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_JAM.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_JAM.get());
                         output.accept(net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_JAM.get());

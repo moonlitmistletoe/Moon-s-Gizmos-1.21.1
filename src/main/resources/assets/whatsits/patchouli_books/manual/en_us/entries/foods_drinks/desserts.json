@@ -6,17 +6,49 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "There are a few sweet things in Moon's Whatsits too.$(br2)Some use fruit from the crops in this mod, while others are a bit less ordinary."
+      "text": "There are a few sweet things in Moon's Whatsits too.$(br2)Some use fruit from the crops in this mod, while others are a bit less ordinary. Bakery adds even more cakes, pies, pastries and other desserts."
     },
     {
       "type": "patchouli:spotlight",
       "item": "whatsits:apple_pie_slice,whatsits:cherry_pie,whatsits:mooncake,whatsits:strawberry_ice_cream",
-      "title": "Desserts",
-      "text": "The desserts are Apple Pie Slice, Cherry Pie, Mooncake and Strawberry Ice Cream.$(br2)Apple Pie Slice is crafted from apples, sugar and wheat. Cherry Pie uses cherries, sugar and wheat. Mooncake uses an egg, sugar and wheat. Strawberry Ice Cream uses strawberries, sugar and a milk bucket."
+      "title": "Whatsits Desserts",
+      "text": "The desserts added directly by Moon's Whatsits are Apple Pie Slice, Cherry Pie, Mooncake and Strawberry Ice Cream.$(br2)Apple Pie Slice is crafted from apples, sugar and wheat. Cherry Pie uses cherries, sugar and wheat. Mooncake uses an egg, sugar and wheat. Strawberry Ice Cream uses strawberries, sugar and a milk bucket."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:apple_cupcake,whatsits:strawberry_cupcake,whatsits:sweetberry_cupcake,whatsits:chocolate_glazed_cookie,whatsits:strawberry_glazed_cookie",
+      "title": "Cupcakes & Cookies",
+      "text": "Bakery adds Apple Cupcakes, Strawberry Cupcakes and Sweetberry Cupcakes, along with Chocolate Glazed Cookies and Strawberry Glazed Cookies."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:croissant,whatsits:cornet,whatsits:jam_roll,whatsits:chocolate_truffle,whatsits:misslilitu_biscuit",
+      "title": "Pastries",
+      "text": "Bakery also adds several smaller sweet foods, including Croissants, Cornets, Jam Rolls, Chocolate Truffles and Misslilitu Biscuits."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry_cake_slice,whatsits:sweetberry_cake_slice,whatsits:chocolate_cake_slice,whatsits:chocolate_gateau_slice,whatsits:bundt_cake_slice",
+      "title": "Cake Slices",
+      "text": "Bakery provides individual slices from several cakes, including Strawberry Cake, Sweetberry Cake, Chocolate Cake, Chocolate Gateau and Bundt Cake."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:linzer_tart_slice,whatsits:glowberry_pie_slice,whatsits:chocolate_tart_slice,whatsits:pudding_slice",
+      "title": "More Slices",
+      "text": "There are also slices of Linzer Tart, Glowberry Pie, Chocolate Tart and Pudding."
     },
     {
       "type": "patchouli:text",
-      "text": "Cutting Bakery cakes and pies:$(br)Use a knife from the Bakery knives tag on a whole Bakery cake, pie, tart or pudding block to cut off a slice.$(br2)Each use gives one slice and reduces the cake's remaining portions. Bakery cakes and similar foods can be cut four times before the block is used up."
+      "text": "Bakery's whole desserts include Strawberry Cake, Sweetberry Cake, Chocolate Cake, Bundt Cake, Linzer Tart, Apple Pie, Glowberry Tart, Pudding, Chocolate Gateau and Chocolate Tart.$(br2)Whole cakes, pies, tarts and pudding can be placed as blocks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cutting Bakery cakes and pies:$(br)Use a Bakery knife on a whole Bakery cake, pie, tart or pudding block to take a slice.$(br2)Each use removes one portion and gives you the corresponding slice. Once all portions have been taken, the block is used up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Bakery additions also include Cake Dough and Sweet Dough, which are used as ingredients for making some of the baked foods."
     }
   ]
 }

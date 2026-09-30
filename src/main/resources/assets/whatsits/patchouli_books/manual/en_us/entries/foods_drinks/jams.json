@@ -6,13 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Some of the fruit grown in the mod can be turned into jam.$(br2)It's a fairly simple way of getting another use out of berries and cherries once you've got a decent harvest."
+      "text": "Some of the fruit grown in Moon's Whatsits can be turned into jam.$(br2)Bakery also adds several more varieties, giving you plenty of different jams to make and use."
     },
     {
       "type": "patchouli:spotlight",
       "item": "whatsits:blackberry_jam,whatsits:blueberry_jam,whatsits:cherry_jam",
-      "title": "Jams",
-      "text": "There are three jams: Blackberry Jam, Blueberry Jam and Cherry Jam.$(br2)Each jam is made from its corresponding fruit and sugar."
+      "title": "Whatsits Jams",
+      "text": "The original Moon's Whatsits jams are Blackberry Jam, Blueberry Jam and Cherry Jam.$(br2)Each is made from its corresponding fruit and sugar."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry_jam,whatsits:sweetberry_jam,whatsits:glowberry_jam,whatsits:apple_jam,whatsits:chocolate_jam",
+      "title": "Bakery Jams",
+      "text": "Bakery adds Strawberry Jam, Sweetberry Jam, Glowberry Jam, Apple Jam and Chocolate Jam.$(br2)These provide additional flavours for use in Bakery foods."
     },
     {
       "type": "patchouli:text",

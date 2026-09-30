@@ -6,13 +6,13 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Moon's Whatsits also has a few proper prepared foods rather than just ingredients and snacks.$(br2)These recipes use familiar ingredients and turn them into something a bit more substantial."
+      "text": "Moon's Whatsits has a few proper prepared foods rather than just ingredients and snacks.$(br2)Bakery expands this selection with breads, sandwiches and other prepared foods."
     },
     {
       "type": "patchouli:spotlight",
       "item": "whatsits:avocado_toast,whatsits:scrambled_eggs,whatsits:sunny_side_eggs,whatsits:cooked_cow_ribs",
-      "title": "Meals",
-      "text": "The meals currently added are Avocado Toast, Scrambled Eggs, Sunny Side Eggs and Cooked Cow Ribs."
+      "title": "Whatsits Meals",
+      "text": "The meals added directly by Moon's Whatsits are Avocado Toast, Scrambled Eggs, Sunny Side Eggs and Cooked Cow Ribs."
     },
     {
       "type": "patchouli:text",
@@ -21,6 +21,18 @@
     {
       "type": "patchouli:text",
       "text": "Egg Yolk is obtained by throwing a normal Egg. Raw Cow Ribs can be obtained from cows when killed with a suitable knife or cleaver.$(br2)Both are ingredients for the cooked foods above rather than having ordinary crafting recipes."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:sandwich,whatsits:vegetable_sandwich,whatsits:grilled_salmon_sandwich,whatsits:grilled_bacon_sandwich,whatsits:bread_with_jam",
+      "title": "Bakery Sandwiches",
+      "text": "Bakery adds Sandwiches, Vegetable Sandwiches, Grilled Salmon Sandwiches, Grilled Bacon Sandwiches and Bread with Jam."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:baguette,whatsits:braided_bread,whatsits:crusty_bread,whatsits:toast,whatsits:bun,whatsits:waffle",
+      "title": "Breads",
+      "text": "The Bakery additions also include Baguettes, Braided Bread, Crusty Bread, Toast, Buns and Waffles."
     }
   ]
 }

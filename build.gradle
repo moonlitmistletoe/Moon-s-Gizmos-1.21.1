@@ -404,12 +404,15 @@ public class BakerySimpleBlock extends Block {
                     "net/satisfy/bakery/core/registry/ObjectRegistry.java",
                     """package net.satisfy.bakery.core.registry;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.moonlitmistletoe.whatsits.item.custom.JamItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.block.Block;
@@ -608,6 +611,8 @@ public class ObjectRegistry {
                     5,
                     0.5F
             );
+            
+    
 
     public static final RegistrySupplier<Item> STRAWBERRY_GLAZED_COOKIE =
             registerFood(
@@ -903,55 +908,96 @@ public class ObjectRegistry {
                     )
             );
 
-    public static final RegistrySupplier<Block> STRAWBERRY_JAM =
-            registerSimpleBlock(
+    public static final RegistrySupplier<Block> STRAWBERRY_JAM_BLOCK =
+            registerJamBlock("strawberry_jam");
+
+    public static final RegistrySupplier<Item> STRAWBERRY_JAM =
+            registerJamItem(
                     "strawberry_jam",
-                    () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(
-                                    Blocks.GLASS
-                            ).noOcclusion()
-                    )
+                    STRAWBERRY_JAM_BLOCK,
+                    3,
+                    0.4F
             );
 
-    public static final RegistrySupplier<Block> GLOWBERRY_JAM =
-            registerSimpleBlock(
+    public static final RegistrySupplier<Block> GLOWBERRY_JAM_BLOCK =
+            registerJamBlock("glowberry_jam");
+
+    public static final RegistrySupplier<Item> GLOWBERRY_JAM =
+            registerJamItem(
                     "glowberry_jam",
-                    () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(
-                                    Blocks.GLASS
-                            ).noOcclusion()
-                    )
+                    GLOWBERRY_JAM_BLOCK,
+                    3,
+                    0.4F
             );
 
-    public static final RegistrySupplier<Block> SWEETBERRY_JAM =
-            registerSimpleBlock(
+    public static final RegistrySupplier<Block> SWEETBERRY_JAM_BLOCK =
+            registerJamBlock("sweetberry_jam");
+
+    public static final RegistrySupplier<Item> SWEETBERRY_JAM =
+            registerJamItem(
                     "sweetberry_jam",
-                    () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(
-                                    Blocks.GLASS
-                            ).noOcclusion()
-                    )
+                    SWEETBERRY_JAM_BLOCK,
+                    3,
+                    0.4F
             );
 
-    public static final RegistrySupplier<Block> CHOCOLATE_JAM =
-            registerSimpleBlock(
+    public static final RegistrySupplier<Block> CHOCOLATE_JAM_BLOCK =
+            registerJamBlock("chocolate_jam");
+
+    public static final RegistrySupplier<Item> CHOCOLATE_JAM =
+            registerJamItem(
                     "chocolate_jam",
-                    () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(
-                                    Blocks.GLASS
-                            ).noOcclusion()
-                    )
+                    CHOCOLATE_JAM_BLOCK,
+                    3,
+                    0.4F
             );
 
-    public static final RegistrySupplier<Block> APPLE_JAM =
-            registerSimpleBlock(
+    public static final RegistrySupplier<Block> APPLE_JAM_BLOCK =
+            registerJamBlock("apple_jam");
+
+    public static final RegistrySupplier<Item> APPLE_JAM =
+            registerJamItem(
                     "apple_jam",
-                    () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(
-                                    Blocks.GLASS
-                            ).noOcclusion()
-                    )
+                    APPLE_JAM_BLOCK,
+                    3,
+                    0.4F
             );
+
+    private static RegistrySupplier<Block> registerJamBlock(
+            String name
+    ) {
+        return BLOCKS.register(
+                name,
+                () -> new net.moonlitmistletoe.whatsits.block.JamBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                Blocks.GLASS
+                        ).noOcclusion()
+                )
+        );
+    }
+
+    private static RegistrySupplier<Item> registerJamItem(
+            String name,
+            RegistrySupplier<Block> block,
+            int nutrition,
+            float saturation
+    ) {
+        return ITEMS.register(
+                name,
+                () -> new JamItem(
+                        new Item.Properties()
+                                .stacksTo(16)
+                                .food(
+                                        new FoodProperties.Builder()
+                                                .nutrition(nutrition)
+                                                .saturationModifier(saturation)
+                                                .alwaysEdible()
+                                                .build()
+                                ),
+                        block
+                )
+        );
+    }
 
     private static RegistrySupplier<Block> registerCakeBlock(
             String name,
@@ -1007,14 +1053,261 @@ public class ObjectRegistry {
         return registerItem(
                 name,
                 () -> new Item(
-                        new Item.Properties().food(
-                                new FoodProperties.Builder()
-                                        .nutrition(nutrition)
-                                        .saturationModifier(saturation)
-                                        .build()
-                        )
+                        new Item.Properties()
+                                .food(
+                                        createFoodProperties(
+                                                name,
+                                                nutrition,
+                                                saturation
+                                        )
+                                )
                 )
         );
+    }
+
+    private static FoodProperties createFoodProperties(
+            String name,
+            int nutrition,
+            float saturation
+    ) {
+        FoodProperties.Builder food = new FoodProperties.Builder()
+                .nutrition(nutrition)
+                .saturationModifier(saturation)
+                .alwaysEdible();
+
+        switch (name) {
+            case "croissant" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.REGENERATION,
+                                    60,
+                                    0
+                            ),
+                            0.25F
+                    );
+
+            case "chocolate_truffle" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.ABSORPTION,
+                                    200,
+                                    0
+                            ),
+                            0.5F
+                    );
+
+            case "misslilitu_biscuit" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.LUCK,
+                                    300,
+                                    0
+                            ),
+                            0.5F
+                    );
+
+            case "strawberry_cupcake" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.REGENERATION,
+                                    80,
+                                    0
+                            ),
+                            0.4F
+                    );
+
+            case "sweetberry_cupcake" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.NIGHT_VISION,
+                                    200,
+                                    0
+                            ),
+                            0.4F
+                    );
+
+            case "apple_cupcake" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.MOVEMENT_SPEED,
+                                    120,
+                                    0
+                            ),
+                            0.4F
+                    );
+
+            case "chocolate_glazed_cookie" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.ABSORPTION,
+                                    120,
+                                    0
+                            ),
+                            0.35F
+                    );
+
+            case "strawberry_glazed_cookie" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.REGENERATION,
+                                    50,
+                                    0
+                            ),
+                            0.35F
+                    );
+
+            case "sweetberry_glazed_cookie" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.MOVEMENT_SPEED,
+                                    80,
+                                    0
+                            ),
+                            0.35F
+                    );
+
+            case "waffle" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.SATURATION,
+                                    1,
+                                    0
+                            ),
+                            1.0F
+                    );
+
+            case "grilled_salmon_sandwich" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.WATER_BREATHING,
+                                    300,
+                                    0
+                            ),
+                            0.4F
+                    );
+
+            case "grilled_bacon_sandwich" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.DAMAGE_RESISTANCE,
+                                    120,
+                                    0
+                            ),
+                            0.35F
+                    );
+
+            case "vegetable_sandwich" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.REGENERATION,
+                                    60,
+                                    0
+                            ),
+                            0.3F
+                    );
+
+            case "bread_with_jam" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.DIG_SPEED,
+                                    120,
+                                    0
+                            ),
+                            0.3F
+                    );
+
+            case "strawberry_cake_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.REGENERATION,
+                                    100,
+                                    0
+                            ),
+                            0.5F
+                    );
+
+            case "sweetberry_cake_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.NIGHT_VISION,
+                                    300,
+                                    0
+                            ),
+                            0.5F
+                    );
+
+            case "chocolate_cake_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.ABSORPTION,
+                                    300,
+                                    0
+                            ),
+                            0.5F
+                    );
+
+            case "chocolate_gateau_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.DAMAGE_RESISTANCE,
+                                    160,
+                                    0
+                            ),
+                            0.35F
+                    );
+
+            case "bundt_cake_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.SATURATION,
+                                    1,
+                                    0
+                            ),
+                            1.0F
+                    );
+
+            case "linzer_tart_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.LUCK,
+                                    400,
+                                    0
+                            ),
+                            0.5F
+                    );
+
+            case "glowberry_pie_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.GLOWING,
+                                    300,
+                                    0
+                            ),
+                            0.75F
+                    );
+
+            case "chocolate_tart_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.ABSORPTION,
+                                    200,
+                                    0
+                            ),
+                            0.5F
+                    );
+
+            case "pudding_slice" ->
+                    food.effect(
+                            () -> new MobEffectInstance(
+                                    MobEffects.REGENERATION,
+                                    80,
+                                    0
+                            ),
+                            0.5F
+                    );
+        }
+
+        return food.build();
     }
 
     private static RegistrySupplier<Item> registerItem(
@@ -1245,6 +1538,27 @@ public class ObjectRegistry {
                         "assets/whatsits/models/item/${name}.json",
                         """{
   "parent": "whatsits:block/${name}"
+}
+"""
+                )
+            }
+
+            def forcedJamItemModels = [
+                    "strawberry_jam",
+                    "glowberry_jam",
+                    "sweetberry_jam",
+                    "chocolate_jam",
+                    "apple_jam"
+            ]
+
+            forcedJamItemModels.each { name ->
+                writeResourceText(
+                        "assets/whatsits/models/item/${name}.json",
+                        """{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "whatsits:item/${name}"
+  }
 }
 """
                 )
