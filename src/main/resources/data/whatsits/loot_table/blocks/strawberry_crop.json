@@ -24,7 +24,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:strawberry_seed"
+          "name": "whatsits:strawberry_seed",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     }

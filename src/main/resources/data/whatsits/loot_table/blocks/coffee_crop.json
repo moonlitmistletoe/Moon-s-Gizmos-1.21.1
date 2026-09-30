@@ -24,7 +24,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:coffee_seed"
+          "name": "whatsits:coffee_seed",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     }

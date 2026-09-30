@@ -24,7 +24,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:blackberry_seed"
+          "name": "whatsits:blackberry_seed",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     }

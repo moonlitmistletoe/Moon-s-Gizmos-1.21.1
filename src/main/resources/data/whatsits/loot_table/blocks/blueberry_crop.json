@@ -24,7 +24,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:blueberry_seed"
+          "name": "whatsits:blueberry_seed",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     }
