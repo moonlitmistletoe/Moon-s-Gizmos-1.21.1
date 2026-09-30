@@ -401,6 +401,62 @@ public class BakerySimpleBlock extends Block {
             )
 
             writeText(
+                    "net/satisfy/bakery/core/block/BakeryStackableBlock.java",
+                    """package net.satisfy.bakery.core.block;
+
+import com.mojang.serialization.MapCodec;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+
+public class BakeryStackableBlock extends HorizontalDirectionalBlock {
+
+    public static final MapCodec<BakeryStackableBlock> CODEC =
+            simpleCodec(BakeryStackableBlock::new);
+
+    public static final IntegerProperty STACK =
+            IntegerProperty.create("stack", 1, 8);
+
+    public BakeryStackableBlock(Properties properties) {
+        super(properties);
+
+        this.registerDefaultState(
+                this.defaultBlockState()
+                        .setValue(FACING, Direction.NORTH)
+                        .setValue(STACK, 1)
+        );
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return CODEC;
+    }
+
+    @Override
+    protected void createBlockStateDefinition(
+            StateDefinition.Builder<Block, BlockState> builder
+    ) {
+        builder.add(FACING, STACK);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState()
+                .setValue(
+                        FACING,
+                        context.getHorizontalDirection().getOpposite()
+                )
+                .setValue(STACK, 1);
+    }
+}
+"""
+            )
+
+            writeText(
                     "net/satisfy/bakery/core/registry/ObjectRegistry.java",
                     """package net.satisfy.bakery.core.registry;
 
@@ -422,6 +478,7 @@ import net.satisfy.bakery.Bakery;
 import net.satisfy.bakery.core.block.BakeryCakeBlock;
 import net.satisfy.bakery.core.block.BakeryFoodBlock;
 import net.satisfy.bakery.core.block.BakerySimpleBlock;
+import net.satisfy.bakery.core.block.BakeryStackableBlock;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 
 import java.util.function.Supplier;
@@ -891,7 +948,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> WAFFLE_BLOCK =
             registerSimpleBlock(
                     "waffle_block",
-                    () -> new BakeryFoodBlock(
+                    () -> new BakeryStackableBlock(
                             BlockBehaviour.Properties.ofFullCopy(
                                     Blocks.CAKE
                             )
@@ -901,7 +958,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> JAR =
             registerSimpleBlock(
                     "jar",
-                    () -> new BakerySimpleBlock(
+                    () -> new BakeryStackableBlock(
                             BlockBehaviour.Properties.ofFullCopy(
                                     Blocks.GLASS
                             ).noOcclusion()
