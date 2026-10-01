@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "World of Lies is a music disc that can be played in a jukebox."
+      "text": "World of Lies is a music disc that can be played in a jukebox.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
