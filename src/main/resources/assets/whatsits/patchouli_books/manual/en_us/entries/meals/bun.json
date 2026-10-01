@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A small Bakery bread that works well on its own or as part of a meal."
+      "text": "A small Bakery bread that works well on its own or as part of a meal.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
