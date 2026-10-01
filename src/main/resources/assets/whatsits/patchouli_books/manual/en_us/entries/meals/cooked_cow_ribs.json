@@ -10,9 +10,9 @@
       "text": "Cook the raw cow ribs to make these. They are the edible result of the cow-rib drop, and are considerably more useful than carrying the raw version around."
     },
     {
-      "type": "patchouli:crafting",
+      "type": "patchouli:smelting",
       "recipe": "whatsits:cooked_cow_ribs",
-      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+      "text": "Smelt the raw cow ribs in a furnace, smoker or other compatible cooking setup. The recipe uses the raw ribs as its ingredient and takes 200 ticks to cook."
     }
   ]
 }
