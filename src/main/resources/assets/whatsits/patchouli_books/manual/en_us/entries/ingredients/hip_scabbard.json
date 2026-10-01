@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A leather-and-string weapon carrier designed to sit at the hip."
+      "text": "A leather-and-string weapon carrier designed to sit at the hip.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
