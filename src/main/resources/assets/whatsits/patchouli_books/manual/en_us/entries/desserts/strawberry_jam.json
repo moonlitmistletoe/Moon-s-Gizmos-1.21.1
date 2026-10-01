@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Strawberry Jam is a sweet Bakery spread. It can be eaten and used as a topping in other recipes."
+      "text": "Strawberry Jam is a sweet Bakery spread. It can be eaten and used as a topping in other recipes.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
