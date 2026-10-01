@@ -12,7 +12,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "whatsits:cornet",
-      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+      "text": ""
     }
   ]
 }

@@ -7,12 +7,12 @@
       "type": "patchouli:spotlight",
       "item": "whatsits:grilled_salmon_sandwich",
       "link_recipe": true,
-      "text": "A salmon sandwich with a useful side effect: eating it can grant Water Breathing. Craft it through the Bakery recipe."
+      "text": "A salmon sandwich. Smells fishy."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "whatsits:grilled_salmon_sandwich",
-      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+      "text": ""
     }
   ]
 }

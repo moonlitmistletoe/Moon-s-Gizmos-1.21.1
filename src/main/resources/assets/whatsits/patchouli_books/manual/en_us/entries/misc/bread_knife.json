@@ -1,13 +1,14 @@
 {
   "name": "Bread Knife",
   "icon": "whatsits:bread_knife",
-  "category": "whatsits:ingredients",
+  "category": "whatsits:misc",
+  "sortnum": 4,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "whatsits:bread_knife",
       "link_recipe": false,
-      "text": "Craft this from the recipe provided by the mod. It is used for cutting Bakery cakes and other prepared foods. It is not edible."
+      "text": "Currently unavailable.."
     }
   ]
 }

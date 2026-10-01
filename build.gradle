@@ -815,14 +815,15 @@ public class ObjectRegistry {
                     () -> ModItems.APPLE_PIE_SLICE.get()
             );
 
-    public static final RegistrySupplier<Block> BLANK_CAKE =
-            registerSimpleBlock(
-                    () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(
-                                    Blocks.CAKE
-                            )
-                    )
-            );
+public static final RegistrySupplier<Block> BLANK_CAKE =
+        registerSimpleBlock(
+                "blank_cake",
+                () -> new BakerySimpleBlock(
+                        BlockBehaviour.Properties.ofFullCopy(
+                                Blocks.CAKE
+                        )
+                )
+        );
 
     public static final RegistrySupplier<Block> APPLE_CUPCAKE_BLOCK =
             registerSimpleBlock(
@@ -998,14 +999,14 @@ public class ObjectRegistry {
             );
 
     public static final RegistrySupplier<Block> CHOCOLATE_JAM =
-            registerSimpleBlock(
-                    "chocolate_jam",
-                    () -> new BakerySimpleBlock(
-                            BlockBehaviour.Properties.ofFullCopy(
-                                    Blocks.GLASS
-                            ).noOcclusion()
-                    )
-            );
+         registerSimpleBlock(
+                   "chocolate_jam",
+                    () -> new BakeryStackableBlock(
+                           BlockBehaviour.Properties.ofFullCopy(
+                                  Blocks.GLASS
+                         ).noOcclusion()
+                 )
+          );
 
     public static final RegistrySupplier<Block> APPLE_JAM =
             registerSimpleBlock(
@@ -1650,6 +1651,11 @@ repositories {
     maven {
         url = "https://maven.theillusivec4.top/"
     }
+
+    maven {
+        name = "KosmX's Maven"
+        url = "https://maven.kosmx.dev/"
+    }
 }
 
 base {
@@ -1741,7 +1747,17 @@ configurations {
 }
 
 dependencies {
-    localRuntime "vazkii.patchouli:Patchouli:1.21.1-93-NEOFORGE"
+    jarJar(
+            implementation(
+                    "vazkii.patchouli:Patchouli:1.21.1-93-NEOFORGE"
+            )
+    ) {
+        version {
+            strictly "[1.21.1-93-NEOFORGE]"
+        }
+    }
+
+    implementation "dev.kosmx.player-anim:player-animation-lib-forge:2.0.4+1.21.1"
 
     implementation "curse.maven:farmers-delight-398521:8765184"
 

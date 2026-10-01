@@ -2,6 +2,7 @@
   "name": "Strawberry",
   "icon": "whatsits:strawberry",
   "category": "whatsits:crops",
+  "sortnum": 7,
   "pages": [
     {
       "type": "patchouli:spotlight",

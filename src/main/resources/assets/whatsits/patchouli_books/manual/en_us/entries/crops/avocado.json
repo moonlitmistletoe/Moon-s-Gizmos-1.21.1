@@ -2,6 +2,7 @@
   "name": "Avocado",
   "icon": "whatsits:avocado",
   "category": "whatsits:crops",
+  "sortnum": 10,
   "pages": [
     {
       "type": "patchouli:spotlight",

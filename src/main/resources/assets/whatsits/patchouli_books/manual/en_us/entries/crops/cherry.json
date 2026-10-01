@@ -2,6 +2,7 @@
   "name": "Cherry",
   "icon": "whatsits:cherry",
   "category": "whatsits:crops",
+  "sortnum": 9,
   "pages": [
     {
       "type": "patchouli:spotlight",

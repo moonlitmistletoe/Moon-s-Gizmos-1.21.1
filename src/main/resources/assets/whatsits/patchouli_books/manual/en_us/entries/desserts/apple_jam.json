@@ -7,12 +7,12 @@
       "type": "patchouli:spotlight",
       "item": "whatsits:apple_jam",
       "link_recipe": true,
-      "text": "Apple jam in its placeable jar form. It is part of the Bakery jam system and is mainly used as a topping rather than eaten directly from the block."
+      "text": "Apple jam is made from apples."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "whatsits:apple_jam",
-      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+      "text": ""
     }
   ]
 }

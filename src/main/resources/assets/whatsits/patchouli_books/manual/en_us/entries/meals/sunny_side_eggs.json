@@ -7,12 +7,11 @@
       "type": "patchouli:spotlight",
       "item": "whatsits:sunny_side_eggs",
       "link_recipe": true,
-      "text": "Another way to put egg yolks to work. The recipe produces a cooked egg dish without needing to hunt down anything unusual."
+      "text": "Another scrumptious way to put egg yolks to work."
     },
     {
-      "type": "patchouli:crafting",
-      "recipe": "whatsits:sunny_side_eggs",
-      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
+      "type": "patchouli:text",
+      "text": "To get your sunny-side eggs, you must place them in a Skillet above an Oven. Let them gently sizzle, and they'll jump at you. Be ready to catch them!"
     }
   ]
 }

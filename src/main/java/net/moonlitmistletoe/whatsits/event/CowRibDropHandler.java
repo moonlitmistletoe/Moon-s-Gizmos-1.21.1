@@ -20,7 +20,7 @@ public class CowRibDropHandler {
             "farmersdelight:flint_knife",
             "farmersdelight:golden_knife",
             "farmersdelight:iron_knife",
-            "farmersdelight:netherrite_knife",
+            "farmersdelight:netherite_knife",
 
             "moredelight:stone_knife",
             "moredelight:wooden_knife",
@@ -29,7 +29,7 @@ public class CowRibDropHandler {
             "dungeonsdelight:diamond_cleaver",
             "dungeonsdelight:golden_cleaver",
             "dungeonsdelight:iron_cleaver",
-            "dungeonsdelight:netherrite_cleaver",
+            "dungeonsdelight:netherite_cleaver",
             "dungeonsdelight:stained_cleaver"
     );
 

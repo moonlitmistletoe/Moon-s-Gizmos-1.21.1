@@ -11,13 +11,14 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class JamBlock extends HorizontalDirectionalBlock {
 
-    public static final MapCodec<JamBlock> CODEC = simpleCodec(JamBlock::new);
+    public static final MapCodec<JamBlock> CODEC =
+            simpleCodec(JamBlock::new);
 
     public static final IntegerProperty STACK =
             IntegerProperty.create("stack", 1, 8);
 
     public JamBlock(Properties properties) {
-        super(properties);
+        super(properties.noOcclusion());
 
         this.registerDefaultState(
                 this.defaultBlockState()
@@ -39,7 +40,9 @@ public class JamBlock extends HorizontalDirectionalBlock {
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
+    public BlockState getStateForPlacement(
+            BlockPlaceContext context
+    ) {
         return this.defaultBlockState()
                 .setValue(
                         FACING,

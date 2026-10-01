@@ -2,6 +2,7 @@
   "name": "Blackberry Seeds",
   "icon": "whatsits:blackberry_seed",
   "category": "whatsits:crops",
+  "sortnum": 2,
   "pages": [
     {
       "type": "patchouli:spotlight",

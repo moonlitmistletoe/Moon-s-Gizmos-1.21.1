@@ -2,6 +2,7 @@
   "name": "Blackberry",
   "icon": "whatsits:blackberry",
   "category": "whatsits:crops",
+  "sortnum": 1,
   "pages": [
     {
       "type": "patchouli:spotlight",

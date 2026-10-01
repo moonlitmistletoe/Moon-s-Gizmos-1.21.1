@@ -2,6 +2,7 @@
   "name": "Blueberry",
   "icon": "whatsits:blueberry",
   "category": "whatsits:crops",
+  "sortnum": 3,
   "pages": [
     {
       "type": "patchouli:spotlight",

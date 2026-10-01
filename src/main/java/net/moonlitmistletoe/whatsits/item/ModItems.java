@@ -17,6 +17,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems("whatsits");
+
     public static final DeferredItem<Item> MOD_LOGO;
     public static final DeferredItem<Item> MANUAL;
     public static final DeferredItem<Item> BLACKBERRY_SEED;
@@ -59,37 +60,165 @@ public class ModItems {
     static {
         MOD_LOGO = ITEMS.register("mod_logo", () -> new Item(new Item.Properties()));
         MANUAL = ITEMS.register("manual", () -> new Item(new Item.Properties()));
-        BLACKBERRY_SEED = ITEMS.register("blackberry_seed", () -> new ItemNameBlockItem((Block)ModBlocks.BLACKBERRY_CROP.get(), new Item.Properties()));
-        BLUEBERRY_SEED = ITEMS.register("blueberry_seed", () -> new ItemNameBlockItem((Block)ModBlocks.BLUEBERRY_CROP.get(), new Item.Properties()));
-        COFFEE_SEED = ITEMS.register("coffee_seed", () -> new ItemNameBlockItem((Block)ModBlocks.COFFEE_CROP.get(), new Item.Properties()));
-        STRAWBERRY_SEED = ITEMS.register("strawberry_seed", () -> new ItemNameBlockItem((Block)ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
-        EGG_YOLK = ITEMS.register("egg_yolk.json", () -> new Item((new Item.Properties()).food(ModFoodProperties.EGG_YOLK)));
-        AVOCADO = ITEMS.register("avocado", () -> new Item((new Item.Properties()).food(ModFoodProperties.AVOCADO)));
-        BLACKBERRY = ITEMS.register("blackberry", () -> new Item((new Item.Properties()).food(ModFoodProperties.BLACKBERRY)));
-        BLUEBERRY = ITEMS.register("blueberry", () -> new Item((new Item.Properties()).food(ModFoodProperties.BLUEBERRY)));
-        CHERRY = ITEMS.register("cherry", () -> new Item((new Item.Properties()).food(ModFoodProperties.CHERRY)));
-        COFFEE_BEANS = ITEMS.register("coffee_beans", () -> new Item(new Item.Properties()));
-        STRAWBERRY = ITEMS.register("strawberry", () -> new Item((new Item.Properties()).food(ModFoodProperties.STRAWBERRY)));
-        RAW_COW_RIBS = ITEMS.register("raw_cow_ribs", () -> new Item((new Item.Properties()).food(ModFoodProperties.RAW_COW_RIBS)));
-        APPLE_JUICE = ITEMS.register("apple_juice.json", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.APPLE_JUICE)));
-        CHERRY_JUICE = ITEMS.register("cherry_juice", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.CHERRY_JUICE)));
-        COFFEE = ITEMS.register("coffee", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.COFFEE)));
-        STRAWBERRY_SMOOTHIE = ITEMS.register("strawberry_smoothie", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.STRAWBERRY_SMOOTHIE)));
-        AVOCADO_TOAST = ITEMS.register("avocado_toast", () -> new Item((new Item.Properties()).food(ModFoodProperties.AVOCADO_TOAST)));
-        BLACKBERRY_JAM = ITEMS.register("blackberry_jam", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.BLACKBERRY_JAM)));
-        BLUEBERRY_JAM = ITEMS.register("blueberry_jam", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.BLUEBERRY_JAM)));
-        CHERRY_JAM = ITEMS.register("cherry_jam", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.CHERRY_JAM)));
-        SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs", () -> new Item((new Item.Properties()).food(ModFoodProperties.SCRAMBLED_EGGS)));
-        SUNNY_SIDE_EGGS = ITEMS.register("sunny_side_eggs", () -> new Item((new Item.Properties()).food(ModFoodProperties.SUNNY_SIDE_EGGS)));
-        COOKED_COW_RIBS = ITEMS.register("cooked_cow_ribs", () -> new Item((new Item.Properties()).food(ModFoodProperties.COOKED_COW_RIBS)));
-        APPLE_PIE_SLICE = ITEMS.register("apple_pie_slice", () -> new Item((new Item.Properties()).food(ModFoodProperties.APPLE_PIE_SLICE)));
-        CHERRY_PIE = ITEMS.register("cherry_pie", () -> new Item((new Item.Properties()).food(ModFoodProperties.CHERRY_PIE)));
-        MOONCAKE = ITEMS.register("mooncake", () -> new Item((new Item.Properties()).food(ModFoodProperties.MOONCAKE)));
-        STRAWBERRY_ICE_CREAM = ITEMS.register("strawberry_ice_cream", () -> new Item((new Item.Properties()).food(ModFoodProperties.STRAWBERRY_ICE_CREAM)));
-        DORIME_SONG = ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath("whatsits", "dorime"));
-        DORIME = ITEMS.register("dorime", () -> new Item((new Item.Properties()).rarity(Rarity.RARE).jukeboxPlayable(DORIME_SONG)));
-        WORLD_OF_LIES_SONG = ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath("whatsits", "worldoflies"));
-        WORLD_OF_LIES = ITEMS.register("world_of_lies", () -> new Item((new Item.Properties()).rarity(Rarity.RARE).jukeboxPlayable(WORLD_OF_LIES_SONG)));
-        HANDCUFFS = ITEMS.register("handcuffs", () -> new HandcuffsItem(new Item.Properties()));
+
+        BLACKBERRY_SEED = ITEMS.register(
+                "blackberry_seed",
+                () -> new ItemNameBlockItem((Block) ModBlocks.BLACKBERRY_CROP.get(), new Item.Properties())
+        );
+
+        BLUEBERRY_SEED = ITEMS.register(
+                "blueberry_seed",
+                () -> new ItemNameBlockItem((Block) ModBlocks.BLUEBERRY_CROP.get(), new Item.Properties())
+        );
+
+        COFFEE_SEED = ITEMS.register(
+                "coffee_seed",
+                () -> new ItemNameBlockItem((Block) ModBlocks.COFFEE_CROP.get(), new Item.Properties())
+        );
+
+        STRAWBERRY_SEED = ITEMS.register(
+                "strawberry_seed",
+                () -> new ItemNameBlockItem((Block) ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties())
+        );
+
+        EGG_YOLK = ITEMS.register(
+                "egg_yolk",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.EGG_YOLK))
+        );
+
+        AVOCADO = ITEMS.register(
+                "avocado",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.AVOCADO))
+        );
+
+        BLACKBERRY = ITEMS.register(
+                "blackberry",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.BLACKBERRY))
+        );
+
+        BLUEBERRY = ITEMS.register(
+                "blueberry",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.BLUEBERRY))
+        );
+
+        CHERRY = ITEMS.register(
+                "cherry",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.CHERRY))
+        );
+
+        COFFEE_BEANS = ITEMS.register(
+                "coffee_beans",
+                () -> new Item(new Item.Properties())
+        );
+
+        STRAWBERRY = ITEMS.register(
+                "strawberry",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY))
+        );
+
+        RAW_COW_RIBS = ITEMS.register(
+                "raw_cow_ribs",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.RAW_COW_RIBS))
+        );
+
+        APPLE_JUICE = ITEMS.register(
+                "apple_juice",
+                () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.APPLE_JUICE))
+        );
+
+        CHERRY_JUICE = ITEMS.register(
+                "cherry_juice",
+                () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.CHERRY_JUICE))
+        );
+
+        COFFEE = ITEMS.register(
+                "coffee",
+                () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.COFFEE))
+        );
+
+        STRAWBERRY_SMOOTHIE = ITEMS.register(
+                "strawberry_smoothie",
+                () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.STRAWBERRY_SMOOTHIE))
+        );
+
+        AVOCADO_TOAST = ITEMS.register(
+                "avocado_toast",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.AVOCADO_TOAST))
+        );
+
+        BLACKBERRY_JAM = ITEMS.register(
+                "blackberry_jam",
+                () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.BLACKBERRY_JAM))
+        );
+
+        BLUEBERRY_JAM = ITEMS.register(
+                "blueberry_jam",
+                () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.BLUEBERRY_JAM))
+        );
+
+        CHERRY_JAM = ITEMS.register(
+                "cherry_jam",
+                () -> new DrinkItem(new Item.Properties().food(ModFoodProperties.CHERRY_JAM))
+        );
+
+        SCRAMBLED_EGGS = ITEMS.register(
+                "scrambled_eggs",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.SCRAMBLED_EGGS))
+        );
+
+        SUNNY_SIDE_EGGS = ITEMS.register(
+                "sunny_side_eggs",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.SUNNY_SIDE_EGGS))
+        );
+
+        COOKED_COW_RIBS = ITEMS.register(
+                "cooked_cow_ribs",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_COW_RIBS))
+        );
+
+        APPLE_PIE_SLICE = ITEMS.register(
+                "apple_pie_slice",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.APPLE_PIE_SLICE))
+        );
+
+        CHERRY_PIE = ITEMS.register(
+                "cherry_pie",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.CHERRY_PIE))
+        );
+
+        MOONCAKE = ITEMS.register(
+                "mooncake",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.MOONCAKE))
+        );
+
+        STRAWBERRY_ICE_CREAM = ITEMS.register(
+                "strawberry_ice_cream",
+                () -> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY_ICE_CREAM))
+        );
+
+        DORIME_SONG = ResourceKey.create(
+                Registries.JUKEBOX_SONG,
+                ResourceLocation.fromNamespaceAndPath("whatsits", "dorime")
+        );
+
+        DORIME = ITEMS.register(
+                "dorime",
+                () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(DORIME_SONG))
+        );
+
+        WORLD_OF_LIES_SONG = ResourceKey.create(
+                Registries.JUKEBOX_SONG,
+                ResourceLocation.fromNamespaceAndPath("whatsits", "worldoflies")
+        );
+
+        WORLD_OF_LIES = ITEMS.register(
+                "world_of_lies",
+                () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(WORLD_OF_LIES_SONG))
+        );
+
+        HANDCUFFS = ITEMS.register(
+                "handcuffs",
+                () -> new HandcuffsItem(new Item.Properties())
+        );
     }
 }

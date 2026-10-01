@@ -2,6 +2,7 @@
   "name": "Strawberry Seeds",
   "icon": "whatsits:strawberry_seed",
   "category": "whatsits:crops",
+  "sortnum": 8,
   "pages": [
     {
       "type": "patchouli:spotlight",

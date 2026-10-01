@@ -7,6 +7,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks("whatsits");
+
     public static final DeferredBlock<BlackberryCropBlock> BLACKBERRY_CROP;
     public static final DeferredBlock<BlueberryCropBlock> BLUEBERRY_CROP;
     public static final DeferredBlock<CoffeeCropBlock> COFFEE_CROP;
@@ -17,9 +18,16 @@ public class ModBlocks {
     }
 
     static {
-        BLACKBERRY_CROP = BLOCKS.register("blackberry_crop", () -> new BlackberryCropBlock(Blocks.WHEAT.properties()));
-        BLUEBERRY_CROP = BLOCKS.register("blueberry_crop", () -> new BlueberryCropBlock(Blocks.WHEAT.properties()));
-        COFFEE_CROP = BLOCKS.register("coffee_crop", () -> new CoffeeCropBlock(Blocks.WHEAT.properties()));
-        STRAWBERRY_CROP = BLOCKS.register("strawberry_crop", () -> new StrawberryCropBlock(Blocks.WHEAT.properties()));
+        BLACKBERRY_CROP = BLOCKS.register("blackberry_crop",
+                () -> new BlackberryCropBlock(Blocks.WHEAT.properties()));
+
+        BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
+                () -> new BlueberryCropBlock(Blocks.WHEAT.properties()));
+
+        COFFEE_CROP = BLOCKS.register("coffee_crop",
+                () -> new CoffeeCropBlock(Blocks.WHEAT.properties()));
+
+        STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+                () -> new StrawberryCropBlock(Blocks.WHEAT.properties()));
     }
 }

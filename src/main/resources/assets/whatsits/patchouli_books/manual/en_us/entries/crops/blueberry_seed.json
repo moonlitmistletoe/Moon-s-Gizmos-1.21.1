@@ -2,6 +2,7 @@
   "name": "Blueberry Seeds",
   "icon": "whatsits:blueberry_seed",
   "category": "whatsits:crops",
+  "sortnum": 4,
   "pages": [
     {
       "type": "patchouli:spotlight",

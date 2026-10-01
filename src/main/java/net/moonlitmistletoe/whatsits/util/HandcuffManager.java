@@ -4,11 +4,10 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.moonlitmistletoe.whatsits.network.HandcuffNetwork;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.slf4j.Logger;
 
-import java.io.InputStream;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -16,32 +15,36 @@ import java.util.UUID;
 
 public final class HandcuffManager {
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    private static final Logger LOGGER =
+            LogUtils.getLogger();
 
     private static final Map<UUID, UUID> CUFFED_PLAYERS =
             new HashMap<>();
 
-    private static final String EMOTE_RESOURCE =
-            "/emotes/SPE_Hands behind.json";
-
-    private static Object cachedAnimation;
-    private static boolean emoteLoadAttempted = false;
-
     private HandcuffManager() {
     }
 
-    public static boolean isCuffed(ServerPlayer player) {
-        return CUFFED_PLAYERS.containsKey(player.getUUID());
+    public static boolean isCuffed(
+            ServerPlayer player
+    ) {
+        return CUFFED_PLAYERS.containsKey(
+                player.getUUID()
+        );
     }
 
     public static boolean isHolder(
             ServerPlayer target,
             ServerPlayer holder
     ) {
-        UUID holderUUID = CUFFED_PLAYERS.get(target.getUUID());
+        UUID holderUUID =
+                CUFFED_PLAYERS.get(
+                        target.getUUID()
+                );
 
         return holderUUID != null
-                && holderUUID.equals(holder.getUUID());
+                && holderUUID.equals(
+                holder.getUUID()
+        );
     }
 
     public static void cuff(
@@ -52,7 +55,8 @@ public final class HandcuffManager {
             return;
         }
 
-        if (isCuffed(holder) || isCuffed(target)) {
+        if (isCuffed(holder)
+                || isCuffed(target)) {
             return;
         }
 
@@ -61,20 +65,14 @@ public final class HandcuffManager {
                 holder.getUUID()
         );
 
-        target.addEffect(
-                new MobEffectInstance(
-                        MobEffects.MOVEMENT_SLOWDOWN,
-                        40,
-                        255,
-                        false,
-                        false,
-                        false
-                )
+        positionTarget(
+                holder,
+                target
         );
 
-        positionTarget(holder, target);
-
-        playCuffEmote(target);
+        HandcuffNetwork.play(
+                target
+        );
 
         LOGGER.debug(
                 "Cuffed {} to {}",
@@ -83,18 +81,31 @@ public final class HandcuffManager {
         );
     }
 
-    public static void uncuff(ServerPlayer target) {
-        UUID targetUUID = target.getUUID();
+    public static void uncuff(
+            ServerPlayer target
+    ) {
+        UUID targetUUID =
+                target.getUUID();
 
-        if (!CUFFED_PLAYERS.containsKey(targetUUID)) {
+        if (!CUFFED_PLAYERS.containsKey(
+                targetUUID
+        )) {
             return;
         }
 
-        CUFFED_PLAYERS.remove(targetUUID);
+        CUFFED_PLAYERS.remove(
+                targetUUID
+        );
 
-        stopCuffEmote(target);
+        HandcuffNetwork.stop(
+                target
+        );
 
-        target.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+        target.setDeltaMovement(
+                0.0D,
+                0.0D,
+                0.0D
+        );
 
         LOGGER.debug(
                 "Uncuffed {}",
@@ -103,7 +114,9 @@ public final class HandcuffManager {
     }
 
     @net.neoforged.bus.api.SubscribeEvent
-    public static void onServerTick(ServerTickEvent.Post event) {
+    public static void onServerTick(
+            ServerTickEvent.Post event
+    ) {
         if (CUFFED_PLAYERS.isEmpty()) {
             return;
         }
@@ -112,23 +125,34 @@ public final class HandcuffManager {
                 CUFFED_PLAYERS.entrySet().iterator();
 
         while (iterator.hasNext()) {
-            Map.Entry<UUID, UUID> entry = iterator.next();
+
+            Map.Entry<UUID, UUID> entry =
+                    iterator.next();
 
             ServerPlayer target =
                     event.getServer()
                             .getPlayerList()
-                            .getPlayer(entry.getKey());
+                            .getPlayer(
+                                    entry.getKey()
+                            );
 
             ServerPlayer holder =
                     event.getServer()
                             .getPlayerList()
-                            .getPlayer(entry.getValue());
+                            .getPlayer(
+                                    entry.getValue()
+                            );
 
-            if (target == null || holder == null) {
+            if (target == null
+                    || holder == null) {
+
                 if (target != null) {
-                    stopCuffEmote(target);
-                    target.removeEffect(
-                            MobEffects.MOVEMENT_SLOWDOWN
+                    HandcuffNetwork.stop(target);
+
+                    target.setDeltaMovement(
+                            0.0D,
+                            0.0D,
+                            0.0D
                     );
                 }
 
@@ -136,18 +160,19 @@ public final class HandcuffManager {
                 continue;
             }
 
-            positionTarget(holder, target);
-
-            target.addEffect(
-                    new MobEffectInstance(
-                            MobEffects.MOVEMENT_SLOWDOWN,
-                            40,
-                            255,
-                            false,
-                            false,
-                            false
-                    )
+            positionTarget(
+                    holder,
+                    target
             );
+
+            // Completely cancel the target's movement.
+            target.setDeltaMovement(
+                    0.0D,
+                    0.0D,
+                    0.0D
+            );
+
+            target.hurtMarked = true;
         }
     }
 
@@ -155,16 +180,26 @@ public final class HandcuffManager {
             ServerPlayer holder,
             ServerPlayer target
     ) {
+        float holderYaw =
+                holder.getYRot();
+
         double yawRadians =
-                Math.toRadians(holder.getYRot());
+                Math.toRadians(
+                        holderYaw
+                );
 
         double forwardX =
-                -Math.sin(yawRadians);
+                -Math.sin(
+                        yawRadians
+                );
 
         double forwardZ =
-                Math.cos(yawRadians);
+                Math.cos(
+                        yawRadians
+                );
 
-        double distance = 0.85D;
+        double distance =
+                0.85D;
 
         double x =
                 holder.getX()
@@ -182,148 +217,28 @@ public final class HandcuffManager {
                 y,
                 z
         );
-    }
 
-    private static void playCuffEmote(
-            ServerPlayer target
-    ) {
-        Object animation = getAnimation();
+        // Make the cuffed player face exactly the
+        // same direction as the person holding them.
+        target.setYRot(
+                holderYaw
+        );
 
-        if (animation == null) {
-            return;
-        }
+        target.setXRot(
+                holder.getXRot()
+        );
 
-        try {
-            Class<?> animationClass =
-                    Class.forName(
-                            "com.zigythebird.playeranimcore.animation.Animation"
-                    );
+        target.setYHeadRot(
+                holderYaw
+        );
 
-            Class<?> serverApiClass =
-                    Class.forName(
-                            "io.github.kosmx.emotes.api.events.server.ServerEmoteAPI"
-                    );
+        target.yBodyRot =
+                holderYaw;
 
-            Method forcePlayEmote =
-                    serverApiClass.getMethod(
-                            "forcePlayEmote",
-                            UUID.class,
-                            animationClass
-                    );
+        target.yHeadRotO =
+                holderYaw;
 
-            forcePlayEmote.invoke(
-                    null,
-                    target.getUUID(),
-                    animation
-            );
-
-        } catch (Throwable throwable) {
-            LOGGER.error(
-                    "Failed to play the handcuff Emotecraft animation.",
-                    throwable
-            );
-        }
-    }
-
-    private static void stopCuffEmote(
-            ServerPlayer target
-    ) {
-        try {
-            Class<?> animationClass =
-                    Class.forName(
-                            "com.zigythebird.playeranimcore.animation.Animation"
-                    );
-
-            Class<?> serverApiClass =
-                    Class.forName(
-                            "io.github.kosmx.emotes.api.events.server.ServerEmoteAPI"
-                    );
-
-            Method forcePlayEmote =
-                    serverApiClass.getMethod(
-                            "forcePlayEmote",
-                            UUID.class,
-                            animationClass
-                    );
-
-            forcePlayEmote.invoke(
-                    null,
-                    target.getUUID(),
-                    new Object[]{null}
-            );
-
-        } catch (Throwable throwable) {
-            LOGGER.error(
-                    "Failed to stop the handcuff Emotecraft animation.",
-                    throwable
-            );
-        }
-    }
-
-    private static Object getAnimation() {
-        if (emoteLoadAttempted) {
-            return cachedAnimation;
-        }
-
-        emoteLoadAttempted = true;
-
-        try (InputStream inputStream =
-                     HandcuffManager.class.getResourceAsStream(
-                             EMOTE_RESOURCE
-                     )) {
-
-            if (inputStream == null) {
-                LOGGER.error(
-                        "Could not find bundled Emotecraft emote: {}",
-                        EMOTE_RESOURCE
-                );
-
-                return null;
-            }
-
-            Class<?> loaderClass =
-                    Class.forName(
-                            "com.zigythebird.playeranimcore.loading.UniversalAnimLoader"
-                    );
-
-            Method loadAnimations =
-                    loaderClass.getMethod(
-                            "loadAnimations",
-                            InputStream.class
-                    );
-
-            Object result =
-                    loadAnimations.invoke(
-                            null,
-                            inputStream
-                    );
-
-            if (!(result instanceof Map<?, ?> animations)) {
-                LOGGER.error(
-                        "Emotecraft returned an invalid animation map."
-                );
-
-                return null;
-            }
-
-            for (Object value : animations.values()) {
-                if (value != null) {
-                    cachedAnimation = value;
-                    return value;
-                }
-            }
-
-            LOGGER.error(
-                    "The bundled handcuff emote did not contain an animation."
-            );
-
-        } catch (Throwable throwable) {
-            LOGGER.error(
-                    "Failed to load bundled handcuff Emotecraft animation.",
-                    throwable
-            );
-        }
-
-        return null;
+        target.yBodyRotO =
+                holderYaw;
     }
 }
