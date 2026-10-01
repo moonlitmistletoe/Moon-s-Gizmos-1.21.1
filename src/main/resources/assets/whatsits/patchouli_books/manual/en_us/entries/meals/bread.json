@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A straightforward Bakery loaf. Nothing fancy, just dependable bread."
+      "text": "A straightforward Bakery loaf. Nothing fancy, just dependable bread.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
