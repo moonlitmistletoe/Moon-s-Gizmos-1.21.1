@@ -1,0 +1,15 @@
+{
+  "name": "Sweet Dough",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:sweet_dough",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Sweet Dough using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweet_dough"
+    }
+  ]
+}

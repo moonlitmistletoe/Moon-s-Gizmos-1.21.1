@@ -4,13 +4,9 @@
   "icon": "whatsits:egg_yolk",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Egg Yolk is an edible ingredient used to prepare several egg-based foods.$(br2)Egg Yolk does not have a crafting recipe. It is obtained through the egg-yolk process implemented by Moon's Whatsits."
-    },
-    {
       "type": "patchouli:spotlight",
       "item": "whatsits:egg_yolk",
-      "text": "Egg Yolk can be eaten directly or used to make Scrambled Eggs and Sunny-Side Eggs."
+      "text": "Throw a normal Minecraft Egg so that it lands on the top surface of a block. There is a 25% chance for the impact to produce one Egg Yolk."
     }
   ]
 }

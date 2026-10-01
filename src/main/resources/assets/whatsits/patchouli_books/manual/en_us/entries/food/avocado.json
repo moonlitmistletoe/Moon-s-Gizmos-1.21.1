@@ -4,13 +4,9 @@
   "icon": "whatsits:avocado",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Avocados are an edible ingredient used to make Avocado Toast."
-    },
-    {
       "type": "patchouli:spotlight",
       "item": "whatsits:avocado",
-      "text": "Avocados can be eaten directly. They can also be combined with Bread to make Avocado Toast. Currently Unobtainable."
+      "text": "Avocado is registered as an edible food item. The current repository does not define a crafting recipe or natural world-generation source for Avocado, so its acquisition is not otherwise specified by Moon's Whatsits."
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "Jar",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:jar",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Jar using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:jar"
+    }
+  ]
+}

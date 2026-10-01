@@ -1,0 +1,15 @@
+{
+  "name": "Cake Dough",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:cake_dough",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Cake Dough using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cake_dough"
+    }
+  ]
+}

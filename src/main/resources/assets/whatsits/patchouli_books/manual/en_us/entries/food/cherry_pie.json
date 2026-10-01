@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Cherry Pie is crafted using Cherries, Wheat and Sugar."
+      "text": "Craft Cherry Pie using the recipe shown on the next page."
     },
     {
       "type": "patchouli:crafting",

@@ -4,18 +4,9 @@
   "icon": "whatsits:blueberry",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Blueberries are harvested from fully grown Blueberry Crops.$(br2)Obtain Blueberry Seeds and plant them on farmland to grow the crop."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:blueberry_seed",
-      "text": "Plant Blueberry Seeds on farmland. A fully grown crop produces 1 Blueberry and 2 Blueberry Seeds when harvested."
-    },
-    {
       "type": "patchouli:spotlight",
       "item": "whatsits:blueberry",
-      "text": "Blueberries are edible and can be used to make Blueberry Jam."
+      "text": "Blueberries are harvested from fully grown Blueberry Crops. Plant Blueberry Seeds on farmland, let the crop reach full growth, then harvest it with a hoe or another supported harvest tool. A mature crop drops 1 Blueberry and 2 Blueberry Seeds, then resets to its first growth stage."
     }
   ]
 }

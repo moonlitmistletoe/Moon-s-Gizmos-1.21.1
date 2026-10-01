@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Cake Slice",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:strawberry_cake_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Strawberry Cake Slice using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_cake_slice"
+    }
+  ]
+}

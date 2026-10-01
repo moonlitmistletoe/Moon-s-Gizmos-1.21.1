@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Strawberry Ice Cream is made using a Strawberry, Sugar and a Milk Bucket."
+      "text": "Craft Strawberry Ice Cream using the recipe shown on the next page."
     },
     {
       "type": "patchouli:crafting",

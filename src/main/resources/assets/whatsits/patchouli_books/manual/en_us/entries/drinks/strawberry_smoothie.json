@@ -1,15 +1,15 @@
 {
-  "name": "Coffee",
+  "name": "Strawberry Smoothie",
   "category": "whatsits:drinks",
-  "icon": "whatsits:coffee",
+  "icon": "whatsits:strawberry_smoothie",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Coffee is made using Coffee Beans and a Milk Bucket."
+      "text": "Craft a Strawberry Smoothie using strawberries and the ingredients shown in the recipe."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:coffee"
+      "recipe": "whatsits:strawberry_smoothie"
     }
   ]
 }

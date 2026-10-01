@@ -1,0 +1,15 @@
+{
+  "name": "Sweetberry Cake Slice",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:sweetberry_cake_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Sweetberry Cake Slice using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweetberry_cake_slice"
+    }
+  ]
+}

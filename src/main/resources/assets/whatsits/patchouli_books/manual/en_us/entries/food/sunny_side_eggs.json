@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Sunny-Side Eggs are made by cooking an Egg Yolk on a Campfire."
+      "text": "Craft Sunny-Side Eggs using the recipe shown on the next page."
     },
     {
       "type": "patchouli:crafting",

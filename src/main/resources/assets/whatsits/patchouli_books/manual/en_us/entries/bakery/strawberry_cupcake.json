@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Cupcake",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:strawberry_cupcake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Strawberry Cupcake using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_cupcake"
+    }
+  ]
+}

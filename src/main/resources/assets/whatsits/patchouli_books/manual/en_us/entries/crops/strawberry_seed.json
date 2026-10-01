@@ -1,0 +1,12 @@
+{
+  "name": "Strawberry Seeds",
+  "category": "whatsits:crops",
+  "icon": "whatsits:strawberry_seed",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry_seed",
+      "text": "Strawberry Seeds are obtained by harvesting a fully grown Strawberry Crop. Plant them on farmland to grow Strawberry Crops. These crops do not naturally spawn in the world."
+    }
+  ]
+}

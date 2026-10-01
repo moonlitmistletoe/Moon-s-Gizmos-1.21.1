@@ -4,18 +4,9 @@
   "icon": "whatsits:strawberry",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Strawberries are harvested from fully grown Strawberry Crops.$(br2)Obtain Strawberry Seeds and plant them on farmland to grow the crop."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:strawberry_seed",
-      "text": "Plant Strawberry Seeds on farmland. A fully grown crop produces 1 Strawberry and 2 Strawberry Seeds when harvested."
-    },
-    {
       "type": "patchouli:spotlight",
       "item": "whatsits:strawberry",
-      "text": "Strawberries are edible and are used in several recipes, including Strawberry Jam, Strawberry Smoothies and Strawberry Ice Cream."
+      "text": "Strawberries are harvested from fully grown Strawberry Crops. Plant Strawberry Seeds on farmland, let the crop reach full growth, then harvest it with a hoe or another supported harvest tool. A mature crop drops 1 Strawberry and 2 Strawberry Seeds, then resets to its first growth stage."
     }
   ]
 }

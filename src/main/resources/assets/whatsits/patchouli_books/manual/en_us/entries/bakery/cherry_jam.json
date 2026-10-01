@@ -1,0 +1,15 @@
+{
+  "name": "Cherry Jam",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:cherry_jam",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft this jam by combining the corresponding fruit, sugar, and a Jar. The recipe is shown on the next page. Jam can also be placed in the world."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cherry_jam"
+    }
+  ]
+}

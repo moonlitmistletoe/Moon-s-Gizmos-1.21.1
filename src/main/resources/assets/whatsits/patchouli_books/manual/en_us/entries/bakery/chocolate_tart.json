@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Tart",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:chocolate_tart",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Chocolate Tart using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_tart"
+    }
+  ]
+}

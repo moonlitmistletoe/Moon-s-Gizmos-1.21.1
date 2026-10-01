@@ -1,0 +1,15 @@
+{
+  "name": "Crusty Bread",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:crusty_bread",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Crusty Bread using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:crusty_bread"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Cake Slice",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:chocolate_cake_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Chocolate Cake Slice using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_cake_slice"
+    }
+  ]
+}

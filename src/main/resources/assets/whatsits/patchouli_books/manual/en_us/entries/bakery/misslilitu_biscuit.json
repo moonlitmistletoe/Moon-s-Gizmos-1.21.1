@@ -1,0 +1,15 @@
+{
+  "name": "Misslilitu Biscuit",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:misslilitu_biscuit",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Misslilitu Biscuit using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:misslilitu_biscuit"
+    }
+  ]
+}

@@ -5,15 +5,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Cooked Cow Ribs are made by cooking Raw Cow Ribs."
+      "text": "Cook Raw Cow Ribs in a furnace to produce Cooked Cow Ribs."
     },
     {
-      "type": "patchouli:crafting",
+      "type": "patchouli:smelting",
       "recipe": "whatsits:cooked_cow_ribs"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "Raw Cow Ribs can also be cooked using a Campfire or Smoker."
     }
   ]
 }

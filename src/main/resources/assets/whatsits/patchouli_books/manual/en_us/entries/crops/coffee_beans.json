@@ -1,0 +1,12 @@
+{
+  "name": "Coffee Beans",
+  "category": "whatsits:crops",
+  "icon": "whatsits:coffee_beans",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:coffee_beans",
+      "text": "Coffee Beans are harvested from fully grown Coffee Crops. Plant Coffee Seeds on farmland, let the crop reach full growth, then harvest it with a hoe or another supported harvest tool. A mature crop drops 1 Coffee Bean and 2 Coffee Seeds. Coffee Beans are used to make Coffee and are not edible on their own."
+    }
+  ]
+}

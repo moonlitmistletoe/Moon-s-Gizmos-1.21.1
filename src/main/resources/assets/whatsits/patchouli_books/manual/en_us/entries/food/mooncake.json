@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Mooncake is crafted using Wheat, Sugar and an Egg."
+      "text": "Craft Mooncake using the recipe shown on the next page."
     },
     {
       "type": "patchouli:crafting",

@@ -1,0 +1,15 @@
+{
+  "name": "Rolling Pin",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:rolling_pin",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Rolling Pin using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:rolling_pin"
+    }
+  ]
+}

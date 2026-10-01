@@ -1,0 +1,12 @@
+{
+  "name": "Coffee Seeds",
+  "category": "whatsits:crops",
+  "icon": "whatsits:coffee_seed",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:coffee_seed",
+      "text": "Coffee Seeds are obtained by harvesting a fully grown Coffee Crop. Plant them on farmland to grow Coffee Crops. These crops do not naturally spawn in the world."
+    }
+  ]
+}

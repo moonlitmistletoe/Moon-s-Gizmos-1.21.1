@@ -1,0 +1,15 @@
+{
+  "name": "Bread",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:bread",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Bread using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bread"
+    }
+  ]
+}

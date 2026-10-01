@@ -1,0 +1,15 @@
+{
+  "name": "Sweetberry Cupcake",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:sweetberry_cupcake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Sweetberry Cupcake using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweetberry_cupcake"
+    }
+  ]
+}

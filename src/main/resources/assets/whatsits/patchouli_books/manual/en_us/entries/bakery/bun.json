@@ -1,0 +1,15 @@
+{
+  "name": "Bun",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:bun",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Bun using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bun"
+    }
+  ]
+}

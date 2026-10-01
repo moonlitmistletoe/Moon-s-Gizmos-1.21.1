@@ -1,0 +1,15 @@
+{
+  "name": "Cornet",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:cornet",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Cornet using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cornet"
+    }
+  ]
+}

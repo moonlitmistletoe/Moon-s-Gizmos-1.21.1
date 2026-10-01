@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Coffee is made using Coffee Beans and a Milk Bucket."
+      "text": "Craft Coffee using Coffee Beans and the ingredients shown in the recipe."
     },
     {
       "type": "patchouli:crafting",

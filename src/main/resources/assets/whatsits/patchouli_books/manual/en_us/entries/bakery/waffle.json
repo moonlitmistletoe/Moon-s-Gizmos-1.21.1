@@ -1,0 +1,15 @@
+{
+  "name": "Waffle",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:waffle",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Waffle using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:waffle"
+    }
+  ]
+}

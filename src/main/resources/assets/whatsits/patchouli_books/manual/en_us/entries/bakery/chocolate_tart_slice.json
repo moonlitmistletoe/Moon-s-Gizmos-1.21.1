@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Tart Slice",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:chocolate_tart_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Chocolate Tart Slice using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_tart_slice"
+    }
+  ]
+}

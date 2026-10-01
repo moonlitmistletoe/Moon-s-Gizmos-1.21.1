@@ -1,0 +1,15 @@
+{
+  "name": "Pudding",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:pudding",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Pudding using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:pudding"
+    }
+  ]
+}

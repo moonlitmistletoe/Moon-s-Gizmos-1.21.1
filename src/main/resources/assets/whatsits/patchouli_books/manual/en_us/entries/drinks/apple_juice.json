@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Apple Juice is made by combining an Apple with a Glass Bottle."
+      "text": "Craft Apple Juice using the ingredients and container shown in the recipe."
     },
     {
       "type": "patchouli:crafting",

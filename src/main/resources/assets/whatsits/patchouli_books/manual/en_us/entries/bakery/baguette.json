@@ -1,0 +1,15 @@
+{
+  "name": "Baguette",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:baguette",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Baguette using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:baguette"
+    }
+  ]
+}

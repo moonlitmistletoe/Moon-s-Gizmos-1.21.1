@@ -1,0 +1,15 @@
+{
+  "name": "Braided Bread",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:braided_bread",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Braided Bread using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:braided_bread"
+    }
+  ]
+}

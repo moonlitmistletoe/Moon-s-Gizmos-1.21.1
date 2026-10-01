@@ -1,0 +1,15 @@
+{
+  "name": "Grilled Bacon Sandwich",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:grilled_bacon_sandwich",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Grilled Bacon Sandwich using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:grilled_bacon_sandwich"
+    }
+  ]
+}

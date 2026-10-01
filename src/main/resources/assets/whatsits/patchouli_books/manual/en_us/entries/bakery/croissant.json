@@ -1,0 +1,15 @@
+{
+  "name": "Croissant",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:croissant",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Croissant using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:croissant"
+    }
+  ]
+}

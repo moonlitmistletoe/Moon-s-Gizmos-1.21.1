@@ -1,0 +1,15 @@
+{
+  "name": "Linzer Tart Slice",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:linzer_tart_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Linzer Tart Slice using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:linzer_tart_slice"
+    }
+  ]
+}

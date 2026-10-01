@@ -1,6 +1,6 @@
 {
   "name": "Drinks",
-  "description": "Drinks and beverages added by Moon's Whatsits.",
+  "description": "Drinks and beverages added by Moon's Whatsits. Entries explain the ingredients and crafting process for each drink.",
   "icon": "whatsits:apple_juice",
   "sortnum": 2
 }

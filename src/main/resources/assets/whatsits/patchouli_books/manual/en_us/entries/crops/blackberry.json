@@ -4,18 +4,9 @@
   "icon": "whatsits:blackberry",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Blackberries are harvested from fully grown Blackberry Crops.$(br2)To begin growing them, obtain Blackberry Seeds and plant them on farmland."
-    },
-    {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:blackberry_seed",
-      "text": "Plant Blackberry Seeds on farmland. When the crop reaches full maturity, harvesting it produces 1 Blackberry and 2 Blackberry Seeds."
-    },
-    {
       "type": "patchouli:spotlight",
       "item": "whatsits:blackberry",
-      "text": "Blackberries are edible and can also be used to make Blackberry Jam."
+      "text": "Blackberries are harvested from fully grown Blackberry Crops. Plant Blackberry Seeds on farmland, let the crop reach full growth, then harvest it with a hoe or another supported harvest tool. A mature crop drops 1 Blackberry and 2 Blackberry Seeds, then resets to its first growth stage."
     }
   ]
 }

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Avocado Toast is made by combining an Avocado with Bread."
+      "text": "Craft Avocado Toast using the recipe shown on the next page."
     },
     {
       "type": "patchouli:crafting",

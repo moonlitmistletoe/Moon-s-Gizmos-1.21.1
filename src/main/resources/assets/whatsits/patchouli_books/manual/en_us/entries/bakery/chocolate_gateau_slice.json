@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Gateau Slice",
+  "category": "whatsits:bakery",
+  "icon": "whatsits:chocolate_gateau_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Craft Chocolate Gateau Slice using the recipe shown on the next page."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_gateau_slice"
+    }
+  ]
+}
