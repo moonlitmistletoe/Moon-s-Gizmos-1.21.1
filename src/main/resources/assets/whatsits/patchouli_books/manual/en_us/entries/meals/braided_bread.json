@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Bread made by braiding the dough before baking. Mostly decorative, but it makes a good-looking loaf."
+      "text": "Bread made by braiding the dough before baking. Mostly decorative, but it makes a good-looking loaf.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
