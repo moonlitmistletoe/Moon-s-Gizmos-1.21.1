@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Minecraft's sweetberries turned into a proper little cupcake."
+      "text": "Minecraft's sweetberries turned into a proper little cupcake.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
