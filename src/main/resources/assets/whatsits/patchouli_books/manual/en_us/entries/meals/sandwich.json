@@ -1,0 +1,15 @@
+{
+  "name": "Sandwich",
+  "category": "whatsits:meals",
+  "icon": "whatsits:sandwich",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A general-purpose Bakery sandwich made to be eaten rather than overthought."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sandwich"
+    }
+  ]
+}

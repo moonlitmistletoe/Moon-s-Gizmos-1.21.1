@@ -1,0 +1,15 @@
+{
+  "name": "Baguette",
+  "category": "whatsits:meals",
+  "icon": "whatsits:baguette",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A long, crisp loaf from the Bakery. Basically an edible stick, and that is not a criticism."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:baguette"
+    }
+  ]
+}

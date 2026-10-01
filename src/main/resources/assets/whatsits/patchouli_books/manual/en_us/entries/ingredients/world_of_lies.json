@@ -1,0 +1,15 @@
+{
+  "name": "World Of Lies",
+  "category": "whatsits:ingredients",
+  "icon": "whatsits:world_of_lies",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "World of Lies is a music disc that can be played in a jukebox."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:world_of_lies"
+    }
+  ]
+}

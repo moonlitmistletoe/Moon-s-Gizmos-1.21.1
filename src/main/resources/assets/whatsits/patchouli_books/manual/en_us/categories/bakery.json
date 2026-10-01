@@ -1,6 +1,0 @@
-{
-  "name": "Bakery",
-  "description": "Bakery items, including breads, pastries, cakes, cookies, cupcakes, pies, puddings, sandwiches, jams, doughs, containers, and Bakery tools. Each entry explains how to craft or prepare the item and shows its recipe where a recipe exists.",
-  "icon": "whatsits:croissant",
-  "sortnum": 4
-}

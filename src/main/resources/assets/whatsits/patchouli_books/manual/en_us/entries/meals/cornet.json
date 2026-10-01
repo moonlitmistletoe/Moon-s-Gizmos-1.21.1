@@ -1,0 +1,15 @@
+{
+  "name": "Cornet",
+  "category": "whatsits:meals",
+  "icon": "whatsits:cornet",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A pointed filled pastry whose shape gives it its name."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cornet"
+    }
+  ]
+}

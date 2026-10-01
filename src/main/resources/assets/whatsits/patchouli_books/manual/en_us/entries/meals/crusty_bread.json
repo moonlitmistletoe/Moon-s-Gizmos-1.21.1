@@ -1,0 +1,15 @@
+{
+  "name": "Crusty Bread",
+  "category": "whatsits:meals",
+  "icon": "whatsits:crusty_bread",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A tougher loaf with a proper crust - the sort of bread that ought to make a satisfying crunch."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:crusty_bread"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Cooked Cow Ribs",
+  "category": "whatsits:meals",
+  "icon": "whatsits:cooked_cow_ribs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The finished form of ribs cut from a cow with the right tool. Much more useful than leaving them raw."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cooked_cow_ribs"
+    }
+  ]
+}

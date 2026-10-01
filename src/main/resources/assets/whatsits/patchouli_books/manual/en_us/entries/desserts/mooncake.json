@@ -1,0 +1,15 @@
+{
+  "name": "Mooncake",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:mooncake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A traditional East Asian pastry associated especially with the Mid-Autumn Festival."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:mooncake"
+    }
+  ]
+}

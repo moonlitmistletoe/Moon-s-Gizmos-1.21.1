@@ -4,9 +4,8 @@
   "icon": "whatsits:blackberry",
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:blackberry",
-      "text": "Blackberries are harvested from fully grown Blackberry Crops. Plant Blackberry Seeds on farmland, let the crop reach full growth, then harvest it with a hoe or another supported harvest tool. A mature crop drops 1 Blackberry and 2 Blackberry Seeds, then resets to its first growth stage."
+      "type": "patchouli:text",
+      "text": "Naturally found in forests, meadows and taiga. Harvest a mature patch for berries and seeds."
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "Braided Bread",
+  "category": "whatsits:meals",
+  "icon": "whatsits:braided_bread",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Bread made by braiding the dough before baking. Mostly decorative, but it makes a good-looking loaf."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:braided_bread"
+    }
+  ]
+}

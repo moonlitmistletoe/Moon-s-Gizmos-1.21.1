@@ -1,0 +1,15 @@
+{
+  "name": "Bundt Cake Slice",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:bundt_cake_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A serving cut from the full bundt cake. It is the convenient version to carry and eat."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bundt_cake_slice"
+    }
+  ]
+}

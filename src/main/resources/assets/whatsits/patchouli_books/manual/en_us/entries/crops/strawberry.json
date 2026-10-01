@@ -4,9 +4,8 @@
   "icon": "whatsits:strawberry",
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:strawberry",
-      "text": "Strawberries are harvested from fully grown Strawberry Crops. Plant Strawberry Seeds on farmland, let the crop reach full growth, then harvest it with a hoe or another supported harvest tool. A mature crop drops 1 Strawberry and 2 Strawberry Seeds, then resets to its first growth stage."
+      "type": "patchouli:text",
+      "text": "Naturally found in forests, meadows and plains. Mature plants provide strawberries and seeds."
     }
   ]
 }

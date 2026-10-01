@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Craft Cherry Juice using the ingredients and container shown in the recipe."
+      "text": "Cherry Juice is a drink from Moon's Whatsits."
     },
     {
       "type": "patchouli:crafting",

@@ -1,0 +1,15 @@
+{
+  "name": "Scrambled Eggs",
+  "category": "whatsits:meals",
+  "icon": "whatsits:scrambled_eggs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Eggs turned into a proper meal rather than something you throw at a wall."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:scrambled_eggs"
+    }
+  ]
+}

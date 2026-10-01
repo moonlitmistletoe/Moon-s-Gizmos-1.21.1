@@ -1,0 +1,15 @@
+{
+  "name": "Glowberry Pie Slice",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:glowberry_pie_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A serving cut from the full glowberry pie. It is the convenient version to carry and eat."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:glowberry_pie_slice"
+    }
+  ]
+}

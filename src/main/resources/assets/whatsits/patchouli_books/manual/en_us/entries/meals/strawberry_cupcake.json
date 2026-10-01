@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Cupcake",
+  "category": "whatsits:meals",
+  "icon": "whatsits:strawberry_cupcake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small strawberry cupcake, ready to eat without needing anything else added."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_cupcake"
+    }
+  ]
+}

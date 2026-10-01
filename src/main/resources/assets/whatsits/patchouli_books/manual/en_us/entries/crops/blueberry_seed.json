@@ -1,12 +1,11 @@
 {
-  "name": "Blueberry Seeds",
+  "name": "Blueberry Seed",
   "category": "whatsits:crops",
   "icon": "whatsits:blueberry_seed",
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:blueberry_seed",
-      "text": "Blueberry Seeds are obtained by harvesting a fully grown Blueberry Crop. Plant them on farmland to grow Blueberry Crops. These crops do not naturally spawn in the world."
+      "type": "patchouli:text",
+      "text": "Obtained from mature blueberry crops and used to grow more."
     }
   ]
 }

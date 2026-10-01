@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Tart",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:chocolate_tart",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Chocolate Tart is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_tart"
+    }
+  ]
+}

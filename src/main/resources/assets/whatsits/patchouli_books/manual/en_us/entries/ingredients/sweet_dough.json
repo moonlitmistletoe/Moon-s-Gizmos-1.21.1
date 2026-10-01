@@ -1,0 +1,15 @@
+{
+  "name": "Sweet Dough",
+  "category": "whatsits:ingredients",
+  "icon": "whatsits:sweet_dough",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Sweet Dough is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweet_dough"
+    }
+  ]
+}

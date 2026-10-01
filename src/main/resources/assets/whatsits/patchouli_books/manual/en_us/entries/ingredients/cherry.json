@@ -1,0 +1,11 @@
+{
+  "name": "Cherry",
+  "category": "whatsits:ingredients",
+  "icon": "whatsits:cherry",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Currently unobtainable in survival. Cherry recipes exist, but there is no way to obtain the cherry itself yet."
+    }
+  ]
+}

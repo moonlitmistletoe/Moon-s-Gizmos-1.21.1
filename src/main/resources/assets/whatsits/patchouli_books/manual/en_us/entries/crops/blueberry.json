@@ -4,9 +4,8 @@
   "icon": "whatsits:blueberry",
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:blueberry",
-      "text": "Blueberries are harvested from fully grown Blueberry Crops. Plant Blueberry Seeds on farmland, let the crop reach full growth, then harvest it with a hoe or another supported harvest tool. A mature crop drops 1 Blueberry and 2 Blueberry Seeds, then resets to its first growth stage."
+      "type": "patchouli:text",
+      "text": "Naturally found in forests, meadows and taiga. Harvest mature plants for blueberries and seeds."
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Ice Cream",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:strawberry_ice_cream",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Strawberry Ice Cream is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_ice_cream"
+    }
+  ]
+}

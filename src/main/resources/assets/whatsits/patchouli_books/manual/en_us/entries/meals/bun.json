@@ -1,0 +1,15 @@
+{
+  "name": "Bun",
+  "category": "whatsits:meals",
+  "icon": "whatsits:bun",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small Bakery bread that works well on its own or as part of a meal."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bun"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Sweetberry Cake",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:sweetberry_cake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A full Sweetberry Cake from the Bakery. Place it down for the whole dessert, then cut it into servings."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweetberry_cake"
+    }
+  ]
+}

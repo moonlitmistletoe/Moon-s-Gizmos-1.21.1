@@ -1,0 +1,15 @@
+{
+  "name": "Sweetberry Glazed Cookie",
+  "category": "whatsits:meals",
+  "icon": "whatsits:sweetberry_glazed_cookie",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A sweetberry take on the glazed cookie."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweetberry_glazed_cookie"
+    }
+  ]
+}

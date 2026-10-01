@@ -1,0 +1,15 @@
+{
+  "name": "Vegetable Sandwich",
+  "category": "whatsits:meals",
+  "icon": "whatsits:vegetable_sandwich",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A sandwich built around vegetables rather than meat - a simple alternative when you want something lighter."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:vegetable_sandwich"
+    }
+  ]
+}

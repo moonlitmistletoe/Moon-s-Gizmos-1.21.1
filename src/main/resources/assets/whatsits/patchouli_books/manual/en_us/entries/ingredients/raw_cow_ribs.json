@@ -1,0 +1,11 @@
+{
+  "name": "Raw Cow Ribs",
+  "category": "whatsits:ingredients",
+  "icon": "whatsits:raw_cow_ribs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A cow killed with a supported knife or cleaver has a 25% chance to drop these. Ordinary cow kills do not produce ribs."
+    }
+  ]
+}

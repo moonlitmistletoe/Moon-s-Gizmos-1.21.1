@@ -1,0 +1,15 @@
+{
+  "name": "Misslilitu Biscuit",
+  "category": "whatsits:meals",
+  "icon": "whatsits:misslilitu_biscuit",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A playful Bakery biscuit with a rather more specific name than most biscuits get."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:misslilitu_biscuit"
+    }
+  ]
+}

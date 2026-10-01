@@ -1,6 +1,6 @@
 {
   "name": "Crops",
-  "description": "The farming guide for Moon's Whatsits crops. These crops do not naturally spawn. Plant their seeds on farmland, let them mature, then harvest them with a hoe or another supported harvest tool to receive the crop and 2 seeds.",
+  "description": "Wild plants and their harvests, including where each crop appears.",
   "icon": "whatsits:strawberry",
-  "sortnum": 3
+  "sortnum": 0
 }

@@ -1,0 +1,11 @@
+{
+  "name": "Egg Yolk",
+  "category": "whatsits:ingredients",
+  "icon": "whatsits:egg_yolk",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Throw a normal egg at the top of a solid block. There is a 25% chance the broken egg leaves an egg yolk behind."
+    }
+  ]
+}

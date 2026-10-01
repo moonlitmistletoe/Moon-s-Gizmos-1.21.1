@@ -1,0 +1,15 @@
+{
+  "name": "Pudding",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:pudding",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A soft Bakery dessert that can be cut into individual servings."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:pudding"
+    }
+  ]
+}

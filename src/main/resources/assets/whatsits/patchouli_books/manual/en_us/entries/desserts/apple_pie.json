@@ -1,0 +1,15 @@
+{
+  "name": "Apple Pie",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:apple_pie",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Apple Pie is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:apple_pie"
+    }
+  ]
+}

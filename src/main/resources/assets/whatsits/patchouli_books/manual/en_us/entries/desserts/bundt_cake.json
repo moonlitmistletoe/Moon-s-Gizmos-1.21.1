@@ -1,0 +1,15 @@
+{
+  "name": "Bundt Cake",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:bundt_cake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A full Bundt Cake from the Bakery. Place it down for the whole dessert, then cut it into servings."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bundt_cake"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Craft Coffee using Coffee Beans and the ingredients shown in the recipe."
+      "text": "Brewed from coffee beans. This is the drinkable form of the coffee crop."
     },
     {
       "type": "patchouli:crafting",

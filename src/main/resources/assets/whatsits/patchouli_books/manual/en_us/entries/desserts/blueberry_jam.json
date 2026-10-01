@@ -1,0 +1,15 @@
+{
+  "name": "Blueberry Jam",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:blueberry_jam",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Blueberry Jam is a sweet Bakery spread. It can be eaten and used as a topping in other recipes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:blueberry_jam"
+    }
+  ]
+}

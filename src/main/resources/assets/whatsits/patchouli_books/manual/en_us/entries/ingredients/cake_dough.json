@@ -1,0 +1,15 @@
+{
+  "name": "Cake Dough",
+  "category": "whatsits:ingredients",
+  "icon": "whatsits:cake_dough",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cake Dough is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cake_dough"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Bread With Jam",
+  "category": "whatsits:meals",
+  "icon": "whatsits:bread_with_jam",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Bread topped with jam. One of those recipes that barely needs an explanation."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bread_with_jam"
+    }
+  ]
+}

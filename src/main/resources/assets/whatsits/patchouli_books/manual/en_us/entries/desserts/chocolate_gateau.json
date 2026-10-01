@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Gateau",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:chocolate_gateau",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Chocolate Gateau is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_gateau"
+    }
+  ]
+}

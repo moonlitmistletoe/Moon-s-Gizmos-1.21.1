@@ -1,0 +1,15 @@
+{
+  "name": "Croissant",
+  "category": "whatsits:meals",
+  "icon": "whatsits:croissant",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A flaky crescent-shaped pastry. It looks considerably fancier than the ingredients make it sound."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:croissant"
+    }
+  ]
+}

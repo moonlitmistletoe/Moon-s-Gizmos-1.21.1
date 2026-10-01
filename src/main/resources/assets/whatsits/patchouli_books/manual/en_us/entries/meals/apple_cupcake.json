@@ -1,0 +1,15 @@
+{
+  "name": "Apple Cupcake",
+  "category": "whatsits:meals",
+  "icon": "whatsits:apple_cupcake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small apple-flavoured cake baked as a cupcake."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:apple_cupcake"
+    }
+  ]
+}

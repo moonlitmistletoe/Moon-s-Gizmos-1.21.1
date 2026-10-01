@@ -1,0 +1,15 @@
+{
+  "name": "Glowberry Tart",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:glowberry_tart",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Glowberry Tart is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:glowberry_tart"
+    }
+  ]
+}

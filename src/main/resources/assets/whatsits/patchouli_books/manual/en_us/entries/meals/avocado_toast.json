@@ -1,0 +1,15 @@
+{
+  "name": "Avocado Toast",
+  "category": "whatsits:meals",
+  "icon": "whatsits:avocado_toast",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Toast topped with avocado - simple, filling, and currently a little awkward to make in survival because avocados have no source yet."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:avocado_toast"
+    }
+  ]
+}

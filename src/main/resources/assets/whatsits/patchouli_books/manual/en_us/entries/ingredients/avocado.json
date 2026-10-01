@@ -1,0 +1,11 @@
+{
+  "name": "Avocado",
+  "category": "whatsits:ingredients",
+  "icon": "whatsits:avocado",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Currently unobtainable in survival. It is used by recipes such as avocado toast, but the fruit has no survival source yet."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Pudding Slice",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:pudding_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A serving cut from the full pudding. It is the convenient version to carry and eat."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:pudding_slice"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Tart Slice",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:chocolate_tart_slice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A serving cut from the full chocolate tart. It is the convenient version to carry and eat."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_tart_slice"
+    }
+  ]
+}

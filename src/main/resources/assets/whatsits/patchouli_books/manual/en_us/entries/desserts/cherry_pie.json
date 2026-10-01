@@ -1,0 +1,15 @@
+{
+  "name": "Cherry Pie",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:cherry_pie",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cherry Pie is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cherry_pie"
+    }
+  ]
+}

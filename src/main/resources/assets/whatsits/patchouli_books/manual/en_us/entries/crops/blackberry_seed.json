@@ -1,12 +1,11 @@
 {
-  "name": "Blackberry Seeds",
+  "name": "Blackberry Seed",
   "category": "whatsits:crops",
   "icon": "whatsits:blackberry_seed",
   "pages": [
     {
-      "type": "patchouli:spotlight",
-      "item": "whatsits:blackberry_seed",
-      "text": "Blackberry Seeds are obtained by harvesting a fully grown Blackberry Crop. Plant them on farmland to grow Blackberry Crops. These crops do not naturally spawn in the world."
+      "type": "patchouli:text",
+      "text": "Obtained from mature blackberries. Plant the seeds to grow your own crop."
     }
   ]
 }

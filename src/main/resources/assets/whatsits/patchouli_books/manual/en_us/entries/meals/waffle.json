@@ -1,0 +1,15 @@
+{
+  "name": "Waffle",
+  "category": "whatsits:meals",
+  "icon": "whatsits:waffle",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A pancake given a grid and told to commit to it. This one is ready to eat."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:waffle"
+    }
+  ]
+}

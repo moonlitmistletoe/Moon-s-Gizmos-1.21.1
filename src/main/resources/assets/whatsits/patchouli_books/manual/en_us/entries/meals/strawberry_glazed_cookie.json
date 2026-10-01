@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Glazed Cookie",
+  "category": "whatsits:meals",
+  "icon": "whatsits:strawberry_glazed_cookie",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A glazed cookie with strawberry flavour running through the finished sweet."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_glazed_cookie"
+    }
+  ]
+}

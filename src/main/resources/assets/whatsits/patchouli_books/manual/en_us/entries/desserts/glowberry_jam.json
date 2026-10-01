@@ -1,0 +1,15 @@
+{
+  "name": "Glowberry Jam",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:glowberry_jam",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Glowberry Jam is a sweet Bakery spread. It can be eaten and used as a topping in other recipes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:glowberry_jam"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Glazed Cookie",
+  "category": "whatsits:meals",
+  "icon": "whatsits:chocolate_glazed_cookie",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small cookie finished with chocolate glaze. Easy to eat several without noticing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_glazed_cookie"
+    }
+  ]
+}

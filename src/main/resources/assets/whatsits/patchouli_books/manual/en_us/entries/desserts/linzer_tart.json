@@ -1,0 +1,15 @@
+{
+  "name": "Linzer Tart",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:linzer_tart",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Linzer Tart is a food item from Moon's Whatsits."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:linzer_tart"
+    }
+  ]
+}

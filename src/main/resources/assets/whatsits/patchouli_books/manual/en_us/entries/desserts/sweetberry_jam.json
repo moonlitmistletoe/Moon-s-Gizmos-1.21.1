@@ -1,0 +1,15 @@
+{
+  "name": "Sweetberry Jam",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:sweetberry_jam",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Sweetberry Jam is a sweet Bakery spread. It can be eaten and used as a topping in other recipes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweetberry_jam"
+    }
+  ]
+}

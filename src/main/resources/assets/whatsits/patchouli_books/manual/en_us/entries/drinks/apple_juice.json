@@ -1,11 +1,11 @@
 {
   "name": "Apple Juice",
   "category": "whatsits:drinks",
-  "icon": "whatsits:apple_juice.json",
+  "icon": "whatsits:apple_juice",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Craft Apple Juice using the ingredients and container shown in the recipe."
+      "text": "Apple Juice is a drink from Moon's Whatsits."
     },
     {
       "type": "patchouli:crafting",

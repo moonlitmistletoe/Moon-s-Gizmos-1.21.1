@@ -1,0 +1,15 @@
+{
+  "name": "Grilled Bacon Sandwich",
+  "category": "whatsits:meals",
+  "icon": "whatsits:grilled_bacon_sandwich",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Bacon, bread and heat. There is not much more theory required."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:grilled_bacon_sandwich"
+    }
+  ]
+}

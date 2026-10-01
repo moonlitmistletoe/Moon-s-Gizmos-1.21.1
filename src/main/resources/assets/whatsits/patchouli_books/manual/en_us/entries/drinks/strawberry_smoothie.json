@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Craft a Strawberry Smoothie using strawberries and the ingredients shown in the recipe."
+      "text": "Strawberry Smoothie is a drink from Moon's Whatsits."
     },
     {
       "type": "patchouli:crafting",

@@ -1,0 +1,15 @@
+{
+  "name": "Grilled Salmon Sandwich",
+  "category": "whatsits:meals",
+  "icon": "whatsits:grilled_salmon_sandwich",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A sandwich centred on grilled salmon. A little more work than a normal sandwich, but a proper meal."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:grilled_salmon_sandwich"
+    }
+  ]
+}

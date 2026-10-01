@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Truffle",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:chocolate_truffle",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small chocolate sweet rather than a full cake or tart."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_truffle"
+    }
+  ]
+}
