@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Sweet Dough is a food item from Moon's Whatsits."
+      "text": "Sweet Dough is a food item from Moon's Whatsits.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
