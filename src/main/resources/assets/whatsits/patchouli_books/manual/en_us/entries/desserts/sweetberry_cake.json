@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A full Sweetberry Cake from the Bakery. Place it down for the whole dessert, then cut it into servings."
+      "text": "A full Sweetberry Cake from the Bakery. Place it down for the whole dessert, then cut it into servings.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
