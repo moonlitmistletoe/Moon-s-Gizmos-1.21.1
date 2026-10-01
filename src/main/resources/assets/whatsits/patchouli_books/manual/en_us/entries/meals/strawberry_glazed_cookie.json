@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A glazed cookie with strawberry flavour running through the finished sweet."
+      "text": "A glazed cookie with strawberry flavour running through the finished sweet.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
