@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A serving cut from the full apple pie. It is the convenient version to carry and eat."
+      "text": "A serving cut from the full apple pie. It is the convenient version to carry and eat.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
