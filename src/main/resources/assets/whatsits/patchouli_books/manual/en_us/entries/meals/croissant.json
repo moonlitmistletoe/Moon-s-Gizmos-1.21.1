@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A flaky crescent-shaped pastry. It looks considerably fancier than the ingredients make it sound."
+      "text": "A flaky crescent-shaped pastry. It looks considerably fancier than the ingredients make it sound.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
