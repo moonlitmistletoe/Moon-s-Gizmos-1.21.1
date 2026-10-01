@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Bacon, bread and heat. There is not much more theory required.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "A bacon sandwich that gives a short resistance effect."
     },
     {
       "type": "patchouli:crafting",

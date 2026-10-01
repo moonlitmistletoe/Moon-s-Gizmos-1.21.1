@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Chocolate Jam is a sweet Bakery spread. It can be eaten and used as a topping in other recipes."
+      "text": "Chocolate spread with the name of jam and the behaviour of a dessert. It can be eaten and used as a topping."
     },
     {
       "type": "patchouli:crafting",

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A rolled pastry with jam through the middle. The filling is the best part.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "A rolled pastry with jam at its centre."
     },
     {
       "type": "patchouli:crafting",

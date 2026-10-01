@@ -1,11 +1,11 @@
 {
-  "name": "Dorime",
+  "name": "Music Disc",
   "category": "whatsits:ingredients",
   "icon": "whatsits:dorime",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Dorime is a music disc that can be played in a jukebox.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "Ameno - ERA"
     },
     {
       "type": "patchouli:crafting",

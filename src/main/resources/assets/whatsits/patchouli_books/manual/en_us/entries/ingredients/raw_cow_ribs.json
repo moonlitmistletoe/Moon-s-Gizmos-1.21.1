@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A cow killed with a supported knife or cleaver has a 25% chance to drop these. Ordinary cow kills do not produce ribs."
+      "text": "Kill a cow with one of the supported knives or cleavers. There is a 25% chance for the ribs to drop. Cook them before eating."
     }
   ]
 }

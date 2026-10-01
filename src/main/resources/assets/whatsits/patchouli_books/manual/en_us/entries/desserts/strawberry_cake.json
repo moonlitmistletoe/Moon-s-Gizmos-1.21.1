@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A full Strawberry Cake from the Bakery. Place it down for the whole dessert, then cut it into servings.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "A full placeable cake. Cut it with a knife to make Strawberry Cake Slices."
     },
     {
       "type": "patchouli:crafting",

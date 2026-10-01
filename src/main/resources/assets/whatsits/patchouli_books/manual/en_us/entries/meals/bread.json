@@ -1,11 +1,11 @@
 {
-  "name": "Bread",
+  "name": "Bakers Bread",
   "category": "whatsits:meals",
   "icon": "whatsits:bread",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A straightforward Bakery loaf. Nothing fancy, just dependable bread.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "The Bakery's standard loaf."
     },
     {
       "type": "patchouli:crafting",

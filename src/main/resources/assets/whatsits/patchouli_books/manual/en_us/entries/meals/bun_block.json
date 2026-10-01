@@ -1,0 +1,15 @@
+{
+  "name": "Bun",
+  "category": "whatsits:meals",
+  "icon": "whatsits:bun_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable bun, mainly for display or storage."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bun_block"
+    }
+  ]
+}

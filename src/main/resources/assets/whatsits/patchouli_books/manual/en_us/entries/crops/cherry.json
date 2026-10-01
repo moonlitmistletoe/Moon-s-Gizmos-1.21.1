@@ -1,0 +1,11 @@
+{
+  "name": "Cherry",
+  "category": "whatsits:crops",
+  "icon": "whatsits:cherry",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Currently unobtainable. There is no recipe, crop, drop, or world generation for it in the current mod."
+    }
+  ]
+}

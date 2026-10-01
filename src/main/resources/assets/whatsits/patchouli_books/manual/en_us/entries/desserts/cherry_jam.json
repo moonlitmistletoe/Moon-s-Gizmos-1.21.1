@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Cherry Jam is a sweet Bakery spread. It can be eaten and used as a topping in other recipes.\\n\\nHow to get it: The recipe is shown below, but this cannot currently be made in survival because cherries are unobtainable."
+      "text": "The recipe exists, but cherries are currently unobtainable, so Cherry Jam cannot be made in normal survival."
     },
     {
       "type": "patchouli:crafting",

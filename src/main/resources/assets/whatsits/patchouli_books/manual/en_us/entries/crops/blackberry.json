@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Naturally found in forests, meadows and taiga. Harvest a mature patch for berries and seeds."
+      "text": "Harvest a fully grown Blackberry Crop. It drops one blackberry and two seeds before resetting. The crop is not currently generated naturally in any biome."
     }
   ]
 }

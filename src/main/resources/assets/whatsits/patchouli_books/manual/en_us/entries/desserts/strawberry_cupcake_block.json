@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Cupcakes",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:strawberry_cupcake_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable group of strawberry cupcakes. The individual cupcake is the portable version."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_cupcake_block"
+    }
+  ]
+}

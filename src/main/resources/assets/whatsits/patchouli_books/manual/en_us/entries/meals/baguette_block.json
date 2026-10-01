@@ -1,0 +1,15 @@
+{
+  "name": "Baguette",
+  "category": "whatsits:meals",
+  "icon": "whatsits:baguette_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable baguette for displaying bread."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:baguette_block"
+    }
+  ]
+}

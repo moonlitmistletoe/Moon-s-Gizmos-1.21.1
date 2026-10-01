@@ -1,0 +1,15 @@
+{
+  "name": "Waffle",
+  "category": "whatsits:meals",
+  "icon": "whatsits:waffle_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable stack of waffles. It has no separate eating interaction."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:waffle_block"
+    }
+  ]
+}

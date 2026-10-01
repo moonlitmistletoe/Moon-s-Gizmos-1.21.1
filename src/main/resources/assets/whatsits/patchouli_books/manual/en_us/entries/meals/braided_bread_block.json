@@ -1,0 +1,15 @@
+{
+  "name": "Braided Bread",
+  "category": "whatsits:meals",
+  "icon": "whatsits:braided_bread_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable braided loaf with no separate interaction."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:braided_bread_block"
+    }
+  ]
+}

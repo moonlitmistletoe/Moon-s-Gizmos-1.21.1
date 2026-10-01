@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Cupcake",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:strawberry_cupcake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small strawberry cake that gives Regeneration for a short time."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_cupcake"
+    }
+  ]
+}

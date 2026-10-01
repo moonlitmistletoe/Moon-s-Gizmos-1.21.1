@@ -1,0 +1,15 @@
+{
+  "name": "Blank Cake",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:blank_cake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A plain cake base from the Bakery. It is part of the cake-making process rather than a finished dessert."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:blank_cake"
+    }
+  ]
+}

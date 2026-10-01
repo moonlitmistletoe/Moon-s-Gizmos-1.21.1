@@ -1,0 +1,15 @@
+{
+  "name": "Apple Cupcake",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:apple_cupcake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "An apple cupcake with a small Speed boost."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:apple_cupcake"
+    }
+  ]
+}

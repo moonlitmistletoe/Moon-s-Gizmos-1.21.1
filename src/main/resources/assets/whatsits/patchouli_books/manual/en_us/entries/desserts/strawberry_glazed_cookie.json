@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Glazed Cookie",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:strawberry_glazed_cookie",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A strawberry-glazed sweet that gives brief Regeneration when eaten."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_glazed_cookie"
+    }
+  ]
+}

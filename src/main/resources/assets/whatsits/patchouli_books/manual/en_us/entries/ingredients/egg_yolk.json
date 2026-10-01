@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Throw a normal egg at the top of a solid block. There is a 25% chance the broken egg leaves an egg yolk behind."
+      "text": "Throw a normal egg at the ground. There is a 25% chance it leaves an Egg Yolk where it lands, provided the egg hits the top of a block."
     }
   ]
 }

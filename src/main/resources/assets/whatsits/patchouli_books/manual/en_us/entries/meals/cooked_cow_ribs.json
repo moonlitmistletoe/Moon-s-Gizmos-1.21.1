@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The finished form of ribs cut from a cow with the right tool. Much more useful than leaving them raw.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "Smelt Raw Cow Ribs in a furnace. The raw drop becomes a proper cooked meal."
     },
     {
       "type": "patchouli:crafting",

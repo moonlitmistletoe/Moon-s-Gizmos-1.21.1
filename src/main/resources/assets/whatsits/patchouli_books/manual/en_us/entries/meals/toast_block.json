@@ -1,0 +1,15 @@
+{
+  "name": "Toast",
+  "category": "whatsits:meals",
+  "icon": "whatsits:toast_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable stack of toast with no separate interaction."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:toast_block"
+    }
+  ]
+}

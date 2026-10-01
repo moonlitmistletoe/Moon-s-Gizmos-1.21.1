@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A placeable, stackable Bakery jar. It currently has no additional crafting use.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "A placeable Bakery jar. It can be stacked and displayed, but has no separate use beyond being a container-like block."
     },
     {
       "type": "patchouli:crafting",

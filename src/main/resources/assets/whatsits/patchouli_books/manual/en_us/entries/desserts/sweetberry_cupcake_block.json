@@ -1,0 +1,15 @@
+{
+  "name": "Sweetberry Cupcakes",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:sweetberry_cupcake_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable group of sweetberry cupcakes. The individual cupcake is the portable version."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sweetberry_cupcake_block"
+    }
+  ]
+}

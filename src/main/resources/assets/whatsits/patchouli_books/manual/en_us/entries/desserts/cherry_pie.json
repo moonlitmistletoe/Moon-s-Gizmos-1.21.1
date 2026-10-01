@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Cherry Pie is a food item from Moon's Whatsits."
+      "text": "A cherry pie with one problem: cherries are currently unobtainable, so the recipe cannot be completed in survival."
     },
     {
       "type": "patchouli:crafting",

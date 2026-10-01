@@ -1,0 +1,15 @@
+{
+  "name": "MissLilitu Biscuit",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:misslilitu_biscuit",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A biscuit with a name that raises questions and a Luck effect that raises even more."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:misslilitu_biscuit"
+    }
+  ]
+}

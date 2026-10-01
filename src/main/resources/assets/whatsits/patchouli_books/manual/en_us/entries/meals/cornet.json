@@ -1,11 +1,11 @@
 {
-  "name": "Cornet",
+  "name": "Stuffed Cornet",
   "category": "whatsits:meals",
   "icon": "whatsits:cornet",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A pointed filled pastry whose shape gives it its name.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "A small filled pastry from the Bakery."
     },
     {
       "type": "patchouli:crafting",

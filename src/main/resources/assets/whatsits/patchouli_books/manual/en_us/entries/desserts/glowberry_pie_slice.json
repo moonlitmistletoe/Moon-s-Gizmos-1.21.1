@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A serving cut from the full glowberry pie. It is the convenient version to carry and eat."
+      "text": "A glowberry pie serving that gives the Glowing effect when eaten."
     },
     {
       "type": "patchouli:crafting",

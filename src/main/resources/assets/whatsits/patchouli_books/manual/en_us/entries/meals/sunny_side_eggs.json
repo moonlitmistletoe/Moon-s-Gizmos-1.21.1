@@ -1,11 +1,11 @@
 {
-  "name": "Sunny Side Eggs",
+  "name": "Sunny-Side Eggs",
   "category": "whatsits:meals",
   "icon": "whatsits:sunny_side_eggs",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The yolk stays intact here, making this the opposite of the scrambled version.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "Cook an Egg Yolk on a campfire to turn it into a proper sunny-side egg."
     },
     {
       "type": "patchouli:crafting",

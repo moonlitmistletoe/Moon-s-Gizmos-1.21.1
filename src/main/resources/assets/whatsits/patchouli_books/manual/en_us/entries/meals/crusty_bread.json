@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A tougher loaf with a proper crust - the sort of bread that ought to make a satisfying crunch.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "A proper crusty Bakery loaf."
     },
     {
       "type": "patchouli:crafting",

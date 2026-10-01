@@ -1,0 +1,15 @@
+{
+  "name": "Cake Dough",
+  "category": "whatsits:meals",
+  "icon": "whatsits:cake_dough",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The starting point for several Bakery cakes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cake_dough"
+    }
+  ]
+}

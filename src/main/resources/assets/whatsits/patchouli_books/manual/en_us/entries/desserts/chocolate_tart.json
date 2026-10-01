@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Chocolate Tart is a food item from Moon's Whatsits."
+      "text": "A full placeable chocolate tart that can be divided into slices."
     },
     {
       "type": "patchouli:crafting",

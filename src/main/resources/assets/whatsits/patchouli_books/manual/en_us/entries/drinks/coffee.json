@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Brewed from coffee beans. This is the drinkable form of the coffee crop.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "Mix Coffee Beans with a milk bucket. The beans are not edible on their own - this is what they are for."
     },
     {
       "type": "patchouli:crafting",

@@ -1,0 +1,15 @@
+{
+  "name": "Apple Cupcakes",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:apple_cupcake_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable group of apple cupcakes. The individual cupcake is the portable version."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:apple_cupcake_block"
+    }
+  ]
+}

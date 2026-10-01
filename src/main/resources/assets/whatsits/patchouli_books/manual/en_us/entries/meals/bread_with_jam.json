@@ -1,11 +1,11 @@
 {
-  "name": "Bread With Jam",
+  "name": "Bread with Jam",
   "category": "whatsits:meals",
   "icon": "whatsits:bread_with_jam",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Bread topped with jam. One of those recipes that barely needs an explanation.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "Bread with a sweet topping that gives a short Haste effect."
     },
     {
       "type": "patchouli:crafting",

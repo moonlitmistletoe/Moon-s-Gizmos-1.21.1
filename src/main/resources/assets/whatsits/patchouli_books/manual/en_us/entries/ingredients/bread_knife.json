@@ -5,11 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A Bakery knife used for preparation and for cutting cakes into slices.\\n\\nHow to get it: Craft it using the recipe shown below."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "whatsits:bread_knife"
+      "text": "The Bakery's iron cutting tool. It is used for cutting the larger food blocks into servings."
     }
   ]
 }

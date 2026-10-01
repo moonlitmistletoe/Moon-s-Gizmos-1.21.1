@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Cherry Juice is a drink from Moon's Whatsits.\\n\\nHow to get it: The recipe is shown below, but this cannot currently be made in survival because cherries are unobtainable."
+      "text": "Made from a cherry and a glass bottle, but cherries are currently unobtainable, so this drink is unavailable in normal survival."
     },
     {
       "type": "patchouli:crafting",

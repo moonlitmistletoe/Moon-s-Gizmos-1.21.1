@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A sandwich centred on grilled salmon. A little more work than a normal sandwich, but a proper meal.\\n\\nHow to get it: Craft it using the recipe shown below."
+      "text": "A salmon sandwich that gives Water Breathing for a short time."
     },
     {
       "type": "patchouli:crafting",

@@ -1,0 +1,15 @@
+{
+  "name": "Chocolate Glazed Cookies",
+  "category": "whatsits:desserts",
+  "icon": "whatsits:chocolate_cookie_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable pile of chocolate glazed cookies. The individual cookie is portable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:chocolate_cookie_block"
+    }
+  ]
+}

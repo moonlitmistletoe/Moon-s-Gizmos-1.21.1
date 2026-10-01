@@ -1,0 +1,15 @@
+{
+  "name": "Bakers Bread",
+  "category": "whatsits:meals",
+  "icon": "whatsits:bread_block",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A placeable loaf. Mainly useful for storage or display."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:bread_block"
+    }
+  ]
+}
