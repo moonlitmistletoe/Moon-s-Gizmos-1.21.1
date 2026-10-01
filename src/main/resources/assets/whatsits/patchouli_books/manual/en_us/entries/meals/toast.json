@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Bread, but warmer and crispier. It also makes a useful base for other food."
+      "text": "Bread, but warmer and crispier. It also makes a useful base for other food.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
