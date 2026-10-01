@@ -1,7 +1,7 @@
 {
   "name": "Apple Juice",
   "category": "whatsits:drinks",
-  "icon": "whatsits:apple_juice",
+  "icon": "whatsits:apple_juice.json",
   "pages": [
     {
       "type": "patchouli:text",

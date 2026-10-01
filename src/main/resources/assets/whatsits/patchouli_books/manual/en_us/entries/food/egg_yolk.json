@@ -1,7 +1,7 @@
 {
   "name": "Egg Yolk",
   "category": "whatsits:food",
-  "icon": "whatsits:egg_yolk",
+  "icon": "whatsits:egg_yolk.json",
   "pages": [
     {
       "type": "patchouli:spotlight",
