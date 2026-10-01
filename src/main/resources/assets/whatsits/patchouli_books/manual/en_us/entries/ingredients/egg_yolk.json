@@ -1,11 +1,13 @@
 {
   "name": "Egg Yolk",
-  "category": "whatsits:ingredients",
   "icon": "whatsits:egg_yolk",
+  "category": "whatsits:ingredients",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Throw a normal egg at the ground. There is a 25% chance it leaves an Egg Yolk where it lands, provided the egg hits the top of a block."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:egg_yolk",
+      "link_recipe": false,
+      "text": "Throw a normal chicken egg. The mod turns the thrown egg into an egg yolk, giving eggs another job besides occasionally producing a chicken. The yolk is used in several food recipes."
     }
   ]
 }

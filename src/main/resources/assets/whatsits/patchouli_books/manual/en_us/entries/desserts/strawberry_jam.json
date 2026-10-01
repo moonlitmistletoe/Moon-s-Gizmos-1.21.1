@@ -1,15 +1,18 @@
 {
   "name": "Strawberry Jam",
-  "category": "whatsits:desserts",
   "icon": "whatsits:strawberry_jam",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A sweet strawberry spread from the Bakery. It can be eaten and used as a topping."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry_jam",
+      "link_recipe": true,
+      "text": "Strawberry jam in its placeable jar form. It is part of the Bakery topping system and can be displayed as a jar."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:strawberry_jam"
+      "recipe": "whatsits:strawberry_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

@@ -1,15 +1,18 @@
 {
-  "name": "Chocolate Jam",
-  "category": "whatsits:desserts",
+  "name": "Chocolate Spread",
   "icon": "whatsits:chocolate_jam",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Chocolate spread with the name of jam and the behaviour of a dessert. It can be eaten and used as a topping."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:chocolate_jam",
+      "link_recipe": true,
+      "text": "Chocolate spread in a placeable jar. It is mainly a topping for Bakery foods."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:chocolate_jam"
+      "recipe": "whatsits:chocolate_jam",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

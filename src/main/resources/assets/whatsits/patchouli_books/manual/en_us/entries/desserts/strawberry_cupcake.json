@@ -1,15 +1,18 @@
 {
   "name": "Strawberry Cupcake",
-  "category": "whatsits:desserts",
   "icon": "whatsits:strawberry_cupcake",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A small strawberry cake that gives Regeneration for a short time."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry_cupcake",
+      "link_recipe": true,
+      "text": "A strawberry cupcake made through the Bakery recipe. It can grant regeneration when eaten."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:strawberry_cupcake"
+      "recipe": "whatsits:strawberry_cupcake",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

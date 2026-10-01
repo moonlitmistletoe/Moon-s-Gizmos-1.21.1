@@ -1,15 +1,18 @@
 {
   "name": "MissLilitu Biscuit",
-  "category": "whatsits:desserts",
   "icon": "whatsits:misslilitu_biscuit",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A biscuit with a name that raises questions and a Luck effect that raises even more."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:misslilitu_biscuit",
+      "link_recipe": true,
+      "text": "A special biscuit from the Bakery collection. It can grant Luck when eaten."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:misslilitu_biscuit"
+      "recipe": "whatsits:misslilitu_biscuit",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

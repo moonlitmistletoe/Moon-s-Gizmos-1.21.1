@@ -1,15 +1,18 @@
 {
   "name": "Apple Cupcakes",
-  "category": "whatsits:desserts",
   "icon": "whatsits:apple_cupcake_block",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A placeable group of apple cupcakes. The individual cupcake is the portable version."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:apple_cupcake_block",
+      "link_recipe": true,
+      "text": "A placeable apple cupcake display. It is a decorative block based on the edible cupcake."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:apple_cupcake_block"
+      "recipe": "whatsits:apple_cupcake_block",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

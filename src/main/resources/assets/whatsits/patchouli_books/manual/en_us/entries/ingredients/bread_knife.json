@@ -1,11 +1,13 @@
 {
   "name": "Bread Knife",
-  "category": "whatsits:ingredients",
   "icon": "whatsits:bread_knife",
+  "category": "whatsits:ingredients",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The Bakery's iron cutting tool. It is used for cutting the larger food blocks into servings."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:bread_knife",
+      "link_recipe": false,
+      "text": "Craft this from the recipe provided by the mod. It is used for cutting Bakery cakes and other prepared foods. It is not edible."
     }
   ]
 }

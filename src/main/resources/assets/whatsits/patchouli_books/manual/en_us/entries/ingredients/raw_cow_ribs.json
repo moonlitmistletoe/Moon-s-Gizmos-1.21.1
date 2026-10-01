@@ -1,11 +1,13 @@
 {
   "name": "Raw Cow Ribs",
-  "category": "whatsits:ingredients",
   "icon": "whatsits:raw_cow_ribs",
+  "category": "whatsits:ingredients",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Kill a cow with one of the supported knives or cleavers. There is a 25% chance for the ribs to drop. Cook them before eating."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:raw_cow_ribs",
+      "link_recipe": false,
+      "text": "Cows have a 25% chance to drop raw cow ribs when killed with a cleaver. They are not particularly appetising raw, but they can be cooked into the edible version."
     }
   ]
 }

@@ -1,15 +1,13 @@
 {
   "name": "Jar",
-  "category": "whatsits:ingredients",
   "icon": "whatsits:jar",
+  "category": "whatsits:ingredients",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A placeable Bakery jar. It can be stacked and displayed, but has no separate use beyond being a container-like block."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "whatsits:jar"
+      "type": "patchouli:spotlight",
+      "item": "whatsits:jar",
+      "link_recipe": false,
+      "text": "Craft and place the jar when you need a container for the mod's jam system. On its own it is mainly a placeable container and has no food value."
     }
   ]
 }

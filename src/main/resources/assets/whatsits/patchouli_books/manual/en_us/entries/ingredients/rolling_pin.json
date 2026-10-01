@@ -1,15 +1,13 @@
 {
   "name": "Rolling Pin",
-  "category": "whatsits:ingredients",
   "icon": "whatsits:rolling_pin",
+  "category": "whatsits:ingredients",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Craft from two sticks and wooden planks. It is one of the Bakery's preparation tools."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "whatsits:rolling_pin"
+      "type": "patchouli:spotlight",
+      "item": "whatsits:rolling_pin",
+      "link_recipe": false,
+      "text": "Craft this from the recipe provided by the mod. It is a Bakery tool used as part of preparing some baked goods. It is a tool, not food."
     }
   ]
 }

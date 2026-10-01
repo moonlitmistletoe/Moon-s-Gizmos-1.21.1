@@ -1,15 +1,18 @@
 {
   "name": "Chocolate Tart",
-  "category": "whatsits:desserts",
   "icon": "whatsits:chocolate_tart",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A full placeable chocolate tart that can be divided into slices."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:chocolate_tart",
+      "link_recipe": true,
+      "text": "A whole chocolate tart that can be placed and served in slices."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:chocolate_tart"
+      "recipe": "whatsits:chocolate_tart",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

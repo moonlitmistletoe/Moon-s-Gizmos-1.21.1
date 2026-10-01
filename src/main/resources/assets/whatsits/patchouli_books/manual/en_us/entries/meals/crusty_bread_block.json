@@ -1,15 +1,18 @@
 {
   "name": "Crusty Bread",
-  "category": "whatsits:meals",
   "icon": "whatsits:crusty_bread_block",
+  "category": "whatsits:meals",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "The placeable form of Crusty Bread. Mainly useful for storage or display."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:crusty_bread_block",
+      "link_recipe": true,
+      "text": "A placeable version of the crusty bread loaf. It is mainly useful for decoration and for making a Bakery-style bread display."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:crusty_bread_block"
+      "recipe": "whatsits:crusty_bread",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

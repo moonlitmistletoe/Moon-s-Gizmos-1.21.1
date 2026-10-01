@@ -1,15 +1,18 @@
 {
   "name": "Toast",
-  "category": "whatsits:meals",
   "icon": "whatsits:toast_block",
+  "category": "whatsits:meals",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A placeable stack of toast with no separate interaction."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:toast_block",
+      "link_recipe": true,
+      "text": "A placeable toast block for displays. The ordinary toast item is the one intended to be eaten."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:toast_block"
+      "recipe": "whatsits:toast",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

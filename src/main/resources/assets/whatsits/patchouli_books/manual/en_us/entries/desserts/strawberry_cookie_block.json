@@ -1,15 +1,18 @@
 {
   "name": "Strawberry Glazed Cookies",
-  "category": "whatsits:desserts",
   "icon": "whatsits:strawberry_cookie_block",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A placeable pile of strawberry glazed cookies. The individual cookie is portable."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:strawberry_cookie_block",
+      "link_recipe": true,
+      "text": "A placeable display of strawberry cookies. It is mainly decorative."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:strawberry_cookie_block"
+      "recipe": "whatsits:strawberry_cookie_block",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

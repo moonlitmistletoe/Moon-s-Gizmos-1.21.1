@@ -1,15 +1,18 @@
 {
   "name": "Mooncake",
-  "category": "whatsits:desserts",
   "icon": "whatsits:mooncake",
+  "category": "whatsits:desserts",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A traditional East Asian pastry associated especially with the Mid-Autumn Festival. The mod makes it from wheat, sugar and an egg."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:mooncake",
+      "link_recipe": true,
+      "text": "A small sweet cake from the mod. Craft it through its recipe and eat it as a dessert."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:mooncake"
+      "recipe": "whatsits:mooncake",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }

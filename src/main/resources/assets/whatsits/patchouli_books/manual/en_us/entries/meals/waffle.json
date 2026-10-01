@@ -1,15 +1,18 @@
 {
   "name": "Waffle",
-  "category": "whatsits:meals",
   "icon": "whatsits:waffle",
+  "category": "whatsits:meals",
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "A pancake given a grid and told to commit to it. This one is ready to eat."
+      "type": "patchouli:spotlight",
+      "item": "whatsits:waffle",
+      "link_recipe": true,
+      "text": "A waffle made through the Bakery recipe. It is edible and has a small saturation effect when eaten."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "whatsits:waffle"
+      "recipe": "whatsits:waffle",
+      "text": "The recipe is shown here. If the ingredients are currently unobtainable, the finished item is too."
     }
   ]
 }
