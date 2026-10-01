@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Bread topped with jam. One of those recipes that barely needs an explanation."
+      "text": "Bread topped with jam. One of those recipes that barely needs an explanation.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
