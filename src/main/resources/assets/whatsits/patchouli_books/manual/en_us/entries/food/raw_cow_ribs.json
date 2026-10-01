@@ -1,0 +1,16 @@
+{
+  "name": "Raw Cow Ribs",
+  "category": "whatsits:food",
+  "icon": "whatsits:raw_cow_ribs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Raw Cow Ribs are obtained from cows when killed with a cleaver or knife. They can be eaten raw, although doing so has a chance to cause Hunger.$(br2)They are primarily useful as a cooking ingredient."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:raw_cow_ribs",
+      "text": "Raw Cow Ribs can be cooked to produce Cooked Cow Ribs."
+    }
+  ]
+}

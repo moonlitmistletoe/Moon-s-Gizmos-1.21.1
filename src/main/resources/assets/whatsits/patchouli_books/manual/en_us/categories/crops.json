@@ -1,6 +1,6 @@
 {
   "name": "Crops",
-  "description": "Learn about the crops added by Moon's Whatsits and what you can make with them.",
+  "description": "Crops, seeds, and farming items added by Moon's Whatsits.",
   "icon": "whatsits:strawberry",
-  "sortnum": 1
+  "sortnum": 3
 }

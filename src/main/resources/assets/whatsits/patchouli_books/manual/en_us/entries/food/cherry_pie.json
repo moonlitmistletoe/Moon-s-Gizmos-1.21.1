@@ -1,0 +1,15 @@
+{
+  "name": "Cherry Pie",
+  "category": "whatsits:food",
+  "icon": "whatsits:cherry_pie",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cherry Pie is crafted using Cherries, Wheat and Sugar."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cherry_pie"
+    }
+  ]
+}

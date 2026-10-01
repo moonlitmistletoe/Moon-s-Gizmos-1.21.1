@@ -1,0 +1,19 @@
+{
+  "name": "Cooked Cow Ribs",
+  "category": "whatsits:food",
+  "icon": "whatsits:cooked_cow_ribs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cooked Cow Ribs are made by cooking Raw Cow Ribs."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cooked_cow_ribs"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Raw Cow Ribs can also be cooked using a Campfire or Smoker."
+    }
+  ]
+}

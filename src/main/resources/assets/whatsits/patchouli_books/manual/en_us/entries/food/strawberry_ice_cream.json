@@ -1,0 +1,15 @@
+{
+  "name": "Strawberry Ice Cream",
+  "category": "whatsits:food",
+  "icon": "whatsits:strawberry_ice_cream",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Strawberry Ice Cream is made using a Strawberry, Sugar and a Milk Bucket."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:strawberry_ice_cream"
+    }
+  ]
+}

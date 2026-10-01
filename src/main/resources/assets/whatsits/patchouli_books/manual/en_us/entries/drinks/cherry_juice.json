@@ -1,0 +1,15 @@
+{
+  "name": "Cherry Juice",
+  "category": "whatsits:drinks",
+  "icon": "whatsits:cherry_juice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cherry Juice is made by combining a Cherry with a Glass Bottle."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cherry_juice"
+    }
+  ]
+}

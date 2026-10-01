@@ -63,7 +63,7 @@ public class ModItems {
         BLUEBERRY_SEED = ITEMS.register("blueberry_seed", () -> new ItemNameBlockItem((Block)ModBlocks.BLUEBERRY_CROP.get(), new Item.Properties()));
         COFFEE_SEED = ITEMS.register("coffee_seed", () -> new ItemNameBlockItem((Block)ModBlocks.COFFEE_CROP.get(), new Item.Properties()));
         STRAWBERRY_SEED = ITEMS.register("strawberry_seed", () -> new ItemNameBlockItem((Block)ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
-        EGG_YOLK = ITEMS.register("egg_yolk", () -> new Item((new Item.Properties()).food(ModFoodProperties.EGG_YOLK)));
+        EGG_YOLK = ITEMS.register("egg_yolk.json", () -> new Item((new Item.Properties()).food(ModFoodProperties.EGG_YOLK)));
         AVOCADO = ITEMS.register("avocado", () -> new Item((new Item.Properties()).food(ModFoodProperties.AVOCADO)));
         BLACKBERRY = ITEMS.register("blackberry", () -> new Item((new Item.Properties()).food(ModFoodProperties.BLACKBERRY)));
         BLUEBERRY = ITEMS.register("blueberry", () -> new Item((new Item.Properties()).food(ModFoodProperties.BLUEBERRY)));
@@ -71,7 +71,7 @@ public class ModItems {
         COFFEE_BEANS = ITEMS.register("coffee_beans", () -> new Item(new Item.Properties()));
         STRAWBERRY = ITEMS.register("strawberry", () -> new Item((new Item.Properties()).food(ModFoodProperties.STRAWBERRY)));
         RAW_COW_RIBS = ITEMS.register("raw_cow_ribs", () -> new Item((new Item.Properties()).food(ModFoodProperties.RAW_COW_RIBS)));
-        APPLE_JUICE = ITEMS.register("apple_juice", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.APPLE_JUICE)));
+        APPLE_JUICE = ITEMS.register("apple_juice.json", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.APPLE_JUICE)));
         CHERRY_JUICE = ITEMS.register("cherry_juice", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.CHERRY_JUICE)));
         COFFEE = ITEMS.register("coffee", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.COFFEE)));
         STRAWBERRY_SMOOTHIE = ITEMS.register("strawberry_smoothie", () -> new DrinkItem((new Item.Properties()).food(ModFoodProperties.STRAWBERRY_SMOOTHIE)));

@@ -1,0 +1,15 @@
+{
+  "name": "Scrambled Eggs",
+  "category": "whatsits:food",
+  "icon": "whatsits:scrambled_eggs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Scrambled Eggs are made using two Egg Yolks."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:scrambled_eggs"
+    }
+  ]
+}

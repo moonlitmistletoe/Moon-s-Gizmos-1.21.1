@@ -1,0 +1,15 @@
+{
+  "name": "Avocado Toast",
+  "category": "whatsits:food",
+  "icon": "whatsits:avocado_toast",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Avocado Toast is made by combining an Avocado with Bread."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:avocado_toast"
+    }
+  ]
+}

@@ -468,7 +468,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.moonlitmistletoe.whatsits.item.custom.JamItem;
+import net.moonlitmistletoe.whatsits.item.custom.DrinkItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.block.Block;
@@ -964,96 +964,58 @@ public class ObjectRegistry {
                     )
             );
 
-    public static final RegistrySupplier<Block> STRAWBERRY_JAM_BLOCK =
-            registerJamBlock("strawberry_jam");
-
     public static final RegistrySupplier<Item> STRAWBERRY_JAM =
-            registerJamItem(
-                    "strawberry_jam",
-                    STRAWBERRY_JAM_BLOCK,
-                    3,
-                    0.4F
-            );
+        registerItem(
+                "strawberry_jam",
+                () -> new DrinkItem(
+                        new Item.Properties().food(
+                                new FoodProperties.Builder()
+                                        .nutrition(3)
+                                        .saturationModifier(0.4F)
+                                        .build()
+                        )
+                )
+        );
 
-    public static final RegistrySupplier<Block> GLOWBERRY_JAM_BLOCK =
-            registerJamBlock("glowberry_jam");
-
-    public static final RegistrySupplier<Item> GLOWBERRY_JAM =
-            registerJamItem(
+    public static final RegistrySupplier<Block> GLOWBERRY_JAM =
+            registerSimpleBlock(
                     "glowberry_jam",
-                    GLOWBERRY_JAM_BLOCK,
-                    3,
-                    0.4F
+                    () -> new BakerySimpleBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
             );
 
-    public static final RegistrySupplier<Block> SWEETBERRY_JAM_BLOCK =
-            registerJamBlock("sweetberry_jam");
-
-    public static final RegistrySupplier<Item> SWEETBERRY_JAM =
-            registerJamItem(
+    public static final RegistrySupplier<Block> SWEETBERRY_JAM =
+            registerSimpleBlock(
                     "sweetberry_jam",
-                    SWEETBERRY_JAM_BLOCK,
-                    3,
-                    0.4F
+                    () -> new BakerySimpleBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
             );
 
-    public static final RegistrySupplier<Block> CHOCOLATE_JAM_BLOCK =
-            registerJamBlock("chocolate_jam");
-
-    public static final RegistrySupplier<Item> CHOCOLATE_JAM =
-            registerJamItem(
+    public static final RegistrySupplier<Block> CHOCOLATE_JAM =
+            registerSimpleBlock(
                     "chocolate_jam",
-                    CHOCOLATE_JAM_BLOCK,
-                    3,
-                    0.4F
+                    () -> new BakerySimpleBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
             );
 
-    public static final RegistrySupplier<Block> APPLE_JAM_BLOCK =
-            registerJamBlock("apple_jam");
-
-    public static final RegistrySupplier<Item> APPLE_JAM =
-            registerJamItem(
+    public static final RegistrySupplier<Block> APPLE_JAM =
+            registerSimpleBlock(
                     "apple_jam",
-                    APPLE_JAM_BLOCK,
-                    3,
-                    0.4F
+                    () -> new BakerySimpleBlock(
+                            BlockBehaviour.Properties.ofFullCopy(
+                                    Blocks.GLASS
+                            ).noOcclusion()
+                    )
             );
-
-    private static RegistrySupplier<Block> registerJamBlock(
-            String name
-    ) {
-        return BLOCKS.register(
-                name,
-                () -> new net.moonlitmistletoe.whatsits.block.JamBlock(
-                        BlockBehaviour.Properties.ofFullCopy(
-                                Blocks.GLASS
-                        ).noOcclusion()
-                )
-        );
-    }
-
-    private static RegistrySupplier<Item> registerJamItem(
-            String name,
-            RegistrySupplier<Block> block,
-            int nutrition,
-            float saturation
-    ) {
-        return ITEMS.register(
-                name,
-                () -> new JamItem(
-                        new Item.Properties()
-                                .stacksTo(16)
-                                .food(
-                                        new FoodProperties.Builder()
-                                                .nutrition(nutrition)
-                                                .saturationModifier(saturation)
-                                                .alwaysEdible()
-                                                .build()
-                                ),
-                        block
-                )
-        );
-    }
 
     private static RegistrySupplier<Block> registerCakeBlock(
             String name,
@@ -1554,6 +1516,60 @@ public class ObjectRegistry {
                     "waffle"
             ]
 
+            def bakeryBlockLootTables = [
+                    "strawberry_cake",
+                    "sweetberry_cake",
+                    "chocolate_cake",
+                    "bundt_cake",
+                    "linzer_tart",
+                    "apple_pie",
+                    "glowberry_tart",
+                    "pudding",
+                    "chocolate_gateau",
+                    "chocolate_tart",
+                    "blank_cake",
+                    "apple_cupcake_block",
+                    "sweetberry_cupcake_block",
+                    "strawberry_cupcake_block",
+                    "chocolate_cookie_block",
+                    "sweetberry_cookie_block",
+                    "strawberry_cookie_block",
+                    "crusty_bread_block",
+                    "bread_block",
+                    "baguette_block",
+                    "toast_block",
+                    "braided_bread_block",
+                    "bun_block",
+                    "waffle_block",
+                    "jar",
+                    "strawberry_jam",
+                    "glowberry_jam",
+                    "sweetberry_jam",
+                    "chocolate_jam",
+                    "apple_jam"
+            ]
+
+            bakeryBlockLootTables.each { name ->
+                writeResourceText(
+                        "data/whatsits/loot_table/blocks/${name}.json",
+                        """{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "whatsits:${name}"
+        }
+      ]
+    }
+  ]
+}
+"""
+                )
+            }
+
             forcedItemTextures.each { name ->
                 writeResourceText(
                         "assets/whatsits/models/item/${name}.json",
@@ -1595,27 +1611,6 @@ public class ObjectRegistry {
                         "assets/whatsits/models/item/${name}.json",
                         """{
   "parent": "whatsits:block/${name}"
-}
-"""
-                )
-            }
-
-            def forcedJamItemModels = [
-                    "strawberry_jam",
-                    "glowberry_jam",
-                    "sweetberry_jam",
-                    "chocolate_jam",
-                    "apple_jam"
-            ]
-
-            forcedJamItemModels.each { name ->
-                writeResourceText(
-                        "assets/whatsits/models/item/${name}.json",
-                        """{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "whatsits:item/${name}"
-  }
 }
 """
                 )
@@ -1750,7 +1745,7 @@ dependencies {
 
     implementation "curse.maven:farmers-delight-398521:8765184"
 
-    compileOnly "dev.architectury:architectury-neoforge:13.0.8"
+    implementation "dev.architectury:architectury-neoforge:13.0.11"
 
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
 
@@ -1823,7 +1818,7 @@ tasks.named(
     dependsOn(prepareBakeryMerge)
 
     duplicatesStrategy =
-            DuplicatesStrategy.EXCLUDE
+            DuplicatesStrategy.INCLUDE
 
     doLast {
 

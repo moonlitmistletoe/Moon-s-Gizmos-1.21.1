@@ -1,0 +1,15 @@
+{
+  "name": "Sunny-Side Eggs",
+  "category": "whatsits:food",
+  "icon": "whatsits:sunny_side_eggs",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Sunny-Side Eggs are made by cooking an Egg Yolk on a Campfire."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:sunny_side_eggs"
+    }
+  ]
+}

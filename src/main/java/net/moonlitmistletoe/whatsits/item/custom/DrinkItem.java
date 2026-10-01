@@ -2,19 +2,14 @@ package net.moonlitmistletoe.whatsits.item.custom;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.UseAnim;
 
-public class DrinkItem extends PotionItem {
+public class DrinkItem extends Item {
 
     public DrinkItem(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    public String getDescriptionId(ItemStack stack) {
-        return super.getDescriptionId();
     }
 
     @Override

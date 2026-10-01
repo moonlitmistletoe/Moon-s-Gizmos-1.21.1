@@ -1,0 +1,15 @@
+{
+  "name": "Mooncake",
+  "category": "whatsits:food",
+  "icon": "whatsits:mooncake",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Mooncake is crafted using Wheat, Sugar and an Egg."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:mooncake"
+    }
+  ]
+}

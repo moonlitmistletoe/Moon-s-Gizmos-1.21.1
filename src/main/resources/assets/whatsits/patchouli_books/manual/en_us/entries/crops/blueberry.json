@@ -1,18 +1,21 @@
 {
-  "name": "Blueberries",
-  "icon": "whatsits:blueberry",
+  "name": "Blueberry",
   "category": "whatsits:crops",
-  "sortnum": 1,
+  "icon": "whatsits:blueberry",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Blueberries come from the Blueberry Crop. Harvest the crop once it is fully grown to get blueberries.$(br2)They're small, but they have a few uses beyond just eating them."
+      "text": "Blueberries are harvested from fully grown Blueberry Crops.$(br2)Obtain Blueberry Seeds and plant them on farmland to grow the crop."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:blueberry_seed",
+      "text": "Plant Blueberry Seeds on farmland. A fully grown crop produces 1 Blueberry and 2 Blueberry Seeds when harvested."
     },
     {
       "type": "patchouli:spotlight",
       "item": "whatsits:blueberry",
-      "title": "Blueberry",
-      "text": "Blueberries can be eaten and used in other foods.$(br2)See $(l:whatsits:foods_drinks)Food & Drinks$(/l) for some of their other uses."
+      "text": "Blueberries are edible and can be used to make Blueberry Jam."
     }
   ]
 }

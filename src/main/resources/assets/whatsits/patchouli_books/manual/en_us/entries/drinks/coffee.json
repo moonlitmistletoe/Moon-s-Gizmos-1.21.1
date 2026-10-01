@@ -1,0 +1,15 @@
+{
+  "name": "Coffee",
+  "category": "whatsits:drinks",
+  "icon": "whatsits:coffee",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Coffee is made using Coffee Beans and a Milk Bucket."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:coffee"
+    }
+  ]
+}

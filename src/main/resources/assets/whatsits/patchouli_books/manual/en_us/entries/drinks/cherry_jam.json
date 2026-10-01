@@ -1,0 +1,15 @@
+{
+  "name": "Cherry Jam",
+  "category": "whatsits:food",
+  "icon": "whatsits:cherry_jam",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cherry Jam is made by combining a Cherry with Sugar.$(br2)It does not require a Jar."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:cherry_jam"
+    }
+  ]
+}

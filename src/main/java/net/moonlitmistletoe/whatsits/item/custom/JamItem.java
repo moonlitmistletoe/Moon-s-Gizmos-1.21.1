@@ -1,8 +1,12 @@
 package net.moonlitmistletoe.whatsits.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -25,23 +29,55 @@ public class JamItem extends Item {
     }
 
     @Override
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.DRINK;
+    }
+
+    @Override
+    public SoundEvent getDrinkingSound() {
+        return SoundEvents.GENERIC_DRINK;
+    }
+
+    @Override
+    public SoundEvent getEatingSound() {
+        return SoundEvents.GENERIC_DRINK;
+    }
+
+    @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (context.getPlayer() == null || !context.getPlayer().isShiftKeyDown()) {
+
+        /*
+         * Normal right-click remains available for drinking.
+         * Shift + right-click places the jam jar.
+         */
+        if (context.getPlayer() == null
+                || !context.getPlayer().isShiftKeyDown()) {
             return super.useOn(context);
         }
 
         Level level = context.getLevel();
         Block block = jamBlock.get();
-        BlockPos clickedPos = context.getClickedPos();
-        BlockState clickedState = level.getBlockState(clickedPos);
 
+        BlockPos clickedPos =
+                context.getClickedPos();
+
+        BlockState clickedState =
+                level.getBlockState(clickedPos);
+
+        /*
+         * If clicking an existing stack of this jam,
+         * add another jar to it.
+         */
         if (clickedState.getBlock() == block
                 && clickedState.hasProperty(JamBlock.STACK)) {
 
-            int stack = clickedState.getValue(JamBlock.STACK);
+            int stack =
+                    clickedState.getValue(JamBlock.STACK);
 
             if (stack < 8) {
+
                 if (!level.isClientSide) {
+
                     level.setBlock(
                             clickedPos,
                             clickedState.setValue(
@@ -51,17 +87,26 @@ public class JamItem extends Item {
                             3
                     );
 
-                    if (!context.getPlayer().getAbilities().instabuild) {
-                        context.getItemInHand().shrink(1);
+                    if (!context.getPlayer()
+                            .getAbilities()
+                            .instabuild) {
+
+                        context.getItemInHand()
+                                .shrink(1);
                     }
                 }
 
-                return InteractionResult.sidedSuccess(level.isClientSide);
+                return InteractionResult.sidedSuccess(
+                        level.isClientSide
+                );
             }
 
             return InteractionResult.FAIL;
         }
 
+        /*
+         * Otherwise place a new jam jar block.
+         */
         BlockPlaceContext placeContext =
                 new BlockPlaceContext(context);
 
@@ -69,23 +114,40 @@ public class JamItem extends Item {
             return InteractionResult.FAIL;
         }
 
-        BlockPos placePos = placeContext.getClickedPos();
+        BlockPos placePos =
+                placeContext.getClickedPos();
 
-        BlockState state = block.defaultBlockState()
-                .setValue(
-                        JamBlock.FACING,
-                        context.getHorizontalDirection().getOpposite()
-                )
-                .setValue(JamBlock.STACK, 1);
+        BlockState state =
+                block.defaultBlockState()
+                        .setValue(
+                                JamBlock.FACING,
+                                context.getHorizontalDirection()
+                                        .getOpposite()
+                        )
+                        .setValue(
+                                JamBlock.STACK,
+                                1
+                        );
 
         if (!level.isClientSide) {
-            level.setBlock(placePos, state, 3);
 
-            if (!context.getPlayer().getAbilities().instabuild) {
-                context.getItemInHand().shrink(1);
+            level.setBlock(
+                    placePos,
+                    state,
+                    3
+            );
+
+            if (!context.getPlayer()
+                    .getAbilities()
+                    .instabuild) {
+
+                context.getItemInHand()
+                        .shrink(1);
             }
         }
 
-        return InteractionResult.sidedSuccess(level.isClientSide);
+        return InteractionResult.sidedSuccess(
+                level.isClientSide
+        );
     }
 }

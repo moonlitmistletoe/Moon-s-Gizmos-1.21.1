@@ -30,6 +30,15 @@
               "function": "minecraft:set_count",
               "count": 2
             }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "whatsits:blackberry_crop",
+              "properties": {
+                "age": "7"
+              }
+            }
           ]
         }
       ]

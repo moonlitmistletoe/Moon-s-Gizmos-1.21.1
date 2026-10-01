@@ -1,18 +1,21 @@
 {
   "name": "Coffee",
-  "icon": "whatsits:coffee_beans",
   "category": "whatsits:crops",
-  "sortnum": 2,
+  "icon": "whatsits:coffee_beans",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Coffee Beans come from the Coffee Crop. Once the crop has grown, harvesting it gives you coffee beans.$(br2)Unlike the berries, the beans aren't the finished product - they are used to make Coffee."
+      "text": "Coffee Beans are harvested from fully grown Coffee Crops.$(br2)Plant Coffee Seeds on farmland and allow the crop to mature."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "whatsits:coffee_seed",
+      "text": "Plant Coffee Seeds on farmland. A fully grown crop produces 1 Coffee Bean and 2 Coffee Seeds when harvested."
     },
     {
       "type": "patchouli:spotlight",
       "item": "whatsits:coffee_beans",
-      "title": "Coffee Beans",
-      "text": "These are used to make Coffee.$(br2)See $(l:whatsits:foods_drinks/juices_drinks)Juices & Drinks$(/l) for more."
+      "text": "Coffee Beans are not edible by themselves. They are used to prepare Coffee."
     }
   ]
 }

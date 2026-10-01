@@ -1,0 +1,15 @@
+{
+  "name": "Apple Juice",
+  "category": "whatsits:drinks",
+  "icon": "whatsits:apple_juice",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Apple Juice is made by combining an Apple with a Glass Bottle."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "whatsits:apple_juice"
+    }
+  ]
+}
