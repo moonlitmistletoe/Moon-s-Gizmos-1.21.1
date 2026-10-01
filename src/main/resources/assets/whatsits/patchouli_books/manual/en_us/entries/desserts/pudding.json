@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A soft Bakery dessert that can be cut into individual servings."
+      "text": "A soft Bakery dessert that can be cut into individual servings.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
