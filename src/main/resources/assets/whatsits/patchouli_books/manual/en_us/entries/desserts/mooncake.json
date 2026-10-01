@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A traditional East Asian pastry associated especially with the Mid-Autumn Festival."
+      "text": "A traditional East Asian pastry associated especially with the Mid-Autumn Festival.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
