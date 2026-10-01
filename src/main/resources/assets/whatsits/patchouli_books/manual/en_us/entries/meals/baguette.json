@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A long, crisp loaf from the Bakery. Basically an edible stick, and that is not a criticism."
+      "text": "A long, crisp loaf from the Bakery. Basically an edible stick, and that is not a criticism.\\n\\nHow to get it: Craft it using the recipe shown below."
     },
     {
       "type": "patchouli:crafting",
