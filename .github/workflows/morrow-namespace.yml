@@ -58,7 +58,7 @@ jobs:
           )
           p.write_text(s)
 
-          lang = Path("src/main/resources/assets/morrow/lang/en_us.json")
+          lang = Path("src/main/resources/assets/whatsits/lang/en_us.json")
           s = lang.read_text()
           s = re.sub(r'\s*"tooltip\.morrow\.dorime\.description":\s*"[^"]*",\n', '\n', s)
           s = re.sub(r'\s*"tooltip\.morrow\.world_of_lies\.description":\s*"[^"]*"\n', '\n', s)
