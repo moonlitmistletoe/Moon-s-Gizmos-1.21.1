@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
 import net.satisfy.morrow.client.gui.CookingPotGui;
 import net.satisfy.morrow.client.model.DungareesLeggingsModel;
+import net.satisfy.morrow.client.model.PlowCartModel;
 import import import net.satisfy.morrow.client.model.SeederCartModel;
 import net.satisfy.morrow.client.model.SupplyCartModel;
 import net.satisfy.morrow.client.model.WaterSprinklerModel;
