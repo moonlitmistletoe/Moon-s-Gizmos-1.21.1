@@ -19,7 +19,6 @@ public class Bakery {
         RecipeTypeRegistry.init();
         PacketHandler.init();
         CommonEvents.init();
-        TabRegistry.init();
         SoundEventRegistry.init();
     }
 }
