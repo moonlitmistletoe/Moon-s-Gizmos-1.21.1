@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "c:foods/cooked_beef"
-    },
-    {
-      "item": "minecraft:bone"
-    },
-    {
-      "tag": "c:crops/wheat"
-    }
+    {"item": "minecraft:cooked_beef"},
+    {"item": "minecraft:bone"},
+    {"item": "minecraft:wheat"}
   ],
   "result": {
     "id": "farm_and_charm:dog_food",
