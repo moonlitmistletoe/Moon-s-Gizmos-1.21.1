@@ -149,7 +149,15 @@ dependencies {
 
     implementation "curse.maven:farmers-delight-398521:8765184"
 
-    implementation "curse.maven:lets-do-farm-charm-1038103:7628193"
+    jarJar(
+            implementation(
+                    "curse.maven:lets-do-farm-charm-1038103:7628193"
+            )
+    ) {
+        version {
+            strictly "[7628193]"
+        }
+    }
 
     implementation "dev.architectury:architectury-neoforge:13.0.11"
 
