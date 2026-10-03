@@ -25,7 +25,6 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems("morrow");
 
     public static final DeferredItem<Item> MOD_LOGO;
-    public static final DeferredItem<Item> MANUAL;
     public static final DeferredItem<Item> BLACKBERRY_SEED;
     public static final DeferredItem<Item> BLUEBERRY_SEED;
     public static final DeferredItem<Item> COFFEE_SEED;
@@ -64,8 +63,6 @@ public class ModItems {
 
     static {
         MOD_LOGO = ITEMS.register("mod_logo", () -> new Item(new Item.Properties()));
-        MANUAL = ITEMS.register("manual", () -> new Item(new Item.Properties()));
-
         BLACKBERRY_SEED = ITEMS.register("blackberry_seed", () -> new ItemNameBlockItem((Block) ModBlocks.BLACKBERRY_CROP.get(), new Item.Properties()));
         BLUEBERRY_SEED = ITEMS.register("blueberry_seed", () -> new ItemNameBlockItem((Block) ModBlocks.BLUEBERRY_CROP.get(), new Item.Properties()));
         COFFEE_SEED = ITEMS.register("coffee_seed", () -> new ItemNameBlockItem((Block) ModBlocks.COFFEE_CROP.get(), new Item.Properties()));
