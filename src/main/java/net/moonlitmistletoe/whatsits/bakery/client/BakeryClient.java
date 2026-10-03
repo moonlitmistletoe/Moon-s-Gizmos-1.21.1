@@ -21,7 +21,7 @@ public class BakeryClient {
         RenderTypeRegistry.register(RenderType.cutout(),
                 , ObjectRegistry.SWEETBERRY_JAM.get(), ObjectRegistry.CHOCOLATE_JAM.get(),
                 ObjectRegistry.STRAWBERRY_JAM.get(), ObjectRegistry.GLOWBERRY_JAM.get(), ObjectRegistry.APPLE_JAM.get(), ObjectRegistry.CAKE_DISPLAY.get(), ObjectRegistry.SMALL_COOKING_POT.get(),
-                ObjectRegistry.IRON_BENCH.get(), ObjectRegistry.BAKER_STATION.get(), ObjectRegistry.TRAY.get()
+                ObjectRegistry.BAKER_STATION.get(), ObjectRegistry.TRAY.get()
         );
 
         registerStorageType();
