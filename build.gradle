@@ -61,16 +61,6 @@ def prepareBakeryMerge = tasks.register("prepareBakeryMerge") {
         def zip = new java.util.zip.ZipFile(bakeryArchive)
 
         try {
-            def writeText = { String relativePath, String text ->
-                def destination = new File(
-                        bakeryGeneratedJava,
-                        relativePath
-                )
-
-                destination.parentFile.mkdirs()
-                destination.text = text
-            }
-
             def writeResourceText = { String relativePath, String text ->
                 def destination = new File(
                         bakeryGeneratedResources,
