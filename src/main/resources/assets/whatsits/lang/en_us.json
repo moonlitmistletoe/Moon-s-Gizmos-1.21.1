@@ -153,7 +153,7 @@
   "item.bakery.baguette": "Baguette",
   "item.bakery.braided_bread": "Braided Bread",
   "item.bakery.waffle": "Waffle",
-  "item.bakery.bun": "Bun"
+  "item.bakery.bun": "Bun",
   "key.categories.whatsits": "Morrow"
   "key.whatsits.scabbard_key": "Draw/Sheath",
   "tooltip.whatsits.stored_sword": "Stored Item",
@@ -242,5 +242,6 @@
   "item.bakery.pudding": "Pudding",
   "block.bakery.bakery_wall_banner": "Bakery Wall Banner",
   "item.bakery.small_cooking_pot": "Small Cooking Pot",
-  "tooltip.whatsits.dorime.description": "Plays a song when used in a jukebox"
+  "tooltip.whatsits.dorime.description": "Plays a song when used in a jukebox",
+  "tooltip.whatsits.world_of_lies.description": "Plays a song when used in a jukebox"
 }
