@@ -8,6 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.moonlitmistletoe.whatsits.item.ModItems;
+import net.moonlitmistletoe.whatsits.scabbard.item.ModScabbardItems;
 
 public class ModCreativeModeTabs {
 
@@ -50,9 +51,9 @@ public class ModCreativeModeTabs {
                         // Scabbards
                         // =========================
 
-                        output.accept(net.nimbu.scabbards.item.ModItems.SCABBARD);
-                        output.accept(net.nimbu.scabbards.item.ModItems.HIP_SCABBARD);
-                        output.accept(net.nimbu.scabbards.item.ModItems.WEAPON_HOlSTER);
+                        output.accept(ModScabbardItems.SCABBARD);
+                        output.accept(ModScabbardItems.HIP_SCABBARD);
+                        output.accept(ModScabbardItems.WEAPON_HOLSTER);
 
                         // =========================
                         // Drinks
@@ -96,11 +97,11 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.ROLLING_PIN.get()
+                                ModItems.ROLLING_PIN.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BREAD_KNIFE.get()
+                                ModItems.BREAD_KNIFE.get()
                         );
 
                         // =========================
@@ -108,35 +109,35 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CAKE_DOUGH.get()
+                                ModItems.CAKE_DOUGH.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEET_DOUGH.get()
+                                ModItems.SWEET_DOUGH.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CROISSANT.get()
+                                ModItems.CROISSANT.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SANDWICH.get()
+                                ModItems.SANDWICH.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.VEGETABLE_SANDWICH.get()
+                                ModItems.VEGETABLE_SANDWICH.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GRILLED_SALMON_SANDWICH.get()
+                                ModItems.GRILLED_SALMON_SANDWICH.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GRILLED_BACON_SANDWICH.get()
+                                ModItems.GRILLED_BACON_SANDWICH.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BREAD_WITH_JAM.get()
+                                ModItems.BREAD_WITH_JAM.get()
                         );
 
                         // =========================
@@ -144,39 +145,39 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_CAKE_SLICE.get()
+                                ModItems.STRAWBERRY_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_CAKE_SLICE.get()
+                                ModItems.SWEETBERRY_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_CAKE_SLICE.get()
+                                ModItems.CHOCOLATE_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_GATEAU_SLICE.get()
+                                ModItems.CHOCOLATE_GATEAU_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BUNDT_CAKE_SLICE.get()
+                                ModItems.BUNDT_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.LINZER_TART_SLICE.get()
+                                ModItems.LINZER_TART_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_PIE_SLICE.get()
+                                ModItems.GLOWBERRY_PIE_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART_SLICE.get()
+                                ModItems.CHOCOLATE_TART_SLICE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.PUDDING_SLICE.get()
+                                ModItems.PUDDING_SLICE.get()
                         );
 
                         // =========================
@@ -184,19 +185,19 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CORNET.get()
+                                ModItems.CORNET.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.JAM_ROLL.get()
+                                ModItems.JAM_ROLL.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TRUFFLE.get()
+                                ModItems.CHOCOLATE_TRUFFLE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.MISSLILITU_BISCUIT.get()
+                                ModItems.MISSLILITU_BISCUIT.get()
                         );
 
                         // =========================
@@ -204,43 +205,43 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_CAKE.get()
+                                ModItems.STRAWBERRY_CAKE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_CAKE.get()
+                                ModItems.SWEETBERRY_CAKE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_CAKE.get()
+                                ModItems.CHOCOLATE_CAKE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.BUNDT_CAKE.get()
+                                ModItems.BUNDT_CAKE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.LINZER_TART.get()
+                                ModItems.LINZER_TART.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.APPLE_PIE.get()
+                                ModItems.APPLE_PIE.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_TART.get()
+                                ModItems.GLOWBERRY_TART.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.PUDDING.get()
+                                ModItems.PUDDING.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_GATEAU.get()
+                                ModItems.CHOCOLATE_GATEAU.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_TART.get()
+                                ModItems.CHOCOLATE_TART.get()
                         );
 
                         // =========================
@@ -248,23 +249,23 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.STRAWBERRY_JAM.get()
+                                ModItems.STRAWBERRY_JAM.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.GLOWBERRY_JAM.get()
+                                ModItems.GLOWBERRY_JAM.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.SWEETBERRY_JAM.get()
+                                ModItems.SWEETBERRY_JAM.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.CHOCOLATE_JAM.get()
+                                ModItems.CHOCOLATE_JAM.get()
                         );
 
                         output.accept(
-                                net.satisfy.bakery.core.registry.ObjectRegistry.APPLE_JAM.get()
+                                ModItems.APPLE_JAM.get()
                         );
                     })
                     .build());
