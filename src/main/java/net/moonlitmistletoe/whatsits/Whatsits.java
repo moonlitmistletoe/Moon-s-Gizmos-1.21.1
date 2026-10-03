@@ -32,6 +32,7 @@ import net.moonlitmistletoe.whatsits.scabbard.item.ModScabbardItems;
 import net.moonlitmistletoe.whatsits.scabbard.networking.ModScabbardNetworking;
 import net.moonlitmistletoe.whatsits.bakery.neoforge.client.BakeryClientNeoForge;
 import net.moonlitmistletoe.whatsits.scabbard.client.ScabbardClient;
+import net.moonlitmistletoe.whatsits.client.MorrowClient;
 
 @Mod(Whatsits.MOD_ID)
 public class Whatsits {
@@ -67,6 +68,7 @@ public class Whatsits {
             BakeryClientNeoForge.register(modEventBus);
             ScabbardClient.register(modEventBus);
             ScabbardClient.registerGameEvents();
+            MorrowClient.register();
         }
 
         ModSounds.register(modEventBus);
