@@ -31,6 +31,7 @@ jobs:
           test -n "$COMMON"
           test -n "$NEO"
           test -n "$RES"
+          export COMMON NEO RES
 
           python3 <<'PY'
           from pathlib import Path
@@ -176,25 +177,11 @@ jobs:
 
           text = "\\n".join(lines) + "\\n"
 
-          # Remove the old simplified Bakery helper methods.
-          text = re.sub(
-              r'\\n\\s*private static DeferredItem<Item> registerBlockItem\\(.*?\\n\\s*}\\n',
-              '\\n',
-              text,
-              flags=re.S
-          )
-          text = re.sub(
-              r'\\n\\s*private static DeferredItem<Item> registerBakeryFood\\(.*?\\n\\s*}\\n',
-              '\\n',
-              text,
-              flags=re.S
-          )
-          text = re.sub(
-              r'\\n\\s*private static FoodProperties createBakeryFood\\(.*?\\n\\s*}\\n',
-              '\\n',
-              text,
-              flags=re.S
-          )
+          # Remove the old simplified Bakery helper methods. They were only
+          # used by the partial Bakery registration layer.
+          helper = text.find("    private static DeferredItem<Item> registerBlockItem(")
+          if helper != -1:
+              text = text[:helper].rstrip() + "\n}\n"
           mod_items.write_text(text, encoding="utf-8")
 
           # Any remaining source references to the old partial Bakery fields now
