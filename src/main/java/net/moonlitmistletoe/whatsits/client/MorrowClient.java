@@ -17,7 +17,11 @@ public final class MorrowClient {
     public static void register() {
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(
                 EventPriority.LOWEST,
-                MorrowClient::removeFarmAndCharmModName
+                (RenderTooltipEvent.GatherComponents event) -> removeFarmAndCharmModName(event)
+        );
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(
+                EventPriority.LOWEST,
+                (ItemTooltipEvent event) -> removeFarmAndCharmModName(event)
         );
     }
 
