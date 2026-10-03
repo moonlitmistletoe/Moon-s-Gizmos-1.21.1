@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.DistExecutor;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.moonlitmistletoe.whatsits.event.EggYolkHandler;
@@ -28,6 +30,8 @@ import net.moonlitmistletoe.whatsits.scabbard.config.ScabbardConfig;
 import net.moonlitmistletoe.whatsits.scabbard.config.ScabbardItemCache;
 import net.moonlitmistletoe.whatsits.scabbard.item.ModScabbardItems;
 import net.moonlitmistletoe.whatsits.scabbard.networking.ModScabbardNetworking;
+import net.moonlitmistletoe.whatsits.bakery.neoforge.client.BakeryClientNeoForge;
+import net.moonlitmistletoe.whatsits.scabbard.client.ScabbardClient;
 
 @Mod(Whatsits.MOD_ID)
 public class Whatsits {
@@ -59,6 +63,11 @@ public class Whatsits {
 
         Bakery.init();
 
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            BakeryClientNeoForge.register(modEventBus);
+            ScabbardClient.register(modEventBus);
+            ScabbardClient.registerGameEvents();
+        });
 
         ModSounds.register(modEventBus);
 
