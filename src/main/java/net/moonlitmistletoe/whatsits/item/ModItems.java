@@ -49,7 +49,6 @@ public class ModItems {
     public static final DeferredItem<Item> SCRAMBLED_EGGS;
     public static final DeferredItem<Item> SUNNY_SIDE_EGGS;
     public static final DeferredItem<Item> COOKED_COW_RIBS;
-    public static final DeferredItem<Item> APPLE_PIE_SLICE;
     public static final DeferredItem<Item> CHERRY_PIE;
     public static final DeferredItem<Item> MOONCAKE;
     public static final DeferredItem<Item> STRAWBERRY_ICE_CREAM;
@@ -91,7 +90,6 @@ public class ModItems {
         SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs", () -> new Item(new Item.Properties().food(ModFoodProperties.SCRAMBLED_EGGS)));
         SUNNY_SIDE_EGGS = ITEMS.register("sunny_side_eggs", () -> new Item(new Item.Properties().food(ModFoodProperties.SUNNY_SIDE_EGGS)));
         COOKED_COW_RIBS = ITEMS.register("cooked_cow_ribs", () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_COW_RIBS)));
-        APPLE_PIE_SLICE = ITEMS.register("apple_pie_slice", () -> new Item(new Item.Properties().food(ModFoodProperties.APPLE_PIE_SLICE)));
         CHERRY_PIE = ITEMS.register("cherry_pie", () -> new Item(new Item.Properties().food(ModFoodProperties.CHERRY_PIE)));
         MOONCAKE = ITEMS.register("mooncake", () -> new Item(new Item.Properties().food(ModFoodProperties.MOONCAKE)));
         STRAWBERRY_ICE_CREAM = ITEMS.register("strawberry_ice_cream", () -> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY_ICE_CREAM)));
