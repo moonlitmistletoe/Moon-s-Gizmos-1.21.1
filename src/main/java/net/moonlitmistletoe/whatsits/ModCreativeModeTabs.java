@@ -15,7 +15,7 @@ import java.util.Set;
 public class ModCreativeModeTabs {
 
     private static final Set<String> REMOVED_MORROW_ITEMS = Set.of(
-            "cabinet", "drawer", "wall_cabinet",
+            "bakery_banner", "cabinet", "drawer", "wall_cabinet",
             "iron_bench", "iron_chair", "iron_table", "street_sign",
             "breadbox", "croissant", "crusty_bread", "bread", "toast",
             "braided_bread", "sandwich", "vegetable_sandwich",
