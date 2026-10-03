@@ -12,7 +12,7 @@ import com.mojang.logging.LogUtils;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.fml.DistExecutor;
+import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.moonlitmistletoe.whatsits.event.EggYolkHandler;
@@ -63,7 +63,7 @@ public class Whatsits {
 
         Bakery.init();
 
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+        if (FMLLoader.getDist() == Dist.CLIENT) {
             BakeryClientNeoForge.register(modEventBus);
             ScabbardClient.register(modEventBus);
             ScabbardClient.registerGameEvents();
