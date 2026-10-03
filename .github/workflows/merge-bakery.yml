@@ -251,7 +251,7 @@ jobs:
           if generated_start != -1 and generated_end != -1:
               b = b[:generated_start] + b[generated_end:]
 
-          process_start = b.find('tasks.named(\\n        "processResources"\\n).configure {')
+          process_start = b.find('tasks.named(\n        "processResources"\n).configure {')
           idea_start = b.find("idea {", process_start)
           if process_start != -1 and idea_start != -1:
               b = b[:process_start] + '''tasks.named(\n        "processResources"\n).configure {\n\n    duplicatesStrategy =\n            DuplicatesStrategy.INCLUDE\n}\n\n''' + b[idea_start:]
