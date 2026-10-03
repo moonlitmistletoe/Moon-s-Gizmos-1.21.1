@@ -4,11 +4,6 @@
   "package": "net.moonlitmistletoe.whatsits.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
-  "client": [
-    "CreativeModeTabRegistryMixin"
-  ],
-  "server": [],
-  "injectors": {
-    "defaultRequire": 1
-  }
+  "client": [],
+  "server": []
 }
