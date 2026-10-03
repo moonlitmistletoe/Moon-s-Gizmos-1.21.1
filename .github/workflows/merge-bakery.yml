@@ -259,7 +259,7 @@ jobs:
           dep = '    implementation "curse.maven:lets-do-farm-charm-1038103:7628193"'
           if "lets-do-farm-charm-1038103" not in b:
               anchor = '    implementation "curse.maven:farmers-delight-398521:8765184"'
-              b = b.replace(anchor, anchor + "\\n\\n" + dep, 1)
+              b = b.replace(anchor, anchor + "\n\n" + dep, 1)
 
           build.write_text(b, encoding="utf-8")
 
