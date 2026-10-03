@@ -67,7 +67,7 @@ public class Whatsits {
             BakeryClientNeoForge.register(modEventBus);
             ScabbardClient.register(modEventBus);
             ScabbardClient.registerGameEvents();
-        });
+        }
 
         ModSounds.register(modEventBus);
 
