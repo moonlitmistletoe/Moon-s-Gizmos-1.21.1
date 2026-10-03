@@ -1,0 +1,21 @@
+{
+  "type": "farm_and_charm:crafting_bowl",
+  "ingredients": [
+    {
+      "item": "farm_and_charm:flour"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "whatsits:eggs"
+    },
+    {
+      "tag": "whatsits:water_bottles"
+    }
+  ],
+  "result": {
+    "id": "whatsits:sweet_dough",
+    "count": 12
+  }
+}

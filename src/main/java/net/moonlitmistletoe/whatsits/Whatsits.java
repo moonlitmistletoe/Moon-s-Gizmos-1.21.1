@@ -1,6 +1,10 @@
 package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
+import net.neoforged.fml.event.config.ModConfigEvent;
+import net.moonlitmistletoe.whatsits.bakery.neoforge.core.config.BakeryNeoForgeConfig;
+import net.moonlitmistletoe.whatsits.bakery.core.registry.CompostableRegistry;
+import net.moonlitmistletoe.whatsits.bakery.Bakery;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import org.slf4j.Logger;
 
@@ -35,6 +39,27 @@ public class Whatsits {
 
         modEventBus.addListener(this::commonSetup);
 
+
+        modContainer.registerConfig(
+      ModConfig.Type.COMMON,
+      BakeryNeoForgeConfig.COMMON_CONFIG
+        );
+
+        modEventBus.addListener((ModConfigEvent.Loading event) -> {
+  if (event.getConfig().getSpec() == BakeryNeoForgeConfig.COMMON_CONFIG) {
+      BakeryNeoForgeConfig.sync();
+  }
+        });
+
+        modEventBus.addListener((ModConfigEvent.Reloading event) -> {
+  if (event.getConfig().getSpec() == BakeryNeoForgeConfig.COMMON_CONFIG) {
+      BakeryNeoForgeConfig.sync();
+  }
+        });
+
+        Bakery.init();
+
+
         ModSounds.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
@@ -64,7 +89,8 @@ public class Whatsits {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-    }
+    event.enqueueWork(CompostableRegistry::registerCompostable);
+}
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {

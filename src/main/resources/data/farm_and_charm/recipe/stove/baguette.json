@@ -1,0 +1,20 @@
+{
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "item": "whatsits:sweet_dough"
+    },
+    {
+      "tag": "whatsits:dough"
+    },
+    {
+      "item": "farm_and_charm:yeast"
+    }
+  ],
+  "result": {
+    "id": "whatsits:baguette",
+    "count": 3
+  },
+  "experience": 0.2,
+  "requiresLearning": false
+}

@@ -1,0 +1,20 @@
+{
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "whatsits:dough"
+    },
+    {
+      "item": "farm_and_charm:yeast"
+    },
+    {
+      "tag": "whatsits:water_bottles"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "whatsits:crusty_bread"
+  },
+  "experience": 0.3,
+  "requiresLearning": false
+}

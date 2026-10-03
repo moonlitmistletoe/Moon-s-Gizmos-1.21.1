@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "whatsits:strawberry_jam",
+    "whatsits:sweetberry_jam",
+    "whatsits:glowberry_jam",
+    "whatsits:apple_jam",
+    "whatsits:chocolate_jam"
+  ]
+}

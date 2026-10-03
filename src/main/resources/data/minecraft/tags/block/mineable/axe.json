@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "whatsits:wall_cabinet",
+    "whatsits:cabinet",
+    "whatsits:drawer",
+    "whatsits:street_sign",
+    "whatsits:breadbox",
+    "whatsits:tray",
+    "whatsits:wall_display"
+  ]
+}

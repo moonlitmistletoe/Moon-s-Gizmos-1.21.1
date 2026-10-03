@@ -1,0 +1,20 @@
+{
+  "type": "farm_and_charm:stove",
+  "ingredients": [
+    {
+      "tag": "whatsits:dough"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "whatsits:water_bottles"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "whatsits:bread"
+  },
+  "experience": 0.125,
+  "requiresLearning": false
+}

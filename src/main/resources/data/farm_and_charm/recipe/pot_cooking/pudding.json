@@ -1,0 +1,23 @@
+{
+  "type": "farm_and_charm:pot_cooking",
+  "ingredients": [
+    {
+      "tag": "whatsits:eggs"
+    },
+    {
+      "tag": "whatsits:jam"
+    },
+    {
+      "tag": "whatsits:milk"
+    }
+  ],
+  "container": {
+    "id": "whatsits:jar"
+  },
+  "result": {
+    "id": "whatsits:pudding",
+    "count": 1
+  },
+  "requiresLearning": false,
+  "requireContainer": false
+}

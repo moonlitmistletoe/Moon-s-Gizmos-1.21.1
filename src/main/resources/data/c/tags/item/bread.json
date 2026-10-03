@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "whatsits:crusty_bread",
+    "whatsits:baguette",
+    "whatsits:braided_bread",
+    "whatsits:bun",
+    "whatsits:toast",
+    "whatsits:bread",
+    "minecraft:bread"
+  ]
+}
