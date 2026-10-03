@@ -1,0 +1,29 @@
+name: Fix Morrow asset namespaces
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fix embedded Bakery asset references
+        run: |
+          find src/main/resources/assets/morrow -type f \( -name '*.json' -o -name '*.mcmeta' \) -print0 | xargs -0 sed -i \
+            -e 's/bakery:/morrow:/g' \
+            -e 's/\\.bakery\\./.morrow./g'
+
+      - name: Commit fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/main/resources/assets/morrow
+          git diff --cached --quiet || git commit -m "Fix Morrow asset namespaces"
+          git push
