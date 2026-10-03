@@ -1,0 +1,14 @@
+{
+  "name": "Bread Knife",
+  "icon": "morrow:bread_knife",
+  "category": "morrow:misc",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:bread_knife",
+      "link_recipe": false,
+      "text": "Currently unavailable.."
+    }
+  ]
+}

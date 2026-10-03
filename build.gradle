@@ -215,9 +215,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 def decodeBakeryStructure = tasks.register("decodeBakeryStructure") {
-    def source = file("src/main/resources/data/whatsits/structure/bakery.nbt.base64")
+    def source = file("src/main/resources/data/morrow/structure/bakery.nbt.base64")
     def output = layout.buildDirectory.file(
-            "generated/resources/data/whatsits/structure/bakery.nbt"
+            "generated/resources/data/morrow/structure/bakery.nbt"
     )
 
     inputs.file(source)
@@ -245,7 +245,7 @@ tasks.named(
     notCompatibleWithConfigurationCache("Rewrites merged Bakery resource namespaces after processing")
 
     doLast {
-        def resourceRoot = new File(destinationDir, "assets/whatsits")
+        def resourceRoot = new File(destinationDir, "assets/morrow")
 
         if (resourceRoot.exists()) {
             fileTree(resourceRoot)

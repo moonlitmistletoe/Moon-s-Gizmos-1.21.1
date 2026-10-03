@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morrow:linzer_tart"
+    },
+    {
+      "item": "minecraft:shears"
+    }
+  ],
+  "result": {
+    "id": "morrow:linzer_tart_slice",
+    "count": 4
+  }
+}

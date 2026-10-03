@@ -23,7 +23,7 @@ public final class WhatsitsCommands {
                 event.getDispatcher();
 
         dispatcher.register(
-                Commands.literal("whatsits")
+                Commands.literal("morrow")
                         .then(
                                 Commands.literal("testcuffs")
                                         .executes(context ->

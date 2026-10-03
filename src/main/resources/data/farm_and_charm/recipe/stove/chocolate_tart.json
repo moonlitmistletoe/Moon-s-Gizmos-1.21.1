@@ -2,10 +2,10 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "tag": "whatsits:chocolate"
+      "tag": "morrow:chocolate"
     },
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "farm_and_charm:yeast"
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 1,
-    "id": "whatsits:chocolate_tart"
+    "id": "morrow:chocolate_tart"
   },
   "experience": 0.4,
   "requiresLearning": false

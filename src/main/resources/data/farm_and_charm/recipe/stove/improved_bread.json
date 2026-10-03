@@ -2,13 +2,13 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "tag": "whatsits:wheat"
+      "tag": "morrow:wheat"
     },
     {
-      "tag": "whatsits:wheat"
+      "tag": "morrow:wheat"
     },
     {
-      "tag": "whatsits:wheat"
+      "tag": "morrow:wheat"
     }
   ],
   "result": {

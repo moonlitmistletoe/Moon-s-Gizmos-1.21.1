@@ -2,10 +2,10 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "tag": "whatsits:jam"
+      "tag": "morrow:jam"
     },
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 5,
-    "id": "whatsits:jam_roll"
+    "id": "morrow:jam_roll"
   },
   "experience": 0.2,
   "requiresLearning": false

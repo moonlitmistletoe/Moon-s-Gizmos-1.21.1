@@ -2,7 +2,7 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "farm_and_charm:yeast"
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 4,
-    "id": "whatsits:croissant"
+    "id": "morrow:croissant"
   },
   "experience": 0.2,
   "requiresLearning": false

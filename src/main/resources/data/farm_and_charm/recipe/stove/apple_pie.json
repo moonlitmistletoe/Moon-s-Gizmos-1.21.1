@@ -5,14 +5,14 @@
       "item": "minecraft:apple"
     },
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "id": "whatsits:apple_pie",
+    "id": "morrow:apple_pie",
     "count": 1
   },
   "experience": 0.5,

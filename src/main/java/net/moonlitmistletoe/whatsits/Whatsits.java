@@ -37,7 +37,7 @@ import net.moonlitmistletoe.whatsits.client.MorrowClient;
 @Mod(Whatsits.MOD_ID)
 public class Whatsits {
 
-    public static final String MOD_ID = "whatsits";
+    public static final String MOD_ID = "morrow";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public Whatsits(IEventBus modEventBus, ModContainer modContainer) {

@@ -1,0 +1,18 @@
+{
+  "name": "Cooked Cow Ribs",
+  "icon": "morrow:cooked_cow_ribs",
+  "category": "morrow:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:cooked_cow_ribs",
+      "link_recipe": true,
+      "text": "Cook raw cow ribs to make these. They are delicious."
+    },
+    {
+      "type": "patchouli:smelting",
+      "recipe": "morrow:cooked_cow_ribs",
+      "text": "Smelt the raw cow ribs in a furnace, smoker or other compatible furnace. The recipe uses the raw ribs as its ingredient and takes 10s to cook."
+    }
+  ]
+}

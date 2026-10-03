@@ -8,14 +8,14 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "whatsits:eggs"
+      "tag": "morrow:eggs"
     },
     {
-      "tag": "whatsits:milk"
+      "tag": "morrow:milk"
     }
   ],
   "result": {
-    "id": "whatsits:cake_dough",
+    "id": "morrow:cake_dough",
     "count": 12
   }
 }

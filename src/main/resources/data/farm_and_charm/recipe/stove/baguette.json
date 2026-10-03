@@ -2,17 +2,17 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
-      "tag": "whatsits:dough"
+      "tag": "morrow:dough"
     },
     {
       "item": "farm_and_charm:yeast"
     }
   ],
   "result": {
-    "id": "whatsits:baguette",
+    "id": "morrow:baguette",
     "count": 3
   },
   "experience": 0.2,

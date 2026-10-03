@@ -5,7 +5,7 @@
       "item": "minecraft:milk_bucket"
     },
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 4,
-    "id": "whatsits:cornet"
+    "id": "morrow:cornet"
   },
   "experience": 0.2,
   "requiresLearning": false

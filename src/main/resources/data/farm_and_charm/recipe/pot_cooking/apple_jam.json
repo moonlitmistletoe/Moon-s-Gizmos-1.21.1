@@ -9,10 +9,10 @@
     }
   ],
   "container": {
-    "id": "whatsits:jar"
+    "id": "morrow:jar"
   },
   "result": {
-    "id": "whatsits:apple_jam"
+    "id": "morrow:apple_jam"
   },
   "requiresLearning": false,
   "requireContainer": true

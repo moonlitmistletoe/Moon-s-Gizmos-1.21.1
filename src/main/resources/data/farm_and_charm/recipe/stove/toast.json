@@ -5,15 +5,15 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "whatsits:dough"
+      "tag": "morrow:dough"
     },
     {
-      "tag": "whatsits:milk"
+      "tag": "morrow:milk"
     }
   ],
   "result": {
     "count": 3,
-    "id": "whatsits:toast"
+    "id": "morrow:toast"
   },
   "experience": 0.2,
   "requiresLearning": false

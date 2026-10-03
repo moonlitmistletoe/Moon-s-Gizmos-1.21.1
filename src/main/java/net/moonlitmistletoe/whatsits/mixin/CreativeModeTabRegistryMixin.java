@@ -38,7 +38,7 @@ public class CreativeModeTabRegistryMixin {
 
             // Safety net for any old Bakery tab that may still be registered under
             // Morrow's namespace.
-            return id.getNamespace().equals("whatsits") && id.getPath().equals("bakery");
+            return id.getNamespace().equals("morrow") && id.getPath().equals("bakery");
         });
 
         cir.setReturnValue(tabs);

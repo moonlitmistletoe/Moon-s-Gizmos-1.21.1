@@ -2,17 +2,17 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "tag": "whatsits:dough"
+      "tag": "morrow:dough"
     },
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "id": "whatsits:braided_bread",
+    "id": "morrow:braided_bread",
     "count": 4
   },
   "experience": 0.125,

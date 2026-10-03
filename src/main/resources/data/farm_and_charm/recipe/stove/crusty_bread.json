@@ -2,18 +2,18 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "tag": "whatsits:dough"
+      "tag": "morrow:dough"
     },
     {
       "item": "farm_and_charm:yeast"
     },
     {
-      "tag": "whatsits:water_bottles"
+      "tag": "morrow:water_bottles"
     }
   ],
   "result": {
     "count": 4,
-    "id": "whatsits:crusty_bread"
+    "id": "morrow:crusty_bread"
   },
   "experience": 0.3,
   "requiresLearning": false

@@ -1,0 +1,19 @@
+{
+  "name": "Weapon Holster",
+  "icon": "morrow:weapon_holster",
+  "category": "morrow:misc",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:weapon_holster",
+      "link_recipe": true,
+      "text": "A holster used to carry and sheath weapons. Equip it to your inventory slot, then use R to sheath a weapon inside to keep it secured until you need it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:weapon_holster",
+      "text": ""
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Scabbard",
+  "icon": "morrow:scabbard",
+  "category": "morrow:misc",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:scabbard",
+      "link_recipe": true,
+      "text": "A scabbard used to carry and sheath swords. Equip it to your waist using your inventory slot, then use R to sheath a sword inside to keep the weapon sheathed until you need it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:scabbard",
+      "text": ""
+    }
+  ]
+}

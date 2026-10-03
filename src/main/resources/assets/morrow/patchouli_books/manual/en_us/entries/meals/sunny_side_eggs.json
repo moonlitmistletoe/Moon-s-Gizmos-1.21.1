@@ -1,0 +1,17 @@
+{
+  "name": "Sunny-Side Eggs",
+  "icon": "morrow:sunny_side_eggs",
+  "category": "morrow:meals",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:sunny_side_eggs",
+      "link_recipe": true,
+      "text": "Another scrumptious way to put egg yolks to work."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "To get your sunny-side eggs, you must place them in a Skillet above an Oven. Let them gently sizzle, and they'll jump at you. Be ready to catch them!"
+    }
+  ]
+}

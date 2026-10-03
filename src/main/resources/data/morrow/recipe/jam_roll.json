@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morrow:sweet_dough"
+    },
+    {
+      "item": "morrow:strawberry_jam"
+    }
+  ],
+  "result": {
+    "id": "morrow:jam_roll",
+    "count": 1
+  }
+}

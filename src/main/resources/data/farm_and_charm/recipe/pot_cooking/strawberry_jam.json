@@ -9,10 +9,10 @@
     }
   ],
   "container": {
-    "id": "whatsits:jar"
+    "id": "morrow:jar"
   },
   "result": {
-    "id": "whatsits:strawberry_jam"
+    "id": "morrow:strawberry_jam"
   },
   "requiresLearning": false,
   "requireContainer": true

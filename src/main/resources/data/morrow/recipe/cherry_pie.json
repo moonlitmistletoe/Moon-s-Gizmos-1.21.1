@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CSC",
+    "WWW"
+  ],
+  "key": {
+    "C": {
+      "item": "morrow:cherry"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "W": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "id": "morrow:cherry_pie",
+    "count": 1
+  }
+}

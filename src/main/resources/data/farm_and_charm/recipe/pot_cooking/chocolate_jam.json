@@ -2,20 +2,20 @@
   "type": "farm_and_charm:pot_cooking",
   "ingredients": [
     {
-      "tag": "whatsits:milk"
+      "tag": "morrow:milk"
     },
     {
-      "tag": "whatsits:chocolate"
+      "tag": "morrow:chocolate"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "container": {
-    "id": "whatsits:jar"
+    "id": "morrow:jar"
   },
   "result": {
-    "id": "whatsits:chocolate_jam"
+    "id": "morrow:chocolate_jam"
   },
   "requiresLearning": false,
   "requireContainer": true

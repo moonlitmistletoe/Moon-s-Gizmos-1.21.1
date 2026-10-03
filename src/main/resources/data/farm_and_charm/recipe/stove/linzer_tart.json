@@ -5,7 +5,7 @@
       "item": "farm_and_charm:strawberry"
     },
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 1,
-    "id": "whatsits:linzer_tart"
+    "id": "morrow:linzer_tart"
   },
   "experience": 0.2,
   "requiresLearning": false

@@ -8,12 +8,12 @@
       "item": "minecraft:white_dye"
     },
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     }
   ],
   "result": {
     "count": 4,
-    "id": "whatsits:misslilitu_biscuit"
+    "id": "morrow:misslilitu_biscuit"
   },
   "experience": 0.2,
   "requiresLearning": false

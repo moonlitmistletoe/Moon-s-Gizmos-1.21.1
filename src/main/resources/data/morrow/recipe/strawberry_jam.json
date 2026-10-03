@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morrow:strawberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "morrow:jar"
+    }
+  ],
+  "result": {
+    "id": "morrow:strawberry_jam",
+    "count": 1
+  }
+}

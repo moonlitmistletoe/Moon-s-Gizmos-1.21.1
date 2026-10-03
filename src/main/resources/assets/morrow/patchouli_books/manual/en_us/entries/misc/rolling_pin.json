@@ -1,0 +1,14 @@
+{
+  "name": "Rolling Pin",
+  "icon": "morrow:rolling_pin",
+  "category": "morrow:misc",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:rolling_pin",
+      "link_recipe": false,
+      "text": "Currently no uses."
+    }
+  ]
+}

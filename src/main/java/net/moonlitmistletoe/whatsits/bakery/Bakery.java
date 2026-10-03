@@ -6,7 +6,7 @@ import net.moonlitmistletoe.whatsits.bakery.core.network.PacketHandler;
 import net.moonlitmistletoe.whatsits.bakery.core.registry.*;
 
 public class Bakery {
-    public static final String MOD_ID = "whatsits";
+    public static final String MOD_ID = "morrow";
 
     public static ResourceLocation identifier(String name) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);

@@ -1,0 +1,13 @@
+{
+  "name": "Egg Yolk",
+  "icon": "morrow:egg_yolk",
+  "category": "morrow:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:egg_yolk",
+      "link_recipe": false,
+      "text": "When you throw an egg, there is a chance it cracks and you get egg yolk, which is used in several food recipes."
+    }
+  ]
+}

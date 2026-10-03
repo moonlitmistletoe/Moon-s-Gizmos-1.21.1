@@ -1,0 +1,18 @@
+{
+  "name": "Apple Jam",
+  "icon": "morrow:apple_jam",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:apple_jam",
+      "link_recipe": true,
+      "text": "Apple jam is made from apples."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:apple_jam",
+      "text": ""
+    }
+  ]
+}

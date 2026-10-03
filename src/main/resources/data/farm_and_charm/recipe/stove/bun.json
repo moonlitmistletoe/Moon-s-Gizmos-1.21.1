@@ -8,12 +8,12 @@
       "item": "farm_and_charm:yeast"
     },
     {
-      "tag": "whatsits:eggs"
+      "tag": "morrow:eggs"
     }
   ],
   "result": {
     "count": 5,
-    "id": "whatsits:bun"
+    "id": "morrow:bun"
   },
   "experience": 0.125,
   "requiresLearning": false

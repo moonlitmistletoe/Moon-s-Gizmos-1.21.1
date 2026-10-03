@@ -8,14 +8,14 @@
       "item": "minecraft:cocoa_beans"
     },
     {
-      "tag": "whatsits:milk"
+      "tag": "morrow:milk"
     }
   ],
   "container": {
-    "id": "whatsits:jar"
+    "id": "morrow:jar"
   },
   "result": {
-    "id": "whatsits:chocolate_truffle",
+    "id": "morrow:chocolate_truffle",
     "count": 4
   },
   "requiresLearning": false,

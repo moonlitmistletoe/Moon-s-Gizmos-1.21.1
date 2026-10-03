@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_plains",
+  "features": "morrow:strawberry_patch",
+  "step": "vegetal_decoration"
+}

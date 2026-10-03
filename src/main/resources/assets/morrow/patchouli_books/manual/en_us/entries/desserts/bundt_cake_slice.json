@@ -1,0 +1,18 @@
+{
+  "name": "Slice of Bundt Cake",
+  "icon": "morrow:bundt_cake_slice",
+  "category": "morrow:desserts",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "morrow:bundt_cake_slice",
+      "link_recipe": true,
+      "text": "A slice of bundt cake. It is a simple dessert but especially filling.."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "morrow:bundt_cake_slice",
+      "text": ""
+    }
+  ]
+}

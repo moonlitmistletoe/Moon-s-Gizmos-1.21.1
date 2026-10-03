@@ -2,20 +2,20 @@
   "type": "farm_and_charm:pot_cooking",
   "ingredients": [
     {
-      "tag": "whatsits:eggs"
+      "tag": "morrow:eggs"
     },
     {
-      "tag": "whatsits:jam"
+      "tag": "morrow:jam"
     },
     {
-      "tag": "whatsits:milk"
+      "tag": "morrow:milk"
     }
   ],
   "container": {
-    "id": "whatsits:jar"
+    "id": "morrow:jar"
   },
   "result": {
-    "id": "whatsits:pudding",
+    "id": "morrow:pudding",
     "count": 1
   },
   "requiresLearning": false,

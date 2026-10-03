@@ -6,7 +6,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModBlocks {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks("whatsits");
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks("morrow");
 
     public static final DeferredBlock<BlackberryCropBlock> BLACKBERRY_CROP;
     public static final DeferredBlock<BlueberryCropBlock> BLUEBERRY_CROP;

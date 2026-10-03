@@ -2,7 +2,7 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "tag": "whatsits:eggs"
+      "tag": "morrow:eggs"
     },
     {
       "item": "minecraft:sugar"
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 1,
-    "id": "whatsits:bundt_cake"
+    "id": "morrow:bundt_cake"
   },
   "experience": 0.4,
   "requiresLearning": false

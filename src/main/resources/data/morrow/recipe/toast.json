@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morrow:bread"
+    }
+  ],
+  "result": {
+    "id": "morrow:toast",
+    "count": 1
+  }
+}

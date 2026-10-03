@@ -2,18 +2,18 @@
   "type": "farm_and_charm:stove",
   "ingredients": [
     {
-      "item": "whatsits:sweet_dough"
+      "item": "morrow:sweet_dough"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "tag": "whatsits:eggs"
+      "tag": "morrow:eggs"
     }
   ],
   "result": {
     "count": 6,
-    "id": "whatsits:waffle"
+    "id": "morrow:waffle"
   },
   "experience": 0.2,
   "requiresLearning": false
