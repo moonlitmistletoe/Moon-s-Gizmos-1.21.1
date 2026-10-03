@@ -1,19 +1,13 @@
 package net.nimbu.scabbards;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.component.DyedItemColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
 import net.nimbu.scabbards.item.ModItems;
-import net.nimbu.scabbards.keybinds.ModKeybinds;
-import net.nimbu.scabbards.networking.ScabbardKeyPressedPayload;
 import net.nimbu.scabbards.renderer.HipScabbardRenderer;
 import net.nimbu.scabbards.renderer.ScabbardRenderer;
 import net.nimbu.scabbards.renderer.entity.layers.ModModelLayers;
@@ -38,19 +32,6 @@ public class ScabbardsClient {
     }
 
     @SubscribeEvent
-    public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
-        ModKeybinds.register();
-        event.register(ModKeybinds.SCABBARD_KEY);
-    }
-
-    @SubscribeEvent
-    public static void onClientTick(ClientTickEvent.Post event) {
-        while (ModKeybinds.SCABBARD_KEY.consumeClick()) {
-            PacketDistributor.sendToServer(new ScabbardKeyPressedPayload());
-        }
-    }
-
-    @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             CuriosRendererRegistry.register(
@@ -68,7 +49,7 @@ public class ScabbardsClient {
                     () -> new HipScabbardRenderer(0)
             );
 
-            Minecraft minecraft = Minecraft.getInstance();
+            net.minecraft.client.Minecraft minecraft = net.minecraft.client.Minecraft.getInstance();
 
             minecraft.getItemColors().register(
                     (stack, tintIndex) -> {
