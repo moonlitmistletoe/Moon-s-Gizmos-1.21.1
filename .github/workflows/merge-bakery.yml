@@ -150,38 +150,32 @@ jobs:
           }
           '''.replace("          ", ""), encoding="utf-8")
 
-          # Remove Bakery fields/registrations from the old ModItems file while
-          # leaving all Whatsits-native items, songs and handcuffs intact.
+          # Remove the old partial Bakery layer from ModItems. The full upstream
+          # ObjectRegistry is now authoritative for every Bakery registry entry.
           mod_items = root / "src/main/java/net/moonlitmistletoe/whatsits/item/ModItems.java"
           text = mod_items.read_text(encoding="utf-8")
 
-          for name in sorted(names, key=len, reverse=True):
-              text = re.sub(
-                  rf'^\s*public static final DeferredItem<[^;]+>\s+{re.escape(name)};\s*\n',
-                  '',
-                  text,
-                  flags=re.M
-              )
-              text = re.sub(
-                  rf'^\s*{re.escape(name)}\s*=.*(?:\n(?!\s*[A-Z_]+\s*=).*?)*',
-                  lambda m: '' if m.group(0).strip() else m.group(0),
-                  text
-              )
+          # APPLE_PIE_SLICE sits among the native fields, so remove just that declaration.
+          text = text.replace("    public static final DeferredItem<Item> APPLE_PIE_SLICE;\\n", "")
 
-          # The previous regex intentionally handles the one-line registrations;
-          # remove any remaining static-block lines that clearly belong to a
-          # Bakery field.
-          lines = text.splitlines()
-          lines = [line for line in lines if not any(re.search(rf'\b{name}\s*=', line) for name in names)]
-          lines = [line for line in lines if not re.search(r'registerBlockItem\(".*",\s*ModBlocks\.', line)]
+          # The remaining old Bakery declarations are one contiguous section.
+          field_start = text.find("    public static final DeferredItem<Item> ROLLING_PIN;")
+          field_end = text.find("    public static void register(IEventBus eventBus)", field_start)
+          if field_start != -1 and field_end != -1:
+              text = text[:field_start] + text[field_end:]
 
-          text = "\n".join(lines) + "\n"
+          # The old Bakery registrations are one contiguous section between the
+          # native food registrations and the native jukebox registrations.
+          static_start = text.find('        ROLLING_PIN = ITEMS.register("rolling_pin"')
+          static_end = text.find("        DORIME_SONG =", static_start)
+          if static_start != -1 and static_end != -1:
+              text = text[:static_start] + text[static_end:]
 
-          # Remove the old simplified Bakery helper methods. They were only
-          # used by the partial Bakery registration layer.
+          # The old Bakery-only helper methods are at the end of ModItems.
           helper = text.find("    private static DeferredItem<Item> registerBlockItem(")
           if helper != -1:
-              text = text[:helper].rstrip() + "\n}\n"
+              text = text[:helper].rstrip() + "\\n}\\n"
+
           mod_items.write_text(text, encoding="utf-8")
 
           # Any remaining source references to the old partial Bakery fields now
