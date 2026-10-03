@@ -1,0 +1,290 @@
+name: Merge Bakery into Whatsits
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '[bakery-merge]') }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract and merge Bakery
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/bakery-src
+          mkdir -p /tmp/bakery-src
+          unzip -q bakery-1.21.1.zip -d /tmp/bakery-src
+
+          COMMON="$(find /tmp/bakery-src -type d -path '*/common/src/main/java/net/satisfy/bakery' | head -n1)"
+          NEO="$(find /tmp/bakery-src -type d -path '*/neoforge/src/main/java/net/satisfy/bakery/neoforge' | head -n1)"
+          RES="$(find /tmp/bakery-src -type d -path '*/common/src/main/resources' | head -n1)"
+
+          test -n "$COMMON"
+          test -n "$NEO"
+          test -n "$RES"
+
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+          import shutil
+          import os
+
+          common = Path(os.environ["COMMON"])
+          neo = Path(os.environ["NEO"])
+          res = Path(os.environ["RES"])
+          root = Path.cwd()
+          java_root = root / "src/main/java/net/moonlitmistletoe/whatsits/bakery"
+          resource_root = root / "src/main/resources"
+
+          if java_root.exists():
+              shutil.rmtree(java_root)
+          java_root.mkdir(parents=True)
+
+          def transform_java(text):
+              text = text.replace("net.satisfy.bakery", "net.moonlitmistletoe.whatsits.bakery")
+              text = text.replace('public static final String MOD_ID = "bakery";',
+                                  'public static final String MOD_ID = "whatsits";')
+              text = re.sub(r'^import net\.fabricmc\.api\.EnvType;\n', '', text, flags=re.M)
+              text = re.sub(r'^import net\.fabricmc\.api\.Environment;\n', '', text, flags=re.M)
+              text = re.sub(r'^@Environment\(EnvType\.CLIENT\)\s*\n', '', text, flags=re.M)
+              return text
+
+          # Copy the complete common Bakery implementation.
+          for src in common.rglob("*.java"):
+              rel = src.relative_to(common)
+              dst = java_root / rel
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              dst.write_text(transform_java(src.read_text(encoding="utf-8")), encoding="utf-8")
+
+          # Copy the complete NeoForge-specific implementation except the old
+          # standalone @Mod entrypoint. Its setup is integrated into Whatsits below.
+          for src in neo.rglob("*.java"):
+              rel = src.relative_to(neo)
+              if rel.as_posix() == "BakeryNeoForge.java":
+                  continue
+              dst = java_root / "neoforge" / rel
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              text = transform_java(src.read_text(encoding="utf-8"))
+              dst.write_text(text, encoding="utf-8")
+
+          # Copy Bakery's complete asset tree into Whatsits' namespace.
+          assets = res / "assets" / "bakery"
+          dst_assets = resource_root / "assets" / "whatsits"
+          if assets.exists():
+              for src in assets.rglob("*"):
+                  if src.is_file():
+                      rel = src.relative_to(assets)
+                      dst = dst_assets / rel
+                      dst.parent.mkdir(parents=True, exist_ok=True)
+                      shutil.copy2(src, dst)
+
+          # Copy Bakery's complete data tree. Namespace references are rewritten
+          # from bakery:* to whatsits:* while external compatibility namespaces
+          # such as farm_and_charm remain untouched.
+          data = res / "data"
+          dst_data = resource_root / "data"
+          if data.exists():
+              for src in data.rglob("*"):
+                  if not src.is_file():
+                      continue
+                  rel = src.relative_to(data)
+                  dst = dst_data / rel
+                  dst.parent.mkdir(parents=True, exist_ok=True)
+                  raw = src.read_bytes()
+                  try:
+                      text = raw.decode("utf-8")
+                  except UnicodeDecodeError:
+                      shutil.copy2(src, dst)
+                      continue
+                  text = text.replace("bakery:", "whatsits:")
+                  dst.write_text(text, encoding="utf-8")
+
+          # Read the full upstream ObjectRegistry to identify the IDs which must
+          # no longer be registered by the old partial merge.
+          object_registry = java_root / "core/registry/ObjectRegistry.java"
+          object_text = object_registry.read_text(encoding="utf-8")
+          names = set(re.findall(r'public static final RegistrySupplier<[^>]+>\\s+([A-Z0-9_]+)\\s*=', object_text))
+
+          # Remove the old partial Bakery registrations from ModBlocks. The
+          # complete upstream ObjectRegistry now owns those IDs.
+          mod_blocks = root / "src/main/java/net/moonlitmistletoe/whatsits/block/ModBlocks.java"
+          mod_blocks.write_text('''package net.moonlitmistletoe.whatsits.block;
+
+          import net.minecraft.world.level.block.Blocks;
+          import net.neoforged.bus.api.IEventBus;
+          import net.neoforged.neoforge.registries.DeferredBlock;
+          import net.neoforged.neoforge.registries.DeferredRegister;
+
+          public class ModBlocks {
+              public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks("whatsits");
+
+              public static final DeferredBlock<BlackberryCropBlock> BLACKBERRY_CROP;
+              public static final DeferredBlock<BlueberryCropBlock> BLUEBERRY_CROP;
+              public static final DeferredBlock<CoffeeCropBlock> COFFEE_CROP;
+              public static final DeferredBlock<StrawberryCropBlock> STRAWBERRY_CROP;
+
+              public static void register(IEventBus eventBus) {
+                  BLOCKS.register(eventBus);
+              }
+
+              static {
+                  BLACKBERRY_CROP = BLOCKS.register("blackberry_crop",
+                          () -> new BlackberryCropBlock(Blocks.WHEAT.properties()));
+                  BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
+                          () -> new BlueberryCropBlock(Blocks.WHEAT.properties()));
+                  COFFEE_CROP = BLOCKS.register("coffee_crop",
+                          () -> new CoffeeCropBlock(Blocks.WHEAT.properties()));
+                  STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+                          () -> new StrawberryCropBlock(Blocks.WHEAT.properties()));
+              }
+          }
+          '''.replace("          ", ""), encoding="utf-8")
+
+          # Remove Bakery fields/registrations from the old ModItems file while
+          # leaving all Whatsits-native items, songs and handcuffs intact.
+          mod_items = root / "src/main/java/net/moonlitmistletoe/whatsits/item/ModItems.java"
+          text = mod_items.read_text(encoding="utf-8")
+
+          for name in sorted(names, key=len, reverse=True):
+              text = re.sub(
+                  rf'^\\s*public static final DeferredItem<[^;]+>\\s+{re.escape(name)};\\s*\\n',
+                  '',
+                  text,
+                  flags=re.M
+              )
+              text = re.sub(
+                  rf'^\\s*{re.escape(name)}\\s*=.*(?:\\n(?!\\s*[A-Z_]+\\s*=).*?)*',
+                  lambda m: '' if m.group(0).strip() else m.group(0),
+                  text
+              )
+
+          # The previous regex intentionally handles the one-line registrations;
+          # remove any remaining static-block lines that clearly belong to a
+          # Bakery field.
+          lines = text.splitlines()
+          lines = [line for line in lines if not any(re.search(rf'\\b{name}\\s*=', line) for name in names)]
+          lines = [line for line in lines if not re.search(r'registerBlockItem\\(".*",\\s*ModBlocks\\.', line)]
+
+          text = "\\n".join(lines) + "\\n"
+
+          # Remove the old simplified Bakery helper methods.
+          text = re.sub(
+              r'\\n\\s*private static DeferredItem<Item> registerBlockItem\\(.*?\\n\\s*}\\n',
+              '\\n',
+              text,
+              flags=re.S
+          )
+          text = re.sub(
+              r'\\n\\s*private static DeferredItem<Item> registerBakeryFood\\(.*?\\n\\s*}\\n',
+              '\\n',
+              text,
+              flags=re.S
+          )
+          text = re.sub(
+              r'\\n\\s*private static FoodProperties createBakeryFood\\(.*?\\n\\s*}\\n',
+              '\\n',
+              text,
+              flags=re.S
+          )
+          mod_items.write_text(text, encoding="utf-8")
+
+          # Any remaining source references to the old partial Bakery fields now
+          # point to the authoritative ObjectRegistry.
+          source_root = root / "src/main/java"
+          for path in source_root.rglob("*.java"):
+              if path == object_registry:
+                  continue
+              s = path.read_text(encoding="utf-8")
+              original = s
+              for name in names:
+                  s = re.sub(rf'\\bModBlocks\\.{re.escape(name)}\\b', f'ObjectRegistry.{name}', s)
+                  s = re.sub(rf'\\bModItems\\.{re.escape(name)}\\b', f'ObjectRegistry.{name}', s)
+              if s != original and "ObjectRegistry." in s and "import net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;" not in s:
+                  s = s.replace("\\n", "\\nimport net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;", 1)
+              path.write_text(s, encoding="utf-8")
+
+          # Integrate the Bakery NeoForge bootstrap into Whatsits.
+          whatsits = root / "src/main/java/net/moonlitmistletoe/whatsits/Whatsits.java"
+          s = whatsits.read_text(encoding="utf-8")
+
+          imports = [
+              "import net.moonlitmistletoe.whatsits.bakery.Bakery;",
+              "import net.moonlitmistletoe.whatsits.bakery.core.registry.CompostableRegistry;",
+              "import net.moonlitmistletoe.whatsits.bakery.neoforge.core.config.BakeryNeoForgeConfig;",
+              "import net.neoforged.fml.event.config.ModConfigEvent;",
+          ]
+          marker = "import net.moonlitmistletoe.whatsits.block.ModBlocks;"
+          for imp in imports:
+              if imp not in s:
+                  s = s.replace(marker, marker + "\\n" + imp, 1)
+
+          ctor_marker = "        modEventBus.addListener(this::commonSetup);"
+          bakery_setup = '''
+                  modContainer.registerConfig(
+                          ModConfig.Type.COMMON,
+                          BakeryNeoForgeConfig.COMMON_CONFIG
+                  );
+
+                  modEventBus.addListener((ModConfigEvent.Loading event) -> {
+                      if (event.getConfig().getSpec() == BakeryNeoForgeConfig.COMMON_CONFIG) {
+                          BakeryNeoForgeConfig.sync();
+                      }
+                  });
+
+                  modEventBus.addListener((ModConfigEvent.Reloading event) -> {
+                      if (event.getConfig().getSpec() == BakeryNeoForgeConfig.COMMON_CONFIG) {
+                          BakeryNeoForgeConfig.sync();
+                      }
+                  });
+
+                  Bakery.init();
+          '''.replace("          ", "")
+          if "Bakery.init();" not in s:
+              s = s.replace(ctor_marker, ctor_marker + "\\n\\n" + bakery_setup, 1)
+
+          old_setup = "    private void commonSetup(FMLCommonSetupEvent event) {\\n    }"
+          new_setup = """    private void commonSetup(FMLCommonSetupEvent event) {
+              event.enqueueWork(CompostableRegistry::registerCompostable);
+          }"""
+          if old_setup in s:
+              s = s.replace(old_setup, new_setup, 1)
+
+          whatsits.write_text(s, encoding="utf-8")
+
+          # Add the Farm & Charm dependency required by the full Bakery source.
+          build = root / "build.gradle"
+          b = build.read_text(encoding="utf-8")
+          dep = '    implementation "curse.maven:lets-do-farm-charm-1038103:7628193"'
+          if "lets-do-farm-charm-1038103" not in b:
+              anchor = '    implementation "curse.maven:farmers-delight-398521:8765184"'
+              b = b.replace(anchor, anchor + "\\n\\n" + dep, 1)
+          build.write_text(b, encoding="utf-8")
+
+          # The source archive has served its purpose. Bakery is now source code
+          # and resources inside Whatsits, not a build-time import.
+          archive = root / "bakery-1.21.1.zip"
+          if archive.exists():
+              archive.unlink()
+          PY
+
+      - name: Build merged mod
+        shell: bash
+        run: ./gradlew clean build --no-daemon
+
+      - name: Commit completed merge
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "[bakery-merge] Fully merge Bakery into Whatsits" || exit 0
+          git push
