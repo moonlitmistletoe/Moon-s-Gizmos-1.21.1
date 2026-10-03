@@ -4,10 +4,10 @@
     "item": "minecraft:netherite_ingot"
   },
   "base": {
-    "item": "whatsits:bakery_banner"
+    "item": "morrow:bakery_banner"
   },
   "result": {
-    "id": "whatsits:bakery_banner",
+    "id": "morrow:bakery_banner",
     "count": 2
   },
   "template": {

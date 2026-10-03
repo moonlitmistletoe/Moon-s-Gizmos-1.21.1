@@ -1,8 +1,8 @@
 {
-  "parent": "whatsits:main/place_baker_station",
+  "parent": "morrow:main/place_baker_station",
   "display": {
     "icon": {
-      "id": "whatsits:chocolate_gateau"
+      "id": "morrow:chocolate_gateau"
     },
     "title": {
       "translate": "advancement.bakery.get_all_cakes"
@@ -19,13 +19,13 @@
     "experience": 50
   },
   "criteria": {
-    "whatsits:strawberry_cake": {
+    "morrow:strawberry_cake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:strawberry_cake"
+              "morrow:strawberry_cake"
             ]
           }
         ]
@@ -43,25 +43,25 @@
         ]
       }
     },
-    "whatsits:chocolate_cake": {
+    "morrow:chocolate_cake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:chocolate_cake"
+              "morrow:chocolate_cake"
             ]
           }
         ]
       }
     },
-    "whatsits:sweetberry_cake": {
+    "morrow:sweetberry_cake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:sweetberry_cake"
+              "morrow:sweetberry_cake"
             ]
           }
         ]
@@ -70,16 +70,16 @@
   },
   "requirements": [
     [
-      "whatsits:strawberry_cake"
+      "morrow:strawberry_cake"
     ],
     [
       "minecraft:cake"
     ],
     [
-      "whatsits:chocolate_cake"
+      "morrow:chocolate_cake"
     ],
     [
-      "whatsits:sweetberry_cake"
+      "morrow:sweetberry_cake"
     ]
   ]
 }

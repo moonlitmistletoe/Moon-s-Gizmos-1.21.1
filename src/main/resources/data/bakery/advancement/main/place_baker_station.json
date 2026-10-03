@@ -1,11 +1,11 @@
 {
-  "parent": "whatsits:main/get_yeast",
+  "parent": "morrow:main/get_yeast",
   "criteria": {
     "baker_station": {
       "conditions": {
         "location": [
           {
-            "block": "whatsits:baker_station",
+            "block": "morrow:baker_station",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -21,7 +21,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "whatsits:baker_station"
+      "id": "morrow:baker_station"
     },
     "show_toast": true,
     "title": {

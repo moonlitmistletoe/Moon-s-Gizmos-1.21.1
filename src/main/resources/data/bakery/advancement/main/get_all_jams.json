@@ -1,8 +1,8 @@
 {
-  "parent": "whatsits:main/place_cooking_pot",
+  "parent": "morrow:main/place_cooking_pot",
   "display": {
     "icon": {
-      "id": "whatsits:jar"
+      "id": "morrow:jar"
     },
     "title": {
       "translate": "advancement.bakery.get_all_jams"
@@ -19,61 +19,61 @@
     "experience": 50
   },
   "criteria": {
-    "whatsits:strawberry_jam": {
+    "morrow:strawberry_jam": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:strawberry_jam"
+              "morrow:strawberry_jam"
             ]
           }
         ]
       }
     },
-    "whatsits:chocolate_jam": {
+    "morrow:chocolate_jam": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:chocolate_jam"
+              "morrow:chocolate_jam"
             ]
           }
         ]
       }
     },
-    "whatsits:apple_jam": {
+    "morrow:apple_jam": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:apple_jam"
+              "morrow:apple_jam"
             ]
           }
         ]
       }
     },
-    "whatsits:glowberry_jam": {
+    "morrow:glowberry_jam": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:glowberry_jam"
+              "morrow:glowberry_jam"
             ]
           }
         ]
       }
     },
-    "whatsits:sweetberry_jam": {
+    "morrow:sweetberry_jam": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:sweetberry_jam"
+              "morrow:sweetberry_jam"
             ]
           }
         ]
@@ -82,19 +82,19 @@
   },
   "requirements": [
     [
-      "whatsits:strawberry_jam"
+      "morrow:strawberry_jam"
     ],
     [
-      "whatsits:chocolate_jam"
+      "morrow:chocolate_jam"
     ],
     [
-      "whatsits:apple_jam"
+      "morrow:apple_jam"
     ],
     [
-      "whatsits:glowberry_jam"
+      "morrow:glowberry_jam"
     ],
     [
-      "whatsits:sweetberry_jam"
+      "morrow:sweetberry_jam"
     ]
   ]
 }

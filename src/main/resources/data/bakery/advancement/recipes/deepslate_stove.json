@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "whatsits:deepslate_stove"
+      "morrow:deepslate_stove"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "whatsits:deepslate_stove"
+        "recipe": "morrow:deepslate_stove"
       }
     }
   },

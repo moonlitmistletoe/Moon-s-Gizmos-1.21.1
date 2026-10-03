@@ -1,5 +1,5 @@
 {
-  "parent": "whatsits:main/root",
+  "parent": "morrow:main/root",
   "display": {
     "icon": {
       "id": "farm_and_charm:yeast"

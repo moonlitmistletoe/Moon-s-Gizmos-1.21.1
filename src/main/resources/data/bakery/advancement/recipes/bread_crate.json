@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "whatsits:bread_crate"
+      "morrow:bread_crate"
     ]
   },
   "criteria": {
@@ -12,7 +12,7 @@
         "items": [
           {
             "items": [
-              "whatsits:tray"
+              "morrow:tray"
             ]
           }
         ]
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "whatsits:bread_crate"
+        "recipe": "morrow:bread_crate"
       }
     }
   },

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "whatsits:chocolate_truffle"
+      "item": "morrow:chocolate_truffle"
     }
   ],
   "result": {

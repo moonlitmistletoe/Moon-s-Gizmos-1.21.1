@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:bakery_banner"
+          "name": "morrow:bakery_banner"
         }
       ],
       "rolls": 1.0

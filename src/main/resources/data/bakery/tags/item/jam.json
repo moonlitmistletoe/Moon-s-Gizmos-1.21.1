@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "whatsits:chocolate_jam",
-    "whatsits:strawberry_jam",
-    "whatsits:sweetberry_jam",
-    "whatsits:glowberry_jam",
-    "whatsits:apple_jam"
+    "morrow:chocolate_jam",
+    "morrow:strawberry_jam",
+    "morrow:sweetberry_jam",
+    "morrow:glowberry_jam",
+    "morrow:apple_jam"
   ]
 }

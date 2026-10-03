@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "whatsits:end_bricks_stove"
+      "morrow:end_bricks_stove"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "whatsits:end_bricks_stove"
+        "recipe": "morrow:end_bricks_stove"
       }
     }
   },

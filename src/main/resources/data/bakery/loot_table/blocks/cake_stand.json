@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:cake_stand"
+          "name": "morrow:cake_stand"
         }
       ],
       "rolls": 1.0

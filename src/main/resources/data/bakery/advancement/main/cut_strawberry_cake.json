@@ -1,5 +1,5 @@
 {
-  "parent": "whatsits:main/get_all_cakes",
+  "parent": "morrow:main/get_all_cakes",
   "criteria": {
     "use_strawberry_cake": {
       "conditions": {
@@ -9,7 +9,7 @@
             "predicate": {
               "block": {
                 "blocks": [
-                  "whatsits:strawberry_cake"
+                  "morrow:strawberry_cake"
                 ]
               }
             }
@@ -18,7 +18,7 @@
             "condition": "minecraft:match_tool",
             "predicate": {
               "items": [
-                "whatsits:bread_knife"
+                "morrow:bread_knife"
               ]
             }
           }
@@ -35,7 +35,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "whatsits:strawberry_cake"
+      "id": "morrow:strawberry_cake"
     },
     "show_toast": true,
     "title": {

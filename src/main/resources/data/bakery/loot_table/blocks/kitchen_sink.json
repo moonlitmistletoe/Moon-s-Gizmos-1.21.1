@@ -13,14 +13,14 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "whatsits:kitchen_sink",
+              "block": "morrow:kitchen_sink",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"
               }
             }
           ],
-          "name": "whatsits:kitchen_sink"
+          "name": "morrow:kitchen_sink"
         }
       ],
       "rolls": 1.0

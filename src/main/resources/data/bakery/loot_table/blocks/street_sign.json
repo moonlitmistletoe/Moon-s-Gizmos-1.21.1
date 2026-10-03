@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:street_sign"
+          "name": "morrow:street_sign"
         }
       ],
       "rolls": 1.0

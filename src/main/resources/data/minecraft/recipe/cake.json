@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "A": {
-      "tag": "whatsits:milk"
+      "tag": "morrow:milk"
     },
     "B": {
       "item": "minecraft:sugar"
     },
     "C": {
-      "tag": "whatsits:wheat"
+      "tag": "morrow:wheat"
     },
     "E": {
-      "tag": "whatsits:eggs"
+      "tag": "morrow:eggs"
     }
   },
   "pattern": [

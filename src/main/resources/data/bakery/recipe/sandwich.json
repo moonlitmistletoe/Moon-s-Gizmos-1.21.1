@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "whatsits:bread"
+      "tag": "morrow:bread"
     },
     {
-      "tag": "whatsits:cooked_beef"
+      "tag": "morrow:cooked_beef"
     },
     {
       "tag": "farm_and_charm:cabbage"
     }
   ],
   "result": {
-    "id": "whatsits:sandwich",
+    "id": "morrow:sandwich",
     "count": 2
   }
 }

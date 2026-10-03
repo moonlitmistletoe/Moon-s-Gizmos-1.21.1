@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "whatsits:iron_chair"
+      "morrow:iron_chair"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "whatsits:iron_chair"
+        "recipe": "morrow:iron_chair"
       }
     }
   },

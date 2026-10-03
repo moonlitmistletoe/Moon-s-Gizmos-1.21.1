@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:wall_display"
+          "name": "morrow:wall_display"
         }
       ],
       "rolls": 1.0

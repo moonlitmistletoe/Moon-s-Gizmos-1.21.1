@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
-    "whatsits:kitchen_sink",
-    "whatsits:small_cooking_pot",
-    "whatsits:baker_station",
-    "whatsits:brick_counter",
-    "whatsits:iron_table",
-    "whatsits:iron_chair",
-    "whatsits:iron_bench"
+    "morrow:kitchen_sink",
+    "morrow:small_cooking_pot",
+    "morrow:baker_station",
+    "morrow:brick_counter",
+    "morrow:iron_table",
+    "morrow:iron_chair",
+    "morrow:iron_bench"
   ]
 }

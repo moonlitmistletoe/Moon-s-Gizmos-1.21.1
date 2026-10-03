@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "whatsits:cupcake_display"
+      "morrow:cupcake_display"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "whatsits:cupcake_display"
+        "recipe": "morrow:cupcake_display"
       }
     }
   },

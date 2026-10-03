@@ -1,9 +1,9 @@
 {
   "type": "minecraft:jigsaw",
-  "start_pool": "whatsits:bakery/start_pool",
+  "start_pool": "morrow:bakery/start_pool",
   "size": 2,
   "max_distance_from_center": 80,
-  "biomes": "#whatsits:has_structure/bakery",
+  "biomes": "#morrow:has_structure/bakery",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "start_height": {

@@ -1,5 +1,5 @@
 {
-  "parent": "whatsits:main/place_sign",
+  "parent": "morrow:main/place_sign",
   "criteria": {
     "use_wall_display": {
       "conditions": {
@@ -9,7 +9,7 @@
             "predicate": {
               "block": {
                 "blocks": [
-                  "whatsits:wall_display"
+                  "morrow:wall_display"
                 ]
               }
             }
@@ -18,7 +18,7 @@
             "condition": "minecraft:match_tool",
             "predicate": {
               "items": [
-                "whatsits:bread"
+                "morrow:bread"
               ]
             }
           }
@@ -35,7 +35,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "whatsits:wall_display"
+      "id": "morrow:wall_display"
     },
     "show_toast": true,
     "title": {

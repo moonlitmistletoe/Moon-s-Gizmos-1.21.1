@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:iron_table"
+          "name": "morrow:iron_table"
         }
       ],
       "rolls": 1.0

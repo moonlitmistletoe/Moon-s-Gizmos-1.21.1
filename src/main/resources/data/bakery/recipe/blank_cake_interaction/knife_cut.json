@@ -1,8 +1,8 @@
 {
-  "type": "whatsits:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CAKE",
   "ingredient": {
-    "tag": "whatsits:knives"
+    "tag": "morrow:knives"
   },
   "result": {
     "set_state": {
@@ -10,7 +10,7 @@
       "cupcake": true,
       "cookie": false
     },
-    "sound": "whatsits:cake_cut",
+    "sound": "morrow:cake_cut",
     "particles": true
   },
   "priority": 50

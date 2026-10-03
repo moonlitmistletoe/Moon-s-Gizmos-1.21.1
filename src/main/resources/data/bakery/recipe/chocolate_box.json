@@ -10,11 +10,11 @@
       "item": "minecraft:chest"
     },
     "W": {
-      "item": "whatsits:chocolate_truffle"
+      "item": "morrow:chocolate_truffle"
     }
   },
   "result": {
-    "id": "whatsits:chocolate_box",
+    "id": "morrow:chocolate_box",
     "count": 1
   }
 }

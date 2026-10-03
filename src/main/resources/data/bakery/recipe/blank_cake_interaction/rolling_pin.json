@@ -1,8 +1,8 @@
 {
-  "type": "whatsits:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CUPCAKE",
   "ingredient": {
-    "item": "whatsits:rolling_pin"
+    "item": "morrow:rolling_pin"
   },
   "result": {
     "set_state": {

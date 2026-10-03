@@ -1,11 +1,11 @@
 {
-  "parent": "whatsits:main/root",
+  "parent": "morrow:main/root",
   "criteria": {
     "street_sign": {
       "conditions": {
         "location": [
           {
-            "block": "whatsits:street_sign",
+            "block": "morrow:street_sign",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -21,7 +21,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "whatsits:street_sign"
+      "id": "morrow:street_sign"
     },
     "show_toast": true,
     "title": {

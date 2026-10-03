@@ -1,8 +1,8 @@
 {
-  "parent": "whatsits:main/place_stove",
+  "parent": "morrow:main/place_stove",
   "display": {
     "icon": {
-      "id": "whatsits:misslilitu_biscuit"
+      "id": "morrow:misslilitu_biscuit"
     },
     "title": {
       "translate": "advancement.bakery.get_misslilitu_biscuit"
@@ -24,7 +24,7 @@
       "conditions": {
         "items": [
           {
-            "items": ["whatsits:misslilitu_biscuit"]
+            "items": ["morrow:misslilitu_biscuit"]
           }
         ]
       }

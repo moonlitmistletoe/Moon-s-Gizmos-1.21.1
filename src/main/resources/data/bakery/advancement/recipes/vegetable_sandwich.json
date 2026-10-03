@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "whatsits:vegetable_sandwich"
+      "morrow:vegetable_sandwich"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "whatsits:vegetable_sandwich"
+        "recipe": "morrow:vegetable_sandwich"
       }
     }
   },

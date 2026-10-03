@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "whatsits:bread"
+      "tag": "morrow:bread"
     },
     {
       "item": "minecraft:beetroot"
@@ -18,7 +18,7 @@
     }
   ],
   "result": {
-    "id": "whatsits:vegetable_sandwich",
+    "id": "morrow:vegetable_sandwich",
     "count": 4
   }
 }

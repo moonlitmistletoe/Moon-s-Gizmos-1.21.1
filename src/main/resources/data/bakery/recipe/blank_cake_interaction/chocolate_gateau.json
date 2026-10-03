@@ -1,11 +1,11 @@
 {
-  "type": "whatsits:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CAKE",
   "ingredient": {
-    "item": "whatsits:chocolate_truffle"
+    "item": "morrow:chocolate_truffle"
   },
   "result": {
-    "set_block": "whatsits:chocolate_gateau",
+    "set_block": "morrow:chocolate_gateau",
     "consume_one": true,
     "sound": "minecraft:slime_block_place",
     "particles": true,

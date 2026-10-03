@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:baker_station"
+          "name": "morrow:baker_station"
         }
       ],
       "rolls": 1.0

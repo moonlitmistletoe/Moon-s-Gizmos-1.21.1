@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:cabinet"
+          "name": "morrow:cabinet"
         }
       ],
       "rolls": 1.0

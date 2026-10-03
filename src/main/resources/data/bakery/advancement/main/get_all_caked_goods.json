@@ -1,8 +1,8 @@
 {
-  "parent": "whatsits:main/place_baker_station",
+  "parent": "morrow:main/place_baker_station",
   "display": {
     "icon": {
-      "id": "whatsits:apple_cupcake"
+      "id": "morrow:apple_cupcake"
     },
     "title": {
       "translate": "advancement.bakery.get_all_caked_goods"
@@ -19,13 +19,13 @@
     "experience": 150
   },
   "criteria": {
-    "whatsits:strawberry_cake": {
+    "morrow:strawberry_cake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:strawberry_cake"
+              "morrow:strawberry_cake"
             ]
           }
         ]
@@ -43,97 +43,97 @@
         ]
       }
     },
-    "whatsits:chocolate_cake": {
+    "morrow:chocolate_cake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:chocolate_cake"
+              "morrow:chocolate_cake"
             ]
           }
         ]
       }
     },
-    "whatsits:sweetberry_cake": {
+    "morrow:sweetberry_cake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:sweetberry_cake"
+              "morrow:sweetberry_cake"
             ]
           }
         ]
       }
     },
-    "whatsits:strawberry_glazed_cookie": {
+    "morrow:strawberry_glazed_cookie": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:strawberry_glazed_cookie"
+              "morrow:strawberry_glazed_cookie"
             ]
           }
         ]
       }
     },
-    "whatsits:chocolate_glazed_cookie": {
+    "morrow:chocolate_glazed_cookie": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:chocolate_glazed_cookie"
+              "morrow:chocolate_glazed_cookie"
             ]
           }
         ]
       }
     },
-    "whatsits:sweetberry_glazed_cookie": {
+    "morrow:sweetberry_glazed_cookie": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:sweetberry_glazed_cookie"
+              "morrow:sweetberry_glazed_cookie"
             ]
           }
         ]
       }
     },
-    "whatsits:apple_cupcake": {
+    "morrow:apple_cupcake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:apple_cupcake"
+              "morrow:apple_cupcake"
             ]
           }
         ]
       }
     },
-    "whatsits:sweetberry_cupcake": {
+    "morrow:sweetberry_cupcake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:sweetberry_cupcake"
+              "morrow:sweetberry_cupcake"
             ]
           }
         ]
       }
     },
-    "whatsits:strawberry_cupcake": {
+    "morrow:strawberry_cupcake": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "whatsits:strawberry_cupcake"
+              "morrow:strawberry_cupcake"
             ]
           }
         ]
@@ -142,34 +142,34 @@
   },
   "requirements": [
     [
-      "whatsits:strawberry_cake"
+      "morrow:strawberry_cake"
     ],
     [
       "minecraft:cake"
     ],
     [
-      "whatsits:chocolate_cake"
+      "morrow:chocolate_cake"
     ],
     [
-      "whatsits:sweetberry_cake"
+      "morrow:sweetberry_cake"
     ],
     [
-      "whatsits:strawberry_glazed_cookie"
+      "morrow:strawberry_glazed_cookie"
     ],
     [
-      "whatsits:chocolate_glazed_cookie"
+      "morrow:chocolate_glazed_cookie"
     ],
     [
-      "whatsits:sweetberry_glazed_cookie"
+      "morrow:sweetberry_glazed_cookie"
     ],
     [
-      "whatsits:apple_cupcake"
+      "morrow:apple_cupcake"
     ],
     [
-      "whatsits:sweetberry_cupcake"
+      "morrow:sweetberry_cupcake"
     ],
     [
-      "whatsits:strawberry_cupcake"
+      "morrow:strawberry_cupcake"
     ]
   ]
 }

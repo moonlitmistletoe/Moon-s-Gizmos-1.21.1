@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:breadbox"
+          "name": "morrow:breadbox"
         }
       ],
       "rolls": 1.0

@@ -1,11 +1,11 @@
 {
-  "parent": "whatsits:main/eat_bread",
+  "parent": "morrow:main/eat_bread",
   "criteria": {
     "bread_crate": {
       "conditions": {
         "location": [
           {
-            "block": "whatsits:bread_crate",
+            "block": "morrow:bread_crate",
             "condition": "minecraft:block_state_property"
           }
         ]
@@ -21,7 +21,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "id": "whatsits:bread_crate"
+      "id": "morrow:bread_crate"
     },
     "show_toast": true,
     "title": {

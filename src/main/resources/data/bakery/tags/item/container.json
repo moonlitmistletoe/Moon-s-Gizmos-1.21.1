@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "minecraft:bowl",
-    "whatsits:jar",
-    "whatsits:tray"
+    "morrow:jar",
+    "morrow:tray"
   ]
 }

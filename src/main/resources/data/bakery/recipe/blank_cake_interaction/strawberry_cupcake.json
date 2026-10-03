@@ -1,12 +1,12 @@
 {
-  "type": "whatsits:blank_cake_interaction",
+  "type": "morrow:blank_cake_interaction",
   "stage": "CUPCAKE",
   "ingredient": {
-    "item": "whatsits:strawberry_jam"
+    "item": "morrow:strawberry_jam"
   },
   "result": {
-    "set_block": "whatsits:strawberry_cupcake_block",
-    "give_item": "whatsits:jar",
+    "set_block": "morrow:strawberry_cupcake_block",
+    "give_item": "morrow:jar",
     "consume_one": true,
     "sound": "minecraft:slime_block_place",
     "particles": true

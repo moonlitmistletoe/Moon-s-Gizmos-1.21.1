@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:cake_display"
+          "name": "morrow:cake_display"
         }
       ],
       "rolls": 1.0

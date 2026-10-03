@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "whatsits:brick_counter"
+          "name": "morrow:brick_counter"
         }
       ],
       "rolls": 1.0

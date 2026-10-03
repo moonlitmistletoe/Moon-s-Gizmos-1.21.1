@@ -1,5 +1,5 @@
 {
-  "parent": "whatsits:main/get_yeast",
+  "parent": "morrow:main/get_yeast",
   "criteria": {
     "stove": {
       "conditions": {

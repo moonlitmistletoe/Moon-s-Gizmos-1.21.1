@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
-    "whatsits:wall_cabinet",
-    "whatsits:cabinet",
-    "whatsits:drawer",
-    "whatsits:street_sign",
-    "whatsits:breadbox",
-    "whatsits:tray",
-    "whatsits:wall_display"
+    "morrow:wall_cabinet",
+    "morrow:cabinet",
+    "morrow:drawer",
+    "morrow:street_sign",
+    "morrow:breadbox",
+    "morrow:tray",
+    "morrow:wall_display"
   ]
 }

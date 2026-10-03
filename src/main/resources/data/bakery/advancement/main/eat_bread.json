@@ -1,11 +1,11 @@
 {
-  "parent": "whatsits:main/place_stove",
+  "parent": "morrow:main/place_stove",
   "criteria": {
     "bread": {
       "conditions": {
         "item": {
           "items": [
-            "whatsits:bread"
+            "morrow:bread"
           ]
         }
       },
@@ -20,7 +20,7 @@
     "frame": "goal",
     "hidden": false,
     "icon": {
-      "id": "whatsits:bread"
+      "id": "morrow:bread"
     },
     "show_toast": true,
     "title": {
