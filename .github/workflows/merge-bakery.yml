@@ -220,7 +220,8 @@ jobs:
                   s = re.sub(rf'\bModItems\.{re.escape(name)}\b', f'ObjectRegistry.{name}', s)
               if s != original and "ObjectRegistry." in s and "import net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;" not in s:
                   s = s.replace("\n", "\nimport net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;", 1)
-              s = re.sub(r"output\.accept\(ObjectRegistry\.([A-Z0-9_]+)\)", r"output.accept(ObjectRegistry.\1.get())", s)\n              path.write_text(s, encoding="utf-8")
+              s = re.sub(r"output\.accept\(ObjectRegistry\.([A-Z0-9_]+)\)", r"output.accept(ObjectRegistry.\1.get())", s)
+              path.write_text(s, encoding="utf-8")
 
           # Integrate the Bakery NeoForge bootstrap into Whatsits.
           whatsits = root / "src/main/java/net/moonlitmistletoe/whatsits/Whatsits.java"
