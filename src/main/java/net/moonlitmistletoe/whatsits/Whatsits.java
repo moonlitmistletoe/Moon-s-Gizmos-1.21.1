@@ -2,7 +2,6 @@ package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.moonlitmistletoe.whatsits.item.ModItems;
-import net.nimbu.scabbards.Scabbards;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -20,6 +19,11 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.moonlitmistletoe.whatsits.scabbard.component.ModDataComponents;
+import net.moonlitmistletoe.whatsits.scabbard.config.ScabbardConfig;
+import net.moonlitmistletoe.whatsits.scabbard.config.ScabbardItemCache;
+import net.moonlitmistletoe.whatsits.scabbard.item.ModScabbardItems;
+import net.moonlitmistletoe.whatsits.scabbard.networking.ModScabbardNetworking;
 
 @Mod(Whatsits.MOD_ID)
 public class Whatsits {
@@ -44,7 +48,10 @@ public class Whatsits {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
 
-        new Scabbards(modEventBus, modContainer);
+        ModScabbardItems.register(modEventBus);
+        ModDataComponents.register(modEventBus);
+        ModScabbardNetworking.register(modEventBus);
+        modContainer.registerConfig(ModConfig.Type.SERVER, ScabbardConfig.SPEC);
 
 
         ModCreativeModeTabs.register(modEventBus);
@@ -61,6 +68,7 @@ public class Whatsits {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+        ScabbardItemCache.reload();
     }
 
 }
