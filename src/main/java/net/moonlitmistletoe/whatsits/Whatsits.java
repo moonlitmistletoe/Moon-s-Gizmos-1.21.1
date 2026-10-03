@@ -69,6 +69,7 @@ public class Whatsits {
             ScabbardClient.register(modEventBus);
             ScabbardClient.registerGameEvents();
             MorrowClient.register();
+            MorrowClient.registerCreativeTabEvents(modEventBus);
         }
 
         ModSounds.register(modEventBus);
