@@ -7,8 +7,8 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.nimbu.scabbards.component.ModDataComponents;
-import net.nimbu.scabbards.component.StoredItem;
+import net.moonlitmistletoe.whatsits.scabbard.component.ModDataComponents;
+import net.moonlitmistletoe.whatsits.scabbard.component.StoredItem;
 
 public class SheathedSwordRenderer {
 
