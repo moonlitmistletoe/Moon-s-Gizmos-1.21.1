@@ -242,6 +242,8 @@ tasks.named(
 
     exclude("**/*.base64")
 
+    notCompatibleWithConfigurationCache("Rewrites merged Bakery resource namespaces after processing")
+
     doLast {
         def resourceRoot = new File(destinationDir, "assets/whatsits")
 
