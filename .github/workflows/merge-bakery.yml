@@ -124,10 +124,7 @@ jobs:
                   "package net.satisfy.bakery.platform.neoforge;",
                   "package net.moonlitmistletoe.whatsits.bakery.platform;"
               )
-              platform = platform.replace(
-                  "import net.satisfy.bakery.platform.PlatformHelper;\n",
-                  ""
-              )
+              platform = "\n".join(line for line in platform.splitlines() if "import net.moonlitmistletoe.whatsits.bakery.platform.PlatformHelper;" not in line) + "\n"
               platform = platform.replace(" extends PlatformHelper", "")
               platform = platform.replace("public class PlatformHelperImpl", "public class PlatformHelper")
               common_platform.write_text(platform, encoding="utf-8")
