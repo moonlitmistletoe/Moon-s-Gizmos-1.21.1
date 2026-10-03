@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.moonlitmistletoe.whatsits.item.custom.DrinkItem;
 import net.moonlitmistletoe.whatsits.item.custom.HandcuffsItem;
+import net.moonlitmistletoe.whatsits.item.custom.MorrowMusicDiscItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -97,12 +98,14 @@ public class ModItems {
         DORIME_SONG = ResourceKey.create(Registries.JUKEBOX_SONG,
                 ResourceLocation.fromNamespaceAndPath("whatsits", "dorime"));
         DORIME = ITEMS.register("dorime",
-                () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(DORIME_SONG)));
+                () -> new MorrowMusicDiscItem(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(DORIME_SONG),
+                        "tooltip.whatsits.dorime.description"));
 
         WORLD_OF_LIES_SONG = ResourceKey.create(Registries.JUKEBOX_SONG,
                 ResourceLocation.fromNamespaceAndPath("whatsits", "worldoflies"));
         WORLD_OF_LIES = ITEMS.register("world_of_lies",
-                () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(WORLD_OF_LIES_SONG)));
+                () -> new MorrowMusicDiscItem(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(WORLD_OF_LIES_SONG),
+                        "tooltip.whatsits.world_of_lies.description"));
 
         HANDCUFFS = ITEMS.register("handcuffs", () -> new HandcuffsItem(new Item.Properties()));
     }
