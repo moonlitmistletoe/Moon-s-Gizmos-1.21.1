@@ -8,6 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.moonlitmistletoe.whatsits.item.ModItems;
+import net.moonlitmistletoe.whatsits.block.ModBlocks;
 import net.moonlitmistletoe.whatsits.scabbard.item.ModScabbardItems;
 
 public class ModCreativeModeTabs {
@@ -80,7 +81,7 @@ public class ModCreativeModeTabs {
                         // Pies / desserts
                         // =========================
 
-                        output.accept(ModItems.APPLE_PIE_SLICE);
+                        output.accept(ModBlocks.APPLE_PIE_SLICE);
                         output.accept(ModItems.CHERRY_PIE);
                         output.accept(ModItems.MOONCAKE);
                         output.accept(ModItems.STRAWBERRY_ICE_CREAM);
@@ -145,27 +146,27 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                ModItems.STRAWBERRY_CAKE_SLICE.get()
+                                ModBlocks.STRAWBERRY_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                ModItems.SWEETBERRY_CAKE_SLICE.get()
+                                ModBlocks.SWEETBERRY_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                ModItems.CHOCOLATE_CAKE_SLICE.get()
+                                ModBlocks.CHOCOLATE_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                ModItems.CHOCOLATE_GATEAU_SLICE.get()
+                                ModBlocks.CHOCOLATE_GATEAU_SLICE.get()
                         );
 
                         output.accept(
-                                ModItems.BUNDT_CAKE_SLICE.get()
+                                ModBlocks.BUNDT_CAKE_SLICE.get()
                         );
 
                         output.accept(
-                                ModItems.LINZER_TART_SLICE.get()
+                                ModBlocks.LINZER_TART_SLICE.get()
                         );
 
                         output.accept(
@@ -173,11 +174,11 @@ public class ModCreativeModeTabs {
                         );
 
                         output.accept(
-                                ModItems.CHOCOLATE_TART_SLICE.get()
+                                ModBlocks.CHOCOLATE_TART_SLICE.get()
                         );
 
                         output.accept(
-                                ModItems.PUDDING_SLICE.get()
+                                ModBlocks.PUDDING_SLICE.get()
                         );
 
                         // =========================
@@ -205,43 +206,43 @@ public class ModCreativeModeTabs {
                         // =========================
 
                         output.accept(
-                                ModItems.STRAWBERRY_CAKE.get()
+                                ModBlocks.STRAWBERRY_CAKE.get()
                         );
 
                         output.accept(
-                                ModItems.SWEETBERRY_CAKE.get()
+                                ModBlocks.SWEETBERRY_CAKE.get()
                         );
 
                         output.accept(
-                                ModItems.CHOCOLATE_CAKE.get()
+                                ModBlocks.CHOCOLATE_CAKE.get()
                         );
 
                         output.accept(
-                                ModItems.BUNDT_CAKE.get()
+                                ModBlocks.BUNDT_CAKE.get()
                         );
 
                         output.accept(
-                                ModItems.LINZER_TART.get()
+                                ModBlocks.LINZER_TART.get()
                         );
 
                         output.accept(
-                                ModItems.APPLE_PIE.get()
+                                ModBlocks.APPLE_PIE.get()
                         );
 
                         output.accept(
-                                ModItems.GLOWBERRY_TART.get()
+                                ModBlocks.GLOWBERRY_TART.get()
                         );
 
                         output.accept(
-                                ModItems.PUDDING.get()
+                                ModBlocks.PUDDING.get()
                         );
 
                         output.accept(
-                                ModItems.CHOCOLATE_GATEAU.get()
+                                ModBlocks.CHOCOLATE_GATEAU.get()
                         );
 
                         output.accept(
-                                ModItems.CHOCOLATE_TART.get()
+                                ModBlocks.CHOCOLATE_TART.get()
                         );
 
                         // =========================
@@ -253,19 +254,19 @@ public class ModCreativeModeTabs {
                         );
 
                         output.accept(
-                                ModItems.GLOWBERRY_JAM.get()
+                                ModBlocks.GLOWBERRY_JAM.get()
                         );
 
                         output.accept(
-                                ModItems.SWEETBERRY_JAM.get()
+                                ModBlocks.SWEETBERRY_JAM.get()
                         );
 
                         output.accept(
-                                ModItems.CHOCOLATE_JAM.get()
+                                ModBlocks.CHOCOLATE_JAM.get()
                         );
 
                         output.accept(
-                                ModItems.APPLE_JAM.get()
+                                ModBlocks.APPLE_JAM.get()
                         );
                     })
                     .build());
