@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "morrow:strawberry"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "morrow:strawberry_seeds",
+    "count": 4
+  }
+}

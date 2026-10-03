@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:oat_seeds",
+    "morrow:kernels",
+    "morrow:barley_seeds",
+    "morrow:lettuce_seeds",
+    "morrow:tomato_seeds",
+    "morrow:strawberry_seeds",
+    "morrow:onion"
+  ]
+}

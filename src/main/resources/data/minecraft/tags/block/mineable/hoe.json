@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:strawberry_bag",
+    "morrow:carrot_bag",
+    "morrow:potato_bag",
+    "morrow:beetroot_bag",
+    "morrow:lettuce_bag",
+    "morrow:tomato_bag",
+    "morrow:corn_bag",
+    "morrow:onion_bag",
+    "morrow:flour_bag",
+    "morrow:oat_ball",
+    "morrow:barley_ball",
+    "morrow:dog_food_bag",
+    "morrow:cat_food_bag",
+    "morrow:rope_knot",
+    "morrow:rope"
+  ]
+}

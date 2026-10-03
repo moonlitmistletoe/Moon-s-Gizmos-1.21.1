@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "tag": "morrow:dough"
+  },
+  "recipe_type": "STONE",
+  "result": {
+    "id": "morrow:raw_pasta",
+    "count": 2
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:fertilized_soil",
+    "morrow:fertilized_farmland",
+    "morrow:packed_dirt",
+    "morrow:trampled_packed_dirt",
+    "morrow:straw_stable_floor",
+    "morrow:trampled_stable_floor",
+    "morrow:stable_floor"
+  ]
+}

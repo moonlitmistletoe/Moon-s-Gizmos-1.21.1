@@ -34,8 +34,8 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.moonlitmistletoe.whatsits.bakery.core.registry.SoundEventRegistry;
 import net.moonlitmistletoe.whatsits.bakery.core.registry.TagsRegistry;
-import net.satisfy.farm_and_charm.core.block.FacingBlock;
-import net.satisfy.farm_and_charm.core.util.GeneralUtil;
+import net.satisfy.morrow.core.block.FacingBlock;
+import net.satisfy.morrow.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -168,13 +168,13 @@ public class PieBlock extends FacingBlock {
         int icingRed = 0xE3A6A0;
         int gold = 0xFFD700;
 
-        tooltip.add(Component.translatable("tooltip.farm_and_charm.canbeplaced").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("tooltip.morrow.canbeplaced").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.empty());
 
         if (!Screen.hasShiftDown()) {
             Component key = Component.literal("[SHIFT]")
                     .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(gold)));
-            tooltip.add(Component.translatable("tooltip.farm_and_charm.tooltip_information.hold", key)
+            tooltip.add(Component.translatable("tooltip.morrow.tooltip_information.hold", key)
                     .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(icingRed))));
             return;
         }

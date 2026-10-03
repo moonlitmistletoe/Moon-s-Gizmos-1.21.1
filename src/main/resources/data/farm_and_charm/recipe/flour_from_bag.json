@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morrow:flour_bag"
+    }
+  ],
+  "result": {
+    "id": "morrow:flour",
+    "count": 9
+  }
+}

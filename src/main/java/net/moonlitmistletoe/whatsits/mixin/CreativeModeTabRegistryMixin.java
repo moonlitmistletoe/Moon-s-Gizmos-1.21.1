@@ -32,7 +32,7 @@ public class CreativeModeTabRegistryMixin {
 
             // Farm & Charm is still a runtime dependency, so remove its own tab
             // while keeping all of its items available through Morrow's tab.
-            if (id.getNamespace().equals("farm_and_charm")) {
+            if (id.getNamespace().equals("morrow")) {
                 return true;
             }
 

@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:strawberry_tea",
+    "morrow:nettle_tea",
+    "morrow:ribwort_tea",
+    "morrow:strawberry_tea_cup",
+    "morrow:nettle_tea_cup",
+    "morrow:ribwort_tea_cup",
+    "morrow:flour",
+    "morrow:farmer_salad",
+    "morrow:oat_pancake",
+    "morrow:grandmothers_strawberry_cake",
+    "morrow:oatmeal_with_strawberries",
+    "morrow:simple_tomato_soup",
+    "morrow:barley_soup",
+    "morrow:onion_soup",
+    "morrow:potato_soup",
+    "morrow:goulash",
+    "morrow:corn_grits",
+    "morrow:pasta_with_onion_sauce",
+    "morrow:dog_food",
+    "morrow:cat_food",
+    "morrow:horse_fodder",
+    "morrow:chicken_feed",
+    "morrow:farmers_bread",
+    "morrow:scarecrow"
+  ]
+}

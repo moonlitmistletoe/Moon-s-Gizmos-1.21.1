@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.moonlitmistletoe.whatsits.bakery.Bakery;
 import net.moonlitmistletoe.whatsits.bakery.core.block.entity.*;
-import net.satisfy.farm_and_charm.FarmAndCharm;
+import net.satisfy.morrow.FarmAndCharm;
 
 import java.util.HashSet;
 import java.util.Set;

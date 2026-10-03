@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "recipe_type": "STONE",
+  "result": {
+    "id": "morrow:fertilizer",
+    "count": 1
+  }
+}

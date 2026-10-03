@@ -1,0 +1,20 @@
+{
+  "type": "morrow:stove",
+  "ingredients": [
+    {
+      "tag": "morrow:corn"
+    },
+    {
+      "tag": "morrow:corn"
+    },
+    {
+      "tag": "morrow:butter"
+    }
+  ],
+  "result": {
+    "id": "morrow:roasted_corn",
+    "count": 1
+  },
+  "experience": 0.2,
+  "requiresLearning": false
+}

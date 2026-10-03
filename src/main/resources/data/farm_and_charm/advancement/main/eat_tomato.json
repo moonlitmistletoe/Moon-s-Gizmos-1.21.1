@@ -1,0 +1,40 @@
+{
+  "parent": "morrow:main/find_wild_crops",
+  "criteria": {
+    "tomato": {
+      "conditions": {
+        "item": {
+          "items": [
+            "morrow:tomato"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.morrow.eat_tomato.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "morrow:tomato"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.morrow.eat_tomato"
+    }
+  },
+  "requirements": [
+    [
+      "tomato"
+    ]
+  ],
+  "rewards": {
+    "experience": 25
+  },
+  "sends_telemetry_event": true
+}

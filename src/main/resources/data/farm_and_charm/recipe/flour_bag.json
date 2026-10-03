@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "morrow:flour"
+    }
+  },
+  "result": {
+    "id": "morrow:flour_bag",
+    "count": 1
+  }
+}

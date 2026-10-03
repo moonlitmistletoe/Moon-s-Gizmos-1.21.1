@@ -1,0 +1,177 @@
+{
+  "parent": "morrow:main/place_cooking_pot",
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "morrow:goulash"
+    },
+    "title": {
+      "translate": "advancement.morrow.cook_everything"
+    },
+    "description": {
+      "translate": "advancement.morrow.cook_everything.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 50
+  },
+  "criteria": {
+    "morrow:barley_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:barley_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:corn_grits": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:corn_grits"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:strawberry_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:strawberry_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:nettle_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:nettle_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:ribwort_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:ribwort_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:goulash": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:goulash"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:onion_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:onion_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:potato_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:potato_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:simple_tomato_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:simple_tomato_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:yeast": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:yeast"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "morrow:barley_soup"
+    ],
+    [
+      "morrow:corn_grits"
+    ],
+    [
+      "morrow:strawberry_tea"
+    ],
+    [
+      "morrow:nettle_tea"
+    ],
+    [
+      "morrow:ribwort_tea"
+    ],
+    [
+      "morrow:goulash"
+    ],
+    [
+      "morrow:onion_soup"
+    ],
+    [
+      "morrow:potato_soup"
+    ],
+    [
+      "morrow:simple_tomato_soup"
+
+    ],
+    [
+      "morrow:yeast"
+    ]
+  ]
+}

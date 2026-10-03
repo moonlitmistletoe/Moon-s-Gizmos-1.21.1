@@ -1,12 +1,13 @@
 {
   "replace": false,
   "values": [
-    "morrow:kitchen_sink",
-    "morrow:small_cooking_pot",
-    "morrow:baker_station",
-    "morrow:brick_counter",
-    "morrow:iron_table",
-    "morrow:iron_chair",
-    "morrow:iron_bench"
+    "morrow:stove",
+    "morrow:silo_copper",
+    "morrow:cooking_pot",
+    "morrow:mincer",
+    "morrow:roaster",
+    "morrow:chicken_coop",
+    "morrow:iron_divider",
+    "morrow:cattlegrid"
   ]
 }

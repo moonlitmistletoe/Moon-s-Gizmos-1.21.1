@@ -1,0 +1,20 @@
+{
+  "type": "morrow:stove",
+  "ingredients": [
+    {
+      "tag": "morrow:dough"
+    },
+    {
+      "tag": "morrow:strawberry"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "id": "morrow:grandmothers_strawberry_cake",
+    "count": 2
+  },
+  "experience": 0.35,
+  "requiresLearning": false
+}

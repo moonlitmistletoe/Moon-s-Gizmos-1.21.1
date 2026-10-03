@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.moonlitmistletoe.whatsits.bakery.core.registry.EntityTypeRegistry;
-import net.satisfy.farm_and_charm.core.util.GeneralUtil;
+import net.satisfy.morrow.core.util.GeneralUtil;
 
 public class StorageBlockEntity extends BlockEntity {
     private int size;

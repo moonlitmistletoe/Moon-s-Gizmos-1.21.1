@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "morrow:block/barley_ball_top",
+    "side": "morrow:block/barley_ball_side"
+  }
+}

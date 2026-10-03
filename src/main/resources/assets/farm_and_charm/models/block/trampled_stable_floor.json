@@ -1,0 +1,7 @@
+{
+  "parent": "block/dirt_path",
+  "textures": {
+    "top": "morrow:block/trampled_stable_floor_top",
+    "side": "morrow:block/trampled_stable_floor_side"
+  }
+}

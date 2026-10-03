@@ -1,0 +1,32 @@
+{
+  "type": "morrow:roaster",
+  "ingredients": [
+    {
+      "tag": "morrow:oat"
+    },
+    {
+      "tag": "morrow:oat"
+    },
+    {
+      "tag": "morrow:oat"
+    },
+    {
+      "tag": "morrow:dough"
+    },
+    {
+      "tag": "morrow:butter"
+    },
+    {
+      "tag": "morrow:strawberry"
+    }
+  ],
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "morrow:oat_pancake",
+    "count": 3
+  },
+  "requiresLearning": false
+}

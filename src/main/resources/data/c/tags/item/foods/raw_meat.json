@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:minced_beef",
+    "morrow:chicken_parts",
+    "morrow:lamb_ham",
+    "morrow:bacon"
+  ]
+}

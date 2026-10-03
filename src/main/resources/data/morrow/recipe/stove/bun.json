@@ -1,11 +1,11 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
-      "tag": "farm_and_charm:dough"
+      "tag": "morrow:dough"
     },
     {
-      "item": "farm_and_charm:yeast"
+      "item": "morrow:yeast"
     },
     {
       "tag": "morrow:eggs"

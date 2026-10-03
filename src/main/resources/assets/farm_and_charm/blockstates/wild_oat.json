@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morrow:block/wild_oat_1",
+        "weight": 1
+      },
+      {
+        "model": "morrow:block/wild_oat_2",
+        "weight": 1
+      }
+    ]
+  }
+}

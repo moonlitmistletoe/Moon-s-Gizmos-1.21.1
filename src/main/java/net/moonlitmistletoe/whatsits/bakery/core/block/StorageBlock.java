@@ -21,8 +21,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.moonlitmistletoe.whatsits.bakery.core.block.entity.StorageBlockEntity;
-import net.satisfy.farm_and_charm.core.block.FacingBlock;
-import net.satisfy.farm_and_charm.core.util.GeneralUtil;
+import net.satisfy.morrow.core.block.FacingBlock;
+import net.satisfy.morrow.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

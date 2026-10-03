@@ -1,0 +1,38 @@
+{
+  "parent": "morrow:main/introduction_mincing",
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "morrow:minced_beef"
+    },
+    "title": {
+      "translate": "advancement.morrow.get_minced_beef"
+    },
+    "description": {
+      "translate": "advancement.morrow.get_minced_beef.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "minced_beef": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:minced_beef"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "minced_beef"
+    ]
+  ]
+}

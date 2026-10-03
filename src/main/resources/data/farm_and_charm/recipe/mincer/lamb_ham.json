@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:mutton"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "morrow:lamb_ham",
+    "count": 1
+  }
+}

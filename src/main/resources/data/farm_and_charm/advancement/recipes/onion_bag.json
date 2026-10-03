@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "morrow:onion_bag"
+    ]
+  },
+  "criteria": {
+    "has_onion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:onion"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "morrow:onion_bag"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_onion",
+      "has_the_recipe"
+    ]
+  ]
+}

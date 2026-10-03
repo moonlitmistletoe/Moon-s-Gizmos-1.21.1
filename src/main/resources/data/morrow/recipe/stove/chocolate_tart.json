@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
       "tag": "morrow:chocolate"
@@ -8,7 +8,7 @@
       "item": "morrow:sweet_dough"
     },
     {
-      "item": "farm_and_charm:yeast"
+      "item": "morrow:yeast"
     }
   ],
   "result": {

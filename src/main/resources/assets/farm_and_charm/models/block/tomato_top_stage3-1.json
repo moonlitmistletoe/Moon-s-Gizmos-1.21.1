@@ -1,0 +1,7 @@
+{
+  "parent": "morrow:block/template_cross_crop",
+  "textures": {
+    "4": "morrow:block/tomato_top_stage3_1",
+    "particle": "morrow:block/tomato_top_stage3_1"
+  }
+}

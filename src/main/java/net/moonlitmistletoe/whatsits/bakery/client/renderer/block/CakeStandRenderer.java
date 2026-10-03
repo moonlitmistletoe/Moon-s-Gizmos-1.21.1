@@ -7,7 +7,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.moonlitmistletoe.whatsits.bakery.core.block.entity.StorageBlockEntity;
-import net.satisfy.farm_and_charm.client.util.ClientUtil;
+import net.satisfy.morrow.client.util.ClientUtil;
 
 public class CakeStandRenderer implements StorageTypeRenderer {
     @Override

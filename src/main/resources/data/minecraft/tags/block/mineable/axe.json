@@ -1,12 +1,16 @@
 {
   "replace": false,
   "values": [
-    "morrow:wall_cabinet",
-    "morrow:cabinet",
-    "morrow:drawer",
-    "morrow:street_sign",
-    "morrow:breadbox",
-    "morrow:tray",
-    "morrow:wall_display"
+    "morrow:feeding_trough",
+    "morrow:water_sprinkler",
+    "morrow:silo_wood",
+    "morrow:chicken_coop",
+    "morrow:pet_bowl",
+    "morrow:rope_knot",
+    "morrow:rope",
+    "morrow:sturdy_ladder",
+    "morrow:chicken_fence",
+    "morrow:timber_well",
+    "morrow:water_trough"
   ]
 }

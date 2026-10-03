@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cooked_mutton",
+    "morrow:baked_lamb_ham",
+    "morrow:lamb_with_corn",
+    "morrow:goulash"
+  ]
+}

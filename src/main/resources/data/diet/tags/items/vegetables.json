@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:onion",
+    "morrow:tomato",
+    "morrow:corn",
+    "morrow:strawberry",
+    "morrow:lettuce"
+  ]
+}

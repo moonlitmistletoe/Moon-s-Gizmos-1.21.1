@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:porkchop"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "morrow:bacon",
+    "count": 2
+  }
+}

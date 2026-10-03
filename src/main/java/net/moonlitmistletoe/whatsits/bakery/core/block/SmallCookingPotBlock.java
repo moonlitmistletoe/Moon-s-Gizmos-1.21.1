@@ -44,9 +44,9 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.moonlitmistletoe.whatsits.bakery.core.block.entity.SmallCookingPotBlockEntity;
 import net.moonlitmistletoe.whatsits.bakery.core.util.BakeryTiers;
-import net.satisfy.farm_and_charm.core.registry.ParticleTypeRegistry;
-import net.satisfy.farm_and_charm.core.registry.SoundEventRegistry;
-import net.satisfy.farm_and_charm.core.util.GeneralUtil;
+import net.satisfy.morrow.core.registry.ParticleTypeRegistry;
+import net.satisfy.morrow.core.registry.SoundEventRegistry;
+import net.satisfy.morrow.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -314,7 +314,7 @@ public class SmallCookingPotBlock extends BaseEntityBlock {
 
     @Override
     public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("tooltip.farm_and_charm.canbeplaced").withStyle(ChatFormatting.GRAY));
+        list.add(Component.translatable("tooltip.morrow.canbeplaced").withStyle(ChatFormatting.GRAY));
     }
 
     public enum CookpotStage implements StringRepresentable {

@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:deepslate_emerald_ore"
+  },
+  "recipe_type": "METAL",
+  "result": {
+    "id": "minecraft:emerald",
+    "count": 3
+  }
+}

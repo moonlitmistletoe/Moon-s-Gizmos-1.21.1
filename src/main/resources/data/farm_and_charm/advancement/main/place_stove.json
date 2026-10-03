@@ -1,0 +1,38 @@
+{
+  "parent": "morrow:main/root",
+  "criteria": {
+    "stove": {
+      "conditions": {
+        "location": [
+          {
+            "block": "morrow:stove",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.morrow.place_stove.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "morrow:stove"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.morrow.place_stove"
+    }
+  },
+  "requirements": [
+    [
+      "stove"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

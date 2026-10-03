@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
 import net.moonlitmistletoe.whatsits.bakery.core.block.entity.StorageBlockEntity;
-import net.satisfy.farm_and_charm.client.util.ClientUtil;
+import net.satisfy.morrow.client.util.ClientUtil;
 
 public class CupcakeDisplayRenderer implements StorageTypeRenderer {
     @Override

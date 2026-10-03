@@ -1,0 +1,38 @@
+{
+  "parent": "morrow:main/place_stove",
+  "criteria": {
+    "cooking_pot": {
+      "conditions": {
+        "location": [
+          {
+            "block": "morrow:cooking_pot",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.morrow.place_cooking_pot.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "morrow:cooking_pot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.morrow.place_cooking_pot"
+    }
+  },
+  "requirements": [
+    [
+      "cooking_pot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

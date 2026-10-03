@@ -5,8 +5,8 @@ import net.neoforged.fml.event.config.ModConfigEvent;
 import net.moonlitmistletoe.whatsits.bakery.neoforge.core.config.BakeryNeoForgeConfig;
 import net.moonlitmistletoe.whatsits.bakery.core.registry.CompostableRegistry;
 import net.moonlitmistletoe.whatsits.bakery.Bakery;
-import net.satisfy.farm_and_charm.FarmAndCharm;
-import net.satisfy.farm_and_charm.neoforge.FarmAndCharmNeoForge;
+import net.satisfy.morrow.FarmAndCharm;
+import net.satisfy.morrow.neoforge.FarmAndCharmNeoForge;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import org.slf4j.Logger;
 

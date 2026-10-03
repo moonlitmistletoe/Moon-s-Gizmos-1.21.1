@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "morrow:corn"
+    ]
+  },
+  "criteria": {
+    "has_kernels": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:kernels"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "morrow:corn"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_kernels",
+      "has_the_recipe"
+    ]
+  ]
+}

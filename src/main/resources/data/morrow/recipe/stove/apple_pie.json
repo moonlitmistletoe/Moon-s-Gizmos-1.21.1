@@ -1,5 +1,5 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
       "item": "minecraft:apple"

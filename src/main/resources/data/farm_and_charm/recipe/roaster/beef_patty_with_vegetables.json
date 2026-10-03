@@ -1,0 +1,32 @@
+{
+  "type": "morrow:roaster",
+  "ingredients": [
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "morrow:butter"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "tag": "morrow:cabbage"
+    }
+  ],
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "morrow:beef_patty_with_vegetables",
+    "count": 2
+  },
+  "requiresLearning": false
+}

@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:beef"
+  },
+  "recipe_type": "MEAT",
+  "result": {
+    "id": "morrow:minced_beef",
+    "count": 1
+  }
+}

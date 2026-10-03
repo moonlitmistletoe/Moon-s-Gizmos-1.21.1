@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "morrow:block/stable_floor"
+    }
+  }
+}

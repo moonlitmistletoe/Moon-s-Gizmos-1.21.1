@@ -22,10 +22,10 @@ import net.moonlitmistletoe.whatsits.bakery.core.block.cake.*;
 import net.moonlitmistletoe.whatsits.bakery.core.item.SmallCookingPotItem;
 import net.moonlitmistletoe.whatsits.bakery.core.item.SugarRushEffectItem;
 import net.moonlitmistletoe.whatsits.bakery.platform.PlatformHelper;
-import net.satisfy.farm_and_charm.core.block.*;
-import net.satisfy.farm_and_charm.core.item.food.EffectBlockItem;
-import net.satisfy.farm_and_charm.core.item.food.EffectItem;
-import net.satisfy.farm_and_charm.core.util.GeneralUtil;
+import net.satisfy.morrow.core.block.*;
+import net.satisfy.morrow.core.item.food.EffectBlockItem;
+import net.satisfy.morrow.core.item.food.EffectItem;
+import net.satisfy.morrow.core.util.GeneralUtil;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;

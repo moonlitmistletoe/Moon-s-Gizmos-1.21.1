@@ -24,7 +24,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;
-import net.satisfy.farm_and_charm.core.block.EatableBoxBlock;
+import net.satisfy.morrow.core.block.EatableBoxBlock;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -81,7 +81,7 @@ public class BreadBasketBlock extends EatableBoxBlock {
 
     @Override
     public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("tooltip.farm_and_charm.canbeplaced").withStyle(ChatFormatting.GRAY));
+        list.add(Component.translatable("tooltip.morrow.canbeplaced").withStyle(ChatFormatting.GRAY));
     }
 }
 

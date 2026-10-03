@@ -1,8 +1,8 @@
 {
-  "type": "farm_and_charm:stove",
+  "type": "morrow:stove",
   "ingredients": [
     {
-      "item": "farm_and_charm:strawberry"
+      "item": "morrow:strawberry"
     },
     {
       "item": "morrow:sweet_dough"

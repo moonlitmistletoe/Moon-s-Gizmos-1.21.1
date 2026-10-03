@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "tag": "morrow:wheat"
+  },
+  "recipe_type": "STONE",
+  "result": {
+    "id": "morrow:flour",
+    "count": 4
+  }
+}

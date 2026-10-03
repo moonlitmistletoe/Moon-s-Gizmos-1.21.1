@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;
-import net.satisfy.farm_and_charm.core.block.FacingBlock;
+import net.satisfy.morrow.core.block.FacingBlock;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -63,7 +63,7 @@ public class BakerStationBlock extends FacingBlock {
 
         if (!Screen.hasShiftDown()) {
             Component key = Component.literal("[SHIFT]").withStyle(Style.EMPTY.withColor(TextColor.fromRgb(gold)));
-            tooltip.add(Component.translatable("tooltip.farm_and_charm.tooltip_information.hold", key).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(icingRed))));
+            tooltip.add(Component.translatable("tooltip.morrow.tooltip_information.hold", key).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(icingRed))));
             return;
         }
 

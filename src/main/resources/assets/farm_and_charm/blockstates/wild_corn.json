@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "morrow:block/wild_corn_bottom"
+    },
+    "half=upper": {
+      "model": "morrow:block/wild_corn_top"
+    }
+  }
+}

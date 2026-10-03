@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cooked_beef",
+    "morrow:beef_patty_with_vegetables",
+    "morrow:potato_with_roast_meat"
+  ]
+}

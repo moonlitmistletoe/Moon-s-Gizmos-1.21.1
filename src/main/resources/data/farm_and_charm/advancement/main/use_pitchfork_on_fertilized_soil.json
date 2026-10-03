@@ -1,0 +1,52 @@
+{
+  "parent": "morrow:main/place_fertilized_soil",
+  "criteria": {
+    "use_fertilized_soil": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "morrow:fertilized_soil"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "morrow:pitchfork"
+              ]
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.morrow.use_pitchfork_on_fertilized_soil.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "count": 1,
+      "id": "morrow:pitchfork"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.morrow.use_pitchfork_on_fertilized_soil"
+    }
+  },
+  "requirements": [
+    [
+      "use_fertilized_soil"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

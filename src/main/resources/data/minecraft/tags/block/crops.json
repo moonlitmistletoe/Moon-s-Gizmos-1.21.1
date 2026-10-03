@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:tomato_crop",
+    "morrow:lettuce_crop",
+    "morrow:strawberry_crop",
+    "morrow:oat_crop",
+    "morrow:barley_crop",
+    "morrow:corn_crop",
+    "morrow:onion_crop"
+  ]
+}

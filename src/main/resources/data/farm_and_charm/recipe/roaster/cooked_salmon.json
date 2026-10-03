@@ -1,0 +1,26 @@
+{
+  "type": "morrow:roaster",
+  "ingredients": [
+    {
+      "tag": "morrow:corn"
+    },
+    {
+      "tag": "morrow:cabbage"
+    },
+    {
+      "item": "minecraft:salmon"
+    },
+    {
+      "tag": "morrow:butter"
+    }
+  ],
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "result": {
+    "id": "morrow:cooked_salmon",
+    "count": 1
+  },
+  "requiresLearning": false
+}

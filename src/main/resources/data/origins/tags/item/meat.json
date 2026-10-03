@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "morrow:minced_beef",
+    "morrow:lamb_ham",
+    "morrow:chicken_parts",
+    "morrow:bacon",
+    "morrow:baked_lamb_ham",
+    "morrow:lamb_with_corn",
+    "morrow:goulash",
+    "morrow:beef_patty_with_vegetables",
+    "morrow:potato_with_roast_meat",
+    "morrow:stuffed_chicken",
+    "morrow:roasted_chicken",
+    "morrow:chicken_wrapped_in_bacon",
+    "morrow:minced_beef",
+    "morrow:cooked_cod",
+    "morrow:cooked_salmon",
+    "morrow:stuffed_rabbit",
+    "morrow:sausage_with_oat_patty",
+    "morrow:bacon_with_eggs"
+  ]
+}

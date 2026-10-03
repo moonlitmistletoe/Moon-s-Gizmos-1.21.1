@@ -5,7 +5,7 @@
 		"1": "morrow:block/small_cooking_pan_top",
 		"2": "morrow:block/small_cooking_pan_bottom",
 		"3": "morrow:block/small_cooking_pan_side",
-		"4": "farm_and_charm:block/cooking_pot_soup",
+		"4": "morrow:block/cooking_pot_soup",
 		"particle": "morrow:block/small_cooking_pan_bottom"
 	},
 	"elements": [

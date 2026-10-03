@@ -1,0 +1,479 @@
+{
+  "parent": "morrow:main/root",
+  "display": {
+    "icon": {
+      "count": 1,
+      "id": "morrow:stuffed_chicken"
+    },
+    "title": {
+      "translate": "advancement.morrow.make_everything"
+    },
+    "description": {
+      "translate": "advancement.morrow.make_everything.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 800,
+    "loot": [
+      "morrow:advancements/completionist"
+    ]
+  },
+  "criteria": {
+    "morrow:farmer_salad": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:farmer_salad"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:goulash": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:goulash"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:simple_tomato_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:simple_tomato_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:barley_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:barley_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:onion_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:onion_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:potato_soup": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:potato_soup"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:pasta_with_onion_sauce": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:pasta_with_onion_sauce"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:corn_grits": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:corn_grits"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:oatmeal_with_strawberries": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:oatmeal_with_strawberries"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:sausage_with_oat_patty": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:sausage_with_oat_patty"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:lamb_with_corn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:lamb_with_corn"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:beef_patty_with_vegetables": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:beef_patty_with_vegetables"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:barley_patties_with_potatoes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:barley_patties_with_potatoes"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:bacon_with_eggs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:bacon_with_eggs"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:chicken_wrapped_in_bacon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:chicken_wrapped_in_bacon"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:cooked_salmon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:cooked_salmon"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:cooked_cod": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:cooked_cod"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:roasted_chicken": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:roasted_chicken"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:oat_pancake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:oat_pancake"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:roasted_corn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:roasted_corn"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:potato_with_roast_meat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:potato_with_roast_meat"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:baked_lamb_ham": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:baked_lamb_ham"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:farmers_breakfast": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:farmers_breakfast"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:stuffed_chicken": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:stuffed_chicken"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:stuffed_rabbit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:stuffed_rabbit"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:grandmothers_strawberry_cake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:grandmothers_strawberry_cake"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:farmers_bread": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:farmers_bread"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:strawberry_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:strawberry_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:nettle_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:nettle_tea"
+            ]
+          }
+        ]
+      }
+    },
+    "morrow:ribwort_tea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "morrow:ribwort_tea"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "morrow:farmer_salad"
+    ],
+    [
+      "morrow:goulash"
+    ],
+    [
+      "morrow:simple_tomato_soup"
+    ],
+    [
+      "morrow:barley_soup"
+    ],
+    [
+      "morrow:onion_soup"
+    ],
+    [
+      "morrow:potato_soup"
+    ],
+    [
+      "morrow:pasta_with_onion_sauce"
+    ],
+    [
+      "morrow:corn_grits"
+    ],
+    [
+      "morrow:oatmeal_with_strawberries"
+    ],
+    [
+      "morrow:sausage_with_oat_patty"
+    ],
+    [
+      "morrow:lamb_with_corn"
+    ],
+    [
+      "morrow:beef_patty_with_vegetables"
+    ],
+    [
+      "morrow:barley_patties_with_potatoes"
+    ],
+    [
+      "morrow:bacon_with_eggs"
+    ],
+    [
+      "morrow:chicken_wrapped_in_bacon"
+    ],
+    [
+      "morrow:cooked_salmon"
+    ],
+    [
+      "morrow:cooked_cod"
+    ],
+    [
+      "morrow:roasted_chicken"
+    ],
+    [
+      "morrow:oat_pancake"
+    ],
+    [
+      "morrow:roasted_corn"
+    ],
+    [
+      "morrow:potato_with_roast_meat"
+    ],
+    [
+      "morrow:baked_lamb_ham"
+    ],
+    [
+      "morrow:farmers_breakfast"
+    ],
+    [
+      "morrow:stuffed_chicken"
+    ],
+    [
+      "morrow:stuffed_rabbit"
+    ],
+    [
+      "morrow:grandmothers_strawberry_cake"
+    ],
+    [
+      "morrow:farmers_bread"
+    ],
+    [
+      "morrow:strawberry_tea"
+    ],
+    [
+      "morrow:nettle_tea"
+    ],
+    [
+      "morrow:ribwort_tea"
+    ]
+  ]
+}

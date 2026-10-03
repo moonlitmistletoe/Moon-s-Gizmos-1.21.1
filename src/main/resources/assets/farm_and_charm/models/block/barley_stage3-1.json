@@ -1,0 +1,6 @@
+{
+  "parent": "morrow:block/template_tall_crop",
+  "textures": {
+    "crop": "morrow:block/barley_stage3-1"
+  }
+}

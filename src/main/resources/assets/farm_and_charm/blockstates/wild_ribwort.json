@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morrow:block/wild_ribwort",
+        "weight": 1
+      }
+    ]
+  }
+}

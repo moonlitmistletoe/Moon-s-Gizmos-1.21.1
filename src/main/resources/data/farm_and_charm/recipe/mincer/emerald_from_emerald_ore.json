@@ -1,0 +1,11 @@
+{
+  "type": "morrow:mincer",
+  "ingredient": {
+    "item": "minecraft:emerald_ore"
+  },
+  "recipe_type": "METAL",
+  "result": {
+    "id": "minecraft:emerald",
+    "count": 2
+  }
+}
