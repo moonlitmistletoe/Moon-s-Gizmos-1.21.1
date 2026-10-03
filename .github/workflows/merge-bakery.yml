@@ -174,7 +174,7 @@ jobs:
           # The old Bakery-only helper methods are at the end of ModItems.
           helper = text.find("    private static DeferredItem<Item> registerBlockItem(")
           if helper != -1:
-              text = text[:helper].rstrip() + "\\n}\\n"
+              text = text[:helper].rstrip() + "\n}\n"
 
           mod_items.write_text(text, encoding="utf-8")
 
