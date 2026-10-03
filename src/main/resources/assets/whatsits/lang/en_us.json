@@ -153,8 +153,8 @@
   "item.bakery.baguette": "Baguette",
   "item.bakery.braided_bread": "Braided Bread",
   "item.bakery.waffle": "Waffle",
-  "item.bakery.bun": "Bun",
-  "key.categories.whatsits": "Morrow",
+  "item.bakery.bun": "Bun"
+  "key.categories.whatsits": "Morrow"
   "key.whatsits.scabbard_key": "Draw/Sheath",
   "tooltip.whatsits.stored_sword": "Stored Item",
   "advancement.bakery.eat_bread": "Dive into Doughy Delights",
