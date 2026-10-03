@@ -241,13 +241,26 @@ jobs:
 
           whatsits.write_text(s, encoding="utf-8")
 
-          # Add the Farm & Charm dependency required by the full Bakery source.
+          # Remove the old build-time Bakery downloader/generator. Bakery is now
+          # permanently inside src/main/java and src/main/resources.
           build = root / "build.gradle"
           b = build.read_text(encoding="utf-8")
+
+          generated_start = b.find("def bakeryGeneratedRoot =")
+          generated_end = b.find("repositories {", generated_start)
+          if generated_start != -1 and generated_end != -1:
+              b = b[:generated_start] + b[generated_end:]
+
+          process_start = b.find('tasks.named(\\n        "processResources"\\n).configure {')
+          idea_start = b.find("idea {", process_start)
+          if process_start != -1 and idea_start != -1:
+              b = b[:process_start] + '''tasks.named(\n        "processResources"\n).configure {\n\n    duplicatesStrategy =\n            DuplicatesStrategy.INCLUDE\n}\n\n''' + b[idea_start:]
+
           dep = '    implementation "curse.maven:lets-do-farm-charm-1038103:7628193"'
           if "lets-do-farm-charm-1038103" not in b:
               anchor = '    implementation "curse.maven:farmers-delight-398521:8765184"'
-              b = b.replace(anchor, anchor + "\n\n" + dep, 1)
+              b = b.replace(anchor, anchor + "\\n\\n" + dep, 1)
+
           build.write_text(b, encoding="utf-8")
 
           # The source archive has served its purpose. Bakery is now source code
