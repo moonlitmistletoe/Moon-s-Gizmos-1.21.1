@@ -34,5 +34,23 @@
     "sounds": [
       "morrow:cooking_pot_hit"
     ]
+  },
+  "dorime-ameno": {
+    "subtitle": "item.morrow.dorime.description",
+    "sounds": [
+      {
+        "name": "morrow:dorime-ameno",
+        "stream": true
+      }
+    ]
+  },
+  "worldoflies": {
+    "subtitle": "item.morrow.world_of_lies.description",
+    "sounds": [
+      {
+        "name": "morrow:worldoflies",
+        "stream": true
+      }
+    ]
   }
 }
