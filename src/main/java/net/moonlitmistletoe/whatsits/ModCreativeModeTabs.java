@@ -32,7 +32,7 @@ public class ModCreativeModeTabs {
                             net.minecraft.resources.ResourceLocation id =
                                     net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(item);
 
-                            if (id.getNamespace().equals(Whatsits.MOD_ID) && added.add(item)) {
+                            if (id.getNamespace().equals(Whatsits.MOD_ID) && id.getPath().equals("mod_logo") == false && added.add(item)) {
                                 output.accept(item);
                             }
                         }
