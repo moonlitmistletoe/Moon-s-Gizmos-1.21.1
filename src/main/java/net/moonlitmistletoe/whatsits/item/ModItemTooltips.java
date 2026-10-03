@@ -13,9 +13,9 @@ public class ModItemTooltips {
 
         ItemStack stack = event.getItemStack();
 
-        if (stack.is(ModItems.DORIME.get())) {
+        if (stack.is(ModItems.DORIME.get()) || stack.is(ModItems.WORLD_OF_LIES.get())) {
             event.getToolTip().add(
-                    Component.translatable("raw_cow_ribs.json.whatsits.dorime.description")
+                    Component.translatable(stack.is(ModItems.DORIME.get()) ? "tooltip.whatsits.dorime.description" : "tooltip.whatsits.world_of_lies.description")
                             .withStyle(ChatFormatting.GRAY)
             );
         }
