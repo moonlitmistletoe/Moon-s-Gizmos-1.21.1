@@ -1,9 +1,0 @@
-{
-  "parent": "morrow:block/template_farmland",
-  "textures": {
-    "6": "morrow:block/fertilized_soil",
-    "9": "morrow:block/fertilized_farmland_side_moist",
-    "10": "morrow:block/fertilized_farmland_top_moist",
-    "particle": "morrow:block/fertilized_farmland_top_moist"
-  }
-}

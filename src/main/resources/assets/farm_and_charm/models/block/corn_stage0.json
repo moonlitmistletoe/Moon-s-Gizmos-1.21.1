@@ -1,6 +1,0 @@
-{
-  "parent": "morrow:block/template_tall_crop",
-  "textures": {
-    "crop": "morrow:block/corn_stage0-1"
-  }
-}

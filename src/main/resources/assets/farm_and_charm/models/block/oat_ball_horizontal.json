@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "morrow:block/oat_ball_top",
-    "side": "morrow:block/oat_ball_side"
-  }
-}

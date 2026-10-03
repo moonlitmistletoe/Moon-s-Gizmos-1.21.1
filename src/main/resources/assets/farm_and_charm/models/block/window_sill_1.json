@@ -1,9 +1,0 @@
-{
-  "parent": "morrow:block/template_window_sill",
-  "textures": {
-    "0": "block/flower_pot",
-    "1": "block/dirt",
-    "2": "morrow:block/window_sill",
-    "particle": "morrow:block/window_sill"
-  }
-}

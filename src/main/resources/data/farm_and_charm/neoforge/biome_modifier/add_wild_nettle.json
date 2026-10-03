@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "#morrow:spawns_wild_flowers",
-  "features": "morrow:wild_nettle_chance",
-  "step": "vegetal_decoration"
-}
