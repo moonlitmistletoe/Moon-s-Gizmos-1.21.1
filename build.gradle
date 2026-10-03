@@ -402,28 +402,6 @@ tasks.named(
 
     notCompatibleWithConfigurationCache("Rewrites merged Bakery resource namespaces after processing")
 
-    doLast {
-        def resourceRoot = new File(destinationDir, "assets/morrow")
-
-        if (resourceRoot.exists()) {
-            fileTree(resourceRoot)
-                    .matching {
-                        include("**/*.json")
-                        include("**/*.mcmeta")
-                    }
-                    .each { file ->
-                        def text = file.getText("UTF-8")
-
-                        def fixed = text
-                                .replace("bakery:", "whatsits:")
-                                .replace("bakery.", "whatsits.")
-
-                        if (fixed != text) {
-                            file.setText(fixed, "UTF-8")
-                        }
-                    }
-        }
-    }
 }
 
 idea {
