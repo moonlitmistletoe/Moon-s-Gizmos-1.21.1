@@ -1,7 +1,6 @@
 package net.moonlitmistletoe.whatsits;
 
 import net.moonlitmistletoe.whatsits.block.ModBlocks;
-import net.satisfy.bakery.Bakery;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 import net.nimbu.scabbards.Scabbards;
 import org.slf4j.Logger;
@@ -47,8 +46,6 @@ public class Whatsits {
 
         new Scabbards(modEventBus, modContainer);
 
-        // Register the merged Bakery food/cake content.
-        Bakery.init();
 
         ModCreativeModeTabs.register(modEventBus);
 
