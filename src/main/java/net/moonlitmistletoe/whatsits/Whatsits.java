@@ -81,11 +81,6 @@ public class Whatsits {
 
         ModCreativeModeTabs.register(modEventBus);
 
-        // Only Whatsits' own config is registered.
-        modContainer.registerConfig(
-                ModConfig.Type.COMMON,
-                Config.SPEC
-        );
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
