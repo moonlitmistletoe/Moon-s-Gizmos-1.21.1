@@ -1,0 +1,35 @@
+name: Merge Farm & Charm source
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    if: github.event.head_commit.message != 'Merge Farm & Charm source'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy Farm & Charm source
+        run: |
+          git clone --depth 1 --branch 1.21.1 https://github.com/Let-s-Do-Collection/FarmAndCharm.git /tmp/fac
+          mkdir -p src/main/java src/main/resources
+          cp -R /tmp/fac/common/src/main/java/. src/main/java/
+          cp -R /tmp/fac/common/src/main/resources/. src/main/resources/
+          cp -R /tmp/fac/neoforge/src/main/java/. src/main/java/
+          cp -R /tmp/fac/neoforge/src/main/resources/. src/main/resources/ 2>/dev/null || true
+          find src/main/java -type f -name '*.java' -print0 | xargs -0 sed -i 's/farm_and_charm/morrow/g'
+          find src/main/resources -type f \( -name '*.json' -o -name '*.mcmeta' -o -name '*.toml' -o -name '*.properties' -o -name '*.txt' \) -print0 | xargs -0 sed -i 's/farm_and_charm/morrow/g'
+          rm -f src/main/resources/META-INF/neoforge.mods.toml
+          rm -f src/main/resources/fabric.mod.json
+          rm -f src/main/resources/morrow.mixins.json
+      - name: Commit merged source
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add src/main/java src/main/resources
+          git commit -m "Merge Farm & Charm source" || exit 0
+          git push
