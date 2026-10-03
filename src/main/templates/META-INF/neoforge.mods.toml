@@ -111,3 +111,6 @@ config="${mod_id}.mixins.json"
     ordering="AFTER"
     side="BOTH"
 
+
+[[mixins]]
+config="morrow-farm-and-charm.mixins.json"
