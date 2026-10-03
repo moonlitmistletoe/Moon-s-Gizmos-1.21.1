@@ -214,12 +214,33 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
+def decodeBakeryStructure = tasks.register("decodeBakeryStructure") {
+    def source = file("src/main/resources/data/whatsits/structure/bakery.nbt.base64")
+    def output = layout.buildDirectory.file(
+            "generated/resources/data/whatsits/structure/bakery.nbt"
+    )
+
+    inputs.file(source)
+    outputs.file(output)
+
+    doLast {
+        output.get().asFile.parentFile.mkdirs()
+        output.get().asFile.bytes =
+                java.util.Base64.decoder.decode(
+                        source.text.replaceAll("\\s", "")
+                )
+    }
+}
+
 tasks.named(
         "processResources"
 ).configure {
+    dependsOn(decodeBakeryStructure)
 
     duplicatesStrategy =
             DuplicatesStrategy.INCLUDE
+
+    exclude("**/*.base64")
 }
 
 idea {
