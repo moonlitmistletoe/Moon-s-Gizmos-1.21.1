@@ -188,5 +188,11 @@
   "block.whatsits.blackberry_crop": "Blackberry Crop",
   "block.whatsits.blueberry_crop": "Blueberry Crop",
   "block.whatsits.coffee_crop": "Coffee Crop",
-  "block.whatsits.strawberry_crop": "Strawberry Crop"
+  "block.whatsits.strawberry_crop": "Strawberry Crop",
+  "item.bakery.crusty_bread": "Crusty Bread",
+  "item.bakery.bread": "Bread",
+  "item.bakery.baguette": "Baguette",
+  "item.bakery.braided_bread": "Braided Bread",
+  "item.bakery.waffle": "Waffle",
+  "item.bakery.bun": "Bun"
 }
