@@ -112,20 +112,26 @@ jobs:
           # This is a NeoForge-only mod now, so replace Architectury's common
           # @ExpectPlatform shim with Bakery's actual NeoForge implementation.
           common_platform = java_root / "platform/PlatformHelper.java"
-          impl_candidates = list(java_root.rglob("PlatformHelperImpl.java"))
+          impl_candidates = list(
+              Path("/tmp/bakery-src").rglob(
+                  "neoforge/src/main/java/net/satisfy/bakery/platform/neoforge/PlatformHelperImpl.java"
+              )
+          )
           if impl_candidates:
               platform = impl_candidates[0].read_text(encoding="utf-8")
               platform = platform.replace(
-                  "package net.moonlitmistletoe.whatsits.bakery.platform.neoforge;",
+                  "package net.satisfy.bakery.platform.neoforge;",
                   "package net.moonlitmistletoe.whatsits.bakery.platform;"
               )
               platform = platform.replace(
-                  "import net.moonlitmistletoe.whatsits.bakery.platform.PlatformHelper;\\n",
+                  "import net.satisfy.bakery.platform.PlatformHelper;\n",
                   ""
               )
               platform = platform.replace(" extends PlatformHelper", "")
               platform = platform.replace("public class PlatformHelperImpl", "public class PlatformHelper")
               common_platform.write_text(platform, encoding="utf-8")
+          else:
+              raise RuntimeError("Bakery NeoForge PlatformHelperImpl.java was not found")
           shutil.rmtree(java_root / "neoforge/platform", ignore_errors=True)
 
           # REI/JEI are optional integrations in the standalone Bakery mod. This
