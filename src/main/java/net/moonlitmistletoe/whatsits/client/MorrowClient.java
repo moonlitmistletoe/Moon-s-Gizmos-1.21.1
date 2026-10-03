@@ -18,7 +18,7 @@ public final class MorrowClient {
     public static void register() {
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(
                 EventPriority.LOWEST,
-                (RenderTooltipEvent.GatherComponents event) -> removeFarmAndCharmModName(event)
+                (RenderTooltipEvent.GatherComponents event) -> replaceFarmAndCharmModName(event)
         );
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(
                 EventPriority.LOWEST,
@@ -44,7 +44,7 @@ public final class MorrowClient {
         }
     }
 
-    private static void removeFarmAndCharmModName(RenderTooltipEvent.GatherComponents event) {
+    private static void replaceFarmAndCharmModName(RenderTooltipEvent.GatherComponents event) {
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem());
 
         if (!"farm_and_charm".equals(id.getNamespace())) {
@@ -58,6 +58,7 @@ public final class MorrowClient {
             String value = text.getString();
             return value.equals("Farm & Charm") || value.equals("[Let's Do] Farm & Charm");
         }).orElse(false));
+        elements.add(Either.left(Component.literal("Morrow")));
     }
 
     private static void removeFarmAndCharmModName(ItemTooltipEvent event) {
@@ -71,5 +72,6 @@ public final class MorrowClient {
             String value = component.getString();
             return value.equals("Farm & Charm") || value.equals("[Let's Do] Farm & Charm");
         });
+        event.getToolTip().add(Component.literal("Morrow"));
     }
 }
