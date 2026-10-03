@@ -1,7 +1,6 @@
 package net.satisfy.morrow;
 
 import net.minecraft.resources.ResourceLocation;
-import net.satisfy.morrow.core.event.VanillaItemPlacements;
 import net.satisfy.morrow.core.network.PacketHandler;
 import net.satisfy.morrow.core.registry.*;
 import net.satisfy.morrow.core.util.CartInteractionHooks;
@@ -17,12 +16,10 @@ public class FarmAndCharm {
         MobEffectRegistry.init();
         ObjectRegistry.init();
         ParticleTypeRegistry.init();
-        VanillaItemPlacements.init();
         EntityTypeRegistry.init();
         ScreenhandlerTypeRegistry.init();
         SoundEventRegistry.init();
         RecipeTypeRegistry.init();
-        VillagerTradeRegistryHandler.init();
         PacketHandler.init();
         CartInteractionHooks.init();
     }
