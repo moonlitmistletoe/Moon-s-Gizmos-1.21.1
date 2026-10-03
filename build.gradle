@@ -262,6 +262,7 @@ def prepareFarmAndCharm = tasks.register("prepareFarmAndCharm") {
                 "kernels", "corn_kernels", "onion", "wild_ribwort", "wild_nettle",
                 "wild_corn", "wild_barley", "wild_oat", "wild_tomatoes",
                 "wild_lettuce", "wild_onions", "wild_strawberries",
+                "strawberry_bag", "carrot_bag", "potato_bag", "beetroot_bag",
                 "lettuce_bag", "tomato_bag", "corn_bag", "onion_bag", "flour_bag",
                 "oat_ball", "barley_ball", "oat_bale", "barley_bale",
                 "fertilized_soil", "fertilized_farmland", "silo_wood", "silo_copper",
@@ -367,7 +368,11 @@ def prepareFarmAndCharm = tasks.register("prepareFarmAndCharm") {
 }
 
 sourceSets.main.java.srcDir(prepareFarmAndCharm.map { layout.buildDirectory.dir("farm_and_charm/generated/java").get().asFile })
-sourceSets.main.resources.srcDir(prepareFarmAndCharm.map { layout.buildDirectory.dir("farm_and_charm/generated/resources").get().asFile })
+sourceSets.main.resources.setSrcDirs([
+        layout.buildDirectory.dir("farm_and_charm/generated/resources").get().asFile,
+        file("src/main/resources"),
+        file("src/generated/resources")
+])
 
 tasks.named("compileJava").configure { dependsOn(prepareFarmAndCharm) }
 tasks.named("processResources").configure { dependsOn(prepareFarmAndCharm) }
@@ -396,7 +401,7 @@ tasks.named(
     dependsOn(decodeBakeryStructure)
 
     duplicatesStrategy =
-            DuplicatesStrategy.INCLUDE
+            DuplicatesStrategy.EXCLUDE
 
     exclude("**/*.base64")
 
