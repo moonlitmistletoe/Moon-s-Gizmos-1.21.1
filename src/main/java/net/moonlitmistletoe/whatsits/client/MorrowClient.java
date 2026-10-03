@@ -34,7 +34,13 @@ public final class MorrowClient {
         String name = event.getTab().getDisplayName().getString();
 
         if (name.equals("Farm & Charm") || name.equals("[Let's Do] Farm & Charm")) {
-            event.getEntries().clear();
+            for (net.minecraft.world.item.ItemStack stack : new java.util.ArrayList<>(event.getParentEntries())) {
+                event.remove(stack, net.minecraft.world.item.CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
+            }
+
+            for (net.minecraft.world.item.ItemStack stack : new java.util.ArrayList<>(event.getSearchEntries())) {
+                event.remove(stack, net.minecraft.world.item.CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
+            }
         }
     }
 
