@@ -10,6 +10,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.moonlitmistletoe.whatsits.item.ModItems;
 
+import java.util.Set;
 
 public class ModCreativeModeTabs {
 
@@ -45,7 +46,6 @@ public class ModCreativeModeTabs {
                                 output.accept(item);
                             }
                         }
-}
                     })
                     .build());
 
