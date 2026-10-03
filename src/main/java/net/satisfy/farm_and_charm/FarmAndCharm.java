@@ -19,7 +19,6 @@ public class FarmAndCharm {
         ParticleTypeRegistry.init();
         VanillaItemPlacements.init();
         EntityTypeRegistry.init();
-        TabRegistry.init();
         ScreenhandlerTypeRegistry.init();
         SoundEventRegistry.init();
         RecipeTypeRegistry.init();
