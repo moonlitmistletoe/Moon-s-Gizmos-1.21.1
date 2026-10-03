@@ -119,6 +119,7 @@ jobs:
           )
           if impl_candidates:
               platform = impl_candidates[0].read_text(encoding="utf-8")
+              platform = platform.replace("net.satisfy.bakery", "net.moonlitmistletoe.whatsits.bakery")
               platform = platform.replace(
                   "package net.satisfy.bakery.platform.neoforge;",
                   "package net.moonlitmistletoe.whatsits.bakery.platform;"
