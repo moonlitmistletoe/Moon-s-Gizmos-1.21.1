@@ -1,34 +1,4 @@
 {
-  "cake_cut": {
-    "subtitle": "sound.bakery.cake_cut",
-    "sounds": [
-      "morrow:cake_cut"
-    ]
-  },
-  "drawer_open": {
-    "subtitle": "sound.bakery.drawer_open",
-    "sounds": [
-      "morrow:drawer_open"
-    ]
-  },
-  "drawer_close": {
-    "subtitle": "sound.bakery.drawer_close",
-    "sounds": [
-      "morrow:drawer_close"
-    ]
-  },
-  "cabinet_open": {
-    "subtitle": "sound.bakery.cabinet_open",
-    "sounds": [
-      "morrow:cabinet_open"
-    ]
-  },
-  "cabinet_close": {
-    "subtitle": "sound.bakery.cabinet_close",
-    "sounds": [
-      "morrow:cabinet_close"
-    ]
-  },
   "cooking_pot_hit": {
     "subtitle": "sound.bakery.cooking_pot_hit",
     "sounds": [
