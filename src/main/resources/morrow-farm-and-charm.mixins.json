@@ -24,7 +24,6 @@
     "MobAccessor",
     "ParrotMixin",
     "PigMixin",
-    "PlayerModelCartPullMixin",
     "RabbitMixin",
     "TemptGoalAccessor",
     "VanillaFarmlandPlantingParticlesMixin",
