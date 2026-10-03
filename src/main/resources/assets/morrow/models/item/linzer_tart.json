@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bakery:item/linzer_tart"
+    "layer0": "morrow:item/linzer_tart"
   }
 }

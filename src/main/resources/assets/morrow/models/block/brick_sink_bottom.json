@@ -2,9 +2,9 @@
 
 	"credit": "Made by Satisfy",
 	"textures": {
-		"particle": "bakery:block/brick_sink_side",
-		"side": "bakery:block/brick_sink_side",
-		"top": "bakery:block/brick_sink_top",
+		"particle": "morrow:block/brick_sink_side",
+		"side": "morrow:block/brick_sink_side",
+		"top": "morrow:block/brick_sink_top",
 		"bricks": "block/bricks",
 		"metal_top": "block/blast_furnace_top"
 	},

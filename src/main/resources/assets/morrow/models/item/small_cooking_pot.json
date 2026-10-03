@@ -2,7 +2,7 @@
 	"credit": "Made by Satisfy",
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "bakery:item/small_cooking_pan"
+		"layer0": "morrow:item/small_cooking_pan"
 	},
 	"display": {
 		"thirdperson_righthand": {

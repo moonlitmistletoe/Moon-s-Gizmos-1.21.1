@@ -1,8 +1,8 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/waffles",
-		"particle": "bakery:block/waffles"
+		"0": "morrow:block/waffles",
+		"particle": "morrow:block/waffles"
 	},
 	"elements": [
 		{

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bakery:item/crusty_bread"
+    "layer0": "morrow:item/crusty_bread"
   }
 }

@@ -1,10 +1,10 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"3": "bakery:block/iron_table_top",
-		"4": "bakery:block/iron_table_side",
-		"5": "bakery:block/iron_table",
-		"particle": "bakery:block/iron_table_top"
+		"3": "morrow:block/iron_table_top",
+		"4": "morrow:block/iron_table_side",
+		"5": "morrow:block/iron_table",
+		"particle": "morrow:block/iron_table_top"
 	},
 	"elements": [
 		{

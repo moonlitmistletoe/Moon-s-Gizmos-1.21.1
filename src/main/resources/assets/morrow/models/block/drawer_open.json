@@ -2,11 +2,11 @@
 
 	"credit": "Made by Satisfy",
 	"textures": {
-		"3": "bakery:block/cabinet_front_open",
-		"particle": "bakery:block/drawer_front",
-		"front": "bakery:block/drawer_front",
-		"side": "bakery:block/cabinet_side",
-		"top": "bakery:block/cabinet_top"
+		"3": "morrow:block/cabinet_front_open",
+		"particle": "morrow:block/drawer_front",
+		"front": "morrow:block/drawer_front",
+		"side": "morrow:block/cabinet_side",
+		"top": "morrow:block/cabinet_top"
 	},
 	"elements": [
 		{

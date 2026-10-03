@@ -1,9 +1,9 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"1": "bakery:block/street_sign_front",
-		"2": "bakery:block/street_sign_back",
-		"particle": "bakery:block/street_sign_front"
+		"1": "morrow:block/street_sign_front",
+		"2": "morrow:block/street_sign_back",
+		"particle": "morrow:block/street_sign_front"
 	},
 	"elements": [
 		{

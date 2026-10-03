@@ -3,8 +3,8 @@
 	"credit": "Made by Satisfy",
 	"parent": "block/block",
 	"textures": {
-		"base": "bakery:block/breadbox",
-		"particle": "bakery:block/breadbox"
+		"base": "morrow:block/breadbox",
+		"particle": "morrow:block/breadbox"
 	},
 	"elements": [
 		{

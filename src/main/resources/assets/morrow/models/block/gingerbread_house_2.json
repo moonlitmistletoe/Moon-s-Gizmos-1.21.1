@@ -1,10 +1,10 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/gingerbread_house_top",
-		"1": "bakery:block/gingerbread_house_side",
-		"2": "bakery:block/gingerbread_house_base",
-		"particle": "bakery:block/gingerbread_house_top"
+		"0": "morrow:block/gingerbread_house_top",
+		"1": "morrow:block/gingerbread_house_side",
+		"2": "morrow:block/gingerbread_house_base",
+		"particle": "morrow:block/gingerbread_house_top"
 	},
 	"elements": [
 		{

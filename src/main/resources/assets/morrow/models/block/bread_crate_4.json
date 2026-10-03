@@ -2,12 +2,12 @@
 
 	"credit": "Made by Satisfy",
 	"textures": {
-		"2": "bakery:block/baguette",
-		"3": "bakery:block/crusty_bread",
-		"4": "bakery:block/bread",
-		"5": "bakery:block/bun",
-		"6": "bakery:block/rattan_block",
-		"particle": "bakery:block/rattan_block"
+		"2": "morrow:block/baguette",
+		"3": "morrow:block/crusty_bread",
+		"4": "morrow:block/bread",
+		"5": "morrow:block/bun",
+		"6": "morrow:block/rattan_block",
+		"particle": "morrow:block/rattan_block"
 	},
 	"elements": [
 		{

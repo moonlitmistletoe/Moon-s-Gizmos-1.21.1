@@ -1,8 +1,8 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/crusty_bread",
-		"particle": "bakery:block/crusty_bread"
+		"0": "morrow:block/crusty_bread",
+		"particle": "morrow:block/crusty_bread"
 	},
 	"elements": [
 		{

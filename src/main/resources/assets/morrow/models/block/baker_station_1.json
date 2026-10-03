@@ -2,11 +2,11 @@
 
 	"credit": "Made by Satisfy",
 	"textures": {
-		"particle": "bakery:block/baker_station_side",
-		"side": "bakery:block/baker_station_side",
-		"top": "bakery:block/cabinet_top",
+		"particle": "morrow:block/baker_station_side",
+		"side": "morrow:block/baker_station_side",
+		"top": "morrow:block/cabinet_top",
 		"bottom": "block/bricks",
-		"front": "bakery:block/baker_station_1"
+		"front": "morrow:block/baker_station_1"
 	},
 	"elements": [
 		{

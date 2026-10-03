@@ -2,9 +2,9 @@
 	"credit": "Made by Satisfy",
 	"parent": "minecraft:block/block",
 	"textures": {
-		"1": "bakery:block/iron_bench_top_middle",
-		"2": "bakery:block/iron_table_side",
-		"particle": "bakery:block/iron_table_side"
+		"1": "morrow:block/iron_bench_top_middle",
+		"2": "morrow:block/iron_table_side",
+		"particle": "morrow:block/iron_table_side"
 	},
 	"elements": [
 		{

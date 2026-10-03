@@ -1,8 +1,8 @@
 {
 	"credit": "Made by Satisfy",
 	"textures": {
-		"0": "bakery:block/pudding",
-		"particle": "bakery:block/pudding"
+		"0": "morrow:block/pudding",
+		"particle": "morrow:block/pudding"
 	},
 	"elements": [
 		{
