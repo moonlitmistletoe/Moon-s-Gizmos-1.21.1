@@ -18,7 +18,7 @@ public class ModCreativeModeTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WHATSITS_TAB =
             CREATIVE_MODE_TABS.register("morrow", () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.whatsits.whatsits"))
+                    .title(Component.translatable("itemGroup.morrow.morrow"))
 
                     // The mod logo is the actual creative-tab icon
                     .icon(() -> new ItemStack(ModItems.MOD_LOGO.get()))
