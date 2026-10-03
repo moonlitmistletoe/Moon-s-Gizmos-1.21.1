@@ -7,25 +7,23 @@ import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
 import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.satisfy.morrow.client.event.ClientEventHandler;
 import net.satisfy.morrow.client.gui.CookingPotGui;
-import net.satisfy.morrow.client.gui.PetBowlEditGui;
 import net.satisfy.morrow.client.gui.RoasterGui;
 import net.satisfy.morrow.client.gui.StoveGui;
 import net.satisfy.morrow.client.model.*;
 import net.satisfy.morrow.client.particle.SoupBubbleParticle;
 import net.satisfy.morrow.client.particle.SoupCookingBubbleParticle;
 import net.satisfy.morrow.client.particle.SoupSteamParticle;
-import net.satisfy.morrow.client.renderer.block.*;
+import net.satisfy.morrow.client.renderer.block.StorageBlockEntityRenderer;
+import net.satisfy.morrow.client.renderer.block.ToolRackRenderer;
 import net.satisfy.morrow.client.renderer.entity.ChairRenderer;
 import net.satisfy.morrow.client.renderer.entity.PlowCartRenderer;
 import net.satisfy.morrow.client.renderer.entity.SeederCartRenderer;
 import net.satisfy.morrow.client.renderer.entity.SupplyCartRenderer;
-import net.satisfy.morrow.core.block.entity.PetBowlBlockEntity;
 import net.satisfy.morrow.core.registry.EntityTypeRegistry;
 import net.satisfy.morrow.core.registry.ParticleTypeRegistry;
 import net.satisfy.morrow.core.registry.ScreenhandlerTypeRegistry;
@@ -52,14 +50,10 @@ public class FarmAndCharmClient {
         ParticleProviderRegistry.register(ParticleTypeRegistry.SOUP_COOKING_BUBBLE.get(), SoupCookingBubbleParticle.Provider::new);
 
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
-            if (world == null || pos == null) {
-                return -1;
-            }
+            if (world == null || pos == null) return -1;
             return BiomeColors.getAverageWaterColor(world, pos);
-        }, WATER_TROUGH.get(), TIMBER_WELL.get());
+        }, WATER_TROUGH.get());
 
-        ClientStorageTypes.init();
-        ClientEventHandler.init();
         registerStorageTypeRenderers();
         registerBlockEntityRenderer();
         MenuRegistry.registerScreenFactory(ScreenhandlerTypeRegistry.COOKING_POT_SCREEN_HANDLER.get(), CookingPotGui::new);
@@ -100,7 +94,6 @@ public class FarmAndCharmClient {
     }
 
     public static void registerBlockEntityRenderer() {
-        BlockEntityRendererRegistry.register(EntityTypeRegistry.ROPE_KNOT_BLOCK_ENTITY.get(), ctx -> new RopeKnotRenderer());
         BlockEntityRendererRegistry.register(EntityTypeRegistry.STOVE_BLOCK_ENTITY.get(), StoveBlockRenderer::new);
         BlockEntityRendererRegistry.register(EntityTypeRegistry.SCARECROW_BLOCK_ENTITY.get(), ScarecrowRenderer::new);
         BlockEntityRendererRegistry.register(EntityTypeRegistry.TIMBER_WELL_BLOCK_ENTITY.get(), TimberWellRenderer::new);
@@ -109,10 +102,6 @@ public class FarmAndCharmClient {
         BlockEntityRendererRegistry.register(EntityTypeRegistry.SPRINKLER_BLOCK_ENTITY.get(), WaterSprinklerRenderer::new);
         BlockEntityRendererRegistry.register(EntityTypeRegistry.PET_BOWL_BLOCK_ENTITY.get(), context -> new PetBowlBlockRenderer());
         BlockEntityRendererRegistry.register(EntityTypeRegistry.STORAGE_ENTITY.get(), context -> new StorageBlockEntityRenderer());
-    }
-
-    public static void openPetBowlScreen(PetBowlBlockEntity entity) {
-        Minecraft.getInstance().setScreen(new PetBowlEditGui(entity));
     }
 
 }
