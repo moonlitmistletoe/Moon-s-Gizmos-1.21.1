@@ -113,7 +113,7 @@ jobs:
           # no longer be registered by the old partial merge.
           object_registry = java_root / "core/registry/ObjectRegistry.java"
           object_text = object_registry.read_text(encoding="utf-8")
-          names = set(re.findall(r'public static final RegistrySupplier<[^>]+>\\s+([A-Z0-9_]+)\\s*=', object_text))
+          names = set(re.findall(r'public static final RegistrySupplier<[^>]+>\s+([A-Z0-9_]+)\s*=', object_text))
 
           # Remove the old partial Bakery registrations from ModBlocks. The
           # complete upstream ObjectRegistry now owns those IDs.
@@ -157,13 +157,13 @@ jobs:
 
           for name in sorted(names, key=len, reverse=True):
               text = re.sub(
-                  rf'^\\s*public static final DeferredItem<[^;]+>\\s+{re.escape(name)};\\s*\\n',
+                  rf'^\s*public static final DeferredItem<[^;]+>\s+{re.escape(name)};\s*\n',
                   '',
                   text,
                   flags=re.M
               )
               text = re.sub(
-                  rf'^\\s*{re.escape(name)}\\s*=.*(?:\\n(?!\\s*[A-Z_]+\\s*=).*?)*',
+                  rf'^\s*{re.escape(name)}\s*=.*(?:\n(?!\s*[A-Z_]+\s*=).*?)*',
                   lambda m: '' if m.group(0).strip() else m.group(0),
                   text
               )
@@ -172,10 +172,10 @@ jobs:
           # remove any remaining static-block lines that clearly belong to a
           # Bakery field.
           lines = text.splitlines()
-          lines = [line for line in lines if not any(re.search(rf'\\b{name}\\s*=', line) for name in names)]
-          lines = [line for line in lines if not re.search(r'registerBlockItem\\(".*",\\s*ModBlocks\\.', line)]
+          lines = [line for line in lines if not any(re.search(rf'\b{name}\s*=', line) for name in names)]
+          lines = [line for line in lines if not re.search(r'registerBlockItem\(".*",\s*ModBlocks\.', line)]
 
-          text = "\\n".join(lines) + "\\n"
+          text = "\n".join(lines) + "\n"
 
           # Remove the old simplified Bakery helper methods. They were only
           # used by the partial Bakery registration layer.
@@ -193,10 +193,10 @@ jobs:
               s = path.read_text(encoding="utf-8")
               original = s
               for name in names:
-                  s = re.sub(rf'\\bModBlocks\\.{re.escape(name)}\\b', f'ObjectRegistry.{name}', s)
-                  s = re.sub(rf'\\bModItems\\.{re.escape(name)}\\b', f'ObjectRegistry.{name}', s)
+                  s = re.sub(rf'\bModBlocks\.{re.escape(name)}\b', f'ObjectRegistry.{name}', s)
+                  s = re.sub(rf'\bModItems\.{re.escape(name)}\b', f'ObjectRegistry.{name}', s)
               if s != original and "ObjectRegistry." in s and "import net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;" not in s:
-                  s = s.replace("\\n", "\\nimport net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;", 1)
+                  s = s.replace("\n", "\nimport net.moonlitmistletoe.whatsits.bakery.core.registry.ObjectRegistry;", 1)
               path.write_text(s, encoding="utf-8")
 
           # Integrate the Bakery NeoForge bootstrap into Whatsits.
@@ -212,7 +212,7 @@ jobs:
           marker = "import net.moonlitmistletoe.whatsits.block.ModBlocks;"
           for imp in imports:
               if imp not in s:
-                  s = s.replace(marker, marker + "\\n" + imp, 1)
+                  s = s.replace(marker, marker + "\n" + imp, 1)
 
           ctor_marker = "        modEventBus.addListener(this::commonSetup);"
           bakery_setup = '''
@@ -236,9 +236,9 @@ jobs:
                   Bakery.init();
           '''.replace("          ", "")
           if "Bakery.init();" not in s:
-              s = s.replace(ctor_marker, ctor_marker + "\\n\\n" + bakery_setup, 1)
+              s = s.replace(ctor_marker, ctor_marker + "\n\n" + bakery_setup, 1)
 
-          old_setup = "    private void commonSetup(FMLCommonSetupEvent event) {\\n    }"
+          old_setup = "    private void commonSetup(FMLCommonSetupEvent event) {\n    }"
           new_setup = """    private void commonSetup(FMLCommonSetupEvent event) {
               event.enqueueWork(CompostableRegistry::registerCompostable);
           }"""
@@ -253,7 +253,7 @@ jobs:
           dep = '    implementation "curse.maven:lets-do-farm-charm-1038103:7628193"'
           if "lets-do-farm-charm-1038103" not in b:
               anchor = '    implementation "curse.maven:farmers-delight-398521:8765184"'
-              b = b.replace(anchor, anchor + "\\n\\n" + dep, 1)
+              b = b.replace(anchor, anchor + "\n\n" + dep, 1)
           build.write_text(b, encoding="utf-8")
 
           # The source archive has served its purpose. Bakery is now source code
