@@ -1,12 +1,13 @@
 package net.moonlitmistletoe.whatsits.client;
 
 import com.mojang.datafixers.util.Either;
-import net.minecraft.network.chat.Component;
-import net.neoforged.bus.api.EventPriority;
-import net.neoforged.neoforge.client.event.RenderTooltipEvent;
-import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.neoforged.neoforge.client.event.RenderTooltipEvent;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+import net.neoforged.bus.api.EventPriority;
 
 import java.util.List;
 
@@ -23,6 +24,18 @@ public final class MorrowClient {
                 EventPriority.LOWEST,
                 (ItemTooltipEvent event) -> removeFarmAndCharmModName(event)
         );
+    }
+
+    public static void registerCreativeTabEvents(net.neoforged.bus.api.IEventBus modEventBus) {
+        modEventBus.addListener(MorrowClient::removeFarmAndCharmTabContents);
+    }
+
+    private static void removeFarmAndCharmTabContents(BuildCreativeModeTabContentsEvent event) {
+        String name = event.getTab().getDisplayName().getString();
+
+        if (name.equals("Farm & Charm") || name.equals("[Let's Do] Farm & Charm")) {
+            event.getEntries().clear();
+        }
     }
 
     private static void removeFarmAndCharmModName(RenderTooltipEvent.GatherComponents event) {
