@@ -109,6 +109,34 @@ jobs:
                   text = text.replace("bakery:", "whatsits:")
                   dst.write_text(text, encoding="utf-8")
 
+          # This is a NeoForge-only mod now, so replace Architectury's common
+          # @ExpectPlatform shim with Bakery's actual NeoForge implementation.
+          common_platform = java_root / "platform/PlatformHelper.java"
+          neo_platform = java_root / "neoforge/platform/neoforge/PlatformHelperImpl.java"
+          if neo_platform.exists():
+              platform = neo_platform.read_text(encoding="utf-8")
+              platform = platform.replace(
+                  "package net.moonlitmistletoe.whatsits.bakery.platform.neoforge;",
+                  "package net.moonlitmistletoe.whatsits.bakery.platform;"
+              )
+              platform = platform.replace(
+                  "import net.moonlitmistletoe.whatsits.bakery.platform.PlatformHelper;\\n",
+                  ""
+              )
+              platform = platform.replace(" extends PlatformHelper", "")
+              common_platform.write_text(platform, encoding="utf-8")
+              shutil.rmtree(java_root / "neoforge/platform", ignore_errors=True)
+
+          # REI/JEI are optional integrations in the standalone Bakery mod. This
+          # project does not depend on either API, so remove those loader plugins
+          # while retaining all actual Bakery recipe and station functionality.
+          for rel in [
+              "core/compat/rei",
+              "core/compat/jei",
+              "neoforge/core/rei"
+          ]:
+              shutil.rmtree(java_root / rel, ignore_errors=True)
+
           # Read the full upstream ObjectRegistry to identify the IDs which must
           # no longer be registered by the old partial merge.
           object_registry = java_root / "core/registry/ObjectRegistry.java"
